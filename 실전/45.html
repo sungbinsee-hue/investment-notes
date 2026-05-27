@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTS·MTS 실전 활용 — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세전략">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+    <li><a href="../절세/34.html">해외 주식 세금 실무</a></li>
+    <li><a href="../절세/54.html">금투세 폐지 & 세제 변화</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="주식기업분석">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="ETF완전가이드">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩유안타증권">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="투자전략심화">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📊 투자 전략 & 심화<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../투자전략/33.html">거시경제 기초 — 금리·환율·경기사이클</a></li>
+    <li><a href="../투자전략/35.html">투자 심리 & 행동경제학</a></li>
+    <li><a href="../투자전략/36.html">포트폴리오 자산배분 전략</a></li>
+    <li><a href="../투자전략/37.html">배당 투자 전략</a></li>
+    <li><a href="../투자전략/38.html">채권 기초 & ETF 활용</a></li>
+    <li><a href="../투자전략/39.html">기술적 분석 기초</a></li>
+    <li><a href="../투자전략/40.html">리스크 관리</a></li>
+    <li><a href="../투자전략/41.html">투자 철학 & 명저</a></li>
+    <li><a href="../투자전략/43.html">경제 지표 & 뉴스 해석법</a></li>
+    <li><a href="../투자전략/46.html">금·원자재 투자</a></li>
+    <li><a href="../투자전략/47.html">리츠(REITs) 실전 투자</a></li>
+    <li><a href="../투자전략/48.html">파생상품 기초 — 선물·옵션·ELS</a></li>
+    <li><a href="../투자전략/49.html">암호화폐 기초 & 세금</a></li>
+    <li><a href="../투자전략/50.html">퀀트 투자 기초</a></li>
+    <li><a href="../투자전략/55.html">AI·방산·원전 투자 사이클</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="실전투자가이드">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛠️ 실전 투자 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../실전/42.html">공모주 IPO 청약 실전</a></li>
+    <li><a href="../실전/44.html">종목 스크리닝 & DART 실전</a></li>
+    <li class="current"><a href="../실전/45.html">HTS·MTS 실전 활용</a></li>
+    <li><a href="../실전/51.html">퇴직연금 DC형 실전 운용</a></li>
+    <li><a href="../실전/52.html">미국 주식 직접 투자 실무</a></li>
+    <li><a href="../실전/53.html">투자 일지 & 수익률 계산</a></li>
+    <li><a href="../주식/32.html">트레이딩 용어 사전</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>🛠️ 실전 투자 가이드</span><span class="sep">›</span><span>HTS·MTS 실전 활용</span></div>
+<article class="content">
+<h1>HTS·MTS 실전 활용</h1>
+<blockquote>
+<p>도구를 모르면 전쟁터에서 총 사용법을 모르는 것과 같다.<br />
+HTS/MTS를 제대로 쓰면 정보 속도에서 개인투자자도 경쟁력을 가진다.</p>
+</blockquote>
+<hr />
+<h2>1. 주요 증권사 HTS·MTS 비교 (2026년)</h2>
+<h3>HTS (Home Trading System, PC 프로그램) 비교</h3>
+<table>
+<thead>
+<tr>
+<th>증권사</th>
+<th>HTS명</th>
+<th>장점</th>
+<th>단점</th>
+<th>추천 대상</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>키움증권</strong></td>
+<td>영웅문4</td>
+<td>조건검색 최강, 차트 기능 우수, 수수료 저렴</td>
+<td>UI 구식, 초보 진입장벽</td>
+<td>적극적 트레이더</td>
+</tr>
+<tr>
+<td><strong>미래에셋</strong></td>
+<td>M-STOCK</td>
+<td>UI 깔끔, 해외주식 연동 우수</td>
+<td>조건검색 약함</td>
+<td>해외투자자</td>
+</tr>
+<tr>
+<td><strong>NH투자증권</strong></td>
+<td>NAMUH</td>
+<td>균형잡힌 기능, 해외주식</td>
+<td>수수료 상대적 높음</td>
+<td>국내+해외 병행</td>
+</tr>
+<tr>
+<td><strong>삼성증권</strong></td>
+<td>POP</td>
+<td>대형 IPO 참여, 안정적</td>
+<td>기능 다양성 낮음</td>
+<td>안정성 우선</td>
+</tr>
+<tr>
+<td><strong>한투증권</strong></td>
+<td>eFriend PLUS</td>
+<td>기능 다양</td>
+<td>UI 복잡</td>
+<td>중급 이상</td>
+</tr>
+</tbody>
+</table>
+<h3>MTS (Mobile Trading System, 앱) 비교</h3>
+<table>
+<thead>
+<tr>
+<th>증권사</th>
+<th>앱명</th>
+<th>장점</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>토스증권</strong></td>
+<td>토스</td>
+<td>UI 최강, 초보 친화, 소수점 매수</td>
+<td>기능 단순, 수수료 무료</td>
+</tr>
+<tr>
+<td><strong>키움증권</strong></td>
+<td>영웅문S</td>
+<td>PC와 동일 조건검색, 기능 풍부</td>
+<td>복잡한 UI</td>
+</tr>
+<tr>
+<td><strong>카카오페이증권</strong></td>
+<td>카카오페이</td>
+<td>간편함, 연동 편의</td>
+<td>기능 제한적</td>
+</tr>
+<tr>
+<td><strong>미래에셋</strong></td>
+<td>M-STOCK</td>
+<td>해외주식·ETF 편의 우수</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>한국투자증권</strong></td>
+<td>뱅키스</td>
+<td>IPO 청약 편의, 기능 다양</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>수수료 비교 (2026년 기준)</h3>
+<table>
+<thead>
+<tr>
+<th>증권사</th>
+<th>국내 주식 수수료</th>
+<th>해외 주식 수수료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>키움증권</td>
+<td>0.015% (온라인)</td>
+<td>0.25%</td>
+</tr>
+<tr>
+<td>토스증권</td>
+<td>0% (평생 무료)</td>
+<td>0.1%</td>
+</tr>
+<tr>
+<td>미래에셋</td>
+<td>0.015%</td>
+<td>0.25%</td>
+</tr>
+<tr>
+<td>삼성증권</td>
+<td>0.015%</td>
+<td>0.25%</td>
+</tr>
+<tr>
+<td>카카오페이증권</td>
+<td>0%</td>
+<td>0.1%</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-tip"><div class="callout-title">💡 실전 전략</div><div class="callout-body">
+
+국내 주식 단타·스윙: 키움 영웅문 (조건검색 + 낮은 수수료)  
+해외 ETF 장기: 토스증권 (0% 수수료 + 소수점 매수)  
+IPO 청약: 주관 증권사 앱 별도 개설
+
+</div></div>
+
+<hr />
+<h2>2. 호가창 완전 정복</h2>
+<h3>호가창 구조</h3>
+<pre><code>┌─────────────────────────────┐
+│  매도 잔량  │  가격  │
+├─────────────────────────────┤
+│    2,500   │ 50,500 │ ← 매도5호가
+│    1,800   │ 50,400 │ ← 매도4호가
+│    3,200   │ 50,300 │ ← 매도3호가
+│    5,100   │ 50,200 │ ← 매도2호가
+│   10,500   │ 50,100 │ ← 매도1호가 (최우선 매도)
+├─────────────────────────────┤
+│ 현재가: 50,000              │
+├─────────────────────────────┤
+│    8,200   │ 49,900 │ ← 매수1호가 (최우선 매수)
+│    6,500   │ 49,800 │ ← 매수2호가
+│    4,100   │ 49,700 │ ← 매수3호가
+│    2,800   │ 49,600 │ ← 매수4호가
+│    1,500   │ 49,500 │ ← 매수5호가
+└─────────────────────────────┘
+</code></pre>
+<h3>호가창 해석법</h3>
+<p><strong>매도 잔량 vs 매수 잔량 비교</strong></p>
+<pre><code>매도 잔량 합계: 23,100
+매수 잔량 합계: 23,100
+
+매도 잔량 &gt;&gt; 매수 잔량 → 하락 압력 강함
+매수 잔량 &gt;&gt; 매도 잔량 → 상승 압력 강함
+</code></pre>
+<p><strong>허매수·허매도 주의</strong></p>
+<ul>
+<li>대량 매수 호가가 쌓여 있다가 갑자기 사라지는 것</li>
+<li>실제 매수 의도 없이 매수세인 척 속이는 작전</li>
+<li>갑자기 사라지면 반대 방향으로 이동 예상</li>
+</ul>
+<h3>체결강도 해석</h3>
+<pre><code>체결강도 = 매수 체결량 / 매도 체결량 × 100
+
+체결강도 100%: 매수·매도 균형
+체결강도 130%+: 매수 우위 → 상승 압력
+체결강도 70%-: 매도 우위 → 하락 압력
+</code></pre>
+<hr />
+<h2>3. 차트 설정 실전</h2>
+<h3>추천 기본 차트 설정 (키움 영웅문 기준)</h3>
+<pre><code>캔들: 일봉 기본
+이동평균선: 5일(노랑), 20일(빨강), 60일(파랑), 120일(초록)
+거래량: 하단 바차트
+보조지표: RSI(14) + MACD(12,26,9)
+</code></pre>
+<h3>타임프레임별 용도</h3>
+<table>
+<thead>
+<tr>
+<th>타임프레임</th>
+<th>용도</th>
+<th>확인 항목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>월봉</strong></td>
+<td>초장기 추세</td>
+<td>10년 추세, 지지·저항</td>
+</tr>
+<tr>
+<td><strong>주봉</strong></td>
+<td>중기 추세</td>
+<td>3~6개월 흐름</td>
+</tr>
+<tr>
+<td><strong>일봉</strong></td>
+<td>단기 추세</td>
+<td>매매 타이밍 기본</td>
+</tr>
+<tr>
+<td><strong>60분봉</strong></td>
+<td>단기 진입</td>
+<td>일중 고점·저점</td>
+</tr>
+<tr>
+<td><strong>15분봉</strong></td>
+<td>스캘핑</td>
+<td>초단타 진입</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-tip"><div class="callout-title">💡 상위 타임프레임 먼저</div><div class="callout-body">
+
+주봉에서 하락 추세 → 일봉에서 단기 반등해도 공략 자제  
+주봉 상승 추세 + 일봉 눌림목 = 최적 매수 타이밍
+
+</div></div>
+
+<hr />
+<h2>4. 조건검색 실전 (키움 영웅문)</h2>
+<h3>기본 조건검색 예시: 눌림목 매수 조건</h3>
+<pre><code>조건 설정:
+1. 주가 20일 이동평균선 위 (상승 추세 확인)
+2. 주가 5일 이동평균선 아래 (단기 눌림목)
+3. 거래량 평균의 50% 이하 (거래 감소 = 매도세 약화)
+4. RSI 40~50 구간 (과매도에서 회복 초기)
+5. 시가총액 500억 이상 (유동성 확보)
+</code></pre>
+<h3>거래량 급증 조건</h3>
+<pre><code>1. 전일 대비 거래량 300% 이상
+2. 주가 전일 대비 +2% 이상 (거래량 + 상승)
+3. 상한가·정지종목 제외
+→ 세력 진입 또는 호재 발생 종목 발굴
+</code></pre>
+<h3>52주 신고가 돌파 조건</h3>
+<pre><code>1. 주가 52주 신고가 갱신
+2. 거래량 전일 대비 200%+
+3. 시가총액 1,000억 이상
+→ 강한 모멘텀 종목 발굴
+</code></pre>
+<hr />
+<h2>5. 주문 유형 완전 정리</h2>
+<table>
+<thead>
+<tr>
+<th>주문 유형</th>
+<th>체결 방식</th>
+<th>장점</th>
+<th>단점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>시장가</strong></td>
+<td>즉시 최우선 체결</td>
+<td>확실한 체결</td>
+<td>불리한 가격 가능</td>
+</tr>
+<tr>
+<td><strong>지정가</strong></td>
+<td>지정 가격 이하 체결</td>
+<td>원하는 가격</td>
+<td>미체결 가능</td>
+</tr>
+<tr>
+<td><strong>최유리지정가</strong></td>
+<td>상대방 최우선 호가로 체결</td>
+<td>신속 체결</td>
+<td>시장가보다 불리할 수 있음</td>
+</tr>
+<tr>
+<td><strong>최우선지정가</strong></td>
+<td>내 쪽 최우선 호가로 체결</td>
+<td>적정 가격 체결</td>
+<td>미체결 가능</td>
+</tr>
+<tr>
+<td><strong>IOC</strong></td>
+<td>즉시 체결 안 되면 취소</td>
+<td>확실한 타이밍</td>
+<td>부분 체결 가능</td>
+</tr>
+<tr>
+<td><strong>FOK</strong></td>
+<td>전량 즉시 체결 또는 전량 취소</td>
+<td>완전 체결만</td>
+<td>체결 가능성 낮음</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>6. 실전 세팅 추천 (증권사별)</h2>
+<h3>키움 영웅문 초기 세팅</h3>
+<pre><code>1. 화면 분할: 차트 + 호가창 + 잔고/미체결 3분할
+2. 관심종목 그룹: 보유종목 / 관심종목 / 매매대기 3그룹
+3. 알림 설정: 목표가·손절가 도달 알림 설정
+4. 단축키 설정: F1=매수, F2=매도, F3=취소
+5. 조건검색 저장: 자주 쓰는 조건 저장
+</code></pre>
+<h3>토스증권 초보 추천 기능</h3>
+<pre><code>1. 소수점 매수: 테슬라 1주 못 사도 0.1주 매수 가능
+2. 자동 환전: 달러 필요 시 자동 환전 (수수료 체크)
+3. 자동 분할매수: 금액 설정 후 N회 분산 매수
+4. 이유 알림: 주가 변동 원인 뉴스 자동 알림
+</code></pre>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>

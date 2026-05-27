@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>퀀트 투자 기초 — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세전략">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+    <li><a href="../절세/34.html">해외 주식 세금 실무</a></li>
+    <li><a href="../절세/54.html">금투세 폐지 & 세제 변화</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="주식기업분석">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="ETF완전가이드">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩유안타증권">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="투자전략심화">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📊 투자 전략 & 심화<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../투자전략/33.html">거시경제 기초 — 금리·환율·경기사이클</a></li>
+    <li><a href="../투자전략/35.html">투자 심리 & 행동경제학</a></li>
+    <li><a href="../투자전략/36.html">포트폴리오 자산배분 전략</a></li>
+    <li><a href="../투자전략/37.html">배당 투자 전략</a></li>
+    <li><a href="../투자전략/38.html">채권 기초 & ETF 활용</a></li>
+    <li><a href="../투자전략/39.html">기술적 분석 기초</a></li>
+    <li><a href="../투자전략/40.html">리스크 관리</a></li>
+    <li><a href="../투자전략/41.html">투자 철학 & 명저</a></li>
+    <li><a href="../투자전략/43.html">경제 지표 & 뉴스 해석법</a></li>
+    <li><a href="../투자전략/46.html">금·원자재 투자</a></li>
+    <li><a href="../투자전략/47.html">리츠(REITs) 실전 투자</a></li>
+    <li><a href="../투자전략/48.html">파생상품 기초 — 선물·옵션·ELS</a></li>
+    <li><a href="../투자전략/49.html">암호화폐 기초 & 세금</a></li>
+    <li class="current"><a href="../투자전략/50.html">퀀트 투자 기초</a></li>
+    <li><a href="../투자전략/55.html">AI·방산·원전 투자 사이클</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="실전투자가이드">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛠️ 실전 투자 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../실전/42.html">공모주 IPO 청약 실전</a></li>
+    <li><a href="../실전/44.html">종목 스크리닝 & DART 실전</a></li>
+    <li><a href="../실전/45.html">HTS·MTS 실전 활용</a></li>
+    <li><a href="../실전/51.html">퇴직연금 DC형 실전 운용</a></li>
+    <li><a href="../실전/52.html">미국 주식 직접 투자 실무</a></li>
+    <li><a href="../실전/53.html">투자 일지 & 수익률 계산</a></li>
+    <li><a href="../주식/32.html">트레이딩 용어 사전</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>📊 투자 전략 & 심화</span><span class="sep">›</span><span>퀀트 투자 기초</span></div>
+<article class="content">
+<h1>퀀트 투자 기초</h1>
+<blockquote>
+<p>퀀트 = 감정 없이 숫자와 규칙으로만 투자하는 방법.<br />
+개인투자자도 엑셀·파이썬 없이 퀀터스·리밸런싱 앱으로 퀀트 투자 가능.</p>
+</blockquote>
+<hr />
+<h2>1. 퀀트 투자란?</h2>
+<h3>정의와 특징</h3>
+<pre><code>퀀트(Quant) 투자 = 수학적·통계적 모델을 이용해 투자 결정을 자동화
+
+핵심 원칙:
+- 감정 배제: &quot;이 주식 오를 것 같다&quot; 금지 → 숫자만
+- 규칙 기반: 매수·매도 조건 사전 정의
+- 백테스트: 과거 데이터로 전략 검증
+- 분산투자: 수십~수백 종목 동시 보유
+- 리밸런싱: 주기적(월·분기·연 1회) 포트폴리오 재구성
+</code></pre>
+<h3>퀀트 투자 vs 일반 투자</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>퀀트 투자</th>
+<th>일반 주관적 투자</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>의사결정</td>
+<td>규칙 (자동)</td>
+<td>직관·판단</td>
+</tr>
+<tr>
+<td>감정 영향</td>
+<td>없음</td>
+<td>큼 (공포·탐욕)</td>
+</tr>
+<tr>
+<td>보유 종목 수</td>
+<td>20~100개+</td>
+<td>5~20개</td>
+</tr>
+<tr>
+<td>시간 투입</td>
+<td>리밸런싱만</td>
+<td>지속적 모니터링</td>
+</tr>
+<tr>
+<td>초과수익 근거</td>
+<td>팩터 프리미엄</td>
+<td>정보 우위</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. 주요 팩터 (Factor)</h2>
+<h3>팩터란?</h3>
+<pre><code>팩터 = 초과수익을 설명하는 체계적인 특성
+
+학술 연구로 검증된 팩터:
+1. 가치(Value): 저PBR·저PER → 저평가 주식 우위
+2. 모멘텀(Momentum): 최근 상승 주식 계속 상승
+3. 소형주(Size): 소형주 &gt; 대형주 장기 수익률
+4. 퀄리티(Quality): 고ROE·저부채 기업 우위
+5. 저변동성(Low Volatility): 변동성 낮은 주식 위험 대비 수익 우위
+</code></pre>
+<h3>팩터별 특성</h3>
+<table>
+<thead>
+<tr>
+<th>팩터</th>
+<th>대표 지표</th>
+<th>작동 원리</th>
+<th>약점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>가치</strong></td>
+<td>PBR, PER, EV/EBITDA</td>
+<td>저평가 정상화</td>
+<td>가치 함정 위험</td>
+</tr>
+<tr>
+<td><strong>모멘텀</strong></td>
+<td>12개월 수익률 (최근 1개월 제외)</td>
+<td>추세 지속성</td>
+<td>급등 후 급락</td>
+</tr>
+<tr>
+<td><strong>소형주</strong></td>
+<td>시가총액 하위</td>
+<td>저평가·성장 여력</td>
+<td>유동성 위험</td>
+</tr>
+<tr>
+<td><strong>퀄리티</strong></td>
+<td>ROE, 이익 안정성</td>
+<td>지속 성장 기업</td>
+<td>고평가 위험</td>
+</tr>
+<tr>
+<td><strong>저변동성</strong></td>
+<td>52주 표준편차</td>
+<td>비이성적 선호</td>
+<td>상승장 부진</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. 주요 퀀트 전략</h2>
+<h3>마법공식 (Joel Greenblatt)</h3>
+<pre><code>마법공식 = 이익수익률 + 투하자본이익률(ROIC) 두 지표 조합
+
+1. 이익수익률 = EBIT / 기업가치(EV) → 높을수록 좋음
+2. ROIC = EBIT / 투하자본 → 높을수록 좋음
+
+방법:
+- 전체 종목에서 이익수익률 순위 계산
+- ROIC 순위 계산
+- 두 순위의 합산이 낮은 종목 20~30개 선택
+- 연 1회 리밸런싱
+
+백테스트 결과 (미국 1988~2004):
+→ 연평균 30.8% vs S&amp;P500 연 12.4%
+</code></pre>
+<h3>모멘텀 전략</h3>
+<pre><code>12-1 모멘텀 = 12개월 전 대비 현재 수익률 (단, 최근 1개월 제외)
+
+이유: 최근 1개월 수익률은 단기 반전 효과로 노이즈
+
+실전 방법:
+1. 전체 종목에서 12-1 모멘텀 계산
+2. 상위 20% 종목 균등 보유
+3. 월 1회 리밸런싱
+
+주의: 모멘텀 크래시 (2009년 3월 같은 급반등 장세에서 큰 손실)
+</code></pre>
+<h3>저PBR 전략 (국내 적합)</h3>
+<pre><code>한국 주식시장 특성: 선진국 대비 저PBR 코리아 디스카운트
+
+저PBR 전략:
+1. 코스피·코스닥 전체에서 PBR 하위 20% 선정
+2. 부채비율 200% 초과 제거
+3. 적자 기업 제거
+4. 20~30종목 균등 보유
+5. 분기 1회 리밸런싱
+
+2024년 코리아 디스카운트 해소 정책 시작 → 저PBR 종목 수혜 기대
+</code></pre>
+<h3>F-Score (Piotroski)</h3>
+<pre><code>F-Score = 재무 건전성 9가지 항목 점수 합산
+
+항목 (각 1점):
+수익성:
+1. ROA &gt; 0 (당기 수익)
+2. 영업현금흐름 &gt; 0
+3. ROA 전년비 증가
+4. 영업현금흐름 &gt; 순이익 (발생주의 조정)
+
+레버리지·유동성:
+5. 부채비율 전년비 감소
+6. 유동비율 전년비 증가
+7. 신주발행 없음
+
+효율성:
+8. 매출총이익률 전년비 증가
+9. 자산회전율 전년비 증가
+
+F-Score 0~2: 약한 기업 (매도 신호)
+F-Score 7~9: 강한 기업 (매수 신호)
+</code></pre>
+<hr />
+<h2>4. 멀티팩터 전략 (추천)</h2>
+<h3>단일 팩터의 한계</h3>
+<pre><code>단일 팩터 문제:
+- 가치 팩터: 2010~2020년 10년간 부진
+- 모멘텀 팩터: 2009·2020 급반등 장세에서 큰 손실
+- 소형주 팩터: 유동성 위험
+
+해결: 팩터 조합으로 분산
+→ 각 팩터의 약점을 다른 팩터가 보완
+</code></pre>
+<h3>추천 멀티팩터 조합</h3>
+<table>
+<thead>
+<tr>
+<th>전략명</th>
+<th>팩터 조합</th>
+<th>리밸런싱</th>
+<th>국내 적용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>가치+모멘텀</strong></td>
+<td>저PBR + 12-1 모멘텀</td>
+<td>월 1회</td>
+<td>적합</td>
+</tr>
+<tr>
+<td><strong>퀄리티+가치</strong></td>
+<td>고ROE + 저PER</td>
+<td>분기 1회</td>
+<td>적합</td>
+</tr>
+<tr>
+<td><strong>올웨더 팩터</strong></td>
+<td>가치+모멘텀+퀄리티</td>
+<td>월 1회</td>
+<td>적합</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>5. 국내 퀀트 투자 도구</h2>
+<h3>퀀터스 (Quantus, 추천)</h3>
+<pre><code>퀀터스 (quantus.kr):
+- 코스피·코스닥 전체 백테스트 가능
+- 팩터 선택 → 종목 필터 → 성과 확인
+- 백테스트 기간: 2000년~현재
+- 매월 리밸런싱 종목 자동 생성
+- 유료 구독 (월 2~3만원)
+</code></pre>
+<h3>아이투자 (I-Value)</h3>
+<pre><code>아이투자 (itooza.com):
+- 국내 주식 재무 데이터 무료 제공
+- 가치주 스크리닝 특화
+- F-Score, 마법공식 자동 계산
+</code></pre>
+<h3>파이썬 퀀트 (고급)</h3>
+<pre><code class="language-python"># 예시: FinanceDataReader로 국내 주식 데이터 수집
+import FinanceDataReader as fdr
+import pandas as pd
+
+# 코스피 종목 목록
+kospi = fdr.StockListing('KOSPI')
+
+# 삼성전자 주가 데이터
+df = fdr.DataReader('005930', '2020', '2026')
+
+# 12개월 모멘텀 계산
+df['momentum_12_1'] = df['Close'].pct_change(252) - df['Close'].pct_change(21)
+</code></pre>
+<hr />
+<h2>6. 퀀트 투자 실전 설계</h2>
+<h3>초보자 퀀트 전략 예시</h3>
+<pre><code>전략: 국내 저PBR + 고ROE 멀티팩터
+대상: 코스피·코스닥 전체
+필터: 
+  - 시가총액 500억 이상
+  - 부채비율 150% 이하
+  - 최근 2년 연속 흑자
+  - PBR 하위 30%
+  - ROE 상위 30%
+  - 두 조건 합산 상위 30종목 선정
+
+보유 비중: 균등 (각 3.3%)
+리밸런싱: 분기 1회
+</code></pre>
+<h3>리밸런싱 비용 고려</h3>
+<pre><code>리밸런싱 비용:
+- 수수료: 매수·매도 각 0.015% × 2 = 0.03%
+- 세금: 양도세 없음 (국내 주식)
+- 슬리피지: 소형주 일수록 높음 (~0.1~0.3%)
+
+월 1회 리밸런싱: 연간 비용 ~0.5~1%
+분기 1회 리밸런싱: 연간 비용 ~0.2~0.5%
+
+→ 소형주 전략은 분기 리밸런싱 추천
+→ 대형주 전략은 월 리밸런싱 가능
+</code></pre>
+<h3>백테스트 주의사항</h3>
+<pre><code>생존자 편향(Survivorship Bias):
+→ 현재 존재하는 기업만 포함하면 결과 과장
+→ 퀀터스는 상장폐지 종목 포함하여 해결
+
+전진 분석(Out-of-Sample Test):
+→ 2000~2015년 백테스트 → 2016~현재 검증
+→ 과적합(Overfitting) 방지
+
+과최적화 경고:
+→ 변수가 많을수록 과거에만 맞는 전략 위험
+→ 단순한 전략이 장기적으로 더 강건
+</code></pre>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>

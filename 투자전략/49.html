@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>암호화폐 기초 & 세금 — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세전략">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+    <li><a href="../절세/34.html">해외 주식 세금 실무</a></li>
+    <li><a href="../절세/54.html">금투세 폐지 & 세제 변화</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="주식기업분석">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="ETF완전가이드">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩유안타증권">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="투자전략심화">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📊 투자 전략 & 심화<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../투자전략/33.html">거시경제 기초 — 금리·환율·경기사이클</a></li>
+    <li><a href="../투자전략/35.html">투자 심리 & 행동경제학</a></li>
+    <li><a href="../투자전략/36.html">포트폴리오 자산배분 전략</a></li>
+    <li><a href="../투자전략/37.html">배당 투자 전략</a></li>
+    <li><a href="../투자전략/38.html">채권 기초 & ETF 활용</a></li>
+    <li><a href="../투자전략/39.html">기술적 분석 기초</a></li>
+    <li><a href="../투자전략/40.html">리스크 관리</a></li>
+    <li><a href="../투자전략/41.html">투자 철학 & 명저</a></li>
+    <li><a href="../투자전략/43.html">경제 지표 & 뉴스 해석법</a></li>
+    <li><a href="../투자전략/46.html">금·원자재 투자</a></li>
+    <li><a href="../투자전략/47.html">리츠(REITs) 실전 투자</a></li>
+    <li><a href="../투자전략/48.html">파생상품 기초 — 선물·옵션·ELS</a></li>
+    <li class="current"><a href="../투자전략/49.html">암호화폐 기초 & 세금</a></li>
+    <li><a href="../투자전략/50.html">퀀트 투자 기초</a></li>
+    <li><a href="../투자전략/55.html">AI·방산·원전 투자 사이클</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="실전투자가이드">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛠️ 실전 투자 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../실전/42.html">공모주 IPO 청약 실전</a></li>
+    <li><a href="../실전/44.html">종목 스크리닝 & DART 실전</a></li>
+    <li><a href="../실전/45.html">HTS·MTS 실전 활용</a></li>
+    <li><a href="../실전/51.html">퇴직연금 DC형 실전 운용</a></li>
+    <li><a href="../실전/52.html">미국 주식 직접 투자 실무</a></li>
+    <li><a href="../실전/53.html">투자 일지 & 수익률 계산</a></li>
+    <li><a href="../주식/32.html">트레이딩 용어 사전</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>📊 투자 전략 & 심화</span><span class="sep">›</span><span>암호화폐 기초 & 세금</span></div>
+<article class="content">
+<h1>암호화폐 기초 &amp; 세금</h1>
+<blockquote>
+<p>암호화폐는 블록체인 기술 기반의 디지털 자산.<br />
+높은 변동성과 규제 리스크를 이해하고, 포트폴리오의 일부로만 접근해야 한다.</p>
+</blockquote>
+<hr />
+<h2>1. 블록체인 &amp; 암호화폐 기초</h2>
+<h3>블록체인이란?</h3>
+<pre><code>블록체인 = 분산된 장부(Distributed Ledger)
+
+- 중앙 서버 없이 수천 개의 컴퓨터(노드)가 동일한 장부를 보유
+- 한번 기록된 데이터는 수정 불가 (불변성)
+- 모든 거래 내역 공개 (투명성)
+
+예시: A가 B에게 1 BTC 전송
+→ 전 세계 노드에 동시 기록
+→ 해킹을 위해서는 51% 이상의 노드 동시 공격 필요 (사실상 불가)
+</code></pre>
+<h3>주요 암호화폐 비교</h3>
+<table>
+<thead>
+<tr>
+<th>코인</th>
+<th>설명</th>
+<th>특징</th>
+<th>시가총액 순위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>비트코인 (BTC)</strong></td>
+<td>최초 암호화폐</td>
+<td>총발행량 2,100만 개 고정, 디지털 금</td>
+<td>1위</td>
+</tr>
+<tr>
+<td><strong>이더리움 (ETH)</strong></td>
+<td>스마트컨트랙트 플랫폼</td>
+<td>DeFi·NFT 생태계, 지분증명(PoS) 전환</td>
+<td>2위</td>
+</tr>
+<tr>
+<td><strong>솔라나 (SOL)</strong></td>
+<td>고속 블록체인</td>
+<td>초당 65,000건 처리, 저수수료</td>
+<td>5위권</td>
+</tr>
+<tr>
+<td><strong>BNB</strong></td>
+<td>바이낸스 코인</td>
+<td>바이낸스 거래소 수수료 할인</td>
+<td>5위권</td>
+</tr>
+<tr>
+<td><strong>리플 (XRP)</strong></td>
+<td>금융기관 송금 특화</td>
+<td>국제 송금 2~5초</td>
+<td>5위권</td>
+</tr>
+</tbody>
+</table>
+<h3>비트코인 반감기 (Halving)</h3>
+<pre><code>반감기 = 4년마다 BTC 채굴 보상이 절반으로 감소하는 이벤트
+
+2009년: 50 BTC/블록
+2012년: 25 BTC/블록
+2016년: 12.5 BTC/블록
+2020년: 6.25 BTC/블록
+2024년 4월: 3.125 BTC/블록 ← 최근 반감기
+
+공급 감소 → 수요 유지/증가 → 역사적으로 반감기 후 12~18개월 내 가격 급등
+</code></pre>
+<hr />
+<h2>2. 국내 암호화폐 거래소 비교</h2>
+<h3>주요 거래소 비교 (2026년)</h3>
+<table>
+<thead>
+<tr>
+<th>거래소</th>
+<th>일 거래량</th>
+<th>수수료</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>업비트 (Upbit)</strong></td>
+<td>1위</td>
+<td>0.05% (할인 없음)</td>
+<td>KRW 마켓 최대, 카카오 계열</td>
+</tr>
+<tr>
+<td><strong>빗썸 (Bithumb)</strong></td>
+<td>2위</td>
+<td>0.04%</td>
+<td>이벤트성 수수료 할인 자주</td>
+</tr>
+<tr>
+<td><strong>코인원 (Coinone)</strong></td>
+<td>3위</td>
+<td>0.02~0.1%</td>
+<td>기관투자자 서비스</td>
+</tr>
+<tr>
+<td><strong>코빗 (Korbit)</strong></td>
+<td>4위</td>
+<td>0.05%</td>
+<td>넥슨 계열, 안정적</td>
+</tr>
+</tbody>
+</table>
+<h3>해외 거래소 (고급 투자자용)</h3>
+<table>
+<thead>
+<tr>
+<th>거래소</th>
+<th>특징</th>
+<th>주의사항</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>바이낸스 (Binance)</strong></td>
+<td>세계 최대, 알트코인 다양</td>
+<td>국내 서비스 제한</td>
+</tr>
+<tr>
+<td><strong>코인베이스 (Coinbase)</strong></td>
+<td>미국 최대, 나스닥 상장</td>
+<td>수수료 높음</td>
+</tr>
+<tr>
+<td><strong>바이비트 (Bybit)</strong></td>
+<td>선물·레버리지 특화</td>
+<td>규제 리스크</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>국내 규제</strong>: 특금법에 따라 ISMS 인증 받은 거래소만 합법 운영<br />
+미인증 거래소 이용 시 출금 불가, 원화 환전 불가 위험</p>
+</blockquote>
+<hr />
+<h2>3. 암호화폐 세금 (2026년 현재)</h2>
+<h3>현행 세제 (가상자산 과세)</h3>
+<pre><code>2025년부터 가상자산 양도소득세 부과 (2024년 재차 유예 후 2025년 시행)
+
+과세 방식:
+- 가상자산 양도·대여 소득 → 기타소득세
+- 세율: 20% (지방소득세 포함 22%)
+- 공제: 연간 250만원 기본 공제
+
+계산 예시:
+연간 비트코인 매매 수익 1,000만원
+→ 과세표준: 1,000만원 - 250만원 = 750만원
+→ 세금: 750만원 × 22% = 165만원
+</code></pre>
+<h3>취득가액 계산 방법</h3>
+<pre><code>취득가액 = 이동평균법 또는 선입선출법 (사업자: 선입선출 강제)
+
+예시 (이동평균법):
+- 1월: BTC 1개 @ 5,000만원
+- 3월: BTC 1개 @ 7,000만원
+- 평균 취득가 = 6,000만원
+
+5월에 BTC 1개 @ 8,000만원 매도
+→ 수익 = 8,000만원 - 6,000만원 = 2,000만원
+→ 세금 = (2,000만원 - 250만원) × 22% = 385만원
+</code></pre>
+<h3>세금 절세 전략</h3>
+<table>
+<thead>
+<tr>
+<th>전략</th>
+<th>방법</th>
+<th>효과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>손익 통산</strong></td>
+<td>수익 종목 + 손실 종목 동시 매도</td>
+<td>과세표준 감소</td>
+</tr>
+<tr>
+<td><strong>연도 분산</strong></td>
+<td>수익을 연도별로 나눠 실현</td>
+<td>공제 250만원 × 2회 활용</td>
+</tr>
+<tr>
+<td><strong>배우자 증여</strong></td>
+<td>가족에게 증여 후 매도</td>
+<td>증여세 공제 한도 활용</td>
+</tr>
+<tr>
+<td><strong>거래 기록 보관</strong></td>
+<td>모든 거래 내역 엑셀 정리</td>
+<td>세무 신고 근거</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>주의</strong>: 가상자산은 주식·부동산 손익과 통산 불가 (별도 계산)</p>
+</blockquote>
+<hr />
+<h2>4. 암호화폐 투자 위험</h2>
+<h3>주요 위험 유형</h3>
+<table>
+<thead>
+<tr>
+<th>위험</th>
+<th>내용</th>
+<th>사례</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>가격 변동성</strong></td>
+<td>하루 ±30% 이상 가능</td>
+<td>2022년 BTC -75%</td>
+</tr>
+<tr>
+<td><strong>거래소 파산</strong></td>
+<td>거래소 파산 시 자산 동결</td>
+<td>FTX 붕괴(2022)</td>
+</tr>
+<tr>
+<td><strong>해킹 위험</strong></td>
+<td>거래소·개인 지갑 해킹</td>
+<td>마운트곡스(2014)</td>
+</tr>
+<tr>
+<td><strong>규제 위험</strong></td>
+<td>각국 정부의 규제 강화</td>
+<td>중국 전면 금지</td>
+</tr>
+<tr>
+<td><strong>프로젝트 실패</strong></td>
+<td>알트코인 가치 0원</td>
+<td>루나(LUNA) 붕괴(2022)</td>
+</tr>
+<tr>
+<td><strong>스캠 프로젝트</strong></td>
+<td>개발팀 도주 (러그풀)</td>
+<td>다수 알트코인</td>
+</tr>
+</tbody>
+</table>
+<h3>루나(LUNA) &amp; FTX 교훈</h3>
+<pre><code>루나(LUNA) 붕괴 (2022년 5월):
+- 알고리즘 스테이블코인 UST 연동 시스템 붕괴
+- 1주일 내 99.99% 폭락
+- 시가총액 40조원 순식간에 소멸
+
+FTX 붕괴 (2022년 11월):
+- 세계 3위 거래소 파산
+- 고객 예치금 32조원 동결
+- 창업자 샘 뱅크먼-프리드 사기죄 유죄 판결
+
+교훈:
+→ 거래소에 장기 보관 금지 → 하드웨어 지갑 사용
+→ 알트코인 과도한 집중 금지
+→ &quot;고수익 보장&quot; 프로젝트 경계
+</code></pre>
+<hr />
+<h2>5. 안전한 암호화폐 투자법</h2>
+<h3>포트폴리오 내 비중 권장</h3>
+<table>
+<thead>
+<tr>
+<th>투자 성향</th>
+<th>암호화폐 비중</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>보수적</td>
+<td>0~3%</td>
+</tr>
+<tr>
+<td>중립적</td>
+<td>3~10%</td>
+</tr>
+<tr>
+<td>공격적</td>
+<td>10~20%</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>전체 포트폴리오의 10% 이내 권장<br />
+"없어도 괜찮은 돈"만 투자</p>
+</blockquote>
+<h3>하드웨어 지갑 (콜드 스토리지)</h3>
+<pre><code>거래소 보관 vs 개인 지갑 비교:
+
+거래소 보관:
+- 편의: 높음
+- 위험: 거래소 해킹·파산
+- 추천: 단기 거래 목적
+
+하드웨어 지갑 (Ledger, Trezor):
+- 편의: 낮음 (별도 장치 필요)
+- 위험: 장치 분실·시드구문 유출 시 영구 손실
+- 추천: 장기 보유 (HODLing)
+
+시드 구문(Seed Phrase) 12~24단어:
+→ 절대 디지털 저장 금지 (사진·메모·클라우드)
+→ 종이에 적어 금고 보관
+</code></pre>
+<h3>비트코인 ETF (2024년 미국 승인)</h3>
+<pre><code>2024년 1월: 미국 SEC 비트코인 현물 ETF 승인
+→ BlackRock IBIT, Fidelity FBTC 등 출시
+→ 증권계좌에서 BTC 간접 투자 가능
+→ 세금: 해외 주식 양도세 22% (250만원 공제)
+→ 직접 거래소 거래보다 안전 (해킹·유실 위험 없음)
+
+국내: 홍콩 비트코인 ETF 투자 가능 (미국 직접 투자)
+</code></pre>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>

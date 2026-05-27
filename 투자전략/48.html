@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>파생상품 기초 — 선물·옵션·ELS — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세전략">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+    <li><a href="../절세/34.html">해외 주식 세금 실무</a></li>
+    <li><a href="../절세/54.html">금투세 폐지 & 세제 변화</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="주식기업분석">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="ETF완전가이드">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩유안타증권">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="투자전략심화">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📊 투자 전략 & 심화<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../투자전략/33.html">거시경제 기초 — 금리·환율·경기사이클</a></li>
+    <li><a href="../투자전략/35.html">투자 심리 & 행동경제학</a></li>
+    <li><a href="../투자전략/36.html">포트폴리오 자산배분 전략</a></li>
+    <li><a href="../투자전략/37.html">배당 투자 전략</a></li>
+    <li><a href="../투자전략/38.html">채권 기초 & ETF 활용</a></li>
+    <li><a href="../투자전략/39.html">기술적 분석 기초</a></li>
+    <li><a href="../투자전략/40.html">리스크 관리</a></li>
+    <li><a href="../투자전략/41.html">투자 철학 & 명저</a></li>
+    <li><a href="../투자전략/43.html">경제 지표 & 뉴스 해석법</a></li>
+    <li><a href="../투자전략/46.html">금·원자재 투자</a></li>
+    <li><a href="../투자전략/47.html">리츠(REITs) 실전 투자</a></li>
+    <li class="current"><a href="../투자전략/48.html">파생상품 기초 — 선물·옵션·ELS</a></li>
+    <li><a href="../투자전략/49.html">암호화폐 기초 & 세금</a></li>
+    <li><a href="../투자전략/50.html">퀀트 투자 기초</a></li>
+    <li><a href="../투자전략/55.html">AI·방산·원전 투자 사이클</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="실전투자가이드">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛠️ 실전 투자 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../실전/42.html">공모주 IPO 청약 실전</a></li>
+    <li><a href="../실전/44.html">종목 스크리닝 & DART 실전</a></li>
+    <li><a href="../실전/45.html">HTS·MTS 실전 활용</a></li>
+    <li><a href="../실전/51.html">퇴직연금 DC형 실전 운용</a></li>
+    <li><a href="../실전/52.html">미국 주식 직접 투자 실무</a></li>
+    <li><a href="../실전/53.html">투자 일지 & 수익률 계산</a></li>
+    <li><a href="../주식/32.html">트레이딩 용어 사전</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>📊 투자 전략 & 심화</span><span class="sep">›</span><span>파생상품 기초 — 선물·옵션·ELS</span></div>
+<article class="content">
+<h1>파생상품 기초 — 선물·옵션·ELS</h1>
+<blockquote>
+<p>파생상품 = 기초자산(주식·지수·금리)에서 파생된 금융 계약.<br />
+레버리지 효과로 고수익이 가능하지만, 원금 전액 손실 + 추가 손실도 발생 가능.</p>
+</blockquote>
+<hr />
+<h2>1. 파생상품 개요</h2>
+<h3>파생상품이란?</h3>
+<p>기초자산(주식, 지수, 금리, 환율, 원자재)의 가격 변동에 따라 가치가 결정되는 금융 계약.</p>
+<table>
+<thead>
+<tr>
+<th>종류</th>
+<th>거래 방식</th>
+<th>위험 수준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>선물 (Futures)</strong></td>
+<td>거래소 표준화 계약</td>
+<td>매우 높음</td>
+</tr>
+<tr>
+<td><strong>옵션 (Options)</strong></td>
+<td>거래소 표준화 계약</td>
+<td>매수자: 제한적, 매도자: 무한대</td>
+</tr>
+<tr>
+<td><strong>ELS</strong></td>
+<td>증권사 장외 발행</td>
+<td>중간 (조건부)</td>
+</tr>
+<tr>
+<td><strong>ELW</strong></td>
+<td>거래소 상장</td>
+<td>매우 높음</td>
+</tr>
+<tr>
+<td><strong>CFD</strong></td>
+<td>장외 계약</td>
+<td>매우 높음</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. 선물 (Futures) 완전 해설</h2>
+<h3>선물 계약 구조</h3>
+<pre><code>선물 = &quot;미래의 특정 날짜에, 특정 가격으로, 특정 자산을 사고팔겠다는 계약&quot;
+
+예: 코스피200 선물 매수
+→ 3개월 후 코스피200 지수를 지금 가격(250)에 사겠다는 계약
+
+실제 결제: 지수 차이만큼 현금 정산 (실물 인도 없음)
+</code></pre>
+<h3>코스피200 선물 구조</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기초자산</td>
+<td>코스피200 지수</td>
+</tr>
+<tr>
+<td>거래단위</td>
+<td>지수 × 250,000원</td>
+</tr>
+<tr>
+<td>증거금</td>
+<td>계약금액의 약 9%</td>
+</tr>
+<tr>
+<td>만기</td>
+<td>3·6·9·12월 두 번째 목요일</td>
+</tr>
+<tr>
+<td>레버리지</td>
+<td>약 11배</td>
+</tr>
+</tbody>
+</table>
+<p><strong>예시 계산:</strong></p>
+<pre><code>코스피200 = 350 → 선물 1계약 = 350 × 250,000원 = 87,500,000원
+필요 증거금 = 87,500,000 × 9% = 7,875,000원
+
+지수 1포인트 변동 = 250,000원 손익
+지수 5포인트 상승 → +1,250,000원 수익 (증거금 대비 +15.9%)
+지수 5포인트 하락 → -1,250,000원 손실 (증거금 대비 -15.9%)
+</code></pre>
+<h3>선물 용어</h3>
+<table>
+<thead>
+<tr>
+<th>용어</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>롱 (Long)</strong></td>
+<td>선물 매수 = 가격 상승에 베팅</td>
+</tr>
+<tr>
+<td><strong>숏 (Short)</strong></td>
+<td>선물 매도 = 가격 하락에 베팅</td>
+</tr>
+<tr>
+<td><strong>청산 (Close)</strong></td>
+<td>반대 포지션으로 계약 종료</td>
+</tr>
+<tr>
+<td><strong>만기 결제</strong></td>
+<td>만기일 기준가격으로 자동 정산</td>
+</tr>
+<tr>
+<td><strong>마진콜 (Margin Call)</strong></td>
+<td>증거금 부족 시 추가 납부 요구</td>
+</tr>
+<tr>
+<td><strong>롤오버 (Rollover)</strong></td>
+<td>만기 전 다음 달 계약으로 교체</td>
+</tr>
+</tbody>
+</table>
+<h3>선물 헤지 활용</h3>
+<pre><code>포트폴리오 헤지 예시:
+보유 주식 총액 = 1억원 (코스피200 기준)
+→ 코스피200 선물 1계약 숏 포지션
+→ 주식 하락 시 선물 이익으로 손실 상쇄
+→ 포트폴리오 가치 방어
+</code></pre>
+<hr />
+<h2>3. 옵션 (Options) 완전 해설</h2>
+<h3>옵션 기본 개념</h3>
+<pre><code>옵션 = 살 권리(콜) 또는 팔 권리(풋)를 사고파는 계약
+
+콜옵션 매수자: &quot;300에 살 권리&quot; 구매 → 행사가 300 콜옵션
+풋옵션 매수자: &quot;300에 팔 권리&quot; 구매 → 행사가 300 풋옵션
+
+핵심: 매수자는 권리만 있고 의무 없음 → 손실은 프리미엄으로 제한
+      매도자는 의무만 있고 권리 없음 → 이론상 무한대 손실 가능
+</code></pre>
+<h3>콜옵션 vs 풋옵션</h3>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>콜옵션 (Call)</th>
+<th>풋옵션 (Put)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>권리</td>
+<td>살 권리</td>
+<td>팔 권리</td>
+</tr>
+<tr>
+<td>수익 방향</td>
+<td>기초자산 상승 시</td>
+<td>기초자산 하락 시</td>
+</tr>
+<tr>
+<td>매수자 최대 손실</td>
+<td>프리미엄 전액</td>
+<td>프리미엄 전액</td>
+</tr>
+<tr>
+<td>매수자 최대 수익</td>
+<td>이론상 무한대</td>
+<td>행사가까지</td>
+</tr>
+</tbody>
+</table>
+<h3>옵션 손익 구조 예시</h3>
+<p><strong>콜옵션 매수 예시 (코스피200 350 콜옵션, 프리미엄 5pt)</strong></p>
+<pre><code>프리미엄 비용: 5pt × 250,000 = 1,250,000원
+
+만기 시 손익:
+- 지수 340 → 권리 포기 → 손실: -1,250,000원
+- 지수 350 → 행사 안 함 → 손실: -1,250,000원 (손익분기점 미달)
+- 지수 355 → 손익분기점 (350 + 5)
+- 지수 360 → 수익: (360-350-5) × 250,000 = +1,250,000원
+- 지수 400 → 수익: (400-350-5) × 250,000 = +11,250,000원
+</code></pre>
+<p><strong>풋옵션 매수 예시 (코스피200 350 풋옵션, 프리미엄 5pt)</strong></p>
+<pre><code>만기 시 손익:
+- 지수 360 → 권리 포기 → 손실: -1,250,000원
+- 지수 345 → 손익분기점 (350 - 5)
+- 지수 330 → 수익: (350-330-5) × 250,000 = +3,750,000원
+- 지수 300 → 수익: (350-300-5) × 250,000 = +11,250,000원
+</code></pre>
+<h3>옵션 주요 지표 (그리스 지수)</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>의미</th>
+<th>활용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>델타 (Δ)</strong></td>
+<td>기초자산 1 변동 시 옵션 가격 변동</td>
+<td>헤지 비율 계산</td>
+</tr>
+<tr>
+<td><strong>감마 (Γ)</strong></td>
+<td>델타의 변화율</td>
+<td>만기 근처 급격한 변동</td>
+</tr>
+<tr>
+<td><strong>세타 (Θ)</strong></td>
+<td>시간 경과에 따른 가치 감소</td>
+<td>시간가치 decay</td>
+</tr>
+<tr>
+<td><strong>베가 (ν)</strong></td>
+<td>변동성 변화에 대한 민감도</td>
+<td>변동성 매매</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>시간가치 감소(세타): 옵션 매수자에게 불리 → 만기가 가까울수록 가치 급감</p>
+</blockquote>
+<hr />
+<h2>4. ELS (주가연계증권)</h2>
+<h3>ELS 구조</h3>
+<pre><code>ELS = 주가(또는 지수)에 연계된 수익 구조를 가진 증권
+
+주요 구조: 스텝다운(Step-Down) 조기상환형
+- 기초자산: 코스피200, S&amp;P500, 홍콩 H지수 등 2~3개
+- 만기: 보통 3년 (6개월마다 조기상환 기회)
+- 수익: 연 6~10% (고정)
+- 조건: 기초자산 가격이 일정 수준 이상 유지 시 수익
+</code></pre>
+<h3>스텝다운 ELS 예시</h3>
+<pre><code>기초자산: 코스피200 + S&amp;P500
+가입 당시 기준가: 각 100%
+
+조기상환 조건:
+- 6개월차: 기준가의 95% 이상 → 연 7% 수익 후 상환
+- 12개월차: 기준가의 90% 이상 → 연 7% 수익 후 상환
+- 18개월차: 기준가의 85% 이상 → 연 7% 수익 후 상환
+- 24개월차: 기준가의 85% 이상 → 연 7% 수익 후 상환
+- 30개월차: 기준가의 80% 이상 → 연 7% 수익 후 상환
+- 만기(36개월): 기준가의 50% 이상 → 원금 + 연 7% 수익 반환
+
+손실 조건 (녹인·Knock-In):
+→ 관찰 기간 중 한 번이라도 기준가의 50% 미만으로 하락 시
+   만기에 하락한 만큼 손실 발생
+   예: 기초자산 최저점 40% → 원금의 40%만 반환 (60% 손실)
+</code></pre>
+<h3>ELS 투자 시 주의사항</h3>
+<table>
+<thead>
+<tr>
+<th>위험</th>
+<th>내용</th>
+<th>주의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>녹인 위험</strong></td>
+<td>기초자산 50% 이하 하락 시 원금 손실</td>
+<td>2008·2020년 사례 존재</td>
+</tr>
+<tr>
+<td><strong>유동성 위험</strong></td>
+<td>만기 전 중도 환매 시 손실 가능</td>
+<td>비상금 투입 금지</td>
+</tr>
+<tr>
+<td><strong>발행사 위험</strong></td>
+<td>증권사 파산 시 손실 (예금자보호 없음)</td>
+<td>대형 증권사 선택</td>
+</tr>
+<tr>
+<td><strong>홍콩 H지수 리스크</strong></td>
+<td>2021~2022년 대규모 손실 사례</td>
+<td>기초자산 분산 확인</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>5. ELW (주식워런트증권)</h2>
+<pre><code>ELW = 주식에 대한 옵션을 증권 형태로 발행한 상품
+
+콜 ELW: 기초주식 가격 상승 시 수익
+풋 ELW: 기초주식 가격 하락 시 수익
+
+레버리지: 5~20배 이상
+만기: 보통 6개월~1년
+
+주의: 만기 시 가치 0원이 될 수 있음
+     개인투자자 90% 이상 손실 기록
+</code></pre>
+<hr />
+<h2>6. 파생상품 투자 원칙</h2>
+<h3>초보자 금지 사항</h3>
+<pre><code>❌ 선물·옵션 매도 포지션 → 무한 손실 가능
+❌ 레버리지 최대화 → 마진콜 위험
+❌ 헤지 없이 방향성 베팅 → 도박과 동일
+❌ 만기 가까운 옵션 매수 → 시간가치 급감
+❌ 비상금으로 파생 투자 → 강제 청산 위험
+</code></pre>
+<h3>안전한 파생상품 활용법</h3>
+<table>
+<thead>
+<tr>
+<th>활용</th>
+<th>방법</th>
+<th>난이도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>포트폴리오 헤지</td>
+<td>주식 보유 + 코스피 풋옵션 매수</td>
+<td>★★★</td>
+</tr>
+<tr>
+<td>커버드콜</td>
+<td>주식 보유 + 콜옵션 매도 → 수익률 향상</td>
+<td>★★★★</td>
+</tr>
+<tr>
+<td>ELS 안전 투자</td>
+<td>녹인 없는 구조, 60~70% 조건</td>
+<td>★★</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>결론</strong>: 파생상품은 투기보다 헤지 도구로 활용이 바람직.<br />
+개인 투자자는 ELS 정도만 접근하고, 선물·옵션은 충분한 학습 후 소액으로 시작.</p>
+</blockquote>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>

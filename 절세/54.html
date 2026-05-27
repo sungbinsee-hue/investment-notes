@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>기술적 분석 기초 — 투자 & 재무 지식창고</title>
+<title>금투세 폐지 & 세제 변화 — 투자 & 재무 지식창고</title>
 <link rel="stylesheet" href="../style.css">
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
@@ -17,7 +17,7 @@
 <body>
 <nav class="sidebar">
 <a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
-<div class="nav-group" data-group="절세전략">
+<div class="nav-group active" data-group="절세전략">
   <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
   <ul>
     <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
@@ -26,7 +26,7 @@
     <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
     <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
     <li><a href="../절세/34.html">해외 주식 세금 실무</a></li>
-    <li><a href="../절세/54.html">금투세 폐지 & 세제 변화</a></li>
+    <li class="current"><a href="../절세/54.html">금투세 폐지 & 세제 변화</a></li>
   </ul>
 </div>
 <div class="nav-group" data-group="주식기업분석">
@@ -76,7 +76,7 @@
     <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
   </ul>
 </div>
-<div class="nav-group active" data-group="투자전략심화">
+<div class="nav-group" data-group="투자전략심화">
   <div class="nav-group-title" onclick="toggleGroup(this)">📊 투자 전략 & 심화<span class="arrow">▼</span></div>
   <ul>
     <li><a href="../투자전략/33.html">거시경제 기초 — 금리·환율·경기사이클</a></li>
@@ -84,7 +84,7 @@
     <li><a href="../투자전략/36.html">포트폴리오 자산배분 전략</a></li>
     <li><a href="../투자전략/37.html">배당 투자 전략</a></li>
     <li><a href="../투자전략/38.html">채권 기초 & ETF 활용</a></li>
-    <li class="current"><a href="../투자전략/39.html">기술적 분석 기초</a></li>
+    <li><a href="../투자전략/39.html">기술적 분석 기초</a></li>
     <li><a href="../투자전략/40.html">리스크 관리</a></li>
     <li><a href="../투자전략/41.html">투자 철학 & 명저</a></li>
     <li><a href="../투자전략/43.html">경제 지표 & 뉴스 해석법</a></li>
@@ -110,238 +110,290 @@
 </div>
 </nav>
 <main class="main">
-<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>📊 투자 전략 & 심화</span><span class="sep">›</span><span>기술적 분석 기초</span></div>
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>🛡️ 절세 전략</span><span class="sep">›</span><span>금투세 폐지 & 세제 변화</span></div>
 <article class="content">
-<h1>기술적 분석 기초</h1>
+<h1>금투세 폐지 &amp; 세제 변화</h1>
 <blockquote>
-<p>기술적 분석은 과거 가격·거래량 데이터로 미래 방향성을 예측하는 기법.<br />
-매수·매도 타이밍 보조 도구로 활용. 단독 의존은 위험.</p>
+<p>2024년 12월 금투세 폐지 확정.<br />
+국내 주식 양도차익 비과세 유지 + ISA 혜택 강화로 투자자에게 유리한 환경.</p>
 </blockquote>
 <hr />
-<h2>1. 캔들 차트</h2>
-<h3>캔들 하나의 구조</h3>
-<pre><code>  │  ← 위꼬리 (고가)
- ┌┴┐
- │ │ ← 몸통 (시가~종가)
- └┬┘
-  │  ← 아래꼬리 (저가)
+<h2>1. 금투세(금융투자소득세) 폐지 경과</h2>
+<h3>금투세란?</h3>
+<pre><code>원래 계획 (도입 예정 → 폐지):
+
+금융투자소득세 = 주식·채권·펀드·파생상품 등 금융투자에서
+                얻은 소득에 부과하는 세금
+
+2023년 도입 → 2024년으로 유예 → 2024년 12월 폐지 확정
+
+폐지된 내용:
+- 국내 주식 양도차익 5,000만원 공제 후 20~25% 과세 계획 → 폐지
+- 해외주식·채권 250만원 공제 후 20% 과세 → 유지 (기존대로)
 </code></pre>
-<ul>
-<li><strong>양봉 (빨간색)</strong>: 종가 &gt; 시가 → 상승 마감</li>
-<li><strong>음봉 (파란색/검정)</strong>: 종가 &lt; 시가 → 하락 마감</li>
-</ul>
-<h3>주요 캔들 패턴</h3>
+<h3>폐지 영향</h3>
 <table>
 <thead>
 <tr>
-<th>패턴</th>
-<th>모양</th>
-<th>신호</th>
+<th>항목</th>
+<th>금투세 도입 예정</th>
+<th>폐지 후 현재</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>장대양봉</strong></td>
-<td>몸통 크고 꼬리 짧음</td>
-<td>강한 매수세</td>
+<td>국내 주식 양도차익</td>
+<td>5,000만원 초과 시 20~25% 과세</td>
+<td><strong>비과세 유지</strong></td>
 </tr>
 <tr>
-<td><strong>장대음봉</strong></td>
-<td>몸통 크고 꼬리 짧음</td>
-<td>강한 매도세</td>
+<td>해외 주식 양도차익</td>
+<td>250만원 초과 22% 과세</td>
+<td><strong>250만원 초과 22% 과세 (동일)</strong></td>
 </tr>
 <tr>
-<td><strong>도지</strong></td>
-<td>몸통 거의 없음</td>
-<td>매수·매도 균형, 추세 전환 가능성</td>
+<td>국내 ETF 매매차익</td>
+<td>과세 예정</td>
+<td><strong>비과세 유지</strong></td>
 </tr>
 <tr>
-<td><strong>망치형</strong></td>
-<td>아래꼬리 길고 몸통 작음</td>
-<td>하락 후 반등 신호</td>
-</tr>
-<tr>
-<td><strong>역망치형</strong></td>
-<td>위꼬리 길고 몸통 작음</td>
-<td>상승 후 하락 전환 가능성</td>
-</tr>
-<tr>
-<td><strong>십자형 도지</strong></td>
-<td>완전 균형</td>
-<td>강한 전환 신호</td>
+<td>펀드 환매 차익</td>
+<td>과세 예정</td>
+<td><strong>일부 비과세</strong></td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2>2. 이동평균선 (MA, Moving Average)</h2>
-<p><strong>일정 기간의 평균 주가를 선으로 연결. 추세 확인 도구.</strong></p>
-<h3>주요 이동평균선</h3>
+<h2>2. 현행 투자 세금 체계 (2026년)</h2>
+<h3>국내 주식</h3>
 <table>
 <thead>
 <tr>
-<th>기간</th>
-<th>용도</th>
+<th>항목</th>
+<th>세율</th>
+<th>비고</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>5일선</strong></td>
-<td>초단기 추세, 데이 트레이더 사용</td>
+<td><strong>개인 양도차익</strong></td>
+<td><strong>비과세</strong></td>
+<td>대주주 제외</td>
 </tr>
 <tr>
-<td><strong>20일선</strong></td>
-<td>단기 추세, 개인투자자 가장 많이 참고</td>
+<td><strong>대주주 양도차익</strong></td>
+<td>20~25%</td>
+<td>종목당 50억원 이상 (완화됨)</td>
 </tr>
 <tr>
-<td><strong>60일선</strong></td>
-<td>중기 추세</td>
+<td><strong>배당소득</strong></td>
+<td>15.4%</td>
+<td>원천징수</td>
 </tr>
 <tr>
-<td><strong>120일선</strong></td>
-<td>장기 추세, 기관·외국인 참고</td>
-</tr>
-<tr>
-<td><strong>200일선</strong></td>
-<td>미국 시장에서 장기 추세 기준선</td>
+<td><strong>금융소득 종합과세</strong></td>
+<td>종합세율</td>
+<td>연 배당·이자 2,000만원 초과 시</td>
 </tr>
 </tbody>
 </table>
-<h3>골든크로스 &amp; 데드크로스</h3>
-<p><strong>골든크로스</strong>: 단기 이동평균선이 장기 이동평균선을 아래에서 위로 돌파 → 상승 신호</p>
-<pre><code>20일선이 60일선 위로 상향 돌파 → 골든크로스 → 매수 신호
-</code></pre>
-<p><strong>데드크로스</strong>: 단기 이동평균선이 장기 이동평균선을 위에서 아래로 하향 돌파 → 하락 신호</p>
-<pre><code>20일선이 60일선 아래로 하향 돌파 → 데드크로스 → 매도 신호
-</code></pre>
-<div class="callout callout-warning"><div class="callout-title">⚠️ 후행성 지표</div><div class="callout-body">
-
-이동평균선은 과거 데이터 기반 → 신호 발생 시점이 늦을 수 있음.  
-강한 추세 확인용으로 활용하되 단독 의존 금지.
-
-</div></div>
-
-<hr />
-<h2>3. RSI (Relative Strength Index, 상대강도지수)</h2>
-<p><strong>0~100 범위로 과매수·과매도 상태 측정. 14일 기준 가장 많이 사용.</strong></p>
-<h3>해석</h3>
+<h3>해외 주식 (미국)</h3>
 <table>
 <thead>
 <tr>
-<th>RSI 구간</th>
-<th>의미</th>
-<th>행동 고려</th>
+<th>항목</th>
+<th>세율</th>
+<th>비고</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>70 이상</strong></td>
-<td>과매수</td>
-<td>과열 → 조정 가능성, 매도 검토</td>
+<td><strong>양도차익</strong></td>
+<td>22%</td>
+<td>연 250만원 공제</td>
 </tr>
 <tr>
-<td><strong>50~70</strong></td>
-<td>상승 추세</td>
-<td>보유·추가 매수</td>
+<td><strong>배당소득 (미국 원천징수)</strong></td>
+<td>15%</td>
+<td>한미 조세조약</td>
 </tr>
 <tr>
-<td><strong>30~50</strong></td>
-<td>하락 추세</td>
-<td>관망·분할 매수 검토</td>
-</tr>
-<tr>
-<td><strong>30 이하</strong></td>
-<td>과매도</td>
-<td>급락 → 반등 가능성, 매수 검토</td>
+<td><strong>금융소득 종합과세</strong></td>
+<td>종합세율</td>
+<td>배당 연 2,000만원 초과 시</td>
 </tr>
 </tbody>
 </table>
-<h3>RSI 다이버전스 (중요)</h3>
-<p><strong>강세 다이버전스</strong>: 주가는 신저점 갱신, RSI는 더 높은 저점 형성 → 상승 전환 신호</p>
-<p><strong>약세 다이버전스</strong>: 주가는 신고점 갱신, RSI는 더 낮은 고점 형성 → 하락 전환 신호</p>
-<hr />
-<h2>4. MACD (Moving Average Convergence Divergence)</h2>
-<p><strong>단기 이동평균과 장기 이동평균의 차이로 추세 강도·전환 포착.</strong></p>
-<h3>구성 요소</h3>
-<ul>
-<li><strong>MACD 선</strong>: 12일 EMA - 26일 EMA</li>
-<li><strong>시그널 선</strong>: MACD의 9일 EMA</li>
-<li><strong>히스토그램</strong>: MACD - 시그널 선</li>
-</ul>
-<h3>매매 신호</h3>
-<p><strong>매수 신호</strong>: MACD 선이 시그널 선을 아래에서 위로 돌파 (골든크로스)</p>
-<p><strong>매도 신호</strong>: MACD 선이 시그널 선을 위에서 아래로 하향 돌파 (데드크로스)</p>
-<p><strong>히스토그램 해석</strong>:<br />
-- 양수 + 증가 → 상승 모멘텀 강화<br />
-- 양수 + 감소 → 상승 모멘텀 약화 (조정 예고)<br />
-- 음수 + 감소 → 하락 모멘텀 강화</p>
-<hr />
-<h2>5. 지지선 &amp; 저항선</h2>
-<h3>지지선 (Support)</h3>
-<p>주가가 하락하다 멈추는 가격대. 매수세가 집중되는 수준.</p>
-<pre><code>주가가 50,000원 부근에서 3번 반등 → 50,000원이 강한 지지선
-</code></pre>
-<h3>저항선 (Resistance)</h3>
-<p>주가가 상승하다 막히는 가격대. 매도세가 집중되는 수준.</p>
-<pre><code>주가가 70,000원에서 3번 하락 → 70,000원이 강한 저항선
-</code></pre>
-<h3>지지-저항 역할 전환</h3>
-<blockquote>
-<p>지지선이 붕괴되면 → 그 수준이 새로운 저항선이 됨<br />
-저항선이 돌파되면 → 그 수준이 새로운 지지선이 됨</p>
-</blockquote>
-<hr />
-<h2>6. 거래량 분석</h2>
-<p><strong>거래량은 주가 움직임의 신뢰도를 검증하는 도구.</strong></p>
-<h3>기본 원칙</h3>
+<h3>채권·펀드·ETF</h3>
 <table>
 <thead>
 <tr>
-<th>상황</th>
-<th>신뢰도</th>
+<th>항목</th>
+<th>세율</th>
+<th>비고</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>주가 상승 + 거래량 증가</td>
-<td>강한 상승 신뢰</td>
+<td><strong>채권 이자</strong></td>
+<td>15.4%</td>
+<td>원천징수</td>
 </tr>
 <tr>
-<td>주가 상승 + 거래량 감소</td>
-<td>약한 상승 (지속성 의심)</td>
+<td><strong>채권 매매차익</strong></td>
+<td>비과세</td>
+<td>개인 직접 거래</td>
 </tr>
 <tr>
-<td>주가 하락 + 거래량 증가</td>
-<td>강한 하락 신뢰</td>
+<td><strong>국내 주식형 ETF 매매차익</strong></td>
+<td><strong>비과세</strong></td>
+<td>금투세 폐지로 유지</td>
 </tr>
 <tr>
-<td>주가 하락 + 거래량 감소</td>
-<td>조정 마무리 가능성</td>
+<td><strong>해외 주식형 ETF 매매차익</strong></td>
+<td>15.4%</td>
+<td>배당소득세</td>
+</tr>
+<tr>
+<td><strong>채권형 ETF 분배금</strong></td>
+<td>15.4%</td>
+<td>배당소득세</td>
 </tr>
 </tbody>
 </table>
-<h3>거래량 급증 패턴</h3>
-<ul>
-<li><strong>돌파 시 거래량 급증</strong>: 저항선 돌파 확인 → 신뢰도 높음</li>
-<li><strong>바닥권 거래량 급증</strong>: 패닉 셀링 마무리 신호 가능성</li>
-</ul>
 <hr />
-<h2>7. 기술적 분석 활용 원칙</h2>
-<div class="callout callout-tip"><div class="callout-title">💡 실전 원칙</div><div class="callout-body">
+<h2>3. 대주주 요건 완화 (2024년)</h2>
+<h3>대주주 기준 변화</h3>
+<pre><code>기존 대주주 기준:
+- 종목당 보유 금액 10억원 이상 (2020년 완화 후)
 
-1. **여러 지표 중첩 확인**: RSI 과매도 + 지지선 + 거래량 급증 → 신뢰도 증가
-2. **상위 타임프레임 우선**: 주봉·월봉 추세 확인 후 일봉 매매 타이밍 결정
-3. **펀더멘털 먼저**: 기술적 신호는 매수·매도 타이밍 보조. 기업 가치 분석이 선행
-4. **과거 패턴 = 확률**: 100% 맞는 지표는 없음. 확률적 도구로 활용
+2024년 완화:
+- 종목당 50억원 이상 (5배 완화)
+- 가족 합산 기준 → 개인 기준으로 변경
 
-</div></div>
+영향:
+→ 이전: 10억원 이상 보유자 → 양도차익 과세
+→ 현재: 50억원 이상 보유자만 대주주
+→ 대부분 개인투자자 비과세 유지
+</code></pre>
+<hr />
+<h2>4. ISA (개인종합자산관리계좌) 혜택 강화</h2>
+<h3>ISA란?</h3>
+<pre><code>ISA = 주식·펀드·ETF·채권을 하나의 계좌에서 운용하며
+      수익을 한도 내 비과세하는 종합 절세 계좌
 
-<div class="callout callout-warning"><div class="callout-title">⚠️ 기술적 분석의 한계</div><div class="callout-body">
+계좌 종류:
+- 중개형 ISA: 주식 직접 투자 가능 (증권사)
+- 일임형 ISA: 증권사가 대신 운용
+- 신탁형 ISA: 일부 상품만 (은행)
 
-- 예측이 아닌 후행 확인 도구
-- 뉴스·공시·외국인 수급 변수에 패턴 붕괴 가능
-- 단기 매매보다 중장기 추세 확인에 더 유용
+→ 중개형 ISA가 투자자에게 가장 유리
+</code></pre>
+<h3>ISA 핵심 혜택</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>일반 계좌</th>
+<th>ISA 계좌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>비과세 한도</td>
+<td>없음</td>
+<td><strong>일반형 200만원 / 서민형 400만원</strong></td>
+</tr>
+<tr>
+<td>한도 초과 분 세율</td>
+<td>15.4%</td>
+<td><strong>9.9% (분리과세)</strong></td>
+</tr>
+<tr>
+<td>손익 통산</td>
+<td>불가</td>
+<td><strong>가능 (손실로 수익 상쇄)</strong></td>
+</tr>
+<tr>
+<td>만기 연금전환</td>
+<td>불가</td>
+<td><strong>연금저축으로 이전 시 세액공제</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>ISA 2024~2025년 확대 개편</h3>
+<pre><code>납입 한도:
+- 기존: 연 2,000만원 (총 1억원)
+- 개편 후: 연 4,000만원 (총 2억원) → 논의 중
 
-</div></div>
+비과세 한도:
+- 서민형·농어민형: 400만원 → 500만원으로 확대 논의
+
+배당주 투자 ISA 활용:
+→ 배당소득 이자 비과세 한도 내 세금 없음
+→ 리츠·고배당 ETF → ISA 우선 편입
+</code></pre>
+<h3>ISA 실전 활용 전략</h3>
+<pre><code>최적 활용법:
+1. 중개형 ISA 개설 (증권사)
+2. 국내 주식·ETF: 비과세 혜택 적극 활용
+3. 리츠 ETF (TIGER 리츠부동산인프라): 배당세 절감
+4. 채권형 ETF: 이자소득세 9.9%로 절감
+5. 만기 시 연금계좌 이전 → 추가 세액공제
+
+주의:
+- 5년 의무 가입 (중도 해지 시 세금 환수)
+- 가입 전 다른 ISA 해지 필요 (1인 1계좌)
+</code></pre>
+<hr />
+<h2>5. 연금저축 세제 현황</h2>
+<h3>연금저축 세액공제 (2026년)</h3>
+<pre><code>연금저축 펀드 + IRP 합산:
+- 총 납입한도: 연 1,800만원
+- 세액공제 한도: 연 900만원
+- 세액공제율:
+  총급여 5,500만원 이하: 16.5% → 최대 148.5만원 환급
+  총급여 5,500만원 초과: 13.2% → 최대 118.8만원 환급
+</code></pre>
+<h3>연금 수령 시 세금</h3>
+<pre><code>연금소득세 (분리과세):
+- 55~70세 미만: 5.5%
+- 70~80세 미만: 4.4%
+- 80세 이상: 3.3%
+
+일시금 수령: 16.5% (기타소득세)
+
+→ 연금 수령이 세금 측면에서 훨씬 유리
+→ 오래 수령할수록 세율 낮아짐
+</code></pre>
+<hr />
+<h2>6. 2026년 투자자 절세 전략 총정리</h2>
+<h3>절세 우선순위</h3>
+<pre><code>1단계: 연금저축 + IRP 최대 활용 (최대 148.5만원 환급)
+   → 연금저축 600만원 + IRP 300만원 = 900만원 납입
+
+2단계: ISA 계좌 활용 (비과세 200~400만원)
+   → 배당·이자 소득 ISA 집중
+
+3단계: 국내 주식 비과세 활용
+   → 대주주 아닌 이상 양도차익 비과세
+
+4단계: 해외 주식 250만원 공제 활용
+   → 연간 수익 250만원 이하 또는 손익 통산
+
+5단계: 금융소득 2,000만원 한도 관리
+   → 배당·이자 합계 2,000만원 이하 유지
+</code></pre>
+<h3>금융소득 종합과세 방어</h3>
+<pre><code>금융소득 종합과세 = 연 이자+배당 2,000만원 초과 시 종합소득에 합산
+→ 고소득자는 최고 49.5% 세율
+
+방어 전략:
+1. 고배당 ETF·채권 → ISA 계좌에 편입
+2. 배당 발생 시점 분산 (12월 집중 피하기)
+3. 배우자·자녀 계좌 분산 (가족 합산 아님)
+4. 비과세 상품 활용 (국내 주식 ETF 등)
+</code></pre>
 </article>
 </main>
 

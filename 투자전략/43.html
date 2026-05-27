@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>경제 지표 & 뉴스 해석법 — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세전략">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+    <li><a href="../절세/34.html">해외 주식 세금 실무</a></li>
+    <li><a href="../절세/54.html">금투세 폐지 & 세제 변화</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="주식기업분석">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="ETF완전가이드">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩유안타증권">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="투자전략심화">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📊 투자 전략 & 심화<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../투자전략/33.html">거시경제 기초 — 금리·환율·경기사이클</a></li>
+    <li><a href="../투자전략/35.html">투자 심리 & 행동경제학</a></li>
+    <li><a href="../투자전략/36.html">포트폴리오 자산배분 전략</a></li>
+    <li><a href="../투자전략/37.html">배당 투자 전략</a></li>
+    <li><a href="../투자전략/38.html">채권 기초 & ETF 활용</a></li>
+    <li><a href="../투자전략/39.html">기술적 분석 기초</a></li>
+    <li><a href="../투자전략/40.html">리스크 관리</a></li>
+    <li><a href="../투자전략/41.html">투자 철학 & 명저</a></li>
+    <li class="current"><a href="../투자전략/43.html">경제 지표 & 뉴스 해석법</a></li>
+    <li><a href="../투자전략/46.html">금·원자재 투자</a></li>
+    <li><a href="../투자전략/47.html">리츠(REITs) 실전 투자</a></li>
+    <li><a href="../투자전략/48.html">파생상품 기초 — 선물·옵션·ELS</a></li>
+    <li><a href="../투자전략/49.html">암호화폐 기초 & 세금</a></li>
+    <li><a href="../투자전략/50.html">퀀트 투자 기초</a></li>
+    <li><a href="../투자전략/55.html">AI·방산·원전 투자 사이클</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="실전투자가이드">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛠️ 실전 투자 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../실전/42.html">공모주 IPO 청약 실전</a></li>
+    <li><a href="../실전/44.html">종목 스크리닝 & DART 실전</a></li>
+    <li><a href="../실전/45.html">HTS·MTS 실전 활용</a></li>
+    <li><a href="../실전/51.html">퇴직연금 DC형 실전 운용</a></li>
+    <li><a href="../실전/52.html">미국 주식 직접 투자 실무</a></li>
+    <li><a href="../실전/53.html">투자 일지 & 수익률 계산</a></li>
+    <li><a href="../주식/32.html">트레이딩 용어 사전</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>📊 투자 전략 & 심화</span><span class="sep">›</span><span>경제 지표 & 뉴스 해석법</span></div>
+<article class="content">
+<h1>경제 지표 &amp; 뉴스 해석법</h1>
+<blockquote>
+<p>경제 지표 하나에 코스피가 2~3% 움직인다.<br />
+지표를 먼저 알고 해석하면 뉴스에 끌려다니지 않는다.</p>
+</blockquote>
+<hr />
+<h2>1. 경제 지표 중요도 순위</h2>
+<h3>시장 임팩트 크기 순서 (2026년 기준)</h3>
+<pre><code>1위: 미국 FOMC 금리 결정 + 기자회견
+2위: 미국 CPI (소비자물가지수)
+3위: 미국 고용보고서 (NFP + 실업률)
+4위: 미국 PCE 물가
+5위: 미국 GDP 성장률 (1차 속보치)
+6위: FOMC 의사록
+7위: 미국 PPI (생산자물가)
+8위: 미국 소매판매
+9위: ISM 제조업·서비스 PMI
+10위: 한국은행 기준금리 결정
+</code></pre>
+<hr />
+<h2>2. FOMC 금리 결정 완전 해석법</h2>
+<h3>FOMC란?</h3>
+<p>미국 연방공개시장위원회(Federal Open Market Committee)<br />
+연준(Fed) 내 12명이 금리를 결정하는 회의. <strong>연 8회</strong> 개최.</p>
+<h3>FOMC 발표 구조</h3>
+<pre><code>① 성명서 (Statement) — 금리 결정 + 경제 평가
+② 경제 전망 요약 (SEP) — 분기별 발표 (연 4회)
+③ 점도표 (Dot Plot) — 연준 위원들의 금리 전망
+④ 파월 의장 기자회견 — 가장 중요, 뉘앙스 주목
+</code></pre>
+<h3>점도표 (Dot Plot) 읽는 법</h3>
+<p>점도표: 연준 위원 18명 각각의 향후 금리 전망을 점으로 표시.</p>
+<pre><code>예: 2026년 말 점도표
+●●●● (4명): 4.50%
+●●●●●● (6명): 4.25%
+●●●●● (5명): 4.00%
+●●● (3명): 3.75%
+
+중앙값 = 4.25% → 시장은 이를 연준의 공식 금리 전망으로 해석
+</code></pre>
+<h3>성명서 핵심 문구 변화 추적</h3>
+<table>
+<thead>
+<tr>
+<th>문구 변화</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"추가 인상 고려" → "인상 일시정지"</td>
+<td>긴축 사이클 종료 신호</td>
+</tr>
+<tr>
+<td>"데이터 의존적" 강조</td>
+<td>앞으로의 방향 불확실</td>
+</tr>
+<tr>
+<td>"인플레이션 목표 달성에 확신"</td>
+<td>금리 인하 가까워짐</td>
+</tr>
+<tr>
+<td>"노동시장 강건" 삭제</td>
+<td>경기 둔화 인식</td>
+</tr>
+</tbody>
+</table>
+<h3>파월 기자회견 포인트</h3>
+<ul>
+<li><strong>매파(Hawkish)</strong>: 인플레 우려, 금리 인상/동결 시사 → 주식 하락</li>
+<li><strong>비둘기파(Dovish)</strong>: 경기 둔화 우려, 금리 인하 시사 → 주식 상승</li>
+<li><strong>중립</strong>: 데이터 의존 강조, 방향 불명확 → 변동성</li>
+</ul>
+<hr />
+<h2>3. CPI (소비자물가지수) 완전 해석</h2>
+<h3>발표 일정 및 구조</h3>
+<ul>
+<li><strong>발표</strong>: 매월 둘째 주 수요일 오후 9:30 (미국 동부 기준, 한국 10:30 또는 22:30)</li>
+<li><strong>구성</strong>: 헤드라인 CPI + 근원 CPI (Core CPI)</li>
+</ul>
+<h3>헤드라인 vs 근원 CPI</h3>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>포함 항목</th>
+<th>연준 주목도</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>헤드라인 CPI</strong></td>
+<td>전체 물가 (식품·에너지 포함)</td>
+<td>낮음</td>
+<td>변동성 큼</td>
+</tr>
+<tr>
+<td><strong>근원 CPI (Core)</strong></td>
+<td>식품·에너지 제외</td>
+<td>높음</td>
+<td>기저 인플레이션 반영</td>
+</tr>
+</tbody>
+</table>
+<h3>CPI 발표 해석 매트릭스</h3>
+<table>
+<thead>
+<tr>
+<th>결과</th>
+<th>시장 반응</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>예상치 상회 (높은 CPI)</td>
+<td>주식↓ 달러↑ 채권↓</td>
+<td>금리 인상/동결 기간 연장 우려</td>
+</tr>
+<tr>
+<td>예상치 하회 (낮은 CPI)</td>
+<td>주식↑ 달러↓ 채권↑</td>
+<td>금리 인하 가능성 증가</td>
+</tr>
+<tr>
+<td>예상치 부합</td>
+<td>소폭 변동</td>
+<td>시장이 이미 선반영</td>
+</tr>
+</tbody>
+</table>
+<h3>CPI 구성 비중 (미국, 2026년)</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>비중</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주거비 (Shelter)</td>
+<td>36%</td>
+</tr>
+<tr>
+<td>교통</td>
+<td>17%</td>
+</tr>
+<tr>
+<td>식품</td>
+<td>14%</td>
+</tr>
+<tr>
+<td>의료</td>
+<td>8%</td>
+</tr>
+<tr>
+<td>에너지</td>
+<td>7%</td>
+</tr>
+<tr>
+<td>기타</td>
+<td>18%</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>주거비(36%)가 가장 큰 비중 → 주거비 하락이 CPI 하락의 핵심</p>
+</blockquote>
+<hr />
+<h2>4. 고용보고서 (NFP) 완전 해석</h2>
+<h3>발표 일정</h3>
+<p>매월 첫째 주 <strong>금요일</strong> 오후 9:30 (미국 동부)</p>
+<h3>핵심 지표 3가지</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>의미</th>
+<th>시장 기준선</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>비농업취업자수 (NFP)</strong></td>
+<td>전월 대비 신규 일자리 수</td>
+<td>+15~20만명이 중립 수준</td>
+</tr>
+<tr>
+<td><strong>실업률</strong></td>
+<td>경제활동인구 중 실업자 비율</td>
+<td>4.0% 이하: 완전고용</td>
+</tr>
+<tr>
+<td><strong>시간당 평균 임금</strong></td>
+<td>임금 인상률 → 인플레 선행</td>
+<td>전년비 3.5% 이하: 안정</td>
+</tr>
+</tbody>
+</table>
+<h3>고용보고서 해석 시나리오</h3>
+<p><strong>강한 고용 (NFP 30만+, 실업률↓, 임금↑)</strong><br />
+→ 경제 강함 + 인플레 우려 → 금리 인하 지연 → 주식 혼조 (단기↓, 이후 회복)</p>
+<p><strong>약한 고용 (NFP 10만 미만, 실업률↑)</strong><br />
+→ 경기 둔화 → 금리 인하 기대 → 성장주↑, 채권↑</p>
+<p><strong>골디락스 (NFP 15~20만, 임금 안정)</strong><br />
+→ 이상적 환경 → 주식↑ 채권↑</p>
+<hr />
+<h2>5. PCE 물가 (연준 선호 지표)</h2>
+<h3>CPI vs PCE 차이</h3>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>CPI</th>
+<th>PCE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>발표 주체</td>
+<td>노동통계국 (BLS)</td>
+<td>상무부 (BEA)</td>
+</tr>
+<tr>
+<td>연준 정책 기준</td>
+<td>참고</td>
+<td><strong>공식 기준</strong></td>
+</tr>
+<tr>
+<td>주거비 비중</td>
+<td>36%</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>특징</td>
+<td>고정 가중치</td>
+<td>변동 가중치 (소비자 행동 반영)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>연준 목표: <strong>근원 PCE 2.0%</strong><br />
+근원 PCE가 CPI보다 낮게 나오는 경향 → 연준은 PCE 기준으로 덜 긴축적</p>
+</blockquote>
+<hr />
+<h2>6. 어닝시즌 (Earnings Season) 활용</h2>
+<h3>어닝시즌 일정</h3>
+<table>
+<thead>
+<tr>
+<th>시즌</th>
+<th>기간</th>
+<th>발표 분기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1분기 어닝</td>
+<td>4월 중순~5월</td>
+<td>1~3월 실적</td>
+</tr>
+<tr>
+<td>2분기 어닝</td>
+<td>7월 중순~8월</td>
+<td>4~6월 실적</td>
+</tr>
+<tr>
+<td>3분기 어닝</td>
+<td>10월 중순~11월</td>
+<td>7~9월 실적</td>
+</tr>
+<tr>
+<td>4분기 어닝</td>
+<td>1월 중순~2월</td>
+<td>10~12월 실적</td>
+</tr>
+</tbody>
+</table>
+<h3>실적 발표 해석 핵심</h3>
+<p><strong>EPS (주당순이익) vs 컨센서스</strong></p>
+<pre><code>실제 EPS &gt; 컨센서스 → 어닝서프라이즈 → 주가 상승 (보통)
+실제 EPS &lt; 컨센서스 → 어닝쇼크 → 주가 하락 (보통)
+실제 EPS = 컨센서스 → &quot;Buy the rumor, Sell the news&quot; 패턴
+</code></pre>
+<p><strong>가이던스 (다음 분기 전망)이 더 중요</strong></p>
+<pre><code>실적 좋음 + 가이던스 하향 → 주가 하락
+실적 나쁨 + 가이던스 상향 → 주가 상승
+</code></pre>
+<h3>어닝시즌 전략</h3>
+<ul>
+<li>실적 발표 전날 포지션 축소 → 발표 후 방향 확인 후 진입 (리스크 관리)</li>
+<li>컨센서스 대비 실제 어닝서프라이즈 확인: Earnings Whispers, FactSet</li>
+<li>어닝콜(실적 발표 컨퍼런스콜) 청취 → CEO의 언어 뉘앙스 중요</li>
+</ul>
+<hr />
+<h2>7. 경제 캘린더 실전 활용</h2>
+<h3>추천 사이트</h3>
+<table>
+<thead>
+<tr>
+<th>사이트</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Investing.com</strong></td>
+<td>가장 포괄적, 중요도 별 표시 (★★★)</td>
+</tr>
+<tr>
+<td><strong>ForexFactory</strong></td>
+<td>트레이더 애용, 예상치·실제치 비교</td>
+</tr>
+<tr>
+<td><strong>FRED (세인트루이스 연준)</strong></td>
+<td>미국 경제 데이터 원본 무료 제공</td>
+</tr>
+<tr>
+<td><strong>네이버 금융</strong></td>
+<td>국내 경제 지표</td>
+</tr>
+<tr>
+<td><strong>한국은행 경제통계시스템</strong></td>
+<td>국내 공식 데이터</td>
+</tr>
+</tbody>
+</table>
+<h3>주간 경제 캘린더 확인법</h3>
+<pre><code>매주 월요일:
+1. Investing.com → 이번 주 ★★★ 지표 확인
+2. 발표 전날: 컨센서스 예상치 기록
+3. 발표 당일: 실제치 vs 예상치 비교
+4. 시장 반응 관찰 → 패턴 학습
+</code></pre>
+<hr />
+<h2>8. 국내 경제 지표</h2>
+<h3>한국은행 기준금리 결정</h3>
+<ul>
+<li><strong>일정</strong>: 연 8회 (금융통화위원회)</li>
+<li><strong>발표</strong>: 오전 10시 결정, 오후 2:30 총재 기자회견</li>
+<li><strong>시장 영향</strong>: 예상치 벗어날 때 큰 변동</li>
+</ul>
+<h3>한국 CPI vs 미국 CPI 관계</h3>
+<pre><code>미국 CPI 상승 → 달러 강세 → 원화 약세 → 수입 물가↑ → 한국 CPI 상승 압력
+→ 한국은행 기준금리 인하 제약
+</code></pre>
+<h3>국내 주요 지표</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>발표 기관</th>
+<th>발표 주기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>소비자물가지수</td>
+<td>통계청</td>
+<td>매월 초</td>
+</tr>
+<tr>
+<td>수출입 동향</td>
+<td>산업통상자원부</td>
+<td>매월 1일</td>
+</tr>
+<tr>
+<td>경기선행지수</td>
+<td>통계청</td>
+<td>매월 말</td>
+</tr>
+<tr>
+<td>기업경기실사지수(BSI)</td>
+<td>한국은행</td>
+<td>매월 말</td>
+</tr>
+</tbody>
+</table>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI·방산·원전 투자 사이클 분석 — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세전략">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+    <li><a href="../절세/34.html">해외 주식 세금 실무</a></li>
+    <li><a href="../절세/54.html">금투세 폐지 & 세제 변화</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="주식기업분석">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="ETF완전가이드">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩유안타증권">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="투자전략심화">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📊 투자 전략 & 심화<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../투자전략/33.html">거시경제 기초 — 금리·환율·경기사이클</a></li>
+    <li><a href="../투자전략/35.html">투자 심리 & 행동경제학</a></li>
+    <li><a href="../투자전략/36.html">포트폴리오 자산배분 전략</a></li>
+    <li><a href="../투자전략/37.html">배당 투자 전략</a></li>
+    <li><a href="../투자전략/38.html">채권 기초 & ETF 활용</a></li>
+    <li><a href="../투자전략/39.html">기술적 분석 기초</a></li>
+    <li><a href="../투자전략/40.html">리스크 관리</a></li>
+    <li><a href="../투자전략/41.html">투자 철학 & 명저</a></li>
+    <li><a href="../투자전략/43.html">경제 지표 & 뉴스 해석법</a></li>
+    <li><a href="../투자전략/46.html">금·원자재 투자</a></li>
+    <li><a href="../투자전략/47.html">리츠(REITs) 실전 투자</a></li>
+    <li><a href="../투자전략/48.html">파생상품 기초 — 선물·옵션·ELS</a></li>
+    <li><a href="../투자전략/49.html">암호화폐 기초 & 세금</a></li>
+    <li><a href="../투자전략/50.html">퀀트 투자 기초</a></li>
+    <li class="current"><a href="../투자전략/55.html">AI·방산·원전 투자 사이클</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="실전투자가이드">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛠️ 실전 투자 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../실전/42.html">공모주 IPO 청약 실전</a></li>
+    <li><a href="../실전/44.html">종목 스크리닝 & DART 실전</a></li>
+    <li><a href="../실전/45.html">HTS·MTS 실전 활용</a></li>
+    <li><a href="../실전/51.html">퇴직연금 DC형 실전 운용</a></li>
+    <li><a href="../실전/52.html">미국 주식 직접 투자 실무</a></li>
+    <li><a href="../실전/53.html">투자 일지 & 수익률 계산</a></li>
+    <li><a href="../주식/32.html">트레이딩 용어 사전</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>📊 투자 전략 & 심화</span><span class="sep">›</span><span>AI·방산·원전 투자 사이클 분석</span></div>
+<article class="content">
+<h1>AI·방산·원전 투자 사이클 분석</h1>
+<blockquote>
+<p>테마 투자는 사이클을 이해하고 '초기'에 진입하는 것이 핵심.<br />
+뉴스에 나오기 시작할 때는 이미 중반부 이후인 경우가 많다.</p>
+</blockquote>
+<hr />
+<h2>1. 투자 테마 사이클 이론</h2>
+<h3>테마주 사이클 5단계</h3>
+<pre><code>1단계: 태동기 (인지도 낮음, 스마트머니 진입)
+   → 기관·외국인 먼저 매집
+   → 거래량 적고 주가 조용
+
+2단계: 성장기 (뉴스 증가, 개인 유입 시작)
+   → 기사 증가, 증권사 리포트 등장
+   → 거래량·주가 점진적 상승
+
+3단계: 과열기 (모두가 아는 테마, 급등)
+   → 포털 실시간 검색어 등장
+   → 급격한 거래량 폭발, 주가 급등
+
+4단계: 분산기 (고점 형성, 기관 차익실현)
+   → 호재에 주가 반응 없음
+   → 거래량 고점 + 주가 횡보
+
+5단계: 소멸기 (버블 붕괴, 실적 비가시화)
+   → 뉴스 줄어들고 주가 하락
+   → &quot;작년 테마주&quot; 취급
+
+투자 원칙:
+→ 1~2단계 진입 → 3단계 중반 이전 매도
+→ 3단계 과열기 신규 매수 = 고점 매수 위험
+</code></pre>
+<hr />
+<h2>2. AI 투자 사이클</h2>
+<h3>AI 테마 현황 (2026년)</h3>
+<pre><code>AI 1차 파도 (2023~2024): 반도체·인프라
+→ 엔비디아 GPU → AI 서버 → 데이터센터
+
+AI 2차 파도 (2024~2025): AI 소프트웨어·서비스
+→ 기업용 AI 도입 → MS Copilot, 세일즈포스
+→ AI 에이전트, 자동화 서비스
+
+AI 3차 파도 (2025~이후): AI 수혜 산업
+→ AI 전력 인프라, 냉각 시스템
+→ AI 적용 의료·바이오, 자율주행
+→ AI 제조·공정 효율화
+</code></pre>
+<h3>AI 투자 밸류체인</h3>
+<pre><code>[AI 투자 밸류체인]
+
+1. 칩(반도체):
+   → 엔비디아(NVDA), AMD, TSMC, SK하이닉스, 삼성전자
+   → HBM(고대역폭메모리): 삼성전자, SK하이닉스
+
+2. AI 서버·데이터센터:
+   → 슈퍼마이크로(SMCI), 델 테크놀로지스
+   → 국내: 네이버 클라우드, KT클라우드
+
+3. 클라우드·AI 플랫폼:
+   → 마이크로소프트(MSFT), 구글(GOOG), 아마존(AMZN)
+   → Azure AI, Google Cloud AI
+
+4. 전력·냉각:
+   → 버티브홀딩스(VRT), 이튼(ETN) → AI 데이터센터 전력
+   → 국내: LS Electric, 현대일렉트릭
+
+5. AI 수혜 소프트웨어:
+   → 팔란티어(PLTR), 세일즈포스(CRM), ServiceNow(NOW)
+</code></pre>
+<h3>국내 AI 관련주</h3>
+<table>
+<thead>
+<tr>
+<th>종목</th>
+<th>포지션</th>
+<th>핵심 모멘텀</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SK하이닉스</strong></td>
+<td>HBM 세계 1위</td>
+<td>엔비디아 HBM 독점 공급</td>
+</tr>
+<tr>
+<td><strong>삼성전자</strong></td>
+<td>HBM3E 개발</td>
+<td>HBM 시장 진입 확대</td>
+</tr>
+<tr>
+<td><strong>한미반도체</strong></td>
+<td>HBM 패키징 장비</td>
+<td>SK하이닉스·삼성 공급</td>
+</tr>
+<tr>
+<td><strong>리노공업</strong></td>
+<td>AI 반도체 테스트 소켓</td>
+<td>수요 폭발</td>
+</tr>
+<tr>
+<td><strong>네이버</strong></td>
+<td>클로바X, 하이퍼클로바</td>
+<td>국내 AI 플랫폼</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. 방산 투자 사이클</h2>
+<h3>방산 테마 배경</h3>
+<pre><code>글로벌 방산 수요 급증 이유:
+1. 러시아-우크라이나 전쟁 (2022~): NATO 국방비 GDP 2% 달성 압박
+2. 북한·중국 위협: 한국 방산 기술력 주목
+3. 중동 분쟁: 이스라엘-하마스 전쟁
+4. 대만 해협 긴장: 아시아 국가 군비 증강
+
+한국 방산의 강점:
+→ K-방산 = 기술력 + 가격 경쟁력 + 빠른 납기
+→ 폴란드, 루마니아, 사우디 등 대규모 수출 계약
+</code></pre>
+<h3>국내 주요 방산주</h3>
+<table>
+<thead>
+<tr>
+<th>종목</th>
+<th>핵심 제품</th>
+<th>수출 현황</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>한화에어로스페이스</strong></td>
+<td>K9 자주포, 천무 다연장로켓</td>
+<td>폴란드 등 대규모 수출</td>
+</tr>
+<tr>
+<td><strong>현대로템</strong></td>
+<td>K2 전차, K21 장갑차</td>
+<td>폴란드 K2 전차 수출</td>
+</tr>
+<tr>
+<td><strong>LIG넥스원</strong></td>
+<td>천궁-II 미사일, 비호복합</td>
+<td>중동 수출 확대</td>
+</tr>
+<tr>
+<td><strong>한국항공우주(KAI)</strong></td>
+<td>FA-50 전투기, 수리온 헬기</td>
+<td>FA-50 수출 확대</td>
+</tr>
+<tr>
+<td><strong>풍산</strong></td>
+<td>포탄·탄약</td>
+<td>우크라이나 지원 수요</td>
+</tr>
+</tbody>
+</table>
+<h3>방산 투자 리스크</h3>
+<pre><code>리스크:
+1. 지정학적 긴장 완화 시 모멘텀 소멸
+2. 정치적 결정에 의한 수출 계약 취소
+3. 금리 상승 시 방산 기업 금융비용 증가
+4. 과열된 밸류에이션 (PER 30배 이상 경계)
+
+모니터링 지표:
+→ NATO 각국 국방비 예산
+→ 한국 방산 수출 계약 발표
+→ 러-우 전쟁 종전 협상 진행
+</code></pre>
+<hr />
+<h2>4. 원전 투자 사이클</h2>
+<h3>원전 르네상스 배경</h3>
+<pre><code>2022년 이후 원전 재평가:
+1. 탄소중립 2050 → 무탄소 에너지 필요
+2. AI 데이터센터 전력 수요 급증 → 안정적 기저전력 필요
+3. 러시아-우크라이나 전쟁 → 에너지 안보 중요성
+4. 유럽 원전 재가동 결정 (독일 제외)
+5. 미국 소형모듈원전(SMR) 개발 가속
+
+2024년 핵심 사건:
+→ 마이크로소프트, Google, 아마존 원전 구매 계약
+→ 미국 스리마일 아일랜드 원전 재가동 결정 (MS와 계약)
+→ SMR(소형모듈원전) 건설 허가 진행
+</code></pre>
+<h3>원전 밸류체인</h3>
+<pre><code>1. 원자력 발전 사업자:
+   → 한국전력(KEPCO), Constellation Energy(CEG), Duke Energy
+
+2. 원전 건설·설계:
+   → 두산에너빌리티 (원자로 핵심 기기 공급)
+   → 한전기술 (원전 설계·엔지니어링)
+   → GS건설, 현대건설 (원전 시공)
+
+3. 핵연료:
+   → Cameco(캐나다, 우라늄 채굴)
+   → 한전원자력연료
+
+4. 소형모듈원전(SMR):
+   → NuScale Power (미국 상장, 첫 SMR 설계 인증)
+   → TerraPower (빌 게이츠 설립)
+   → 두산에너빌리티 (SMR 기기 공급 계약)
+</code></pre>
+<h3>국내 원전주</h3>
+<table>
+<thead>
+<tr>
+<th>종목</th>
+<th>역할</th>
+<th>모멘텀</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>두산에너빌리티</strong></td>
+<td>원자로 핵심 기기 (증기발생기·원자로용기)</td>
+<td>체코 원전 수주, SMR</td>
+</tr>
+<tr>
+<td><strong>한전기술</strong></td>
+<td>원전 설계·엔지니어링</td>
+<td>원전 수출 확대</td>
+</tr>
+<tr>
+<td><strong>우진</strong></td>
+<td>원전 계측·제어 기기</td>
+<td>신규 원전 수주</td>
+</tr>
+<tr>
+<td><strong>비에이치아이</strong></td>
+<td>원전 보조기기</td>
+<td>수출 수혜</td>
+</tr>
+<tr>
+<td><strong>한국전력</strong></td>
+<td>원전 운영·판매</td>
+<td>전기요금 인상 시 실적 개선</td>
+</tr>
+</tbody>
+</table>
+<h3>원전 투자 리스크</h3>
+<pre><code>리스크:
+1. 정권 교체에 따른 에너지 정책 변화
+2. 원전 사고 (후쿠시마 같은 사건)
+3. 건설 비용 초과·납기 지연 (웨스팅하우스 파산 선례)
+4. 우라늄 가격 변동성
+
+체코 원전 수주 (2024):
+→ 한국 팀 우선협상대상자 선정
+→ 2개 기 총 24조원 규모 (한전컨소시엄)
+→ 최종 계약 후 두산에너빌리티·한전기술 수혜
+</code></pre>
+<hr />
+<h2>5. 테마 투자 실전 원칙</h2>
+<h3>3가지 핵심 질문</h3>
+<pre><code>테마주 투자 전 체크리스트:
+□ 지금 사이클 어느 단계인가? (태동 vs 과열)
+□ 테마를 뒷받침할 실적이 있는가? (기대 vs 현실)
+□ 실제 수혜를 받는 종목인가? (직접 vs 간접)
+
+직접 수혜: AI → 엔비디아 GPU → 확실한 매출
+간접 수혜: AI → 전선 수요 증가 → LS전선 → 불확실
+
+간접 수혜 종목은 테마 열기가 식으면 급락 가능
+</code></pre>
+<h3>포트폴리오 내 테마주 비중</h3>
+<table>
+<thead>
+<tr>
+<th>투자 성향</th>
+<th>테마주 비중</th>
+<th>핵심 종목 수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>보수적</td>
+<td>5~10%</td>
+<td>1~2개</td>
+</tr>
+<tr>
+<td>중립</td>
+<td>10~20%</td>
+<td>2~5개</td>
+</tr>
+<tr>
+<td>공격적</td>
+<td>20~30%</td>
+<td>5~10개</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>전체의 20% 이상을 단일 테마에 집중 금지<br />
+여러 테마 동시 진행 시 각 테마별 10% 이내</p>
+</blockquote>
+<h3>테마별 진입·청산 신호</h3>
+<pre><code>진입 신호:
+- 기관·외국인 순매수 시작
+- 증권사 리포트 1~2개 등장
+- 뉴스 빈도 증가 초반부
+- 해당 업종 PER이 역사적 평균 이하
+
+청산 신호:
+- 포털 실시간 검색어 상위 등장
+- 모든 증권사 매수 의견
+- PER이 역사적 평균의 2배 이상
+- 관련 테마 ETF 자금 급격히 유입
+- 비관련 종목들도 테마 편입 주장
+</code></pre>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>
