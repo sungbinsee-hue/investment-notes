@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주식 트레이딩 용어 사전 — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세전략">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="주식기업분석">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+    <li class="current"><a href="../주식/32.html">트레이딩 용어 사전</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="ETF완전가이드">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩유안타증권">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>📈 주식 · 기업 분석</span><span class="sep">›</span><span>주식 트레이딩 용어 사전</span></div>
+<article class="content">
+<h1>주식 트레이딩 용어 사전</h1>
+<blockquote>
+<p>레버리지·공매도·매매 전략 등 실전 트레이딩에 필요한 핵심 용어를 예시·장단점과 함께 정리합니다.</p>
+</blockquote>
+<hr />
+<h2>1. 포지션 기본</h2>
+<h3>롱 (Long)</h3>
+<p>주가 상승에 베팅해 매수 보유하는 포지션.</p>
+<ul>
+<li><strong>예시</strong>: "삼성전자 오를 것 같아 10주 매수 → 롱 포지션"</li>
+<li>가장 일반적인 투자 방식</li>
+</ul>
+<h3>숏 (Short)</h3>
+<p>주가 하락에 베팅해 공매도(빌려서 판 뒤 싸게 사서 갚기)하는 포지션.</p>
+<ul>
+<li><strong>예시</strong>: "삼성전자 내릴 것 같아 10주 빌려서 매도 → 하락 후 싸게 매수 → 차익 실현"</li>
+<li>손실이 이론상 무한대 (주가가 계속 오르면 손실 무한 증가)</li>
+</ul>
+<h3>포지션 청산</h3>
+<p>보유 중인 포지션을 종료하는 것.</p>
+<ul>
+<li>롱 청산 → 보유 주식 매도</li>
+<li>숏 청산 → 공매도한 주식 매수(환매수)</li>
+</ul>
+<hr />
+<h2>2. 레버리지 &amp; 신용 거래</h2>
+<h3>레버리지 (Leverage)</h3>
+<p>내 자본보다 더 큰 금액으로 투자해 수익·손실을 배가시키는 구조.</p>
+<table>
+<thead>
+<tr>
+<th>투자금</th>
+<th>빌린 돈</th>
+<th>총 투자</th>
+<th>레버리지 배율</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1,000만원</td>
+<td>1,000만원</td>
+<td>2,000만원</td>
+<td>2배</td>
+</tr>
+<tr>
+<td>1,000만원</td>
+<td>2,000만원</td>
+<td>3,000만원</td>
+<td>3배</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>장점</strong>: 수익 배가 — 주가 10% 상승 시 2배 레버리지면 실질 수익 20%</li>
+<li><strong>단점</strong>: 손실도 배가 — 주가 10% 하락 시 실질 손실 20%</li>
+</ul>
+<h3>빚투 (빚 + 투자)</h3>
+<p>대출·신용을 이용한 주식 투자의 통칭. 신용매수·미수거래·스탁론 모두 포함.</p>
+<div class="callout callout-warning"><div class="callout-title">⚠️ 핵심 위험</div><div class="callout-body">
+
+주가 하락 시 원금 이상 손실 가능 + 이자 비용 발생 + 반대매매 위험
+
+</div></div>
+
+<h3>신용매수</h3>
+<p>증권사가 보유 주식을 담보로 돈을 빌려줘 추가 매수하는 것.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>한도</td>
+<td>보유 주식 평가액의 최대 140~150%</td>
+</tr>
+<tr>
+<td>이자</td>
+<td>연 6~10% 수준</td>
+</tr>
+<tr>
+<td>기간</td>
+<td>최대 90일 (연장 가능)</td>
+</tr>
+<tr>
+<td>위험</td>
+<td>담보 주식 하락 시 반대매매</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>예시</strong>: 보유 주식 1,000만원 → 신용으로 500만원 추가 대출 → 총 1,500만원 투자</li>
+</ul>
+<h3>미수거래</h3>
+<p>증거금(30~40%)만 있어도 전체 금액으로 매수하고, 결제일(T+2) 안에 나머지 대금 납입.</p>
+<ul>
+<li><strong>예시</strong>: 100만원으로 증거금 40%짜리 주식 250만원어치 매수</li>
+<li><strong>장점</strong>: 단기 레버리지, 결제일까지 주가 오르면 차익 실현 가능</li>
+<li><strong>단점</strong>: 결제일까지 잔금 미납 → 즉시 <strong>반대매매</strong> 발생</li>
+</ul>
+<h3>스탁론 (Stock Loan)</h3>
+<p>증권사·저축은행에서 주식을 담보로 현금 대출받아 별도 투자에 활용.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>한도</td>
+<td>담보 주식 평가액의 50~70%</td>
+</tr>
+<tr>
+<td>이자</td>
+<td>연 5~9%</td>
+</tr>
+<tr>
+<td>위험</td>
+<td>담보 비율 미달 시 추가 담보 요구 또는 강제 청산</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. 반대매매 ⚠️</h2>
+<p>증권사가 신용·미수 상환 불이행 시 <strong>강제로 시장가 매도</strong>하는 것.</p>
+<ul>
+<li>투자자 의사와 무관하게 매도</li>
+<li>주로 개장 직후 <strong>최악의 시점</strong>에 체결되는 경우 많음</li>
+<li>연쇄 반대매매 → 주가 추가 하락 악순환</li>
+</ul>
+<blockquote>
+<p><strong>예시</strong>: 신용으로 매수한 주식이 담보 비율 아래로 하락 → 증권사가 시장가로 강제 매도 → 손실 확정</p>
+</blockquote>
+<hr />
+<h2>4. 공매도 관련</h2>
+<h3>공매도 (Short Selling)</h3>
+<p>없는 주식을 빌려 매도하고, 나중에 싸게 사서 갚아 차익 실현.</p>
+<pre><code>빌려서 매도(10만원) → 주가 하락 → 매수 후 반환(8만원) → 2만원 수익
+빌려서 매도(10만원) → 주가 상승 → 매수 후 반환(13만원) → 3만원 손실
+</code></pre>
+<ul>
+<li><strong>장점</strong>: 하락장에서도 수익 가능, 시장 가격 발견 기능</li>
+<li><strong>단점</strong>: 손실 무한대, 개인 접근 제한적</li>
+<li><strong>한국</strong>: 기관·외국인 중심, 개인은 대주거래로 일부 가능</li>
+</ul>
+<h3>대주거래</h3>
+<p>개인 투자자가 증권사에서 주식을 빌려 공매도하는 것.</p>
+<ul>
+<li>빌릴 수 있는 종목·수량 제한적</li>
+<li>대여 이자 발생</li>
+</ul>
+<h3>숏 스퀴즈 (Short Squeeze)</h3>
+<p>공매도가 많은 주식이 급등 → 손실 방어를 위한 공매도 투자자들의 일제 환매수 → 주가 폭등.</p>
+<ul>
+<li><strong>예시</strong>: 2021년 게임스탑(GME) — 개인투자자 집단 매수로 공매도 세력 수천억 손실</li>
+</ul>
+<hr />
+<h2>5. ETF 레버리지 · 인버스</h2>
+<h3>레버리지 ETF</h3>
+<p>지수 일일 수익률의 2배(2x) 또는 3배(3x)를 추종하는 ETF.</p>
+<table>
+<thead>
+<tr>
+<th>ETF명</th>
+<th>기초지수</th>
+<th>배율</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KODEX 레버리지</td>
+<td>코스피200</td>
+<td>2x</td>
+</tr>
+<tr>
+<td>KODEX 코스닥150 레버리지</td>
+<td>코스닥150</td>
+<td>2x</td>
+</tr>
+<tr>
+<td>TIGER 미국S&amp;P500 레버리지</td>
+<td>S&amp;P500</td>
+<td>2x</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-warning"><div class="callout-title">⚠️ 변동성 손실 (Volatility Decay)</div><div class="callout-body">
+
+횡보장에서 장기 보유 시 지수는 제자리여도 ETF 가치 감소.
+100만원 → +10% → 110만원 → -10% → **99만원** (2배 레버리지는 96만원)
+
+</div></div>
+
+<h3>인버스 ETF</h3>
+<p>지수 하락 시 수익이 나는 ETF. 공매도 효과.</p>
+<table>
+<thead>
+<tr>
+<th>ETF명</th>
+<th>효과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KODEX 인버스</td>
+<td>코스피200 -1% → ETF +1%</td>
+</tr>
+<tr>
+<td>KODEX 200 선물 인버스 2X</td>
+<td>코스피200 -1% → ETF +2%</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>용도</strong>: 하락 헤징, 단기 하락 베팅</li>
+<li><strong>장기 보유 비권장</strong>: 변동성 손실 동일하게 적용</li>
+</ul>
+<hr />
+<h2>6. 매매 전략 용어</h2>
+<h3>물타기 (Averaging Down)</h3>
+<p>주가 하락 시 추가 매수해 평균 매입 단가를 낮추는 전략.</p>
+<pre><code>1만원에 100주 매수 → 8천원으로 하락 → 8천원에 100주 추가 매수
+→ 평단: (1,000,000 + 800,000) ÷ 200 = 9,000원
+</code></pre>
+<ul>
+<li><strong>장점</strong>: 반등 시 손익분기점 낮아져 빠른 수익 전환</li>
+<li><strong>단점</strong>: 하락 지속 시 손실 규모 확대, "떨어지는 칼날 잡기" 위험</li>
+</ul>
+<h3>불타기 (Averaging Up)</h3>
+<p>주가 상승 시 추가 매수해 수익을 극대화하는 전략.</p>
+<ul>
+<li><strong>장점</strong>: 상승 추세 확인 후 진입 → 추세 추종 전략</li>
+<li><strong>단점</strong>: 평균 단가 상승 → 조정 시 손실 전환 빠름</li>
+</ul>
+<h3>분할매수 / 분할매도</h3>
+<p>한 번에 전량 매수·매도하지 않고 나눠서 거래.</p>
+<ul>
+<li><strong>예시</strong>: 1,000만원을 4회에 걸쳐 250만원씩 분할매수</li>
+<li><strong>장점</strong>: 타이밍 리스크 분산</li>
+<li><strong>단점</strong>: 급등·급락 시 최적 수익 놓칠 수 있음</li>
+</ul>
+<h3>손절 (Stop Loss)</h3>
+<p>손실 확대를 막기 위해 기준 하락률 도달 시 매도.</p>
+<ul>
+<li><strong>예시</strong>: "-10% 하락하면 무조건 매도" 규칙 설정</li>
+<li>손절선 없이 버티다 → 물타기 반복 → 대규모 손실로 이어지는 경우 多</li>
+</ul>
+<h3>익절 (Take Profit)</h3>
+<p>목표 수익률 도달 시 매도해 수익 확정.</p>
+<ul>
+<li><strong>예시</strong>: "+20% 되면 절반 매도, +30% 되면 전량 매도"</li>
+<li>목표가 없으면 욕심에 고점에서 못 팔고 다시 하락하는 경우 多</li>
+</ul>
+<h3>뇌동매매</h3>
+<p>남의 말·차트·분위기에 휩쓸려 원칙 없이 매매하는 것.</p>
+<ul>
+<li>커뮤니티 추천글 보고 충동 매수, 급등 소식에 시장가 매수 등</li>
+<li>손실의 주요 원인 중 하나</li>
+</ul>
+<hr />
+<h2>7. 가격·시장 용어</h2>
+<table>
+<thead>
+<tr>
+<th>용어</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>상한가</strong></td>
+<td>하루 최대 상승 폭 도달 (+30%)</td>
+</tr>
+<tr>
+<td><strong>하한가</strong></td>
+<td>하루 최대 하락 폭 도달 (-30%)</td>
+</tr>
+<tr>
+<td><strong>따상</strong></td>
+<td>공모주가 공모가 2배로 시초가 형성 + 상한가 마감</td>
+</tr>
+<tr>
+<td><strong>따상상</strong></td>
+<td>따상 다음 날도 상한가 (매우 드묾)</td>
+</tr>
+<tr>
+<td><strong>갭상승 / 갭하락</strong></td>
+<td>전날 종가와 당일 시가 사이 큰 차이 (호재·악재 overnight 반영)</td>
+</tr>
+<tr>
+<td><strong>시초가</strong></td>
+<td>장 시작 직후 첫 체결 가격</td>
+</tr>
+<tr>
+<td><strong>종가</strong></td>
+<td>장 마감 마지막 체결 가격</td>
+</tr>
+<tr>
+<td><strong>52주 신고가</strong></td>
+<td>최근 1년 중 가장 높은 주가</td>
+</tr>
+<tr>
+<td><strong>52주 신저가</strong></td>
+<td>최근 1년 중 가장 낮은 주가</td>
+</tr>
+<tr>
+<td><strong>시장가</strong></td>
+<td>현재 가격으로 즉시 체결 주문</td>
+</tr>
+<tr>
+<td><strong>지정가</strong></td>
+<td>원하는 가격을 지정해 주문 (미체결 가능)</td>
+</tr>
+<tr>
+<td><strong>호가</strong></td>
+<td>매수·매도 주문이 쌓인 가격 단계</td>
+</tr>
+<tr>
+<td><strong>거래량</strong></td>
+<td>하루 동안 체결된 주식 수</td>
+</tr>
+<tr>
+<td><strong>거래대금</strong></td>
+<td>하루 동안 체결된 총 금액</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>8. 세력·수급 용어</h2>
+<table>
+<thead>
+<tr>
+<th>용어</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>수급</strong></td>
+<td>매수세(사려는 힘) vs 매도세(팔려는 힘)의 균형</td>
+</tr>
+<tr>
+<td><strong>외인 (외국인)</strong></td>
+<td>외국인 투자자 — 대량 매매가 지수에 큰 영향</td>
+</tr>
+<tr>
+<td><strong>기관</strong></td>
+<td>국민연금·자산운용사·보험사 등 기관투자자</td>
+</tr>
+<tr>
+<td><strong>개미</strong></td>
+<td>개인 소액 투자자</td>
+</tr>
+<tr>
+<td><strong>동학개미</strong></td>
+<td>2020년 외국인 대량 매도를 개인들이 집중 매수한 현상에서 유래</td>
+</tr>
+<tr>
+<td><strong>세력</strong></td>
+<td>특정 주식을 집중 매수해 가격을 끌어올리는 큰손</td>
+</tr>
+<tr>
+<td><strong>작전주</strong></td>
+<td>세력이 인위적으로 가격을 조작하는 주식</td>
+</tr>
+<tr>
+<td><strong>주포</strong></td>
+<td>특정 종목에서 주도적으로 매매하는 세력</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>9. 기타 실전 용어</h2>
+<table>
+<thead>
+<tr>
+<th>용어</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>시드 (Seed)</strong></td>
+<td>투자 원금·투자 자본금</td>
+</tr>
+<tr>
+<td><strong>평단 (평균단가)</strong></td>
+<td>여러 번 매수한 주식의 평균 매입 가격</td>
+</tr>
+<tr>
+<td><strong>홀딩 / 존버</strong></td>
+<td>하락에도 버티며 보유 (Hold)</td>
+</tr>
+<tr>
+<td><strong>루머매수 뉴스매도</strong></td>
+<td>기대감에 미리 매수 → 뉴스 발표 직후 매도 (Buy the rumor, sell the news)</td>
+</tr>
+<tr>
+<td><strong>헤징 (Hedging)</strong></td>
+<td>손실 위험을 줄이기 위해 반대 포지션을 동시 보유</td>
+</tr>
+<tr>
+<td><strong>마진콜</strong></td>
+<td>선물·레버리지 거래에서 증거금 부족 시 추가 납입 요구</td>
+</tr>
+<tr>
+<td><strong>롤오버</strong></td>
+<td>선물 만기 도래 시 다음 만기 계약으로 갈아타기</td>
+</tr>
+<tr>
+<td><strong>콜옵션</strong></td>
+<td>특정 가격에 살 수 있는 권리 (상승에 베팅)</td>
+</tr>
+<tr>
+<td><strong>풋옵션</strong></td>
+<td>특정 가격에 팔 수 있는 권리 (하락에 베팅)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>10. 핵심 위험 요약</h2>
+<div class="callout callout-danger"><div class="callout-title">🚨 레버리지·빚투</div><div class="callout-body">
+
+수익 극대화지만 하락 시 원금 초과 손실 + 이자 비용 + 반대매매 위험.
+**투자 원칙**: 레버리지는 감당 가능한 범위 내에서만.
+
+</div></div>
+
+<div class="callout callout-danger"><div class="callout-title">🚨 공매도</div><div class="callout-body">
+
+이론상 손실 무한대. 주가가 계속 오르면 손실이 무한히 증가.
+
+</div></div>
+
+<div class="callout callout-warning"><div class="callout-title">⚠️ 레버리지 ETF 장기보유</div><div class="callout-body">
+
+변동성 손실(Volatility Decay)로 횡보장에서도 원금 감소.
+단기 트레이딩 용도에 적합, 장기 적립식 비권장.
+
+</div></div>
+
+<div class="callout callout-warning"><div class="callout-title">⚠️ 물타기 남용</div><div class="callout-body">
+
+하락 추세 종목에 반복 물타기 → 손실 규모 기하급수 증가.
+손절 기준 없는 물타기는 치명적.
+
+</div></div>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>
