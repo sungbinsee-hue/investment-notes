@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>해외 ETF TOP10 분석 (2026) — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="주식">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="etf">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li class="current"><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>📦 ETF</span><span class="sep">›</span><span>해외 ETF TOP10 분석 (2026)</span></div>
+<article class="content">
+<h1>해외 ETF TOP10 완전 분석 (2026년 5월)</h1>
+<blockquote>
+<p>✅=확인된 수치, 📊=추정치. 환율 1달러 ≈ 1,400원 기준.</p>
+</blockquote>
+<hr />
+<h2>PART 1 — 미국 ETF 순자산 TOP10 (글로벌 최대)</h2>
+<table>
+<thead>
+<tr>
+<th>순위</th>
+<th>ETF명</th>
+<th>티커</th>
+<th>운용사</th>
+<th>AUM(총자산)</th>
+<th>NAV</th>
+<th>보수율</th>
+<th>추종 지수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>Vanguard S&amp;P500</strong></td>
+<td>VOO</td>
+<td>Vanguard</td>
+<td><strong><span class="math-inline">$926.55B ✅</strong></td>
+<td>$</span>660.59 ✅</td>
+<td>0.03%</td>
+<td>S&amp;P 500</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>SPDR S&amp;P500</strong></td>
+<td>SPY</td>
+<td>State Street</td>
+<td>~<span class="math-inline">$580B 📊</td>
+<td>~$</span>595 📊</td>
+<td>0.0945%</td>
+<td>S&amp;P 500</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>iShares S&amp;P500</strong></td>
+<td>IVV</td>
+<td>BlackRock</td>
+<td>~<span class="math-inline">$560B 📊</td>
+<td>~$</span>595 📊</td>
+<td>0.03%</td>
+<td>S&amp;P 500</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>Invesco QQQ</strong></td>
+<td>QQQ</td>
+<td>Invesco</td>
+<td>~<span class="math-inline">$320B 📊</td>
+<td>~$</span>520 📊</td>
+<td>0.20%</td>
+<td>나스닥100</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><strong>Schwab US Dividend</strong></td>
+<td>SCHD</td>
+<td>Schwab</td>
+<td><strong><span class="math-inline">$91.12B ✅</strong></td>
+<td><strong>$</span>32.06 ✅</strong></td>
+<td>0.06%</td>
+<td>다우존스 배당100</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td><strong>Vanguard Total Market</strong></td>
+<td>VTI</td>
+<td>Vanguard</td>
+<td>~<span class="math-inline">$450B 📊</td>
+<td>~$</span>280 📊</td>
+<td>0.03%</td>
+<td>CRSP US Total</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td><strong>SPDR Gold Shares</strong></td>
+<td>GLD</td>
+<td>State Street</td>
+<td>~<span class="math-inline">$80B 📊</td>
+<td>~$</span>250 📊</td>
+<td>0.40%</td>
+<td>금 현물</td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td><strong>iShares MSCI EM</strong></td>
+<td>EEM</td>
+<td>BlackRock</td>
+<td>~<span class="math-inline">$22B 📊</td>
+<td>~$</span>40 📊</td>
+<td>0.68%</td>
+<td>MSCI 신흥국</td>
+</tr>
+<tr>
+<td><strong>9</strong></td>
+<td><strong>iShares US Treasury</strong></td>
+<td>TLT</td>
+<td>BlackRock</td>
+<td>~<span class="math-inline">$55B 📊</td>
+<td>~$</span>82 📊</td>
+<td>0.15%</td>
+<td>미국 장기국채</td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td><strong>iShares Semiconductor</strong></td>
+<td>SOXX</td>
+<td>BlackRock</td>
+<td>~<span class="math-inline">$16B 📊</td>
+<td>~$</span>240 📊</td>
+<td>0.35%</td>
+<td>반도체 지수</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>해외 ETF AUM 비교 차트</h3>
+<p><div class="mermaid">xychart-beta
+ title "미국 ETF AUM 비교 (십억달러, 2026년 5월)"
+ x-axis ["VOO(S&P500)", "SPY(S&P500)", "IVV(S&P500)", "VTI(미국전체)", "QQQ(나스닥)", "SCHD(배당)", "TLT(장기채)", "GLD(금)", "EEM(신흥국)", "SOXX(반도체)"]
+ y-axis "AUM (십억달러)" 0 --> 1000
+ bar [926, 580, 560, 450, 320, 91, 55, 80, 22, 16]
+</div></p>
+<hr />
+<h2>PART 2 — 카테고리별 해외 ETF 상세 분석</h2>
+<h3>Category 1: S&amp;P500 지수형 ETF 3대장 비교</h3>
+<h4>SPY vs VOO vs IVV — 무엇을 사야 하나?</h4>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th><strong>SPY</strong></th>
+<th><strong>VOO</strong></th>
+<th><strong>IVV</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>운용사</td>
+<td>State Street (SPDR)</td>
+<td>Vanguard</td>
+<td>BlackRock (iShares)</td>
+</tr>
+<tr>
+<td>상장 연도</td>
+<td>1993년 (세계 최초 ETF)</td>
+<td>2010년</td>
+<td>2000년</td>
+</tr>
+<tr>
+<td>AUM</td>
+<td>~<span class="math-inline">$580B 📊</td>
+<td>$</span>926.55B ✅</td>
+<td>~$560B 📊</td>
+</tr>
+<tr>
+<td>보수율</td>
+<td>0.0945%</td>
+<td><strong>0.03%</strong></td>
+<td><strong>0.03%</strong></td>
+</tr>
+<tr>
+<td>NAV</td>
+<td>~<span class="math-inline">$595 📊</td>
+<td>$</span>660.59 ✅</td>
+<td>~$595 📊</td>
+</tr>
+<tr>
+<td>배당수익률</td>
+<td>~1.3% 📊</td>
+<td><strong>1.04% ✅</strong></td>
+<td>~1.3% 📊</td>
+</tr>
+<tr>
+<td>분배 주기</td>
+<td>분기</td>
+<td>분기</td>
+<td>분기</td>
+</tr>
+<tr>
+<td><strong>핵심 장점</strong></td>
+<td>유동성 최강, 옵션시장</td>
+<td>보수 최저+Vanguard 신뢰</td>
+<td>보수 최저+대규모</td>
+</tr>
+<tr>
+<td><strong>한국 투자자 선택</strong></td>
+<td>단기 거래·옵션</td>
+<td><strong>장기 보유 최적</strong></td>
+<td>VOO와 동급</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><span style="color:#e67e22"><strong>[참고]</strong></span> <strong>결론</strong>: 장기 투자자는 <strong>VOO</strong> (보수 0.03%, AUM 9,266억달러 ✅) 또는 IVV. SPY는 단기 트레이딩·옵션 활용 시 선택.</p>
+</blockquote>
+<hr />
+<h3>Category 2: 나스닥100 ETF 비교</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th><strong>QQQ</strong></th>
+<th><strong>QQQM</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>운용사</td>
+<td>Invesco</td>
+<td>Invesco</td>
+</tr>
+<tr>
+<td>AUM</td>
+<td>~<span class="math-inline">$320B 📊</td>
+<td>~$</span>30B 📊</td>
+</tr>
+<tr>
+<td>보수율</td>
+<td>0.20%</td>
+<td>0.15%</td>
+</tr>
+<tr>
+<td>NAV</td>
+<td>~<span class="math-inline">$520 📊</td>
+<td>~$</span>220 📊</td>
+</tr>
+<tr>
+<td>구성종목</td>
+<td>나스닥100 (103개)</td>
+<td>나스닥100 (동일)</td>
+</tr>
+<tr>
+<td>유동성</td>
+<td>압도적</td>
+<td>낮음</td>
+</tr>
+<tr>
+<td><strong>추천 대상</strong></td>
+<td>단기 거래·기관</td>
+<td><strong>장기 개인 투자자</strong> (보수 낮음)</td>
+</tr>
+</tbody>
+</table>
+<h4>QQQ 상위 10개 구성 종목 (2026년 기준)</h4>
+<p><div class="mermaid">pie title "QQQ 상위 종목 비중 (2026년 5월 추정)"
+ "Apple (AAPL)" : 9.5
+ "Microsoft (MSFT)" : 8.5
+ "NVIDIA (NVDA)" : 8.0
+ "Amazon (AMZN)" : 5.5
+ "Meta (META)" : 4.8
+ "Alphabet (GOOGL+GOOG)" : 5.0
+ "Tesla (TSLA)" : 3.2
+ "Broadcom (AVGO)" : 3.0
+ "기타 94개 종목" : 52.5
+</div></p>
+<hr />
+<h3>양호 Category 3: 배당형 ETF 완전 분석</h3>
+<h4>SCHD — 미국 배당 ETF의 왕</h4>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>수치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>티커</strong></td>
+<td>SCHD</td>
+</tr>
+<tr>
+<td><strong>운용사</strong></td>
+<td>Schwab</td>
+</tr>
+<tr>
+<td><strong>AUM</strong></td>
+<td>$91.12B ✅</td>
+</tr>
+<tr>
+<td><strong>NAV</strong></td>
+<td>$32.06 ✅</td>
+</tr>
+<tr>
+<td><strong>배당수익률</strong></td>
+<td>3.27% ✅</td>
+</tr>
+<tr>
+<td><strong>보수율</strong></td>
+<td>0.06%</td>
+</tr>
+<tr>
+<td><strong>보유 종목 수</strong></td>
+<td>103개 ✅</td>
+</tr>
+<tr>
+<td><strong>벤치마크</strong></td>
+<td>다우존스 US Dividend 100</td>
+</tr>
+<tr>
+<td><strong>2026년 YTD 수익률</strong></td>
+<td>+12.29% 📊</td>
+</tr>
+<tr>
+<td><strong>최근 5년 누적</strong></td>
+<td>+28.3% 📊</td>
+</tr>
+<tr>
+<td><strong>배당 지급</strong></td>
+<td>분기 (3,6,9,12월)</td>
+</tr>
+</tbody>
+</table>
+<p><div class="mermaid">flowchart LR
+ SCHD["SCHD<br/>배당성장 전략"]
+ SCHD --> A["10년+ 배당 지급 기업만 선별"]
+ SCHD --> B["재무 건전성 필터<br/>(부채비율·ROE)"]
+ SCHD --> C["배당수익률 + 주가성장<br/>복합 수익 추구"]
+ C --> D["5년 배당성장률<br/>연 평균 12%+ 📊"]
+ A & B & C --> E["103개 종목<br/>분산 투자"]
+</div></p>
+<h4>주요 배당 ETF 비교 (2026년)</h4>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th><strong>SCHD</strong></th>
+<th><strong>VYM</strong></th>
+<th><strong>HDV</strong></th>
+<th><strong>JEPI</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>운용사</td>
+<td>Schwab</td>
+<td>Vanguard</td>
+<td>BlackRock</td>
+<td>JPMorgan</td>
+</tr>
+<tr>
+<td>AUM</td>
+<td><span class="math-inline">$91.12B ✅</td>
+<td>~$</span>55B 📊</td>
+<td>~<span class="math-inline">$12B 📊</td>
+<td>~$</span>35B 📊</td>
+</tr>
+<tr>
+<td>배당수익률</td>
+<td>3.27% ✅</td>
+<td>~3.0% 📊</td>
+<td>~3.8% 📊</td>
+<td>~7~8% 📊</td>
+</tr>
+<tr>
+<td>보수율</td>
+<td>0.06%</td>
+<td>0.06%</td>
+<td>0.08%</td>
+<td>0.35%</td>
+</tr>
+<tr>
+<td>특징</td>
+<td>배당성장</td>
+<td>고배당 분산</td>
+<td>에너지·의료 중심</td>
+<td>커버드콜 월배당</td>
+</tr>
+<tr>
+<td><strong>2026 YTD</strong></td>
+<td>+12.29% 📊</td>
+<td>+8% 📊</td>
+<td>+6% 📊</td>
+<td>+5% 📊</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>위험 Category 4: 섹터 ETF (미국)</h3>
+<h4>미국 11개 섹터 SPDR ETF 현황</h4>
+<table>
+<thead>
+<tr>
+<th>섹터</th>
+<th>티커</th>
+<th>주요 보유 종목</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>정보기술</strong></td>
+<td>XLK</td>
+<td>AAPL·MSFT·NVDA</td>
+<td>2026년 기술주 회복 기대</td>
+</tr>
+<tr>
+<td><strong>헬스케어</strong></td>
+<td>XLV</td>
+<td>LLY·UNH·JNJ</td>
+<td>비만치료제 수혜, 방어주</td>
+</tr>
+<tr>
+<td><strong>금융</strong></td>
+<td>XLF</td>
+<td>JPM·BRK·BAC</td>
+<td>고금리 수혜, 배당</td>
+</tr>
+<tr>
+<td><strong>에너지</strong></td>
+<td>XLE</td>
+<td>XOM·CVX</td>
+<td>유가 연동, 높은 배당</td>
+</tr>
+<tr>
+<td><strong>유틸리티</strong></td>
+<td>XLU</td>
+<td>NEE·DUK</td>
+<td>AI 전력 수요 수혜</td>
+</tr>
+<tr>
+<td><strong>산업재</strong></td>
+<td>XLI</td>
+<td>RTX·HON·GE</td>
+<td>방산·인프라 수혜</td>
+</tr>
+</tbody>
+</table>
+<h4>AI·반도체 집중 섹터 ETF 비교</h4>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th><strong>SOXX</strong></th>
+<th><strong>SMH</strong></th>
+<th><strong>XLK</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>운용사</td>
+<td>BlackRock</td>
+<td>VanEck</td>
+<td>State Street</td>
+</tr>
+<tr>
+<td>AUM</td>
+<td>~<span class="math-inline">$16B 📊</td>
+<td>~$</span>20B 📊</td>
+<td>~$70B 📊</td>
+</tr>
+<tr>
+<td>보수율</td>
+<td>0.35%</td>
+<td>0.35%</td>
+<td>0.09%</td>
+</tr>
+<tr>
+<td>특징</td>
+<td>반도체 30개 집중</td>
+<td>반도체+장비 분산</td>
+<td>IT 전체(반도체 포함)</td>
+</tr>
+<tr>
+<td>NVIDIA 비중</td>
+<td>~20% 📊</td>
+<td>~22% 📊</td>
+<td>~8% 📊</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>중립 Category 5: 채권 ETF (미국)</h3>
+<table>
+<thead>
+<tr>
+<th>ETF명</th>
+<th>티커</th>
+<th>AUM</th>
+<th>만기</th>
+<th>현재 수익률</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>iShares 단기국채</strong></td>
+<td>SHY</td>
+<td>~$25B 📊</td>
+<td>1~3년</td>
+<td>~4.5% 📊</td>
+<td>금리 변동 내성 강함</td>
+</tr>
+<tr>
+<td><strong>iShares 중기국채</strong></td>
+<td>IEF</td>
+<td>~$15B 📊</td>
+<td>7~10년</td>
+<td>~4.6% 📊</td>
+<td>금리인하 수혜 중간</td>
+</tr>
+<tr>
+<td><strong>iShares 장기국채</strong></td>
+<td>TLT</td>
+<td>~$55B 📊</td>
+<td>20년+</td>
+<td>~4.8% 📊</td>
+<td>금리인하 최대 수혜</td>
+</tr>
+<tr>
+<td><strong>Vanguard BND</strong></td>
+<td>BND</td>
+<td>~$110B 📊</td>
+<td>혼합</td>
+<td>~4.3% 📊</td>
+<td>전체 채권시장 분산</td>
+</tr>
+<tr>
+<td><strong>iShares TIPS</strong></td>
+<td>TIP</td>
+<td>~$18B 📊</td>
+<td>물가연동</td>
+<td>인플레+2% 📊</td>
+<td>인플레 헤지</td>
+</tr>
+</tbody>
+</table>
+<p><div class="mermaid">flowchart LR
+ 금리방향{"금리 방향"}
+ 금리방향 --> |"금리 인하 예상"| DOWN["장기채 ETF 매력↑<br/>TLT·IEF<br/>가격 상승 기대"]
+ 금리방향 --> |"금리 유지·상승"| UP["단기채 ETF 유리<br/>SHY·BND<br/>높은 이자 수령"]
+ 금리방향 --> |"인플레 우려"| INF["물가연동채<br/>TIP·VTIP<br/>실질수익 보호"]
+</div></p>
+<hr />
+<h3>Category 6: 글로벌·지역 ETF</h3>
+<table>
+<thead>
+<tr>
+<th>ETF명</th>
+<th>티커</th>
+<th>AUM</th>
+<th>지역</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MSCI 신흥국</strong></td>
+<td>EEM</td>
+<td>~$22B 📊</td>
+<td>EM 전체</td>
+<td>중국·인도·한국 포함</td>
+</tr>
+<tr>
+<td><strong>인도 ETF</strong></td>
+<td>INDA</td>
+<td>~$8B 📊</td>
+<td>인도</td>
+<td>인도 GDP 성장 수혜</td>
+</tr>
+<tr>
+<td><strong>일본 ETF</strong></td>
+<td>EWJ</td>
+<td>~$10B 📊</td>
+<td>일본</td>
+<td>엔화 약세+주주환원 수혜</td>
+</tr>
+<tr>
+<td><strong>유럽 ETF</strong></td>
+<td>VGK</td>
+<td>~$18B 📊</td>
+<td>유럽</td>
+<td>방산·에너지 수혜</td>
+</tr>
+<tr>
+<td><strong>중국 ETF</strong></td>
+<td>KWEB</td>
+<td>~$5B 📊</td>
+<td>중국 인터넷</td>
+<td>규제 불확실성 高</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>PART 3 — 2026년 해외 ETF 수익률 비교</h2>
+<h3>주요 ETF 2026년 YTD 성과 비교</h3>
+<p><div class="mermaid">xychart-beta
+ title "2026년 YTD 수익률 비교 (%, 2026.05 기준)"
+ x-axis ["SCHD(배당성장)", "VOO(S&P500)", "SPY(S&P500)", "QQQ(나스닥)", "TLT(장기채)", "GLD(금)"]
+ y-axis "수익률 (%)" -5 --> 20
+ bar [12.29, 3, -0.53, -2, 2, 15]
+</div></p>
+<blockquote>
+<p><span style="color:#e67e22"><strong>[참고]</strong></span> 2026년 특이사항: SCHD(배당성장)가 QQQ·SPY를 앞서는 이례적 현상 — 금리 불확실성·기술주 조정 영향. 금 ETF(GLD) 급등.</p>
+</blockquote>
+<hr />
+<h3>장기 수익률 비교 (5년·10년)</h3>
+<table>
+<thead>
+<tr>
+<th>ETF</th>
+<th>5년 누적</th>
+<th>10년 누적</th>
+<th>연평균(CAGR)</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>QQQ</strong></td>
+<td>+95.8% 📊</td>
+<td>+400%+ 📊</td>
+<td>~17% 📊</td>
+<td>변동성 高, 기술 집중</td>
+</tr>
+<tr>
+<td><strong>VOO/SPY</strong></td>
+<td>+82.39% 📊</td>
+<td>+300%+ 📊</td>
+<td>~14.57% 📊</td>
+<td>안정적 장기 성과 ✅</td>
+</tr>
+<tr>
+<td><strong>VTI</strong></td>
+<td>+80% 📊</td>
+<td>+290% 📊</td>
+<td>~14% 📊</td>
+<td>미국 전체 시장</td>
+</tr>
+<tr>
+<td><strong>SCHD</strong></td>
+<td>+28.3% 📊</td>
+<td>+180% 📊</td>
+<td>~11% 📊</td>
+<td>배당 포함 시 더 높음</td>
+</tr>
+<tr>
+<td><strong>TLT</strong></td>
+<td>-20% 📊</td>
+<td>-5% 📊</td>
+<td>—</td>
+<td>금리 상승 타격</td>
+</tr>
+<tr>
+<td><strong>GLD</strong></td>
+<td>+60%+ 📊</td>
+<td>+140% 📊</td>
+<td>~9% 📊</td>
+<td>인플레·불확실성 헤지</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>투자 성향별 해외 ETF 선택 가이드</h2>
+<p><div class="mermaid">flowchart TD
+ TYPE{"투자 성향"}
+
+ TYPE --> |"안정 장기"| A["VOO + BND<br/>70:30 배분<br/>연 1회 리밸런싱"]
+ TYPE --> |"성장 집중"| B["QQQ + VOO<br/>50:50 or 70:30<br/>기술주+S&P500 혼합"]
+ TYPE --> |"배당 중심"| C["SCHD + VYM<br/>60:40 혼합<br/>배당수익률 3~4%"]
+ TYPE --> |"올웨더"| D["VOO 40% + QQQ 20%<br/>+ SCHD 20% + TLT 10%<br/>+ GLD 10%"]
+ TYPE --> |"AI·섹터 집중"| E["QQQ 50% + SOXX 30%<br/>+ XLK 20%<br/>변동성 감수"]
+</div></p>
+<hr />
+<h2><span style="color:#e74c3c"><strong>[주의]</strong></span> 해외 ETF 투자 시 주의사항</h2>
+<table>
+<thead>
+<tr>
+<th>리스크</th>
+<th>내용</th>
+<th>대응</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>환율 리스크</strong></td>
+<td>달러/원 변동으로 수익률 달라짐</td>
+<td>국내 상장 해외 ETF 활용 시 절세 가능</td>
+</tr>
+<tr>
+<td><strong>세금 차이</strong></td>
+<td>미국 직접 투자: 양도세 22%, 배당세 15%</td>
+<td>ISA·연금계좌에서 국내 상장 해외 ETF 매수</td>
+</tr>
+<tr>
+<td><strong>거래 시간</strong></td>
+<td>미국장 23:30~06:00(한국)</td>
+<td>시간외 주문 또는 국내 상장 ETF 이용</td>
+</tr>
+<tr>
+<td><strong>통화 비용</strong></td>
+<td>달러 환전 스프레드 0.1~0.3%</td>
+<td>증권사 환전 우대 활용</td>
+</tr>
+<tr>
+<td><strong>금리 민감성</strong></td>
+<td>고PER 성장주 ETF는 금리 상승 시 취약</td>
+<td>채권·배당 ETF로 분산</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p><strong>연결 노트</strong>: <a href="../etf/21.html" class="wikilink">21. ETF 완전 가이드 허브</a> | <a href="../etf/22.html" class="wikilink">22. 국내 ETF TOP10 분석 (2026)</a> | <a href="../etf/24.html" class="wikilink">24. 국내·해외 ETF 종합 비교 마스터</a></p>
+</blockquote>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>

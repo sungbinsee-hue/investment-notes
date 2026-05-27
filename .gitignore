@@ -1,0 +1,7 @@
+build.py
+watch.py
+start_watcher.sh
+watch.log
+*.pyc
+__pycache__/
+.DS_Store

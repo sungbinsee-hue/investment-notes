@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>국민성장펀드 심층 분석 — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group active" data-group="절세">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li class="current"><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="주식">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="etf">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>🛡️ 절세 전략</span><span class="sep">›</span><span>국민성장펀드 심층 분석</span></div>
+<article class="content">
+<h1>국민성장펀드 심층 분석 (2026)</h1>
+<blockquote>
+<p><strong>판매</strong>: 2026-05-22 ~ 06-11 | <strong>주관</strong>: KDB 한국산업은행<br />
+<strong>형태</strong>: 사모재간접공모펀드 (폐쇄형, 5년 만기) | <strong>한도</strong>: 5년 누적 2억 원</p>
+</blockquote>
+<hr />
+<h2>1. 펀드 설계 구조 — 실제로 어디에 투자되나</h2>
+<pre><code>[국민 투자금 (공모 모펀드)]
+         │
+         ▼ 자펀드 분산 투자
+┌─────────────────────────────────┐
+│  자펀드 A (사모 PE)  │ 반도체   │ ◀─ 정부 후순위 출자 (손실 20% 우선 부담)
+│  자펀드 B (사모 VC)  │ AI/바이오 │
+│  자펀드 C (사모 펀드) │ 방산/수소 │
+└─────────────────────────────────┘
+
+의무 비율:
+  - 첨단전략산업 60% 이상
+  - 비상장·기술특례 30% 이상 (← 이게 핵심 리스크 요인)
+</code></pre>
+<p><strong>재간접 구조의 의미</strong>: 국민이 투자하는 모펀드는 공모지만, 실제 운용은 다수의 사모펀드 운용사가 담당한다. 즉, 운용 투명성이 일반 공모펀드보다 낮고, 개별 자펀드의 투자 내역을 실시간으로 확인하기 어렵다.</p>
+<hr />
+<h2>2. 세제 혜택 구조 — 정밀 분해</h2>
+<h3>2-1. 소득공제 구간</h3>
+<table>
+<thead>
+<tr>
+<th>투자 구간</th>
+<th>공제율</th>
+<th>구간별 최대 공제</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 ~ 3,000만 원</td>
+<td><strong>40%</strong></td>
+<td>1,200만 원</td>
+</tr>
+<tr>
+<td>3,000만 ~ 5,000만 원</td>
+<td><strong>20%</strong></td>
+<td>400만 원</td>
+</tr>
+<tr>
+<td>5,000만 ~ 7,000만 원</td>
+<td><strong>10%</strong></td>
+<td>200만 원</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td></td>
+<td><strong>최대 1,800만 원</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>소득공제 vs 세액공제 혼동 주의</strong><br />
+1,200만 원 소득공제 = 과세표준이 1,200만 원 줄어드는 것<br />
+실제 세금 절감: 1,200만 원 × 16.5%(세율) = <strong>198만 원</strong></p>
+</blockquote>
+<h3>2-2. 투자금별 상세 절세 계산</h3>
+<table>
+<thead>
+<tr>
+<th>투자금</th>
+<th>소득공제액</th>
+<th>절세액 (세율 16.5%)</th>
+<th>투자 대비 절세율</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>500만 원</td>
+<td>200만 원</td>
+<td><strong>33만 원</strong></td>
+<td>6.6%</td>
+</tr>
+<tr>
+<td>1,000만 원</td>
+<td>400만 원</td>
+<td><strong>66만 원</strong></td>
+<td>6.6%</td>
+</tr>
+<tr>
+<td>3,000만 원</td>
+<td>1,200만 원</td>
+<td><strong>198만 원</strong></td>
+<td>6.6%</td>
+</tr>
+<tr>
+<td>5,000만 원</td>
+<td>1,600만 원</td>
+<td><strong>264만 원</strong></td>
+<td>5.3%</td>
+</tr>
+<tr>
+<td>7,000만 원</td>
+<td>1,800만 원</td>
+<td><strong>297만 원</strong></td>
+<td>4.2%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>결론</strong>: 3,000만 원 이하 구간(40% 공제)이 단위당 절세 효율이 가장 높다. 7,000만 원까지 넣어도 증분 절세효과(추가 99만 원)가 투자금 증가(2,000만 원)에 비해 급감한다.</p>
+<h3>2-3. 배당소득 분리과세</h3>
+<ul>
+<li>펀드 배당 수령 시: <strong>9.9%</strong> 분리과세 (5년간)</li>
+<li>일반 배당소득세: 15.4%</li>
+<li>금융소득종합과세(연 2,000만 원 초과) 대상 여부와 무관하게 분리 과세</li>
+</ul>
+<h3>2-4. 정부 손실 보전</h3>
+<ul>
+<li>각 자펀드별 손실 발생 시 <strong>정부가 20%까지 우선 흡수</strong></li>
+<li>단, 이는 자펀드 단위 적용 — 특정 자펀드의 40% 손실 발생 시 → 정부 20% 흡수, 국민 20% 부담</li>
+<li>전체 원금 보장이 아님. 자펀드 포트폴리오 다각화가 실질 방어선</li>
+</ul>
+<hr />
+<h2>3. 수익률 현실 — 전례 데이터로 분석</h2>
+<h3>뉴딜펀드(2021) 실적 추적</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>수치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>청산 펀드 수</td>
+<td>10개</td>
+</tr>
+<tr>
+<td>내부수익률 (IRR) 평균</td>
+<td><strong>2.14%</strong></td>
+</tr>
+<tr>
+<td>정부 손실 부담 제외 자펀드 수익률</td>
+<td><strong>0.75%</strong></td>
+</tr>
+<tr>
+<td>당시 1년 예금금리</td>
+<td>2~3%</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>핵심 시사점</strong>: 정부가 손실을 흡수해줬는데도 2.14%. 그 효과를 빼면 0.75%. 예금보다 나쁜 수익률.</p>
+</blockquote>
+<h3>2026 국민성장펀드 수익률 시나리오 (3,000만 원 투자)</h3>
+<table>
+<thead>
+<tr>
+<th>시나리오</th>
+<th>연 수익률</th>
+<th>5년 후 원리금</th>
+<th>투자 수익</th>
+<th>절세 포함 총이익</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>낙관 (목표 달성)</td>
+<td>연 6%</td>
+<td>4,015만 원</td>
+<td>+1,015만 원</td>
+<td><strong>+1,213만 원</strong></td>
+</tr>
+<tr>
+<td>중립</td>
+<td>연 3%</td>
+<td>3,478만 원</td>
+<td>+478만 원</td>
+<td><strong>+676만 원</strong></td>
+</tr>
+<tr>
+<td>보수 (뉴딜펀드 전례)</td>
+<td>연 2.14%</td>
+<td>3,337만 원</td>
+<td>+337만 원</td>
+<td><strong>+535만 원</strong></td>
+</tr>
+<tr>
+<td>비관</td>
+<td>연 0%</td>
+<td>3,000만 원</td>
+<td>0</td>
+<td><strong>+198만 원</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>배당 수익은 9.9% 세금 별도. 위 수익에서 차감 필요.</p>
+</blockquote>
+<hr />
+<h2>4. 장단점 — 전문가 시각</h2>
+<h3>장점</h3>
+<p><strong>[1] 소득공제 3,000만 원 구간의 확정 수익성</strong><br />
+40% 소득공제는 수익률과 무관한 확정 혜택이다. 3,000만 원 투자 시 198만 원은 원금 대비 6.6%의 즉각적 수익과 동일한 효과다. 투자 첫 해 연말정산에서 회수된다.</p>
+<p><strong>[2] 비상장 초기 기업 접근</strong><br />
+개인이 직접 접근하기 어려운 VC/PE 투자 영역에 간접 참여 가능. AI·반도체·바이오 성장 기업에 대한 분산 익스포져(Exposure).</p>
+<p><strong>[3] 하방 리스크 제한 (정부 20% 손실 흡수)</strong><br />
+완전한 보장은 아니지만, 펀드 전체가 20% 이상 손실 나지 않는다면 원금 유지 가능성이 높다.</p>
+<h3>단점</h3>
+<p><strong>[1] 유동성 완전 차단 — 가장 큰 리스크</strong><br />
+5년간 중도 환매 불가. 거래소 상장 후 매도 가능하나 거래량이 극히 적어 기준가 이하 할인 거래 가능성 높음. 갑작스러운 의료비, 전세 문제, 취업 공백 등 불확실한 현금 필요 상황에 전혀 대응 불가.</p>
+<p><strong>[2] 수익률 불확실 + 뉴딜 전례</strong><br />
+연 6%는 목표(성과보수 기준선)일 뿐, 과거 유사 정책펀드가 실제로 보여준 숫자는 0.75~2.14%. 정책 의무 비율(비상장 30% 이상) 준수로 운용사의 탄력적 자산 배분이 제약됨.</p>
+<p><strong>[3] 3년 내 해지 시 세액 전액 추징</strong><br />
+불가피한 이유로 3년 전 해지 시 → 받은 소득공제 세금 환급액 + 이자 전액 정부 추징. 즉, 유동성 위기 상황에 세금 폭탄이 더해짐.</p>
+<p><strong>[4] 비상장 비율 30% 의무의 함의</strong><br />
+비상장 주식은 가치 평가가 불투명하고, 경기 침체나 기술 실패 시 유동화 자체가 불가능할 수 있음. 국민 입장에서 투자 내역 추적이 어려운 블랙박스 구조.</p>
+<hr />
+<h2>5. 종합 판단 매트릭스</h2>
+<table>
+<thead>
+<tr>
+<th>판단 항목</th>
+<th>상황</th>
+<th>권고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>비상금 6개월치 보유?</td>
+<td>필수 선행</td>
+<td>없으면 가입 보류</td>
+</tr>
+<tr>
+<td>5년 내 대형 지출 계획?</td>
+<td>전세, 결혼, 유학 등</td>
+<td>있으면 비추</td>
+</tr>
+<tr>
+<td>절세가 주목적인가?</td>
+<td>198만 원은 확정</td>
+<td>소액(500~1,000만) 가능</td>
+</tr>
+<tr>
+<td>수익 기대가 주목적인가?</td>
+<td>뉴딜 전례 고려</td>
+<td>비권고</td>
+</tr>
+<tr>
+<td>ISA·IRP 한도 소진했나?</td>
+<td>선행 처리 권고</td>
+<td>IRP 먼저 (세액공제)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>최종 의견</strong>: 소득공제 효과만을 겨냥해 3,000만 원 이하 소액(특히 500~1,000만 원) 진입 시 risk-adjusted 관점에서 합리적. 고수익 기대로 5,000만 원 이상 넣는 것은 뉴딜 전례 기준 비권고.</p>
+</blockquote>
+<hr />
+<h2>6. 비교 대안 상품</h2>
+<table>
+<thead>
+<tr>
+<th>상품</th>
+<th>절세 방식</th>
+<th>유동성</th>
+<th>예상 수익률</th>
+<th>적합도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IRP + 연금저축</strong></td>
+<td>세액공제 13.2%</td>
+<td>55세 이후</td>
+<td>본인 선택</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td><strong>ISA 중개형</strong></td>
+<td>비과세 200만 + 9.9%</td>
+<td>3년 후</td>
+<td>본인 선택</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td><strong>국민성장펀드</strong></td>
+<td>소득공제 40%</td>
+<td>5년 차단</td>
+<td>2~6% (불확실)</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td><strong>예금 (5년)</strong></td>
+<td>없음</td>
+<td>중도 이자 손실</td>
+<td>3.5~4.5% 고정</td>
+<td>★★★☆☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>출처</h2>
+<ul>
+<li><a href="https://www.mt.co.kr/amp/stock/2026/05/22/2026052209174069113">국민참여성장펀드 출시 — 머니투데이 2026-05-22</a></li>
+<li><a href="https://www.hankyung.com/article/2026052121236">국민성장펀드 괜찮을까 — 한국경제 2026-05-21</a></li>
+<li><a href="https://www.hankyung.com/article/2026050696211">뉴딜펀드 연평균 수익률 2.1% — 한국경제 2026-05-06</a></li>
+<li><a href="https://ngf.kdb.co.kr/">국민성장펀드 공식 홈페이지 — KDB</a></li>
+<li><a href="https://richinfohub.com/%EA%B5%AD%EB%AF%BC%EC%84%B1%EC%9E%A5%ED%8E%80%EB%93%9C-%EC%88%98%EC%9D%B5%EB%A5%A0/">국민성장펀드 수익률 시나리오 분석</a></li>
+</ul>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>

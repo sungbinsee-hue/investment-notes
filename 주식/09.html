@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>재무제표 분석 & 체크리스트 — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="주식">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li class="current"><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="etf">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>📈 주식 · 기업 분석</span><span class="sep">›</span><span>재무제표 분석 & 체크리스트</span></div>
+<article class="content">
+<h1>재무제표 분석 &amp; 체크리스트</h1>
+<blockquote>
+<p>손익계산서(IS) → 재무상태표(BS) → 현금흐름표(CF) 3단계 심층 분석법과 Red Flag 체크리스트.</p>
+</blockquote>
+<h2>재무제표 3종의 관계</h2>
+<p><div class="mermaid">flowchart LR
+ IS[" 손익계산서<br/>Income Statement<br/><br/>매출 → 비용 → 이익<br/>수익성 측정"] -->|"순이익 → 자기자본 이전"| BS
+ BS[" 재무상태표<br/>Balance Sheet<br/><br/>자산 = 부채 + 자기자본<br/>재정 건전성 스냅샷"] -->|"현금 및 현금성자산"| CF
+ CF[" 현금흐름표<br/>Cash Flow Statement<br/><br/>영업·투자·재무 CF<br/>현금 창출 능력"] -->|"영업 CF = 이익 검증"| IS
+</div></p>
+<hr />
+<h2>1. 손익계산서 (Income Statement) 분석</h2>
+<h3>구조 이해</h3>
+<pre><code>매출액 (Revenue)
+ - 매출원가 (COGS)
+= 매출총이익 (Gross Profit) ← 매출총이익률(GPM) 관찰
+ - 판매비와 관리비 (SG&amp;A)
+= 영업이익 (Operating Income / EBIT) ← 핵심 지표
+ + 감가상각·상각비 (D&amp;A)
+= EBITDA ← EV/EBITDA 분모
+ +/- 영업외손익 (금융수익·비용 등)
+= 세전이익 (Pre-tax Income)
+ - 법인세
+= 당기순이익 (Net Income) ← EPS, ROE 분모
+</code></pre>
+<h3>핵심 점검 항목</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>무엇을 보는가</th>
+<th>우량 신호</th>
+<th>경고 신호</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>매출 추이</strong></td>
+<td>3~5년 성장률</td>
+<td>꾸준한 성장 (+10%↑)</td>
+<td>역성장, 성장 정체</td>
+</tr>
+<tr>
+<td><strong>GPM 추이</strong></td>
+<td>가격 결정력</td>
+<td>GPM 유지 또는 상승</td>
+<td>GPM 지속 하락 (경쟁 심화)</td>
+</tr>
+<tr>
+<td><strong>OPM 추이</strong></td>
+<td>비용 통제력</td>
+<td>GPM 대비 OPM 안정</td>
+<td>SG&amp;A 비율 상승</td>
+</tr>
+<tr>
+<td><strong>이익 품질</strong></td>
+<td>일회성 항목 확인</td>
+<td>반복 가능한 영업이익</td>
+<td>자산 매각·일회성으로 순이익 부풀리기</td>
+</tr>
+<tr>
+<td><strong>세율 일관성</strong></td>
+<td>이연법인세 이슈</td>
+<td>25~30% 안정적</td>
+<td>세율 급변 (회계 처리 주의)</td>
+</tr>
+</tbody>
+</table>
+<h3>체크리스트</h3>
+<pre><code>손익계산서 체크리스트
+□ 매출이 3년 연속 성장했는가?
+□ 매출총이익률(GPM)이 최근 3년간 유지 또는 개선되었는가?
+□ 영업이익률(OPM)이 10% 이상인가? (업종 평균과 비교)
+□ 영업이익과 순이익의 괴리가 크지 않은가? (영업외 손익 과도 아닌지)
+□ 이익이 일회성 항목 없이 반복 가능한가?
+□ R&amp;D 비용이 증가하고 있는가? (미래 투자 여부)
+□ 감가상각비 대비 CAPEX가 적절한가? (자산 노후화 여부)
+</code></pre>
+<hr />
+<h2>2. 재무상태표 (Balance Sheet) 분석</h2>
+<h3>구조 이해</h3>
+<pre><code>자 산 부채 &amp; 자기자본
+───────────────── ─────────────────
+[유동자산] [유동부채]
+ 현금 및 현금성자산 단기차입금
+ 매출채권 (A/R) 매입채무 (A/P)
+ 재고자산 (Inventory) 단기사채
+ 단기투자자산 [비유동부채]
+[비유동자산] 장기차입금
+ 유형자산 (PP&amp;E) 사채
+ 무형자산 (특허, 영업권) 퇴직급여충당금
+ 장기투자자산 [자기자본]
+ 이연법인세자산 자본금
+ 이익잉여금
+ 기타포괄손익
+───────────────── ─────────────────
+ 총자산 = 총부채 + 자기자본
+</code></pre>
+<h3>핵심 비율 계산</h3>
+<p><div class="mermaid">flowchart LR
+ subgraph 유동성
+ CR["유동비율<br/>= 유동자산 ÷ 유동부채<br/>> 150% 안전"]
+ QR["당좌비율<br/>= (유동자산-재고) ÷ 유동부채<br/>> 100% 안전"]
+ end
+ subgraph 안전성
+ DE["부채비율<br/>= 총부채 ÷ 자기자본<br/>< 150% 선호"]
+ ND["순부채비율<br/>= (총부채-현금) ÷ 자기자본"]
+ end
+ subgraph 효율성
+ AR["매출채권 회전일수<br/>= A/R ÷ 일평균매출<br/>짧을수록 좋음"]
+ INV["재고회전일수<br/>= 재고 ÷ 일평균매출원가<br/>짧을수록 좋음"]
+ end
+</div></p>
+<h3>자산 품질 분석</h3>
+<table>
+<thead>
+<tr>
+<th>자산 항목</th>
+<th>무엇을 보는가</th>
+<th>우량 신호</th>
+<th>경고 신호</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>매출채권</strong></td>
+<td>회수 가능성</td>
+<td>매출 성장률 ≤ 채권 증가율</td>
+<td>매출보다 채권이 빠르게 증가</td>
+</tr>
+<tr>
+<td><strong>재고자산</strong></td>
+<td>진부화 위험</td>
+<td>재고회전율 유지·개선</td>
+<td>재고가 매출보다 빠르게 증가</td>
+</tr>
+<tr>
+<td><strong>영업권(Goodwill)</strong></td>
+<td>과거 M&amp;A 대가</td>
+<td>적정 수준</td>
+<td>자기자본 대비 과도한 영업권</td>
+</tr>
+<tr>
+<td><strong>이연법인세</strong></td>
+<td>미래 세금 부담</td>
+<td>자산·부채 균형</td>
+<td>대규모 이연법인세 부채</td>
+</tr>
+<tr>
+<td><strong>현금</strong></td>
+<td>실질 유동성</td>
+<td>잉여현금 충분</td>
+<td>현금 급감, 단기차입금 급증</td>
+</tr>
+</tbody>
+</table>
+<h3>체크리스트</h3>
+<pre><code>재무상태표 체크리스트
+□ 유동비율 &gt; 150%인가?
+□ 부채비율 &lt; 150%인가? (업종 평균과 비교)
+□ 현금 및 현금성자산이 단기차입금을 초과하는가?
+□ 이익잉여금이 매년 증가하고 있는가?
+□ 매출채권이 매출 성장률보다 빠르게 증가하지 않는가?
+□ 재고자산이 급증하지 않았는가?
+□ 영업권이 자기자본 대비 50% 이하인가?
+□ 자기자본이 매년 성장하고 있는가?
+</code></pre>
+<hr />
+<h2>3. 현금흐름표 (Cash Flow Statement) 분석</h2>
+<h3>3가지 현금흐름</h3>
+<p><div class="mermaid">flowchart TD
+ CF["현금흐름표"] --> OCF[" 영업 CF (Operating)<br/>본업에서 얼마 버는가<br/>가장 중요한 지표"]
+ CF --> ICF[" 투자 CF (Investing)<br/>CAPEX + 자산 취득·처분<br/>보통 음(-)수"]
+ CF --> FCF_FIN[" 재무 CF (Financing)<br/>차입·상환·배당·자사주<br/>성장기: 양수 / 성숙기: 음수"]
+ OCF --> FCF_CALC["FCF<br/>= 영업CF - CAPEX"]
+ FCF_CALC --> USAGE["FCF 사용처<br/>배당 / 자사주 / 부채상환 / M&A"]
+</div></p>
+<h3>현금흐름 패턴별 기업 분류</h3>
+<table>
+<thead>
+<tr>
+<th>영업 CF</th>
+<th>투자 CF</th>
+<th>재무 CF</th>
+<th>기업 성격</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ 양수</td>
+<td>음수</td>
+<td>음수</td>
+<td><strong>우량 성숙 기업</strong> (가장 이상적)</td>
+</tr>
+<tr>
+<td>✅ 양수</td>
+<td>음수</td>
+<td>✅ 양수</td>
+<td><strong>고성장 기업</strong> (외부 자금 조달 중)</td>
+</tr>
+<tr>
+<td>음수</td>
+<td>✅ 양수</td>
+<td>✅ 양수</td>
+<td><strong>경영 위기 기업</strong> (자산 매각으로 버팀)</td>
+</tr>
+<tr>
+<td>음수</td>
+<td>음수</td>
+<td>✅ 양수</td>
+<td><strong>스타트업·초기 성장</strong> (대규모 투자 단계)</td>
+</tr>
+</tbody>
+</table>
+<h3>FCF vs 순이익 비교 — 이익 품질 판단</h3>
+<p><div class="mermaid">xychart-beta
+ title "이상적 기업: FCF ≥ 순이익 지속 (예시)"
+ x-axis ["2020", "2021", "2022", "2023", "2024"]
+ y-axis "억원" 0 --> 5000
+ line [1200, 1500, 2000, 2500, 3200]
+ bar [1000, 1300, 1800, 2200, 2800]
+</div></p>
+<blockquote>
+<p>위 차트에서 선(FCF) ≥ 막대(순이익)이면 이익 품질 우수</p>
+</blockquote>
+<h3>체크리스트</h3>
+<pre><code>현금흐름표 체크리스트
+□ 영업 CF가 3년 연속 양수인가?
+□ 영업 CF ≥ 순이익인가? (이익 품질 체크)
+□ FCF(= 영업CF - CAPEX)가 양수인가?
+□ CAPEX가 감가상각비의 2~3배 이상이면 성장 투자 중 (긍정)
+□ CAPEX가 감가상각비보다 낮으면 자산 노후화 위험
+□ 재무 CF에서 신규 차입 &gt; 상환인 경우, 차입 목적 확인
+□ 자사주 매입 또는 배당 지급 여력이 있는가?
+</code></pre>
+<hr />
+<h2>4. 종합 Red Flag 체크리스트</h2>
+<h3>즉각 경고 신호</h3>
+<p><div class="mermaid">flowchart TD
+ RED[" Red Flag 탐지"] --> A["회계 관련"]
+ RED --> B["사업 관련"]
+ RED --> C["재무 관련"]
+ RED --> D["경영진 관련"]
+
+ A --> A1["감사의견 비적정<br/>또는 강조 사항"]
+ A --> A2["대규모 자산 손상 반복<br/>(영업권 상각)"]
+ A --> A3["회계정책 빈번 변경"]
+
+ B --> B1["매출 감소 + 재고 증가<br/>(수요 악화 신호)"]
+ B --> B2["매출채권 급증<br/>(깡통 매출 가능성)"]
+ B --> B3["영업 CF 적자<br/>(본업 현금 창출 불가)"]
+
+ C --> C1["부채비율 200% 초과<br/>+ 이자보상배율 2배 미만"]
+ C --> C2["현금 감소 + 단기차입금 급증"]
+ C --> C3["FCF 만성 적자"]
+
+ D --> D1["대주주 지분 급감<br/>(내부자 매도)"]
+ D --> D2["CEO 잦은 교체"]
+ D --> D3["관계사 거래 과다<br/>(터널링 위험)"]
+</div></p>
+<hr />
+<h2>5. 3년치 재무 요약 분석 양식</h2>
+<pre><code class="language-markdown">### [기업명] 재무 요약 분석
+
+| 항목 | 2022 | 2023 | 2024 | 추이 |
+|------|------|------|------|------|
+| 매출액 (억원) | | | | ↑/↓/→ |
+| 매출총이익률 | | | | |
+| 영업이익률 | | | | |
+| 순이익 (억원) | | | | |
+| ROE | | | | |
+| 부채비율 | | | | |
+| 영업 CF (억원) | | | | |
+| FCF (억원) | | | | |
+| 이자보상배율 | | | | |
+| PER (연말) | | | | |
+| PBR (연말) | | | | |
+| EV/EBITDA | | | | |
+
+**종합 의견**:
+- 수익성: 
+- 성장성: 
+- 안전성: 
+- 현금흐름: 
+- 밸류에이션: 
+</code></pre>
+<hr />
+<blockquote>
+<p><strong>관련 노트</strong>: <a href="../주식/08.html" class="wikilink">08. 가치평가 지표 총람</a> | <a href="../주식/10.html" class="wikilink">10. 기업 비교 분석 프레임워크</a> | <a href="../주식/07.html" class="wikilink">07. 기업가치 평가 허브</a></p>
+</blockquote>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>

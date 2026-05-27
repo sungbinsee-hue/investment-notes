@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETF 완전 가이드 — 구조·종류·세금·전략 — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="주식">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="etf">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li class="current"><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>📦 ETF</span><span class="sep">›</span><span>ETF 완전 가이드 — 구조·종류·세금·전략</span></div>
+<article class="content">
+<h1>ETF 완전 가이드 — 구조·종류·세금·전략</h1>
+<hr />
+<h2>1. ETF란 무엇인가 — 구조부터</h2>
+<p>ETF(Exchange Traded Fund, 상장지수펀드)는 <strong>특정 지수·자산을 추종하는 펀드를 주식처럼 거래소에 상장한 상품</strong>이다.</p>
+<pre><code>[일반 펀드]  → 운용사에 자금 위탁 → 하루 1번 기준가 결정 → 익일 체결
+[ETF]       → 거래소에서 직접 매매 → 실시간 가격 변동 → 즉시 체결
+</code></pre>
+<h3>핵심 개념 3가지</h3>
+<table>
+<thead>
+<tr>
+<th>개념</th>
+<th>설명</th>
+<th>중요한 이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NAV</strong> (순자산가치)</td>
+<td>ETF가 보유한 자산의 실제 가치</td>
+<td>기준 가격. 괴리율 판단 기준</td>
+</tr>
+<tr>
+<td><strong>iNAV</strong> (실시간 추정 NAV)</td>
+<td>장중 실시간으로 계산된 NAV</td>
+<td>ETF 매수 시 적정 가격 확인용</td>
+</tr>
+<tr>
+<td><strong>추적오차</strong> (Tracking Error)</td>
+<td>ETF 수익률 vs 추종 지수 수익률 차이</td>
+<td>낮을수록 잘 만들어진 ETF</td>
+</tr>
+<tr>
+<td><strong>괴리율</strong></td>
+<td>ETF 시장가격 vs NAV 차이</td>
+<td>높으면 고평가 / 낮으면 저평가</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>실전 팁</strong>: ETF 매수 시 시장가격이 iNAV보다 크게 높으면 고평가 상태. 가급적 iNAV와 비슷한 수준에서 매수.</p>
+</blockquote>
+<hr />
+<h2>2. ETF 종류 전체 지도</h2>
+<h3>[A] 기초자산별 분류</h3>
+<pre><code>ETF
+├── 주식형
+│   ├── 국내 주식 (KOSPI200, KOSDAQ150)
+│   ├── 해외 주식 — 국내 상장 (미국S&amp;P500, 나스닥100, 중국, 일본)
+│   └── 섹터·테마 (반도체, AI, 2차전지, 방산, 바이오)
+├── 채권형
+│   ├── 국내 채권 (국고채, 회사채, 단기채)
+│   └── 해외 채권 (미국국채, 하이일드)
+├── 원자재형
+│   ├── 금 (Gold ETF)
+│   ├── 원유
+│   └── 농산물
+├── 부동산형 (리츠 ETF)
+├── 통화형 (달러, 엔화)
+└── 혼합형 (주식+채권 자산배분)
+</code></pre>
+<hr />
+<h3>[B] 운용 전략별 분류</h3>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>설명</th>
+<th>대표 상품</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>패시브 (인덱스)</strong></td>
+<td>지수 그대로 추종, 낮은 수수료</td>
+<td>TIGER 미국S&amp;P500, KODEX 200</td>
+</tr>
+<tr>
+<td><strong>액티브</strong></td>
+<td>운용사가 능동적으로 종목 선택</td>
+<td>KODEX AI반도체핵심장비</td>
+</tr>
+<tr>
+<td><strong>팩터 (스마트베타)</strong></td>
+<td>가치, 배당, 모멘텀 등 특정 팩터 기반</td>
+<td>TIGER 배당성장, KODEX 퀄리티</td>
+</tr>
+<tr>
+<td><strong>레버리지</strong></td>
+<td>지수의 2배 수익·손실 추종</td>
+<td>KODEX 레버리지, TIGER 나스닥100레버리지</td>
+</tr>
+<tr>
+<td><strong>인버스</strong></td>
+<td>지수 반대 방향 (하락 시 수익)</td>
+<td>KODEX 인버스, TIGER 200인버스</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>[C] 레버리지·인버스 ETF — 별도 주의</h3>
+<pre><code>레버리지 ETF: 지수 +1% → ETF +2%
+인버스 ETF:   지수 +1% → ETF -1%
+2X 인버스:    지수 +1% → ETF -2%
+</code></pre>
+<p><strong>복리 마찰 효과 (변동성 손실):</strong></p>
+<pre><code>지수가 +10% → -9.09% 반복 시:
+  원금 1,000만원 → 10번 후 ≈ 950만원 (지수는 원점 복귀)
+  2X 레버리지 → 10번 후 ≈ 800만원 (지수 원점이지만 손실)
+</code></pre>
+<blockquote>
+<p>레버리지·인버스는 <strong>단기 방향성 베팅·헤지 전용</strong>.<br />
+장기 보유 시 변동성 마찰로 지수 수익률보다 낮아지는 구조적 문제 발생.<br />
+2026년 5월부터 해외 레버리지·인버스 ETF도 <strong>사전교육 + 예탁금 1,000만원</strong> 필요.</p>
+</blockquote>
+<hr />
+<h3>[D] 배당 ETF — 월배당 트렌드</h3>
+<table>
+<thead>
+<tr>
+<th>상품 유형</th>
+<th>특징</th>
+<th>배당 주기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SCHD형 (미국 배당성장)</td>
+<td>배당 성장 + 가격 상승</td>
+<td>분기</td>
+</tr>
+<tr>
+<td>커버드콜 ETF</td>
+<td>옵션 매도로 배당 극대화, 가격 상승 제한</td>
+<td>월</td>
+</tr>
+<tr>
+<td>리츠 ETF</td>
+<td>부동산 임대수익 배분</td>
+<td>월~분기</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>커버드콜 주의</strong>: 월 배당이 높아 보이지만 기초자산 상승 시 이익이 제한됨.<br />
+우상향 장에서 일반 ETF 대비 총수익이 낮을 수 있음.</p>
+</blockquote>
+<hr />
+<h2>3. 세금 구조 — 가장 복잡한 부분</h2>
+<h3>ETF 세금 3가지 원천</h3>
+<table>
+<thead>
+<tr>
+<th>세금 종류</th>
+<th>발생 시점</th>
+<th>대상</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>매매차익세</strong></td>
+<td>매도 시</td>
+<td>ETF 유형에 따라 다름</td>
+</tr>
+<tr>
+<td><strong>분배금세</strong></td>
+<td>배당 수령 시</td>
+<td>배당소득세 15.4%</td>
+</tr>
+<tr>
+<td><strong>기타소득세</strong></td>
+<td>IRP 중도 해지 시</td>
+<td>16.5%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>ETF 유형별 세금 비교표</h3>
+<table>
+<thead>
+<tr>
+<th>ETF 유형</th>
+<th>매매차익</th>
+<th>분배금</th>
+<th>계좌 유형 영향</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>국내주식형 ETF</strong></td>
+<td><strong>비과세</strong></td>
+<td>배당소득세 15.4%</td>
+<td>ISA에서 손익통산 가능</td>
+</tr>
+<tr>
+<td><strong>국내 상장 해외주식 ETF</strong></td>
+<td>배당소득세 15.4%</td>
+<td>배당소득세 15.4%</td>
+<td>ISA에서 비과세+9.9%</td>
+</tr>
+<tr>
+<td><strong>채권형 ETF</strong></td>
+<td>배당소득세 15.4%</td>
+<td>배당소득세 15.4%</td>
+<td>ISA에서 비과세+9.9%</td>
+</tr>
+<tr>
+<td><strong>원자재 ETF</strong></td>
+<td>배당소득세 15.4%</td>
+<td>배당소득세 15.4%</td>
+<td>ISA에서 비과세+9.9%</td>
+</tr>
+<tr>
+<td><strong>미국 직상장 ETF (해외 직접)</strong></td>
+<td>양도소득세 22% (250만 공제 후)</td>
+<td>배당소득세 15.4%</td>
+<td>ISA 편입 불가</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>계좌별 ETF 세금 비교</h3>
+<pre><code>[일반 계좌]
+  국내주식 ETF 매매차익 → 비과세
+  해외주식 ETF 매매차익 → 15.4% 배당소득세 (금융소득 합산)
+
+[ISA 중개형]
+  모든 ETF 수익 손익통산 후 →
+    수익 200만원까지 비과세 (일반형)
+    초과분 9.9% 분리과세 (금융소득 미합산)
+
+[IRP / 연금저축]
+  운용 중 → 세금 이연 (0원)
+  연금 수령 시 → 연금소득세 3.3~5.5% (나이별)
+  중도 해지 → 기타소득세 16.5%
+</code></pre>
+<hr />
+<h3>핵심 전략: 어떤 ETF를 어느 계좌에 담을 것인가</h3>
+<pre><code>계좌별 최적 ETF 배치 전략
+
+ISA 중개형 (비과세 + 손익통산)
+  → 국내 상장 해외주식 ETF (S&amp;P500, 나스닥)
+  → 배당 ETF (분리과세 9.9% 적용)
+  → 채권·원자재 ETF
+
+IRP / 연금저축 (세금 이연 + 연금소득세 3.3~5.5%)
+  → 장기 고수익 목표 주식형 ETF
+  → 미국 ETF (국내 상장)
+  → 자산배분 ETF
+
+일반 계좌 (세금 최소화)
+  → 국내주식형 ETF (매매차익 비과세)
+  → 단기 트레이딩 목적 ETF
+</code></pre>
+<hr />
+<h2>4. 장점 — 왜 ETF인가</h2>
+<h3>[1] 분산 투자의 민주화</h3>
+<ul>
+<li>S&amp;P500 ETF 1주 = 미국 상위 500개 기업에 동시 투자</li>
+<li>수만 원~수십만 원으로 가능한 글로벌 분산</li>
+</ul>
+<h3>[2] 낮은 비용</h3>
+<table>
+<thead>
+<tr>
+<th>상품</th>
+<th>연간 운용 비용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일반 펀드</td>
+<td>1.0~2.5%</td>
+</tr>
+<tr>
+<td>국내 인덱스 ETF</td>
+<td>0.05~0.15%</td>
+</tr>
+<tr>
+<td>미국 VOO (S&amp;P500)</td>
+<td>0.03%</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>20년 장기 투자 시 비용 1% 차이 = 수익 20~30% 차이</p>
+</blockquote>
+<h3>[3] 실시간 거래 가능</h3>
+<ul>
+<li>주식처럼 장중 언제든 매수·매도</li>
+<li>일반 펀드의 1일 1회 기준가 제약 없음</li>
+</ul>
+<h3>[4] 투명성</h3>
+<ul>
+<li>매일 포트폴리오 구성(PDF) 공시</li>
+<li>어느 종목을 몇 주 보유하는지 확인 가능</li>
+</ul>
+<h3>[5] 세제 계좌 활용 용이</h3>
+<ul>
+<li>ISA, IRP, 연금저축 내 편입 가능</li>
+<li>계좌 특성에 따른 절세 최적화 가능</li>
+</ul>
+<hr />
+<h2>5. 단점 — 반드시 알아야 할 함정</h2>
+<h3>[1] 추적오차 (Tracking Error)</h3>
+<p>지수를 완벽하게 복제하지 못하는 현실.<br />
+- 운용 수수료, 세금, 리밸런싱 비용이 원인<br />
+- 특히 합성 ETF(실물 없이 스왑 계약으로 운용)는 추적오차 + 거래상대방 리스크 존재</p>
+<h3>[2] 괴리율 위험</h3>
+<ul>
+<li>시장 급등락 시 ETF 가격이 NAV에서 크게 벗어남</li>
+<li>급락장에서 급하게 매도하면 NAV보다 낮은 가격에 팔릴 수 있음</li>
+</ul>
+<h3>[3] 레버리지의 구조적 손실</h3>
+<ul>
+<li>변동성이 클수록 레버리지 ETF의 장기 수익은 지수의 2배보다 낮아짐</li>
+<li>레버리지 ETF를 장기 보유하는 것은 명백한 투자 실수</li>
+</ul>
+<h3>[4] 세금 복잡성</h3>
+<ul>
+<li>ETF 유형(국내주식형/해외주식형/채권형)마다 과세 방식이 다름</li>
+<li>어느 계좌에 담느냐에 따라 세금이 크게 달라짐</li>
+<li>잘못된 계좌 배치 = 불필요한 세금 납부</li>
+</ul>
+<h3>[5] 유동성 리스크 (소형 ETF)</h3>
+<ul>
+<li>거래량이 적은 ETF는 원하는 가격에 매수·매도가 어려움</li>
+<li>특히 테마형·소형 ETF는 스프레드(매수·매도 호가 차이)가 크게 벌어짐</li>
+<li>일평균 거래대금 <strong>10억 원 미만</strong> ETF는 가급적 회피</li>
+</ul>
+<h3>[6] 시장 리스크는 분산으로 해소 불가</h3>
+<ul>
+<li>ETF는 개별 종목 리스크를 줄이지만, 시장 전체 하락(시스템 리스크)은 피할 수 없음</li>
+<li>코로나 폭락(2020.3), 금융위기(2008)처럼 지수 자체가 40~50% 하락하는 상황에서 ETF도 동일하게 손실</li>
+</ul>
+<hr />
+<h2>6. 2026년 주목할 ETF 테마</h2>
+<p>ETF 전문가 18인 선정 (한국경제 2026년 1월):</p>
+<table>
+<thead>
+<tr>
+<th>테마</th>
+<th>대표 ETF</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI 인프라</td>
+<td>AI반도체, 데이터센터</td>
+<td>글로벌 AI 투자 지속</td>
+</tr>
+<tr>
+<td>방산</td>
+<td>글로벌 방산 ETF</td>
+<td>지정학적 리스크 지속</td>
+</tr>
+<tr>
+<td>헬스케어</td>
+<td>바이오, 노인의료</td>
+<td>고령화 + 신약 승인</td>
+</tr>
+<tr>
+<td>인도</td>
+<td>인도 주식 ETF</td>
+<td>중국 대안, 인구 성장</td>
+</tr>
+<tr>
+<td>미국 배당</td>
+<td>SCHD형 ETF</td>
+<td>금리 인하 사이클</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>테마 ETF는 수익이 클 수 있지만 변동성도 크다. 코어(S&amp;P500) + 위성(테마) 구조가 표준.</p>
+</blockquote>
+<hr />
+<h2>7. ETF 선택 기준 — 실전 체크리스트</h2>
+<pre><code>□ 운용 규모 1,000억 원 이상? (소형 ETF 유동성 리스크 회피)
+□ 일평균 거래대금 10억 원 이상?
+□ 연간 총보수 0.5% 이하? (해외 ETF는 0.07~0.3%)
+□ 추적오차 1% 이하?
+□ 합성형인가 실물형인가? (실물형 권장)
+□ 환헤지 여부 확인 (H: 헤지, UH: 언헤지)
+□ 어느 계좌에 담을지 결정했는가?
+</code></pre>
+<hr />
+<h2>8. 대표 ETF 정리 (ISA·IRP 활용 기준)</h2>
+<h3>핵심 (코어)</h3>
+<table>
+<thead>
+<tr>
+<th>티커</th>
+<th>이름</th>
+<th>보수</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TIGER 미국S&amp;P500</td>
+<td>미국 S&amp;P500 추종</td>
+<td>0.07%</td>
+<td>ISA·IRP 핵심 자산</td>
+</tr>
+<tr>
+<td>KODEX 나스닥100</td>
+<td>나스닥100 추종</td>
+<td>0.09%</td>
+<td>기술주 집중</td>
+</tr>
+<tr>
+<td>TIGER 미국배당다우존스</td>
+<td>SCHD 추종</td>
+<td>0.25%</td>
+<td>배당 성장 전략</td>
+</tr>
+</tbody>
+</table>
+<h3>안정 (채권·현금)</h3>
+<table>
+<thead>
+<tr>
+<th>티커</th>
+<th>이름</th>
+<th>보수</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TIGER 국채3년</td>
+<td>국내 국고채 3년</td>
+<td>0.05%</td>
+<td>금리 하락 시 수익</td>
+</tr>
+<tr>
+<td>TIGER 단기채권액티브</td>
+<td>단기 채권</td>
+<td>0.05%</td>
+<td>현금 대체 안전 자산</td>
+</tr>
+<tr>
+<td>TIGER 미국달러SOFR금리액티브</td>
+<td>달러 단기금리</td>
+<td>0.25%</td>
+<td>달러 자산 + 이자</td>
+</tr>
+</tbody>
+</table>
+<h3>위성 (테마)</h3>
+<table>
+<thead>
+<tr>
+<th>티커</th>
+<th>이름</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TIGER AI코리아그로스액티브</td>
+<td>국내 AI</td>
+<td>고변동성</td>
+</tr>
+<tr>
+<td>KODEX 미국반도체MV</td>
+<td>미국 반도체</td>
+<td>엔비디아 등 포함</td>
+</tr>
+<tr>
+<td>TIGER 글로벌방산&amp;우주</td>
+<td>글로벌 방산</td>
+<td>지정학적 수혜</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>출처</h2>
+<ul>
+<li><a href="https://kbthink.com/etf.html">ETF 기초 가이드 — KB의 생각</a></li>
+<li><a href="https://blog.intelliquant.ai/post/allaboutetf">ETF 투자 완전 정복 — 인텔리퀀트</a></li>
+<li><a href="https://www.kbam.co.kr/board/view/1040">해외 ETF 투자 가이드 — KBAM</a></li>
+<li><a href="https://www.kiwoomam.com/lounge/KI0502010102M?kijaNo=487">ETF 세금 — 키움투자자산운용</a></li>
+<li><a href="https://magazine.hankyung.com/money/article/202601187642c">2026 유망 ETF 테마 — 매거진한경</a></li>
+<li><a href="https://blog.intelliquant.ai/post/etfinvestmentalternative">ISA·IRP 혜택 축소 후 해외 ETF 절세 전략 — 인텔리퀀트</a></li>
+</ul>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>

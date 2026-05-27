@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>테마별 대장주 허브 (2026) — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="주식">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li class="current"><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="etf">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>🏆🌍 대장주</span><span class="sep">›</span><span>테마별 대장주 허브 (2026)</span></div>
+<article class="content">
+<h1>테마별 대장주 종합 허브 (2026년 5월 기준)</h1>
+<blockquote>
+<p><strong>데이터 기준</strong>: 2026년 5월 22~25일 뉴스·리서치 종합. 주가·시총은 시점에 따라 변동되므로 반드시 최신 시세 확인 필요.</p>
+</blockquote>
+<hr />
+<h2>2026년 코스피 시총 TOP 10 현황</h2>
+<table>
+<thead>
+<tr>
+<th>순위</th>
+<th>종목명</th>
+<th>테마</th>
+<th>시총(조원)</th>
+<th>주가(원)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1위</strong></td>
+<td>삼성전자</td>
+<td>반도체</td>
+<td>~1,710</td>
+<td>~285,000</td>
+</tr>
+<tr>
+<td><strong>2위</strong></td>
+<td>SK하이닉스</td>
+<td>반도체</td>
+<td>~650</td>
+<td>~850,000</td>
+</tr>
+<tr>
+<td><strong>3위</strong></td>
+<td>LG에너지솔루션</td>
+<td>2차전지</td>
+<td>~101</td>
+<td>~450,000</td>
+</tr>
+<tr>
+<td><strong>4위</strong></td>
+<td>삼성바이오로직스</td>
+<td>바이오</td>
+<td>~80</td>
+<td>~1,100,000</td>
+</tr>
+<tr>
+<td><strong>5위</strong></td>
+<td>현대차</td>
+<td>자동차·로봇</td>
+<td>~70</td>
+<td>~500,000</td>
+</tr>
+<tr>
+<td><strong>6위</strong></td>
+<td>두산에너빌리티</td>
+<td>원전·에너지</td>
+<td>~60~70</td>
+<td>~93,000</td>
+</tr>
+<tr>
+<td><strong>7위</strong></td>
+<td>한화에어로스페이스</td>
+<td>방산</td>
+<td>~55~60</td>
+<td>~1,100,000</td>
+</tr>
+<tr>
+<td><strong>8위</strong></td>
+<td>HD현대중공업</td>
+<td>조선</td>
+<td>~50</td>
+<td>~500,000</td>
+</tr>
+<tr>
+<td><strong>9위</strong></td>
+<td>SK스퀘어</td>
+<td>반도체(지주)</td>
+<td>~45</td>
+<td>~200,000</td>
+</tr>
+<tr>
+<td><strong>10위</strong></td>
+<td>KB금융</td>
+<td>금융·은행</td>
+<td>~40</td>
+<td>160,000</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><span style="color:#e67e22"><strong>[참고]</strong></span> 출처: 2026년 4~5월 복수 언론 종합. 5~10위 순위는 중동 분쟁 등 이벤트에 따라 유동적.</p>
+</blockquote>
+<hr />
+<h2>10대 테마 개요</h2>
+<p><div class="mermaid">mindmap
+ root(("2026 10대 테마"))
+ 반도체
+ 삼성전자
+ SK하이닉스
+ SK스퀘어
+ 2차전지
+ LG에너지솔루션
+ 삼성SDI
+ 에코프로비엠
+ 방산
+ 한화에어로스페이스
+ LIG넥스원
+ 현대로템
+ 조선
+ HD현대중공업
+ 한화오션
+ 삼성중공업
+ 원전·에너지
+ 두산에너빌리티
+ 한전기술
+ 한전KPS
+ 바이오
+ 삼성바이오로직스
+ 셀트리온
+ 리가켐바이오
+ 로봇
+ 레인보우로보틱스
+ 두산로보틱스
+ 현대차
+ AI·플랫폼
+ 네이버
+ 카카오
+ SK텔레콤
+ 엔터·콘텐츠
+ HYBE
+ JYP엔터
+ SM엔터
+ 금융·은행
+ KB금융
+ 신한지주
+ 하나금융지주
+</div></p>
+<hr />
+<h2>테마별 대장주 한눈에 비교</h2>
+<table>
+<thead>
+<tr>
+<th>테마</th>
+<th>대장주 (1위)</th>
+<th>2위</th>
+<th>3위</th>
+<th>핵심 투자 포인트</th>
+<th>상세 노트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>반도체</strong></td>
+<td>삼성전자</td>
+<td>SK하이닉스</td>
+<td>SK스퀘어</td>
+<td>AI HBM 수요, 글로벌 1위</td>
+<td><a href="../대장주/13.html" class="wikilink">13. 반도체·2차전지 대장주 TOP10</a></td>
+</tr>
+<tr>
+<td><strong>2차전지</strong></td>
+<td>LG에너지솔루션</td>
+<td>삼성SDI</td>
+<td>에코프로비엠</td>
+<td>캐즘 이후 회복, 전고체 기대</td>
+<td><a href="../대장주/13.html" class="wikilink">13. 반도체·2차전지 대장주 TOP10</a></td>
+</tr>
+<tr>
+<td><strong>방산</strong></td>
+<td>한화에어로스페이스</td>
+<td>LIG넥스원</td>
+<td>현대로템</td>
+<td>중동·우크라이나 분쟁 지속</td>
+<td><a href="../대장주/14.html" class="wikilink">14. 방산·조선·원전·바이오 대장주 TOP10</a></td>
+</tr>
+<tr>
+<td><strong>조선</strong></td>
+<td>HD현대중공업</td>
+<td>한화오션</td>
+<td>삼성중공업</td>
+<td>LNG선·데이터센터 발전설비</td>
+<td><a href="../대장주/14.html" class="wikilink">14. 방산·조선·원전·바이오 대장주 TOP10</a></td>
+</tr>
+<tr>
+<td><strong>원전·에너지</strong></td>
+<td>두산에너빌리티</td>
+<td>한전기술</td>
+<td>한전KPS</td>
+<td>AI 전력 수요, SMR 확산</td>
+<td><a href="../대장주/14.html" class="wikilink">14. 방산·조선·원전·바이오 대장주 TOP10</a></td>
+</tr>
+<tr>
+<td><strong>바이오</strong></td>
+<td>삼성바이오로직스</td>
+<td>셀트리온</td>
+<td>리가켐바이오</td>
+<td>CDMO 글로벌 확장, ADC 기술</td>
+<td><a href="../대장주/14.html" class="wikilink">14. 방산·조선·원전·바이오 대장주 TOP10</a></td>
+</tr>
+<tr>
+<td><strong>로봇</strong></td>
+<td>레인보우로보틱스</td>
+<td>두산로보틱스</td>
+<td>현대차</td>
+<td>휴머노이드, AI 융합 로봇</td>
+<td><a href="../대장주/15.html" class="wikilink">15. 로봇·AI·엔터·금융 대장주 TOP10</a></td>
+</tr>
+<tr>
+<td><strong>AI·플랫폼</strong></td>
+<td>네이버</td>
+<td>카카오</td>
+<td>SK텔레콤</td>
+<td>국내 AI 인프라, 검색·커머스</td>
+<td><a href="../대장주/15.html" class="wikilink">15. 로봇·AI·엔터·금융 대장주 TOP10</a></td>
+</tr>
+<tr>
+<td><strong>엔터·콘텐츠</strong></td>
+<td>HYBE</td>
+<td>JYP엔터</td>
+<td>SM엔터</td>
+<td>BTS 완전체 복귀, K팝 글로벌</td>
+<td><a href="../대장주/15.html" class="wikilink">15. 로봇·AI·엔터·금융 대장주 TOP10</a></td>
+</tr>
+<tr>
+<td><strong>금융·은행</strong></td>
+<td>KB금융</td>
+<td>하나금융지주</td>
+<td>신한지주</td>
+<td>고금리 수익성, 밸류업 프로그램</td>
+<td><a href="../대장주/15.html" class="wikilink">15. 로봇·AI·엔터·금융 대장주 TOP10</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>테마별 2025년 말→2026년 5월 주가 성과 비교</h2>
+<p><div class="mermaid">xychart-beta
+ title "테마 대장주 주가 상승률 비교 (2025.12→2026.5, 추정)"
+ x-axis ["반도체 삼성전자", "방산 한화에어로", "원전 두산에너빌", "조선 HD현대중공", "2차전지 LGES", "바이오 삼성바이오", "금융 KB금융", "로봇 레인보우", "AI 네이버", "엔터 HYBE"]
+ y-axis "주가 상승률 (%)" 0 --> 200
+ bar [138, 80, 60, 55, 35, 25, 20, 45, 15, 30]
+</div></p>
+<blockquote>
+<p><span style="color:#e74c3c"><strong>[주의]</strong></span> 위 수치는 기사 언급 수준의 추정값. 정확한 수익률은 HTS·증권사 데이터 확인 필요.</p>
+</blockquote>
+<hr />
+<h2>테마별 투자 스타일 포지셔닝</h2>
+<p><div class="mermaid">quadrantChart
+ title 테마별 성장성 vs 밸류에이션 포지셔닝 (2026년 기준)
+ x-axis "저성장 (가치주)" --> "고성장 (성장주)"
+ y-axis "고평가(PER 高)" --> "저평가(PER 低)"
+ quadrant-1 저평가 성장주 (최선)
+ quadrant-2 고평가 성장주 (모멘텀 필요)
+ quadrant-3 고평가 저성장 (회피)
+ quadrant-4 저평가 저성장 (가치주)
+ 반도체: [0.72, 0.78]
+ 방산: [0.78, 0.55]
+ 원전에너지: [0.68, 0.62]
+ 조선: [0.65, 0.70]
+ 2차전지: [0.60, 0.45]
+ 바이오: [0.80, 0.20]
+ 로봇: [0.88, 0.15]
+ 금융은행: [0.30, 0.80]
+ AI플랫폼: [0.75, 0.30]
+ 엔터콘텐츠: [0.55, 0.40]
+</div></p>
+<hr />
+<h2>테마별 핵심 투자 포인트 요약</h2>
+<p><div class="mermaid">flowchart LR
+ subgraph " AI 수혜 직접"
+ A1["반도체<br/>HBM·AI 칩 수요"]
+ A2["원전·에너지<br/>AI 데이터센터 전력"]
+ A3["AI·플랫폼<br/>국내 AI 서비스"]
+ end
+ subgraph "양호 지정학 수혜"
+ B1["방산<br/>중동·우크라이나 분쟁"]
+ B2["조선<br/>LNG·군함 발주 증가"]
+ end
+ subgraph "중립 구조적 성장"
+ C1["바이오<br/>CDMO·ADC 글로벌 수요"]
+ C2["로봇<br/>제조업 자동화·휴머노이드"]
+ C3["엔터<br/>BTS 복귀·K팝 확장"]
+ end
+ subgraph " 밸류업 수혜"
+ D1["금융·은행<br/>코리아 디스카운트 해소"]
+ D2["2차전지<br/>전고체·캐즘 탈출"]
+ end
+</div></p>
+<hr />
+<h2><span style="color:#e74c3c"><strong>[주의]</strong></span> 테마 투자 시 공통 주의사항</h2>
+<table>
+<thead>
+<tr>
+<th>리스크</th>
+<th>내용</th>
+<th>관련 테마</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>테마 쏠림</strong></td>
+<td>단기 급등 후 실적 미반영 시 급락</td>
+<td>로봇, 원전</td>
+</tr>
+<tr>
+<td><strong>금리 민감성</strong></td>
+<td>금리 상승 시 고PER 테마 멀티플 수축</td>
+<td>로봇, AI, 바이오</td>
+</tr>
+<tr>
+<td><strong>지정학 리스크</strong></td>
+<td>분쟁 종결 시 방산주 급락 위험</td>
+<td>방산</td>
+</tr>
+<tr>
+<td><strong>중국 경쟁</strong></td>
+<td>배터리·반도체 중국 저가 공세</td>
+<td>반도체, 2차전지</td>
+</tr>
+<tr>
+<td><strong>촉매 소멸</strong></td>
+<td>BTS 이후 차세대 아티스트 부재</td>
+<td>엔터</td>
+</tr>
+<tr>
+<td><strong>정책 리스크</strong></td>
+<td>정부 원전 정책 변화</td>
+<td>원전</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p><strong>연결 노트</strong>: <a href="../대장주/13.html" class="wikilink">13. 반도체·2차전지 대장주 TOP10</a> | <a href="../대장주/14.html" class="wikilink">14. 방산·조선·원전·바이오 대장주 TOP10</a> | <a href="../대장주/15.html" class="wikilink">15. 로봇·AI·엔터·금융 대장주 TOP10</a> | <a href="../주식/08.html" class="wikilink">08. 가치평가 지표 총람</a></p>
+</blockquote>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>

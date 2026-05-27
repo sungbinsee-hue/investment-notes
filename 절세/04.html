@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>연말정산 소득공제 항목 전략 — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group active" data-group="절세">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li class="current"><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="주식">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="etf">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>🛡️ 절세 전략</span><span class="sep">›</span><span>연말정산 소득공제 항목 전략</span></div>
+<article class="content">
+<h1>연말정산 소득공제 항목 전략</h1>
+<blockquote>
+<p><strong>소득공제 vs 세액공제 — 핵심 개념 구분</strong><br />
+<strong>소득공제</strong>: 과세표준(세금 부과 기반)을 줄임 → 절세액 = 공제액 × 세율(16.5%)<br />
+<strong>세액공제</strong>: 산출된 세금에서 직접 차감 → 절세액 = 공제액 그 자체<br />
+과세표준이 높을수록(= 세율이 높을수록) 소득공제가 더 유리해진다.</p>
+</blockquote>
+<hr />
+<h2>1. 세금 프로필 (총급여 5,500만원 초과 구간 예시)</h2>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>항목</th>
+<th>금액</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>총급여</td>
+<td>5,600만 원 (예시)</td>
+</tr>
+<tr>
+<td>②</td>
+<td>근로소득공제 차감</td>
+<td>≈ 1,255만 원</td>
+</tr>
+<tr>
+<td>③</td>
+<td>= 근로소득금액</td>
+<td>≈ 4,345만 원</td>
+</tr>
+<tr>
+<td>④</td>
+<td>소득공제 합산 차감 (기본 + 보험료 등)</td>
+<td>≈ 650만 원</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>= <strong>과세표준</strong></td>
+<td><strong>≈ 3,700만 원</strong></td>
+</tr>
+<tr>
+<td>⑥</td>
+<td>세율 구간</td>
+<td>1,400만 ~ 5,000만 원: <strong>15%</strong></td>
+</tr>
+<tr>
+<td>⑦</td>
+<td>산출세액</td>
+<td>≈ 430만 원</td>
+</tr>
+<tr>
+<td>⑧</td>
+<td>세액공제 차감 (근로소득 세액공제 등)</td>
+<td>≈ 74만 원</td>
+</tr>
+<tr>
+<td>⑨</td>
+<td>= <strong>결정세액</strong></td>
+<td><strong>≈ 356만 원</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>실제 결정세액은 부양가족, 카드, 의료비 등에 따라 크게 달라진다. 위는 최소 공제 시나리오.</p>
+</blockquote>
+<hr />
+<h2>2. 소득공제 항목 전체 지도</h2>
+<h3>[A] 신용카드 등 사용금액 소득공제</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>공제율</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신용카드</td>
+<td>15%</td>
+<td>기본</td>
+</tr>
+<tr>
+<td>체크카드·현금영수증</td>
+<td><strong>30%</strong></td>
+<td>신용카드 2배</td>
+</tr>
+<tr>
+<td>전통시장 사용액</td>
+<td><strong>40%</strong></td>
+<td>추가 우대</td>
+</tr>
+<tr>
+<td>대중교통 사용액</td>
+<td><strong>40%</strong></td>
+<td>추가 우대</td>
+</tr>
+</tbody>
+</table>
+<p><strong>공제 구조 (총급여 5,600만원 예시 기준)</strong>:<br />
+- 공제 시작 기준: 총급여 × 25% = 1,400만 원 초과분부터 공제<br />
+- 공제 한도: <strong>300만 원</strong> (총급여 7,000만 원 이하)<br />
+- 추가 한도: 전통시장·대중교통 각 100만 원 추가</p>
+<p><strong>전략</strong>:</p>
+<pre><code>1단계: 연간 카드 지출이 1,400만 원(=총급여 25%) 미만이면
+        소득공제 효과 없음. 먼저 최소 1,400만 원 소진.
+
+2단계: 1,400만 원 초과분은 체크카드 or 현금 위주로
+        (공제율 30% vs 신용카드 15%)
+
+3단계: 전통시장·대중교통은 별도 우대 한도 활용
+</code></pre>
+<p><strong>절세 최대화 시나리오</strong>:<br />
+- 카드 공제 300만 원 달성 → 세금 절감: 300만 원 × 16.5% = <strong>49.5만 원</strong></p>
+<hr />
+<h3>[B] 주택청약저축 소득공제</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>대상</td>
+<td>총급여 7,000만 원 이하 무주택 세대주 (+ 2026년부터 배우자도 가능)</td>
+</tr>
+<tr>
+<td>연간 납입 한도</td>
+<td>300만 원</td>
+</tr>
+<tr>
+<td>공제율</td>
+<td><strong>40%</strong></td>
+</tr>
+<tr>
+<td>최대 소득공제</td>
+<td><strong>120만 원</strong></td>
+</tr>
+<tr>
+<td>절세액 (16.5% 세율)</td>
+<td><strong>19.8만 원</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>주의사항</strong>:<br />
+- 가입 후 5년 이내 해지 시 공제받은 세금 추징<br />
+- 무주택 세대주 요건 유지 필수<br />
+- 실제 청약 당첨 시에는 납입금 전액 사용 (해지 아님, 공제 유지)</p>
+<hr />
+<h3>[C] 보험료 소득공제</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>한도</th>
+<th>공제율</th>
+<th>절세액 (16.5%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>국민연금 보험료</td>
+<td>전액</td>
+<td>100%</td>
+<td>직접 소득공제</td>
+</tr>
+<tr>
+<td>건강보험·고용보험</td>
+<td>전액</td>
+<td>100%</td>
+<td>직접 소득공제</td>
+</tr>
+<tr>
+<td>개인 보장성 보험</td>
+<td>100만 원</td>
+<td>—</td>
+<td>세액공제 항목 (아래 참조)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. 세액공제 항목 전체 지도</h2>
+<h3>[D] 의료비 세액공제</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>공제율</th>
+<th>한도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일반 의료비 (총급여 3% 초과분)</td>
+<td><strong>15%</strong></td>
+<td>700만 원</td>
+</tr>
+<tr>
+<td>난임시술비</td>
+<td><strong>30%</strong></td>
+<td>별도</td>
+</tr>
+<tr>
+<td>65세 이상·장애인 의료비</td>
+<td><strong>15%</strong></td>
+<td>한도 없음</td>
+</tr>
+</tbody>
+</table>
+<p><strong>의료비 공제 시작점 (총급여 5,600만원 예시)</strong>: 5,600만 원 × 3% = <strong>168만 원</strong> 초과분부터<br />
+→ 연간 의료비가 168만 원 미만이면 세액공제 0원</p>
+<p>예시: 연간 의료비 500만 원 → (500 - 168) × 15% = <strong>49.8만 원</strong> 절세</p>
+<hr />
+<h3>[E] 교육비 세액공제</h3>
+<table>
+<thead>
+<tr>
+<th>대상</th>
+<th>공제율</th>
+<th>한도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>본인</strong> (대학원 포함)</td>
+<td><strong>15%</strong></td>
+<td><strong>한도 없음</strong></td>
+</tr>
+<tr>
+<td>자녀 (초·중·고)</td>
+<td>15%</td>
+<td>300만 원</td>
+</tr>
+<tr>
+<td>자녀 (대학)</td>
+<td>15%</td>
+<td>900만 원</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>자격증 취득, 직무 관련 교육비는 본인 교육비로 공제 가능.<br />
+한도 없는 본인 교육비가 핵심 — 석사·박사과정 진학 시 강력한 세액공제 항목.</p>
+</blockquote>
+<hr />
+<h3>[F] 개인 보장성 보험료 세액공제</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>한도</th>
+<th>공제율</th>
+<th>최대 절세액</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일반 보장성 보험</td>
+<td>100만 원</td>
+<td><strong>12%</strong></td>
+<td>12만 원</td>
+</tr>
+<tr>
+<td>장애인 전용 보험</td>
+<td>100만 원</td>
+<td><strong>15%</strong></td>
+<td>15만 원</td>
+</tr>
+</tbody>
+</table>
+<p>→ 생명보험, 실손보험, 자동차보험 등 포함. 이미 대부분 납입 중이라면 자동으로 공제.</p>
+<hr />
+<h3>[G] 월세 세액공제</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>조건</th>
+<th>공제율</th>
+<th>한도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>월세 세액공제</td>
+<td>총급여 8,000만 원 이하 무주택자</td>
+<td><strong>17%</strong> (총급여 5,500만 이하) / <strong>15%</strong> (5,500만 초과)</td>
+<td>연 1,000만 원</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>총급여 5,500만원 초과 → 공제율 15%</strong><br />
+예시: 월세 월 83만 원 × 12 = 연 1,000만 원 → 세액공제 150만 원</p>
+</blockquote>
+<p><strong>활용 조건</strong>:<br />
+- 임대차계약서 + 주민등록 주소지 일치 필수<br />
+- 현금영수증 or 계좌이체 증빙 필수<br />
+- 집주인 동의 불필요 (신고 가능)</p>
+<hr />
+<h3>[H] 기부금 세액공제</h3>
+<table>
+<thead>
+<tr>
+<th>기부 유형</th>
+<th>공제율</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>법정기부금 (국가, 지자체)</td>
+<td>1,000만 원 이하 15% / 초과 30%</td>
+</tr>
+<tr>
+<td>지정기부금 (사회복지, 종교)</td>
+<td>1,000만 원 이하 15% / 초과 30%</td>
+</tr>
+<tr>
+<td>정치자금 기부금</td>
+<td>10만 원 이하 100% / 초과 15%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. 항목별 절세 요약표 (총급여 5,500만원 초과 구간)</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>방식</th>
+<th>최대 공제</th>
+<th>최대 절세액</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IRP + 연금저축</td>
+<td>세액공제</td>
+<td>900만 원 납입</td>
+<td><strong>118.8만 원</strong></td>
+</tr>
+<tr>
+<td>신용/체크카드</td>
+<td>소득공제</td>
+<td>300만 원</td>
+<td><strong>49.5만 원</strong></td>
+</tr>
+<tr>
+<td>월세</td>
+<td>세액공제</td>
+<td>1,000만 원 지출</td>
+<td><strong>150만 원</strong></td>
+</tr>
+<tr>
+<td>주택청약저축</td>
+<td>소득공제</td>
+<td>120만 원</td>
+<td><strong>19.8만 원</strong></td>
+</tr>
+<tr>
+<td>국민성장펀드</td>
+<td>소득공제</td>
+<td>1,200만 원</td>
+<td><strong>198만 원</strong></td>
+</tr>
+<tr>
+<td>의료비</td>
+<td>세액공제</td>
+<td>700만 원</td>
+<td><strong>105만 원</strong></td>
+</tr>
+<tr>
+<td>보장성 보험</td>
+<td>세액공제</td>
+<td>12만 원</td>
+<td><strong>12만 원</strong></td>
+</tr>
+<tr>
+<td>교육비(본인)</td>
+<td>세액공제</td>
+<td>한도 없음</td>
+<td>지출 × 15%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>5. 2026년 달라진 사항</h2>
+<table>
+<thead>
+<tr>
+<th>변경 내용</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주택청약 소득공제</td>
+<td>세대주 배우자도 공제 가능 (신규)</td>
+</tr>
+<tr>
+<td>자녀 세액공제 인상</td>
+<td>1명 25만 원, 2명 55만 원 (기존 대비 5만 원 인상)</td>
+</tr>
+<tr>
+<td>결혼세액공제</td>
+<td>혼인신고 연도 1인당 50만 원 공제 (2024~2026 한시)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>출처</h2>
+<ul>
+<li><a href="https://kbthink.com/tax/expert/gw/251128.html">2026 연말정산 체크포인트 — KB의 생각</a></li>
+<li><a href="https://www.banksalad.com/articles/13%EC%9B%94%EC%9D%98-%EC%9B%94%EA%B8%89%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%97%B0%EB%A7%90%EC%A0%95%EC%82%B0-%EC%8B%A0%EC%9A%A9%EC%B9%B4%EB%93%9C-%EA%B3%B5%EC%A0%9C-100%ED%94%84%EB%A1%9C-%EB%B0%9B%EB%8A%94-%EA%BF%80%ED%8C%81">신용카드 소득공제 100% 받는법 — 뱅크샐러드</a></li>
+<li><a href="https://brunch.co.kr/@shopl/521">2026년 연말정산 개정사항 5가지</a></li>
+<li><a href="https://hometax.go.kr">연말정산 모의계산 — 국세청 홈택스</a></li>
+</ul>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>해외 테마별 대장주 허브 (2026) — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="주식">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li class="current"><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="etf">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>🏆🌍 대장주</span><span class="sep">›</span><span>해외 테마별 대장주 허브 (2026)</span></div>
+<article class="content">
+<h1>해외 테마별 대장주 종합 허브 (2026년 5월 기준)</h1>
+<blockquote>
+<p><strong>환율 기준</strong>: 1달러 ≈ 1,400원 적용. ✅=확인된 수치, 📊=추정치 <br />
+<strong>시장</strong>: 미국(NYSE/NASDAQ) 중심, 일부 대만·유럽 포함</p>
+</blockquote>
+<hr />
+<h2>2026년 글로벌 시총 TOP 10</h2>
+<table>
+<thead>
+<tr>
+<th>순위</th>
+<th>종목명</th>
+<th>티커</th>
+<th>테마</th>
+<th>시총(조$)</th>
+<th>시총(조원)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1위</strong></td>
+<td><strong>Apple</strong></td>
+<td>AAPL</td>
+<td>빅테크·소비자</td>
+<td>~3.5 📊</td>
+<td>~4,900</td>
+</tr>
+<tr>
+<td><strong>2위</strong></td>
+<td><strong>Microsoft</strong></td>
+<td>MSFT</td>
+<td>AI·클라우드</td>
+<td>~3.2 📊</td>
+<td>~4,480</td>
+</tr>
+<tr>
+<td><strong>3위</strong></td>
+<td><strong>NVIDIA</strong></td>
+<td>NVDA</td>
+<td>AI 반도체</td>
+<td><strong>5.41 ✅</strong></td>
+<td>~7,574</td>
+</tr>
+<tr>
+<td><strong>4위</strong></td>
+<td><strong>Alphabet</strong></td>
+<td>GOOGL</td>
+<td>AI·광고</td>
+<td>~2.5 📊</td>
+<td>~3,500</td>
+</tr>
+<tr>
+<td><strong>5위</strong></td>
+<td><strong>Amazon</strong></td>
+<td>AMZN</td>
+<td>클라우드·커머스</td>
+<td>~2.5 📊</td>
+<td>~3,500</td>
+</tr>
+<tr>
+<td><strong>6위</strong></td>
+<td><strong>Meta</strong></td>
+<td>META</td>
+<td>AI·소셜</td>
+<td>~1.8 📊</td>
+<td>~2,520</td>
+</tr>
+<tr>
+<td><strong>7위</strong></td>
+<td><strong>Tesla</strong></td>
+<td>TSLA</td>
+<td>EV·로봇·AI</td>
+<td>~1.2 📊</td>
+<td>~1,680</td>
+</tr>
+<tr>
+<td><strong>8위</strong></td>
+<td><strong>TSMC</strong></td>
+<td>TSM</td>
+<td>AI 파운드리</td>
+<td>~1.2 📊</td>
+<td>~1,680</td>
+</tr>
+<tr>
+<td><strong>9위</strong></td>
+<td><strong>Broadcom</strong></td>
+<td>AVGO</td>
+<td>AI 네트워킹·칩</td>
+<td>~1.1 📊</td>
+<td>~1,540</td>
+</tr>
+<tr>
+<td><strong>10위</strong></td>
+<td><strong>Berkshire Hathaway</strong></td>
+<td>BRK.B</td>
+<td>금융·가치투자</td>
+<td>~1.0 📊</td>
+<td>~1,400</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><span style="color:#e67e22"><strong>[참고]</strong></span> <strong>주목</strong>: NVIDIA(3위↔1위 근접)는 2024년 대비 시총 3배+ 성장. AI 반도체 슈퍼사이클 수혜.</p>
+</blockquote>
+<hr />
+<h2>해외 10대 테마 개요</h2>
+<p><div class="mermaid">mindmap
+ root(("해외 2026 10대 테마"))
+ AI반도체
+ NVIDIA
+ TSMC
+ Broadcom
+ AMD
+ ASML
+ AI플랫폼·클라우드
+ Microsoft
+ Google Alphabet
+ Amazon AWS
+ Meta
+ Salesforce
+ 전력인프라
+ GE Vernova
+ Vertiv
+ Eaton
+ Quanta Services
+ 방산·우주
+ Lockheed Martin
+ RTX Raytheon
+ Northrop Grumman
+ 원전·에너지
+ Constellation Energy
+ Vistra Energy
+ Cameco
+ 바이오·제약
+ Eli Lilly
+ Novo Nordisk
+ AbbVie
+ 로봇·자동화
+ Tesla Optimus
+ ABB
+ Intuitive Surgical
+ EV·배터리
+ Tesla
+ BYD
+ Panasonic
+ 엔터·스트리밍
+ Netflix
+ Disney
+ Spotify
+ 금융·핀테크
+ JPMorgan
+ Visa
+ Mastercard
+</div></p>
+<hr />
+<h2>해외 테마별 대장주 한눈에 비교</h2>
+<table>
+<thead>
+<tr>
+<th>테마</th>
+<th>대장주 (1위)</th>
+<th>2위</th>
+<th>3위</th>
+<th>핵심 투자 포인트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AI 반도체</strong></td>
+<td><strong>NVIDIA</strong></td>
+<td>TSMC</td>
+<td>Broadcom</td>
+<td>AI 슈퍼사이클, HBM·GPU 독점</td>
+</tr>
+<tr>
+<td><strong>AI 플랫폼</strong></td>
+<td><strong>Microsoft</strong></td>
+<td>Alphabet</td>
+<td>Amazon</td>
+<td>Azure·GCP·AWS AI 클라우드 확장</td>
+</tr>
+<tr>
+<td><strong>전력인프라</strong></td>
+<td><strong>GE Vernova</strong></td>
+<td>Vertiv</td>
+<td>Eaton</td>
+<td>AI 데이터센터 전력 수요 폭증</td>
+</tr>
+<tr>
+<td><strong>방산·우주</strong></td>
+<td><strong>Lockheed Martin</strong></td>
+<td>RTX</td>
+<td>Northrop Grumman</td>
+<td>중동·우크라이나 분쟁, 우주 경제</td>
+</tr>
+<tr>
+<td><strong>원전·에너지</strong></td>
+<td><strong>Constellation Energy</strong></td>
+<td>Vistra</td>
+<td>Cameco</td>
+<td>AI 전력난, SMR 빅테크 계약</td>
+</tr>
+<tr>
+<td><strong>바이오·제약</strong></td>
+<td><strong>Eli Lilly</strong></td>
+<td>Novo Nordisk</td>
+<td>AbbVie</td>
+<td>비만치료제 1조$ 시장, 알츠하이머</td>
+</tr>
+<tr>
+<td><strong>로봇·자동화</strong></td>
+<td><strong>Tesla</strong></td>
+<td>ABB</td>
+<td>Intuitive Surgical</td>
+<td>Optimus 양산, 피지컬 AI</td>
+</tr>
+<tr>
+<td><strong>EV·배터리</strong></td>
+<td><strong>Tesla</strong></td>
+<td>BYD</td>
+<td>Panasonic</td>
+<td>전고체·LFP 기술 경쟁</td>
+</tr>
+<tr>
+<td><strong>엔터·스트리밍</strong></td>
+<td><strong>Netflix</strong></td>
+<td>Disney</td>
+<td>Spotify</td>
+<td>AI 콘텐츠 제작, 구독 경제</td>
+</tr>
+<tr>
+<td><strong>금융·핀테크</strong></td>
+<td><strong>JPMorgan</strong></td>
+<td>Berkshire</td>
+<td>Visa</td>
+<td>고금리 수익, AI 금융 혁신</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>해외 테마 대장주 시총 비교</h2>
+<p><div class="mermaid">xychart-beta
+ title "해외 테마 대장주 시총 비교 (조달러, 2026년 5월 추정)"
+ x-axis ["NVIDIA(AI반도체)", "Microsoft(AI)", "Alphabet(AI)", "Amazon(클라우드)", "Tesla(로봇EV)", "TSMC(파운드리)", "Broadcom(네트워크)", "Eli Lilly(바이오)", "JPMorgan(금융)", "GE Vernova(전력)"]
+ y-axis "시가총액 (조 달러)" 0 --> 6
+ bar [5.41, 3.20, 2.50, 2.50, 1.20, 1.20, 1.10, 0.90, 0.80, 0.40]
+</div></p>
+<hr />
+<h2>해외 테마별 투자 스타일 포지셔닝</h2>
+<p><div class="mermaid">quadrantChart
+ title 해외 테마별 성장성 vs 밸류에이션 포지셔닝 (2026년 기준)
+ x-axis "저성장 (가치주)" --> "고성장 (성장주)"
+ y-axis "고평가(PER高)" --> "저평가(PER低)"
+ quadrant-1 저평가 성장주 (베스트)
+ quadrant-2 고평가 성장주 (모멘텀 지속 필요)
+ quadrant-3 고평가 저성장 (회피)
+ quadrant-4 저평가 저성장 (배당주)
+ AI반도체NVDA: [0.90, 0.30]
+ AI플랫폼MSFT: [0.80, 0.40]
+ 전력인프라GEV: [0.75, 0.60]
+ 방산LMT: [0.60, 0.65]
+ 원전CEG: [0.70, 0.55]
+ 바이오LLY: [0.85, 0.25]
+ 로봇Tesla: [0.88, 0.20]
+ 금융JPM: [0.35, 0.78]
+ EVBYD: [0.72, 0.58]
+ 엔터Netflix: [0.65, 0.50]
+</div></p>
+<hr />
+<h2>해외 테마 투자 핵심 포인트</h2>
+<p><div class="mermaid">flowchart LR
+ subgraph " AI 직접 수혜 (최우선)"
+ A1["AI 반도체<br/>NVIDIA·TSMC·AVGO"]
+ A2["AI 플랫폼<br/>MSFT·GOOGL·AMZN"]
+ A3["전력인프라<br/>GEV·Vertiv·Eaton"]
+ end
+ subgraph "양호 구조적 메가트렌드"
+ B1["비만치료제<br/>LLY·NVO<br/>2030년 1조$ 시장"]
+ B2["로봇·휴머노이드<br/>Tesla Optimus<br/>Figure AI"]
+ B3["원전 르네상스<br/>CEG·Cameco·SMR"]
+ end
+ subgraph "중립 지정학·정책 수혜"
+ C1["방산·우주<br/>LMT·RTX·NOC"]
+ C2["미국 우선주의<br/>Onshoring 수혜"]
+ end
+ subgraph " 안정·밸류"
+ D1["금융·핀테크<br/>JPM·V·MA<br/>고금리 수혜"]
+ D2["엔터·스트리밍<br/>NFLX·DIS·SPOT"]
+ end
+</div></p>
+<hr />
+<h2><span style="color:#e74c3c"><strong>[주의]</strong></span> 해외 투자 공통 리스크</h2>
+<table>
+<thead>
+<tr>
+<th>리스크</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>환율</strong></td>
+<td>원/달러 상승 시 환차익, 하락 시 환차손</td>
+</tr>
+<tr>
+<td><strong>금리 민감성</strong></td>
+<td>미국 금리 상승 → 고PER 성장주 밸류에이션 압박</td>
+</tr>
+<tr>
+<td><strong>미·중 무역전쟁</strong></td>
+<td>반도체 수출 규제, TSMC·엔비디아 중국 매출 리스크</td>
+</tr>
+<tr>
+<td><strong>빅테크 규제</strong></td>
+<td>EU·미국 반독점 규제 강화</td>
+</tr>
+<tr>
+<td><strong>거시경제</strong></td>
+<td>미국 GDP 둔화 시 전반적 수익성 저하</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>상세 노트 링크</h2>
+<table>
+<thead>
+<tr>
+<th>노트</th>
+<th>포함 테마</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../대장주/17.html" class="wikilink">17. 해외 반도체·AI·전력인프라 대장주 TOP10</a></td>
+<td>AI반도체, AI플랫폼, 전력인프라</td>
+</tr>
+<tr>
+<td><a href="../대장주/18.html" class="wikilink">18. 해외 방산·원전·바이오·로봇 대장주 TOP10</a></td>
+<td>방산, 원전, 바이오, 로봇</td>
+</tr>
+<tr>
+<td><a href="../대장주/19.html" class="wikilink">19. 해외 AI플랫폼·금융·EV·엔터 대장주 TOP10</a></td>
+<td>금융, EV·배터리, 엔터, 핀테크</td>
+</tr>
+<tr>
+<td><a href="../대장주/20.html" class="wikilink">20. 국내·해외 테마 종합 비교 마스터</a></td>
+<td>국내 vs 해외 전체 비교</td>
+</tr>
+<tr>
+<td><a href="../대장주/12.html" class="wikilink">12. 테마별 대장주 허브 (2026)</a></td>
+<td>국내 10개 테마 허브</td>
+</tr>
+</tbody>
+</table>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>

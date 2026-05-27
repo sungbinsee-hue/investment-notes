@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>가치평가 지표 총람 — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="주식">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li class="current"><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="etf">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>📈 주식 · 기업 분석</span><span class="sep">›</span><span>가치평가 지표 총람</span></div>
+<article class="content">
+<h1>가치평가 지표 총람</h1>
+<blockquote>
+<p>기업 가치를 측정하는 모든 핵심 지표 — 계산식, 해석, 업종별 기준치, 함정까지.</p>
+</blockquote>
+<h2>1. 시장 가격 배수 (Market Multiples)</h2>
+<h3>1-1. PER (주가수익비율, Price-to-Earnings Ratio)</h3>
+<div class="math-block">$$\text{PER} = \frac{\text{주가}}{\text{EPS(주당순이익)}} = \frac{\text{시가총액}}{\text{순이익}}$$</div>
+
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>의미</strong></td>
+<td>현재 이익의 몇 배로 주가가 형성되어 있는가</td>
+</tr>
+<tr>
+<td><strong>직관</strong></td>
+<td>PER 10배 = 이익이 현재 수준 유지 시 10년 후 원금 회수</td>
+</tr>
+<tr>
+<td><strong>저PER</strong></td>
+<td>저평가 신호 OR 성장 기대 부재, Value Trap 주의</td>
+</tr>
+<tr>
+<td><strong>고PER</strong></td>
+<td>고성장 기대치 반영 OR 거품</td>
+</tr>
+</tbody>
+</table>
+<p><strong>업종별 평균 PER 가이드</strong></p>
+<p><div class="mermaid">xychart-beta
+ title "업종별 PER 참고 범위 (배)"
+ x-axis ["반도체", "바이오", "IT서비스", "자동차", "은행", "유틸리티", "소재"]
+ y-axis "PER 배수" 0 --> 60
+ bar [18, 50, 28, 8, 7, 14, 10]
+</div></p>
+<blockquote>
+<p><span style="color:#e74c3c"><strong>[주의]</strong></span> <strong>함정</strong>: 일회성 이익(자산 매각 등)으로 EPS가 왜곡될 수 있음. 조정 EPS(Adjusted EPS) 사용 권장.</p>
+</blockquote>
+<hr />
+<h3>1-2. PBR (주가순자산비율, Price-to-Book Ratio)</h3>
+<div class="math-block">$$\text{PBR} = \frac{\text{주가}}{\text{BPS(주당순자산)}} = \frac{\text{시가총액}}{\text{자기자본}}$$</div>
+
+<table>
+<thead>
+<tr>
+<th>PBR 구간</th>
+<th>해석</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 0.5</td>
+<td>초저평가 (청산 가치의 절반) — 구조적 문제 의심</td>
+</tr>
+<tr>
+<td>0.5 ~ 1.0</td>
+<td>청산 가치 이하 — 자산주 또는 불량 기업</td>
+</tr>
+<tr>
+<td>1.0 ~ 2.0</td>
+<td>적정 ~ 소폭 프리미엄</td>
+</tr>
+<tr>
+<td>2.0 ~ 5.0</td>
+<td>브랜드·기술력 등 무형자산 반영</td>
+</tr>
+<tr>
+<td>&gt; 5.0</td>
+<td>강력한 성장 프리미엄 (테크·소비재 우량주)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>ROE와의 관계</strong>: PBR ≈ PER × ROE → ROE가 높을수록 높은 PBR 정당화됨</p>
+</blockquote>
+<hr />
+<h3>1-3. PSR (주가매출비율, Price-to-Sales Ratio)</h3>
+<div class="math-block">$$\text{PSR} = \frac{\text{시가총액}}{\text{연간 매출액}}$$</div>
+
+<p><strong>사용 시점</strong>: 적자 기업, 이익이 불안정한 고성장 기업 평가에 유용</p>
+<table>
+<thead>
+<tr>
+<th>PSR 구간</th>
+<th>해석 (일반 기업 기준)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 0.5</td>
+<td>매우 저평가 (사양 산업 가능)</td>
+</tr>
+<tr>
+<td>0.5 ~ 1.5</td>
+<td>저평가 ~ 적정</td>
+</tr>
+<tr>
+<td>1.5 ~ 3.0</td>
+<td>프리미엄 반영</td>
+</tr>
+<tr>
+<td>&gt; 5.0</td>
+<td>고성장 SaaS / 테크 기업 수준</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>1-4. PCR (주가현금흐름비율, Price-to-Cash Flow)</h3>
+<div class="math-block">$$\text{PCR} = \frac{\text{주가}}{\text{주당 영업현금흐름}}$$</div>
+
+<ul>
+<li>PER보다 <strong>회계 조작 어려움</strong> → 더 신뢰성 높음</li>
+<li>감가상각이 큰 장치산업(반도체, 통신)에 유용</li>
+</ul>
+<hr />
+<h3>1-5. PEG (성장 조정 PER)</h3>
+<div class="math-block">$$\text{PEG} = \frac{\text{PER}}{\text{EPS 연간 성장률(\%)}}$$</div>
+
+<p><div class="mermaid">flowchart LR
+ A["PEG 계산"] --> B{"PEG 값 판단"}
+ B -->|"< 0.5"| C[" 심각한 저평가<br/>고성장 대비 매우 싼 주가"]
+ B -->|"0.5 ~ 1.0"| D["✅ 저평가<br/>성장 대비 합리적 가격"]
+ B -->|"1.0 ~ 1.5"| E[" 적정 평가"]
+ B -->|"1.5 ~ 2.0"| F["[주의] 소폭 고평가"]
+ B -->|"> 2.0"| G["[경고] 고평가<br/>성장 프리미엄 과도"]
+</div></p>
+<blockquote>
+<p>Peter Lynch: "PEG 1 미만이면 저평가, 2 이상이면 위험"</p>
+</blockquote>
+<hr />
+<h2>2. 기업가치 배수 (Enterprise Value Multiples)</h2>
+<h3>기업가치(EV) 계산</h3>
+<div class="math-block">$$\text{EV} = \text{시가총액} + \text{순부채} = \text{시가총액} + \text{총부채} - \text{현금}$$</div>
+
+<blockquote>
+<p>부채까지 인수한다고 가정한 <strong>실질 인수 비용</strong></p>
+</blockquote>
+<hr />
+<h3>2-1. EV/EBITDA (가장 범용적인 가치평가 지표)</h3>
+<div class="math-block">$$\text{EV/EBITDA} = \frac{\text{EV}}{\text{EBITDA}}$$</div>
+
+<div class="math-block">$$\text{EBITDA} = \text{영업이익} + \text{감가상각비}(D\&A)$$</div>
+
+<p><strong>EV/EBITDA를 선호하는 이유</strong></p>
+<p><div class="mermaid">pie title "PER 대비 EV/EBITDA의 장점"
+ "자본구조(부채) 차이 제거" : 30
+ "감가상각 차이 제거" : 25
+ "세율 차이 제거" : 20
+ "M&A 가치 직관적 반영" : 25
+</div></p>
+<table>
+<thead>
+<tr>
+<th>EV/EBITDA</th>
+<th>해석</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 5배</td>
+<td>매우 저평가 (사양 산업이거나 저성장)</td>
+</tr>
+<tr>
+<td>5 ~ 10배</td>
+<td>저평가 ~ 적정</td>
+</tr>
+<tr>
+<td>10 ~ 15배</td>
+<td>적정 ~ 프리미엄</td>
+</tr>
+<tr>
+<td>&gt; 20배</td>
+<td>고성장 기업 또는 고평가</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>2-2. EV/Sales &amp; EV/FCF</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>공식</th>
+<th>사용처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>EV/Sales</strong></td>
+<td>EV ÷ 매출액</td>
+<td>초기 성장 기업, 적자 SaaS</td>
+</tr>
+<tr>
+<td><strong>EV/FCF</strong></td>
+<td>EV ÷ FCF</td>
+<td>현금 창출 기업 내재가치</td>
+</tr>
+<tr>
+<td><strong>EV/EBIT</strong></td>
+<td>EV ÷ EBIT</td>
+<td>감가상각 차이 적을 때</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. 수익성 지표 (Profitability)</h2>
+<h3>3-1. ROE (자기자본이익률)</h3>
+<div class="math-block">$$\text{ROE} = \frac{\text{순이익}}{\text{자기자본}} \times 100\%$$</div>
+
+<p><strong>듀퐁 분해 (DuPont Decomposition)</strong></p>
+<div class="math-block">$$\text{ROE} = \underbrace{\frac{\text{순이익}}{\text{매출}}}_{\text{순이익률}} \times \underbrace{\frac{\text{매출}}{\text{총자산}}}_{\text{자산회전율}} \times \underbrace{\frac{\text{총자산}}{\text{자기자본}}}_{\text{레버리지}}$$</div>
+
+<p><div class="mermaid">flowchart TD
+ ROE["ROE 분해 분석"] --> NM["순이익률<br/>↑ = 가격경쟁력·원가절감"]
+ ROE --> AT["자산회전율<br/>↑ = 자산 효율적 활용"]
+ ROE --> LEV["재무 레버리지<br/>↑ = 부채 활용 (위험 수반)"]
+ NM --> Q1{"어떻게 높아졌나?"}
+ AT --> Q1
+ LEV --> Q1
+ Q1 -->|"NM + AT 개선"| GOOD["✅ 진정한 수익성 향상"]
+ Q1 -->|"레버리지만 증가"| WARN["[주의] 부채 증가로 ROE 왜곡<br/>부채비율 반드시 확인"]
+</div></p>
+<table>
+<thead>
+<tr>
+<th>ROE 수준</th>
+<th>평가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; 25%</td>
+<td>탁월 (워런 버핏 선호 기준)</td>
+</tr>
+<tr>
+<td>15 ~ 25%</td>
+<td>우량</td>
+</tr>
+<tr>
+<td>10 ~ 15%</td>
+<td>보통</td>
+</tr>
+<tr>
+<td>&lt; 10%</td>
+<td>자본비용 하회 가능성</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>3-2. ROIC (투하자본이익률) — 가장 중요한 장기 지표</h3>
+<div class="math-block">$$\text{ROIC} = \frac{\text{NOPAT(세후영업이익)}}{\text{투하자본(IC)}}$$</div>
+
+<div class="math-block">$$\text{투하자본(IC)} = \text{자기자본} + \text{이자발생부채} - \text{비영업자산}$$</div>
+
+<p><strong>ROIC vs WACC 비교표</strong></p>
+<table>
+<thead>
+<tr>
+<th>관계</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ROIC &gt; WACC</strong></td>
+<td>양호 가치 <strong>창출</strong> — 투자할수록 기업가치 증가</td>
+</tr>
+<tr>
+<td><strong>ROIC = WACC</strong></td>
+<td>중립 가치 <strong>유지</strong> — 현상 유지</td>
+</tr>
+<tr>
+<td><strong>ROIC &lt; WACC</strong></td>
+<td>위험 가치 <strong>파괴</strong> — 투자할수록 손해</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>장기 주가 상승의 핵심은 <strong>ROIC &gt; WACC 지속 유지</strong></p>
+</blockquote>
+<hr />
+<h3>3-3. 이익률 체계</h3>
+<p><div class="mermaid">flowchart TD
+ REV["매출액(Revenue)<br/>= 100%"] --> GP["매출총이익<br/>= 매출 - 매출원가<br/>→ 매출총이익률(GPM)"]
+ GP --> OP["영업이익<br/>= 총이익 - 판관비<br/>→ 영업이익률(OPM)"]
+ OP --> EBIT["EBIT<br/>= 영업이익 ≈ 동일<br/>(비영업 항목 제외)"]
+ EBIT --> EBITDA["EBITDA<br/>= EBIT + D&A<br/>→ EBITDA 마진"]
+ EBIT --> NI["순이익<br/>= EBIT - 이자 - 세금<br/>→ 순이익률(NPM)"]
+</div></p>
+<p><strong>이상적인 이익률 목표치</strong></p>
+<table>
+<thead>
+<tr>
+<th>이익률</th>
+<th>일반 기업</th>
+<th>우량 기업</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>매출총이익률(GPM)</td>
+<td>&gt; 30%</td>
+<td>&gt; 50%</td>
+</tr>
+<tr>
+<td>영업이익률(OPM)</td>
+<td>&gt; 10%</td>
+<td>&gt; 20%</td>
+</tr>
+<tr>
+<td>EBITDA 마진</td>
+<td>&gt; 15%</td>
+<td>&gt; 25%</td>
+</tr>
+<tr>
+<td>순이익률(NPM)</td>
+<td>&gt; 5%</td>
+<td>&gt; 15%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. 성장성 지표 (Growth)</h2>
+<h3>4-1. 주요 성장 지표 체계</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>공식</th>
+<th>관찰 기간</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>매출 CAGR</strong></td>
+<td>(최근 ÷ 과거)^(1/n) - 1</td>
+<td>3~5년</td>
+<td>외형 성장 속도</td>
+</tr>
+<tr>
+<td><strong>EPS CAGR</strong></td>
+<td>EPS 연평균 성장률</td>
+<td>3~5년</td>
+<td>주주 이익 성장</td>
+</tr>
+<tr>
+<td><strong>EBITDA CAGR</strong></td>
+<td>EBITDA 연평균 성장률</td>
+<td>3~5년</td>
+<td>현금 창출 성장</td>
+</tr>
+<tr>
+<td><strong>FCF CAGR</strong></td>
+<td>FCF 연평균 성장률</td>
+<td>3~5년</td>
+<td>실질 가치 성장</td>
+</tr>
+</tbody>
+</table>
+<h3>4-2. 성장주 vs 가치주 분류</h3>
+<p><div class="mermaid">quadrantChart
+ title 성장성 vs 밸류에이션 포지셔닝
+ x-axis "저성장" --> "고성장"
+ y-axis "고평가(PER 高)" --> "저평가(PER 低)"
+ quadrant-1 저평가 성장주 (최선)
+ quadrant-2 고평가 성장주 (GARP 검토)
+ quadrant-3 고평가 저성장 (최악, 회피)
+ quadrant-4 저평가 저성장 (가치주, Value Trap 주의)
+ 이상적 매수 구간: [0.7, 0.7]
+ 고평가 테크: [0.85, 0.2]
+ 전통 가치주: [0.25, 0.65]
+ 위험 구간: [0.2, 0.15]
+</div></p>
+<hr />
+<h2>5. 재무 안전성 지표 (Financial Safety)</h2>
+<h3>5-1. 부채 관련 지표</h3>
+<div class="math-block">$$\text{부채비율(D/E)} = \frac{\text{총부채}}{\text{자기자본}} \times 100\%$$</div>
+
+<div class="math-block">$$\text{순부채비율} = \frac{\text{총부채} - \text{현금}}{\text{자기자본}} \times 100\%$$</div>
+
+<div class="math-block">$$\text{이자보상배율} = \frac{\text{영업이익}}{\text{이자비용}}$$</div>
+
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>안전</th>
+<th>주의</th>
+<th><span style="color:#e74c3c"><strong>위험</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>부채비율</td>
+<td>&lt; 100%</td>
+<td>100~200%</td>
+<td>&gt; 200%</td>
+</tr>
+<tr>
+<td>순부채/EBITDA</td>
+<td>&lt; 2배</td>
+<td>2~4배</td>
+<td>&gt; 5배</td>
+</tr>
+<tr>
+<td>이자보상배율</td>
+<td>&gt; 5배</td>
+<td>2~5배</td>
+<td>&lt; 2배</td>
+</tr>
+<tr>
+<td>유동비율</td>
+<td>&gt; 200%</td>
+<td>100~200%</td>
+<td>&lt; 100%</td>
+</tr>
+</tbody>
+</table>
+<h3>5-2. 재무 안전성 신호등</h3>
+<p><div class="mermaid">flowchart LR
+ subgraph 양호 안전
+ G1["순현금 보유<br/>(현금 > 총부채)"]
+ G2["이자보상배율<br/>> 10배"]
+ G3["영업 CF > CAPEX<br/>(FCF 흑자)"]
+ end
+ subgraph 중립 주의
+ Y1["부채비율<br/>100~200%"]
+ Y2["이자보상배율<br/>2~5배"]
+ Y3["FCF 불안정<br/>(흑자·적자 반복)"]
+ end
+ subgraph 위험 위험
+ R1["순부채/EBITDA<br/>> 5배"]
+ R2["이자보상배율<br/>< 1.5배"]
+ R3["영업 CF 적자<br/>(본업에서 현금 유출)"]
+ end
+</div></p>
+<hr />
+<h2>6. 현금흐름 지표 (Cash Flow)</h2>
+<h3>6-1. FCF (잉여현금흐름)</h3>
+<div class="math-block">$$\text{FCF} = \text{영업현금흐름(OCF)} - \text{자본적지출(CAPEX)}$$</div>
+
+<blockquote>
+<p>배당, 자사주 매입, 부채 상환, 인수합병에 쓸 수 있는 <strong>진짜 현금</strong></p>
+</blockquote>
+<h3>6-2. FCF 관련 지표</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>공식</th>
+<th>기준</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FCF Yield</strong></td>
+<td>FCF ÷ 시가총액</td>
+<td>&gt; 5% 매력</td>
+<td>투자 대비 현금 수익률</td>
+</tr>
+<tr>
+<td><strong>FCF 마진</strong></td>
+<td>FCF ÷ 매출</td>
+<td>&gt; 10% 우량</td>
+<td>매출 대비 현금 창출</td>
+</tr>
+<tr>
+<td><strong>FCF 전환율</strong></td>
+<td>FCF ÷ 순이익</td>
+<td>&gt; 80%</td>
+<td>이익의 현금 전환 효율</td>
+</tr>
+</tbody>
+</table>
+<h3>6-3. 현금흐름 품질 분석</h3>
+<p><div class="mermaid">flowchart TD
+ OCF["영업현금흐름<br/>(OCF)"] --> Q{"OCF vs 순이익<br/>비교"}
+ Q -->|"OCF >> 순이익"| GOOD["✅ 이익 품질 우수<br/>보수적 회계 or 선수금 多"]
+ Q -->|"OCF ≈ 순이익"| OK[" 정상적 수준"]
+ Q -->|"OCF << 순이익"| WARN["[주의] 이익 품질 의심<br/>미수금 증가 or 재고 누적"]
+ GOOD --> FCF_CHECK["FCF = OCF - CAPEX"]
+ OK --> FCF_CHECK
+ WARN --> FCF_CHECK
+ FCF_CHECK --> CAPEX_Q{"CAPEX 성격"}
+ CAPEX_Q -->|"성장 투자"| GROWTH["성장 CAPEX<br/>→ 미래 수익 기대"]
+ CAPEX_Q -->|"유지 투자만"| MAINT["유지 CAPEX<br/>→ 사업 경쟁력 하락 가능"]
+</div></p>
+<hr />
+<h2>7. 배당 지표</h2>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>공식</th>
+<th>기준</th>
+<th>주의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>배당수익률</strong></td>
+<td>주당배당금 ÷ 주가</td>
+<td>3~5% 선호</td>
+<td>너무 높으면 삭감 위험</td>
+</tr>
+<tr>
+<td><strong>배당성향</strong></td>
+<td>배당금 ÷ 순이익</td>
+<td>30~60% 적정</td>
+<td>&gt; 80% = 지속 위험</td>
+</tr>
+<tr>
+<td><strong>배당 성장률</strong></td>
+<td>연간 배당 증가율</td>
+<td>&gt; 5%</td>
+<td>배당 성장 여력 확인</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>지표 중요도 종합</h2>
+<p><div class="mermaid">pie title "장기 투자 시 지표 중요도 가중치"
+ "ROIC / ROE (수익성)" : 25
+ "FCF / FCF Yield (현금흐름)" : 20
+ "EV/EBITDA / PER (밸류에이션)" : 20
+ "매출·이익 성장률 (성장성)" : 20
+ "부채비율·이자보상배율 (안전성)" : 15
+</div></p>
+<hr />
+<blockquote>
+<p><strong>관련 노트</strong>: <a href="../주식/07.html" class="wikilink">07. 기업가치 평가 허브</a> | <a href="../주식/09.html" class="wikilink">09. 재무제표 분석 &amp; 체크리스트</a> | <a href="../주식/10.html" class="wikilink">10. 기업 비교 분석 프레임워크</a></p>
+</blockquote>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>

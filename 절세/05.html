@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>절세 포트폴리오 분배 전략 — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group active" data-group="절세">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li class="current"><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="주식">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="etf">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>🛡️ 절세 전략</span><span class="sep">›</span><span>절세 포트폴리오 분배 전략</span></div>
+<article class="content">
+<h1>절세 포트폴리오 분배 전략</h1>
+<blockquote>
+<p>이 노트는 "어디에 얼마씩 넣는 것이 합리적인가"에 대한 전문가적 설계안이다.<br />
+아래 예시는 총급여 5,500만원 초과 구간 기준으로 작성되었다.</p>
+</blockquote>
+<hr />
+<h2>1. 월 현금흐름 기반 설계</h2>
+<h3>월 수입·지출 구조 (예시)</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>금액 (월)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>세후 월 실수령</td>
+<td>개인별 상이</td>
+</tr>
+<tr>
+<td>생활비 (식비·교통·통신 등)</td>
+<td>≈ 100~130만 원</td>
+</tr>
+<tr>
+<td>주거비 (월세·관리비)</td>
+<td>≈ 50~80만 원</td>
+</tr>
+<tr>
+<td>비상금 적립 (초기 목표 달성 전)</td>
+<td>≈ 30만 원</td>
+</tr>
+<tr>
+<td><strong>투자·절세 가용 자금</strong></td>
+<td><strong>≈ 150만 원 내외 (예시)</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>개인 지출 구조에 따라 다름. 아래 전략은 <strong>월 여유자금 150만 원</strong> 가용 예시 기준.</p>
+</blockquote>
+<hr />
+<h2>2. 우선순위 기반 자금 배분</h2>
+<h3>원칙: 유동성 → 세액공제 → 비과세 → 소득공제 순</h3>
+<pre><code>[단계 1] 비상금 확보 (선행 필수)
+          목표: 월 생활비 × 6개월 = 약 1,200~1,500만 원
+          수단: CMA, 파킹통장 (이율 3~4%)
+
+[단계 2] IRP + 연금저축 900만원 채우기 (확정 이익 118.8만원)
+          월 75만원 자동이체 → 연 900만원 달성
+
+[단계 3] ISA 중개형 납입 (비과세 + 투자 자유도)
+          월 30~50만원 → 연 360~600만원
+
+[단계 4] 주택청약저축 300만원 (연 19.8만원 절세)
+          월 25만원 → 연 300만원
+
+[단계 5] 국민성장펀드 (유동성 희생 조건부)
+          여유자금 500~3,000만원 일시 납입
+
+[단계 6] 카드 전략 최적화 (추가 최대 49.5만원)
+          체크카드 비중 확대, 전통시장 활용
+</code></pre>
+<hr />
+<h2>3. 월 여유자금 기준 최적 분배안 (150만원 예시)</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>월 납입액</th>
+<th>연 납입액</th>
+<th>연 절세효과</th>
+<th>우선도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IRP (300만/년)</td>
+<td>25만 원</td>
+<td>300만 원</td>
+<td>포함</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>연금저축 (600만/년)</td>
+<td>50만 원</td>
+<td>600만 원</td>
+<td>포함</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td><strong>IRP+연금저축 합계</strong></td>
+<td><strong>75만 원</strong></td>
+<td><strong>900만 원</strong></td>
+<td><strong>118.8만 원</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>ISA 중개형</td>
+<td>40만 원</td>
+<td>480만 원</td>
+<td>수익 발생 시</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>주택청약저축</td>
+<td>25만 원</td>
+<td>300만 원</td>
+<td>19.8만 원</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>잔여 자유 투자</td>
+<td>10만 원</td>
+<td>120만 원</td>
+<td>—</td>
+<td>★★☆☆☆</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td><strong>150만 원</strong></td>
+<td><strong>1,800만 원</strong></td>
+<td><strong>≈ 138.6만 원</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. 국민성장펀드 편입 시나리오</h2>
+<p>국민성장펀드는 5년 만기 폐쇄형이라 월 납입이 아닌 <strong>여유자금 일시 투자</strong> 방식.</p>
+<h3>편입 여부 판단 트리</h3>
+<pre><code>비상금 1,200만원 보유? ──No──→ 국민성장펀드 보류
+                │
+               Yes
+                │
+        5년 내 대형 지출 계획? ──Yes──→ 국민성장펀드 보류
+                │
+               No
+                │
+        여유자금 규모는? ──500만 미만──→ 절세 효과 미미, 보류
+                │
+         500~3,000만원
+                │
+              편입 적합 (소득공제 40% 구간 내)
+</code></pre>
+<h3>여유자금별 추천 투자금</h3>
+<table>
+<thead>
+<tr>
+<th>여유자금</th>
+<th>추천 투자금</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>500만 원</td>
+<td>500만 원</td>
+<td>40% 공제 구간, 절세 33만원</td>
+</tr>
+<tr>
+<td>1,000만 원</td>
+<td>1,000만 원</td>
+<td>절세 66만원, 적정 리스크</td>
+</tr>
+<tr>
+<td>3,000만 원 이상</td>
+<td><strong>최대 3,000만 원</strong></td>
+<td>40% 구간 최대 활용 (절세 198만)</td>
+</tr>
+<tr>
+<td>5,000만 원 이상</td>
+<td>3,000만 원 권고</td>
+<td>3,001만~5,000만 구간은 효율 절반 하락</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>5. 절세 항목별 시계(Time Horizon) 구분</h2>
+<pre><code>단기 (연내 회수)
+  └── 카드 전략 → 연말정산 직후 환급
+  └── 의료비 세액공제 → 연말정산 직후 환급
+
+중기 (3년 내)
+  └── ISA 중개형 → 3년 만기 후 연금 이전 or 현금 회수
+
+장기 (5년)
+  └── 국민성장펀드 → 5년 만기 후 수령
+
+초장기 (55세 이후)
+  └── IRP + 연금저축 → 55세 이후 연금 수령 (세율 3.3~5.5%)
+</code></pre>
+<hr />
+<h2>6. 연도별 절세 효과 누적 시뮬레이션</h2>
+<h3>가정: 풀 시나리오 실행 (IRP+연금+ISA+청약+카드)</h3>
+<table>
+<thead>
+<tr>
+<th>연도</th>
+<th>당해 절세액</th>
+<th>누적 절세액</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1년 차</td>
+<td>138.6만 원 + 카드 49.5만</td>
+<td><strong>≈ 188만 원</strong></td>
+</tr>
+<tr>
+<td>2년 차</td>
+<td>동일</td>
+<td><strong>≈ 376만 원</strong></td>
+</tr>
+<tr>
+<td>3년 차</td>
+<td>동일 + ISA 만기 연금 이전 추가</td>
+<td><strong>≈ 600만 원</strong></td>
+</tr>
+<tr>
+<td>5년 차</td>
+<td>국민성장펀드 만기 + 누적</td>
+<td><strong>≈ 1,100~1,400만 원</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>ISA → 연금 이전 세액공제 (최대 39.6만 원)는 이전 연도에 발생.<br />
+국민성장펀드 소득공제는 납입 1년 차에만 발생 (이후 수익에 9.9% 분리과세).</p>
+</blockquote>
+<hr />
+<h2>7. 세제 혜택 수령 방식 비교</h2>
+<table>
+<thead>
+<tr>
+<th>혜택 방식</th>
+<th>수령 시기</th>
+<th>체감 방식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>세액공제 (IRP·연금저축)</td>
+<td>다음 해 1~2월 연말정산</td>
+<td>급여명세서 환급 or 세금 감소</td>
+</tr>
+<tr>
+<td>소득공제 (청약·카드)</td>
+<td>동일</td>
+<td>과세표준 감소 → 세금 감소</td>
+</tr>
+<tr>
+<td>국민성장펀드 소득공제</td>
+<td>납입 해당 연도 연말정산</td>
+<td>소득공제 → 세금 감소</td>
+</tr>
+<tr>
+<td>ISA 비과세</td>
+<td>만기 정산 시</td>
+<td>수익에서 세금 미차감</td>
+</tr>
+<tr>
+<td>연금 수령 시 절세</td>
+<td>55세 이후</td>
+<td>낮은 세율 연금소득세</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>8. 리스크별 자산 배분 원칙</h2>
+<pre><code>유동성 자산 (언제든 쓸 수 있어야 하는 것)
+  → CMA / 파킹통장: 비상금 1,200만원 + 단기 목적 자금
+
+중기 투자 (3년 내 필요 가능)
+  → ISA 중개형: 연 480만 원 적립
+
+장기 투자 (5년 이상 확실히 안 써도 됨)
+  → IRP + 연금저축: 연 900만 원 (노후 자금)
+  → 국민성장펀드: 여유자금 (5년 묶임 감수)
+
+절대 건드리지 말 것
+  → IRP·연금저축 (55세 이전 인출 시 기타소득세 16.5%)
+  → 국민성장펀드 (3년 내 해지 시 세금 전액 추징)
+</code></pre>
+<hr />
+<h2>9. 전문가 총평</h2>
+<blockquote>
+<p>총급여 5,500만원 초과 구간은 절세 전략의 '전환점'이다.<br />
+5,500만원 경계를 넘으면 세액공제율이 16.5%→13.2%로 낮아지고,<br />
+5,000만원을 넘으면 ISA 서민형(비과세 400만)도 사용 불가다.<br />
+이 구간에서는 <strong>소득공제형 상품</strong>(국민성장펀드, 주택청약, 카드)의 상대적 가치가 높아진다.<br />
+세액공제율 하락을 '소득공제'로 보완하는 것이 핵심 전략이다.</p>
+</blockquote>
+<p><strong>우선순위 요약 (최종)</strong>:<br />
+1. 비상금 1,200만 원 → <strong>먼저</strong><br />
+2. IRP + 연금저축 900만 원 → <strong>매년 기본</strong><br />
+3. ISA 중개형 개설 + 적립 → <strong>지금 개설 (의무기간 카운트)</strong><br />
+4. 주택청약 300만 원 → <strong>청약 계획 있으면 필수</strong><br />
+5. 국민성장펀드 → <strong>여유자금 500만 원 이상, 5년 유동성 감수 가능 시</strong><br />
+6. 카드 전략 → <strong>체크카드 비중 확대 (추가 비용 없이 소득공제 최적화)</strong></p>
+<hr />
+<h2>관련 노트</h2>
+<ul>
+<li>
+<ol>
+<li>마스터 대시보드 — 나의 절세 전략</li>
+</ol>
+</li>
+<li><a href="../절세/01.html" class="wikilink">01. 국민성장펀드 심층 분석</a></li>
+<li><a href="../절세/02.html" class="wikilink">02. IRP + 연금저축 세액공제 전략</a></li>
+<li><a href="../절세/03.html" class="wikilink">03. ISA 중개형 비과세 전략</a></li>
+<li><a href="../절세/04.html" class="wikilink">04. 연말정산 소득공제 항목 전략</a></li>
+</ul>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>

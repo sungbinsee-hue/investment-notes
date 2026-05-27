@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>방산·조선·원전·바이오 대장주 TOP10 — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="주식">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li class="current"><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="etf">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>🏆🌍 대장주</span><span class="sep">›</span><span>방산·조선·원전·바이오 대장주 TOP10</span></div>
+<article class="content">
+<h1>방산 / 조선 / 원전 / 바이오 대장주 TOP10</h1>
+<blockquote>
+<p><strong>기준일</strong>: 2026년 5월. ✅=확인된 수치, 📊=추정치</p>
+</blockquote>
+<hr />
+<h2>테마 3: 방산 (Defense)</h2>
+<h3>투자 포인트</h3>
+<ul>
+<li><strong>중동전쟁 장기화</strong>: 이스라엘-이란 갈등, 미사일·방공 수요 급증</li>
+<li><strong>우크라이나 재건</strong>: K2 전차·K9 자주포 수출 지속</li>
+<li><strong>한화에어로스페이스 황제주</strong> 등극: 주가 120만원 돌파 (2026년 1월), 코스피 7위</li>
+<li>방산 4사 수주잔고 급증, 소액주주 급증 추세</li>
+</ul>
+<hr />
+<h3>방산 대장주 TOP10</h3>
+<table>
+<thead>
+<tr>
+<th>순위</th>
+<th>종목명</th>
+<th>코드</th>
+<th>포지션</th>
+<th>시총(조원)</th>
+<th>주가(원)</th>
+<th>PER(배)</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>한화에어로스페이스</strong></td>
+<td>012450</td>
+<td>항공·우주·방산</td>
+<td>~55 📊</td>
+<td>~1,100,000 ✅(추정)</td>
+<td>25~35 📊</td>
+<td>황제주, K9 자주포·천무·우주발사체</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>LIG넥스원</strong></td>
+<td>079550</td>
+<td>유도무기·방공</td>
+<td>~12 📊</td>
+<td>~611,000 ✅</td>
+<td>20~30 📊</td>
+<td>한국형 미사일·요격 시스템 대표</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>현대로템</strong></td>
+<td>064350</td>
+<td>전차·철도</td>
+<td>~8 📊</td>
+<td>~100,000 📊</td>
+<td>15~25 📊</td>
+<td>K2 전차, 폴란드·루마니아 수출</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>KAI(한국항공우주)</strong></td>
+<td>047810</td>
+<td>전투기·헬기</td>
+<td>~7 📊</td>
+<td>~90,000 📊</td>
+<td>20~28 📊</td>
+<td>KF-21 보라매, FA-50 수출</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><strong>한화시스템</strong></td>
+<td>272210</td>
+<td>방산 전자·위성</td>
+<td>~6 📊</td>
+<td>~35,000 📊</td>
+<td>25~35 📊</td>
+<td>위성통신·전자전 장비, 한화에어로 자회사</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td><strong>한화오션</strong></td>
+<td>042660</td>
+<td>해군함정·잠수함</td>
+<td>~15 📊</td>
+<td>~50,000 📊</td>
+<td>20~30 📊</td>
+<td>방산+조선 겸업, 캐나다 잠수함 수주 기대</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td><strong>풍산</strong></td>
+<td>103140</td>
+<td>탄약·소재</td>
+<td>~3 📊</td>
+<td>~80,000 📊</td>
+<td>8~12 📊</td>
+<td>탄약 국내 1위, 전쟁 장기화 수혜</td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td><strong>빅텍</strong></td>
+<td>065450</td>
+<td>군용 전력공급</td>
+<td>~0.5 📊</td>
+<td>~30,000 📊</td>
+<td>20~30 📊</td>
+<td>군용 전력·방산 특수장비</td>
+</tr>
+<tr>
+<td><strong>9</strong></td>
+<td><strong>한국항공우주</strong></td>
+<td>047810</td>
+<td>위 KAI와 동일</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td><strong>이엠코리아</strong></td>
+<td>095190</td>
+<td>방산 부품</td>
+<td>~0.5 📊</td>
+<td>~10,000 📊</td>
+<td>10~15 📊</td>
+<td>방산 차량·부품</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>방산 시총 비교 차트</h3>
+<p><div class="mermaid">xychart-beta
+ title "방산 TOP7 시가총액 비교 (조원, 2026년 추정)"
+ x-axis ["한화에어로", "한화오션(방산)", "LIG넥스원", "현대로템", "KAI", "한화시스템", "풍산"]
+ y-axis "시가총액 (조원)" 0 --> 60
+ bar [55, 15, 12, 8, 7, 6, 3]
+</div></p>
+<hr />
+<h3>방산주 수주잔고 vs 주가 상관관계</h3>
+<p><div class="mermaid">flowchart LR
+ ORDER["수주잔고 증가"] --> REVENUE["매출 가시성<br/>확보"]
+ REVENUE --> EPS["EPS 성장<br/>(2~3년 후)"]
+ EPS --> MULTIPLE["PER 배수 상승<br/>(시장 선반영)"]
+ MULTIPLE --> PRICE["주가 상승"]
+ 
+ WAR["지정학 이벤트<br/>(전쟁·분쟁)"] -->|"즉각 반응"| PRICE
+ WAR -->|"실질 수요"| ORDER
+ 
+ PEACE["분쟁 완화<br/>(종전 협상)"] -->|"즉각 하락 위험"| RISK["[주의] 방산주<br/>급락 리스크"]
+</div></p>
+<hr />
+<hr />
+<h2>테마 4: 조선 (Shipbuilding)</h2>
+<h3>투자 포인트</h3>
+<ul>
+<li><strong>LNG선 수주 호황</strong>: 미국 LNG 프로젝트 FID 확정 → 2026~2028 수주 증가</li>
+<li><strong>데이터센터 발전설비</strong>: HD현대중공업 엔진→전력생산 확장으로 추가 수혜</li>
+<li><strong>군함·잠수함</strong>: 방산+조선 겸업 (한화오션, HD현대중공업)</li>
+<li><strong>한국 조선 글로벌 점유율 40%+</strong>: 기술력·일정 준수 프리미엄</li>
+</ul>
+<hr />
+<h3>조선 대장주 TOP10</h3>
+<table>
+<thead>
+<tr>
+<th>순위</th>
+<th>종목명</th>
+<th>코드</th>
+<th>포지션</th>
+<th>시총(조원)</th>
+<th>주가(원)</th>
+<th>PER(배)</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>HD현대중공업</strong></td>
+<td>329180</td>
+<td>대형선박·엔진</td>
+<td>~60 📊</td>
+<td>~500,000 📊</td>
+<td>20~30 📊</td>
+<td>코스피 8위, 발전용 엔진→데이터센터 수혜</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>한화오션</strong></td>
+<td>042660</td>
+<td>LNG선·군함</td>
+<td>~15 📊</td>
+<td>~50,000 📊</td>
+<td>20~30 📊</td>
+<td>방산+조선 겸업, 캐나다 잠수함 수주 기대</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>삼성중공업</strong></td>
+<td>010140</td>
+<td>LNG선·드릴십</td>
+<td>~12 📊</td>
+<td>~15,000 📊</td>
+<td>20~25 📊</td>
+<td>LNG선 특화, 드릴십 경쟁력</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>HD한국조선해양</strong></td>
+<td>009540</td>
+<td>HD그룹 조선 지주</td>
+<td>~25 📊</td>
+<td>~300,000 📊</td>
+<td>15~20 📊</td>
+<td>HD현대중공업·HD현대미포 지주</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><strong>HD현대마린솔루션</strong></td>
+<td>443060</td>
+<td>선박 유지보수</td>
+<td>~8 📊</td>
+<td>~100,000 📊</td>
+<td>15~20 📊</td>
+<td>애프터마켓 서비스, 마진 높음</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td><strong>현대미포조선</strong></td>
+<td>010620</td>
+<td>중소형 선박</td>
+<td>~6 📊</td>
+<td>~110,000 📊</td>
+<td>15~20 📊</td>
+<td>PC선·MR탱커 특화</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td><strong>HD현대</strong></td>
+<td>267250</td>
+<td>HD그룹 지주</td>
+<td>~15 📊</td>
+<td>~100,000 📊</td>
+<td>8~12 📊</td>
+<td>HD조선·HD현대오일뱅크 등 지주</td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td><strong>티엠씨</strong></td>
+<td>—</td>
+<td>선박 케이블</td>
+<td>~0.5 📊</td>
+<td>—</td>
+<td>15~20 📊</td>
+<td>선박+광통신 케이블, 2025년 IPO</td>
+</tr>
+<tr>
+<td><strong>9</strong></td>
+<td><strong>케이조선</strong></td>
+<td>024740</td>
+<td>중소형 탱커</td>
+<td>~0.5 📊</td>
+<td>~5,000 📊</td>
+<td>10~15 📊</td>
+<td>중소형 조선사</td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td><strong>씨에스윈드</strong></td>
+<td>112610</td>
+<td>해상풍력 타워</td>
+<td>~2 📊</td>
+<td>~50,000 📊</td>
+<td>15~20 📊</td>
+<td>해상풍력→조선 연계 수혜</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>조선 대장주 시총 비교</h3>
+<p><div class="mermaid">xychart-beta
+ title "조선 TOP7 시가총액 비교 (조원, 2026년 추정)"
+ x-axis ["HD현대중공업", "HD한국조선해양", "HD현대", "한화오션", "삼성중공업", "HD현대마린솔루션", "현대미포조선"]
+ y-axis "시가총액 (조원)" 0 --> 65
+ bar [60, 25, 15, 15, 12, 8, 6]
+</div></p>
+<hr />
+<h3>HD현대중공업 수익성 개선 경로</h3>
+<p><div class="mermaid">flowchart LR
+ A["2021~2023<br/>조선 침체기"] --> B["저가 수주 손실<br/>수익성 악화"]
+ B --> C["2024<br/>조선 업황 회복"]
+ C --> D["고가 수주 LNG선<br/>수주잔고 증가"]
+ D --> E["2025~2026<br/>실적 본격 반영"]
+ E --> F["영업이익률 8~12% 목표<br/>시총 100조 도전"]
+ 
+ EXTRA["데이터센터<br/>전력설비 엔진"] --> E
+ NAVAL["군함·잠수함<br/>방산 수주"] --> E
+</div></p>
+<hr />
+<hr />
+<h2>테마 5: 원전·에너지 (Nuclear Power)</h2>
+<h3>투자 포인트</h3>
+<ul>
+<li><strong>AI 전력 수요 폭증</strong>: 데이터센터 전력 소비 급증 → 원전이 유일한 안정적 대안</li>
+<li><strong>SMR(소형모듈원전)</strong>: MS·구글 등 빅테크 직접 투자, 계약 체결</li>
+<li><strong>체코 원전 수주</strong>: 한국형 APR1400, 유럽 시장 진출 교두보</li>
+<li><strong>두산에너빌리티</strong>: 1년 주가 +301% (뉴스 확인), 코스피 6위 진입</li>
+</ul>
+<hr />
+<h3>원전·에너지 대장주 TOP10</h3>
+<table>
+<thead>
+<tr>
+<th>순위</th>
+<th>종목명</th>
+<th>코드</th>
+<th>포지션</th>
+<th>시총(조원)</th>
+<th>주가(원)</th>
+<th>PER(배)</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>두산에너빌리티</strong></td>
+<td>034020</td>
+<td>원전 주기기·SMR</td>
+<td>~60 📊</td>
+<td>~93,300 ✅</td>
+<td>40~60 📊</td>
+<td>원전 핵심 부품 독점 공급, 코스피 6위</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>한전기술</strong></td>
+<td>052690</td>
+<td>원전 설계</td>
+<td>~3 📊</td>
+<td>~80,000 📊</td>
+<td>15~20 📊</td>
+<td>APR1400 설계사, 수출 수혜</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>한전KPS</strong></td>
+<td>051600</td>
+<td>원전 유지보수</td>
+<td>~2 📊</td>
+<td>~45,000 📊</td>
+<td>12~18 📊</td>
+<td>국내 원전 유지보수 독점</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>우리기술</strong></td>
+<td>032820</td>
+<td>SMR 관련</td>
+<td>~1 📊</td>
+<td>~20,000 📊</td>
+<td>25~40 📊</td>
+<td>원전 계측제어 시스템</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><strong>비에이치아이</strong></td>
+<td>083650</td>
+<td>원전 열교환기</td>
+<td>~0.5 📊</td>
+<td>~20,000 📊</td>
+<td>15~25 📊</td>
+<td>증기발생기·열교환기</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td><strong>보성파워텍</strong></td>
+<td>006910</td>
+<td>원전 배관</td>
+<td>~0.5 📊</td>
+<td>~15,000 📊</td>
+<td>15~20 📊</td>
+<td>원전 배관·밸브 공급</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td><strong>한국전력</strong></td>
+<td>015760</td>
+<td>전력 유틸리티</td>
+<td>~30 📊</td>
+<td>~50,000 📊</td>
+<td>—</td>
+<td>전력 인프라, 적자→흑자 전환 중</td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td><strong>LS ELECTRIC</strong></td>
+<td>010120</td>
+<td>전력설비</td>
+<td>~5 📊</td>
+<td>~160,000 📊</td>
+<td>15~20 📊</td>
+<td>전력 변환·배전 장비, AI 전력 수혜</td>
+</tr>
+<tr>
+<td><strong>9</strong></td>
+<td><strong>효성중공업</strong></td>
+<td>298040</td>
+<td>변압기·중공업</td>
+<td>~3 📊</td>
+<td>~450,000 📊</td>
+<td>10~15 📊</td>
+<td>초고압 변압기, 미국 전력망 수요 급증</td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td><strong>HD현대일렉트릭</strong></td>
+<td>267260</td>
+<td>전력변압기</td>
+<td>~4 📊</td>
+<td>~250,000 📊</td>
+<td>12~18 📊</td>
+<td>미국·중동 변압기 수출 급성장</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>원전 테마 성과 vs 관련 지표</h3>
+<p><div class="mermaid">xychart-beta
+ title "원전·에너지 TOP5 시가총액 (조원, 추정)"
+ x-axis ["두산에너빌리티", "한국전력", "LS ELECTRIC", "HD현대일렉트릭", "효성중공업"]
+ y-axis "시가총액 (조원)" 0 --> 65
+ bar [60, 30, 5, 4, 3]
+</div></p>
+<hr />
+<h3>AI 전력 수요 → 원전 수혜 구조</h3>
+<p><div class="mermaid">flowchart TD
+ AI[" AI/ChatGPT 폭발적 성장"] --> DC[" 데이터센터 급증<br/>MS·Google·Meta 대규모 투자"]
+ DC --> POWER[" 전력 수요 폭증<br/>기존 전력망으로 부족"]
+ POWER --> NUC[" 원전 재조명<br/>24시간 안정 공급 가능"]
+ NUC --> SMR[" SMR 수요<br/>빅테크 직접 계약"]
+ SMR --> KOREA[" 한국 원전 산업 수혜<br/>두산에너빌리티·한전기술 등"]
+ 
+ CZECH["체코 원전 수주<br/>APR1400"] --> KOREA
+ POLAND["폴란드 원전<br/>수주 기대"] --> KOREA
+</div></p>
+<hr />
+<hr />
+<h2>테마 6: 바이오·헬스케어 (Bio/Healthcare)</h2>
+<h3>투자 포인트</h3>
+<ul>
+<li><strong>삼성바이오로직스 5공장</strong>: 2026년 준공, 세계 최대 CDMO 설비</li>
+<li><strong>셀트리온</strong>: 바이오시밀러 글로벌 확장, AI 활용 R&amp;D</li>
+<li><strong>ADC(항체약물접합체)</strong>: 리가켐바이오 기술 수출 잇따라, 글로벌 빅파마 관심</li>
+<li><strong>JP모건 헬스케어 컨퍼런스</strong> 매년 1월 → 바이오주 모멘텀</li>
+</ul>
+<hr />
+<h3>바이오·헬스케어 대장주 TOP10</h3>
+<table>
+<thead>
+<tr>
+<th>순위</th>
+<th>종목명</th>
+<th>코드</th>
+<th>포지션</th>
+<th>시총(조원)</th>
+<th>주가(원)</th>
+<th>PER(배)</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>삼성바이오로직스</strong></td>
+<td>207940</td>
+<td>CDMO 위탁생산</td>
+<td>~80 📊</td>
+<td>~1,100,000 📊</td>
+<td>40~60 📊</td>
+<td>코스피 4위, 세계 최대 CDMO, 5공장 완공</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>셀트리온</strong></td>
+<td>068270</td>
+<td>바이오시밀러</td>
+<td>~35 📊</td>
+<td>~200,000 📊</td>
+<td>25~35 📊</td>
+<td>글로벌 바이오시밀러 대장, AI 도입</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>리가켐바이오</strong></td>
+<td>141080</td>
+<td>ADC 기술 수출</td>
+<td>~6 📊</td>
+<td>~100,000 📊</td>
+<td>—</td>
+<td>ADC 플랫폼 기술, 빅파마 마일스톤</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>유한양행</strong></td>
+<td>000100</td>
+<td>종합 제약</td>
+<td>~8 📊</td>
+<td>~120,000 📊</td>
+<td>25~35 📊</td>
+<td>국내 제약 매출 1위, 레이저티닙 FDA 승인</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><strong>HLB</strong></td>
+<td>028300</td>
+<td>항암제 임상</td>
+<td>~5 📊</td>
+<td>~100,000 📊</td>
+<td>—</td>
+<td>리보세라닙 글로벌 임상</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td><strong>알테오젠</strong></td>
+<td>196170</td>
+<td>피하주사 플랫폼</td>
+<td>~6 📊</td>
+<td>~300,000 📊</td>
+<td>—</td>
+<td>피하주사 변환 기술 글로벌 라이선스</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td><strong>셀트리온제약</strong></td>
+<td>068760</td>
+<td>셀트리온 판매법인</td>
+<td>~5 📊</td>
+<td>~90,000 📊</td>
+<td>25~35 📊</td>
+<td>셀트리온 바이오시밀러 국내 판매</td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td><strong>에이비엘바이오</strong></td>
+<td>298380</td>
+<td>이중항체 ADC</td>
+<td>~2 📊</td>
+<td>~40,000 📊</td>
+<td>—</td>
+<td>이중항체 플랫폼, 임상 다수</td>
+</tr>
+<tr>
+<td><strong>9</strong></td>
+<td><strong>오스코텍</strong></td>
+<td>039200</td>
+<td>저분자 신약</td>
+<td>~1 📊</td>
+<td>~40,000 📊</td>
+<td>—</td>
+<td>폐암 신약 후보, 리보세라닙 연관</td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td><strong>메디톡스</strong></td>
+<td>086900</td>
+<td>보툴리눔</td>
+<td>~1 📊</td>
+<td>~200,000 📊</td>
+<td>20~30 📊</td>
+<td>보툴리눔 톡신 글로벌 수출</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>바이오 시총 비교</h3>
+<p><div class="mermaid">xychart-beta
+ title "바이오 TOP6 시가총액 (조원, 2026년 추정)"
+ x-axis ["삼성바이오로직스", "셀트리온", "유한양행", "알테오젠", "리가켐바이오", "HLB"]
+ y-axis "시가총액 (조원)" 0 --> 85
+ bar [80, 35, 8, 6, 6, 5]
+</div></p>
+<hr />
+<h3>바이오주 투자 판단 프레임워크</h3>
+<p><div class="mermaid">flowchart TD
+ BIO["바이오 기업 분류"] --> CDMO[" CDMO 수익형<br/>삼성바이오·셀트리온<br/>→ 실적 기반 평가 가능"]
+ BIO --> PIPELINE[" 파이프라인형<br/>리가켐·HLB·알테오젠<br/>→ PSR/임상 단계로 평가"]
+ BIO --> GENERIC[" 제약 제네릭<br/>유한양행·종근당<br/>→ PER·배당 기반"]
+
+ CDMO --> EVAL1["평가: EV/매출, EV/EBITDA<br/>안정적 DCF 적용 가능"]
+ PIPELINE --> EVAL2["평가: rNPV(위험조정 현재가치)<br/>임상 단계별 성공률 가중"]
+ GENERIC --> EVAL3["평가: PER·배당수익률<br/>전통 가치주 방식"]
+</div></p>
+<hr />
+<h3>투자 포인트 vs 리스크</h3>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ <strong>강점</strong></td>
+<td>삼성바이오 세계 최대 CDMO 지위, 기술 수출 증가</td>
+</tr>
+<tr>
+<td>✅ <strong>촉매</strong></td>
+<td>ADC 임상 성공, FDA 신약 승인, JP모건 계약</td>
+</tr>
+<tr>
+<td><span style="color:#e74c3c"><strong>[주의]</strong></span> <strong>리스크</strong></td>
+<td>임상 실패 시 주가 급락(파이프라인 바이오), 고PER</td>
+</tr>
+<tr>
+<td><span style="color:#e74c3c"><strong>[주의]</strong></span> <strong>밸류에이션</strong></td>
+<td>삼성바이오 PER 40~60배, 성장 지속 확인 필요</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p><strong>연결 노트</strong>: <a href="../대장주/12.html" class="wikilink">12. 테마별 대장주 허브 (2026)</a> | <a href="../대장주/13.html" class="wikilink">13. 반도체·2차전지 대장주 TOP10</a> | <a href="../대장주/15.html" class="wikilink">15. 로봇·AI·엔터·금융 대장주 TOP10</a></p>
+</blockquote>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>

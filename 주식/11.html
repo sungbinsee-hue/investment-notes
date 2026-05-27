@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주가-기업가치 상관관계 분석 — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="주식">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li class="current"><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="etf">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>📈 주식 · 기업 분석</span><span class="sep">›</span><span>주가-기업가치 상관관계 분석</span></div>
+<article class="content">
+<h1>주가-기업가치 상관관계 분석</h1>
+<blockquote>
+<p>기업 가치(펀더멘털) 지표가 실제 주가 변동에 얼마나, 어떻게 영향을 미치는지 이론과 검증.</p>
+</blockquote>
+<h2>핵심 전제: 벤저민 그레이엄의 저울기계 원리</h2>
+<blockquote>
+<p><em>"단기적으로 시장은 인기투표 기계이지만, 장기적으로는 저울기계다."</em><br />
+— 벤저민 그레이엄</p>
+</blockquote>
+<p><div class="mermaid">flowchart LR
+ subgraph "단기 (1년 이하)"
+ S1["심리·공포·탐욕"]
+ S2["뉴스·이벤트"]
+ S3["수급(외인·기관 매매)"]
+ S4["금리·환율·매크로"]
+ end
+ subgraph "중기 (1~3년)"
+ M1["실적 트렌드<br/>(어닝 방향성)"]
+ M2["밸류에이션 재평가<br/>(PER 배수 변화)"]
+ M3["섹터 사이클"]
+ end
+ subgraph "장기 (3~10년)"
+ L1["EPS 복리 성장"]
+ L2["ROIC 지속성"]
+ L3["경쟁 해자 강화"]
+ end
+ S1 & S2 & S3 & S4 --> SHORT["단기 주가<br/>= 펀더멘털과 괴리 가능"]
+ M1 & M2 & M3 --> MID["중기 주가<br/>= 실적 추이 반영"]
+ L1 & L2 & L3 --> LONG["장기 주가<br/>≈ 기업 가치 추적"]
+</div></p>
+<hr />
+<h2>1. 주가 = EPS 성장 × PER 배수</h2>
+<h3>주가 분해 공식</h3>
+<div class="math-block">$$\text{주가} = \text{EPS} \times \text{PER}$$</div>
+
+<div class="math-block">$$\text{주가 수익률} = \underbrace{\text{EPS 성장률}}_{\text{이익 성장}} + \underbrace{\text{PER 배수 변화율}}_{\text{밸류에이션 재평가}} + \underbrace{\text{배당수익률}}_{\text{배당}}$$</div>
+
+<h3>수익률 분해 예시</h3>
+<p><div class="mermaid">xychart-beta
+ title "주가 총 수익 분해 예시 (연환산 %)"
+ x-axis ["EPS 성장", "PER 배수↑", "배당수익률", "총 수익률"]
+ y-axis "수익률 (%)" 0 --> 25
+ bar [12, 5, 3, 20]
+</div></p>
+<blockquote>
+<p><strong>시사점</strong>: 장기적으로 EPS 성장이 수익률의 60~70%를 결정. PER 재평가는 단기 촉매.</p>
+</blockquote>
+<hr />
+<h2>2. 기업 가치 지표별 주가 영향력 분석</h2>
+<h3>지표별 주가 영향 시간대</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>주가 영향 시간대</th>
+<th>영향 강도</th>
+<th>메커니즘</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>EPS 서프라이즈</strong></td>
+<td>즉각 (1~3일)</td>
+<td></td>
+<td>어닝 서프라이즈 → 즉각 주가 반응</td>
+</tr>
+<tr>
+<td><strong>연간 EPS 성장</strong></td>
+<td>1년 단위</td>
+<td></td>
+<td>실적 발표마다 반영</td>
+</tr>
+<tr>
+<td><strong>ROE 개선</strong></td>
+<td>6~12개월</td>
+<td></td>
+<td>수익성 인식 → PBR 재평가</td>
+</tr>
+<tr>
+<td><strong>ROIC &gt; WACC</strong></td>
+<td>2~3년</td>
+<td></td>
+<td>가치 창출 기업 프리미엄</td>
+</tr>
+<tr>
+<td><strong>FCF 전환</strong></td>
+<td>1~2년</td>
+<td></td>
+<td>배당·자사주 기대감</td>
+</tr>
+<tr>
+<td><strong>매출 CAGR</strong></td>
+<td>2~5년</td>
+<td></td>
+<td>성장 지속성 확인 → 배수 상승</td>
+</tr>
+<tr>
+<td><strong>부채 감소</strong></td>
+<td>6~18개월</td>
+<td></td>
+<td>재무 리스크 감소 → 할인율 하락</td>
+</tr>
+<tr>
+<td><strong>PBR &lt; 1</strong></td>
+<td>즉각~1년</td>
+<td></td>
+<td>청산가치 근접 → 자연 지지선</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. 저평가 지표와 수익률 관계 — 학술·실증 근거</h2>
+<h3>Fama-French 3요인 모형 (1992)</h3>
+<div class="math-block">$$E(R_i) = R_f + \beta_m \cdot MRP + \beta_s \cdot SMB + \beta_v \cdot HML$$</div>
+
+<ul>
+<li><strong>HML (High Minus Low)</strong>: 저PBR 주식이 고PBR 주식 대비 초과수익</li>
+<li><strong>실증 결과</strong>: 저PBR 포트폴리오가 장기적으로 시장 대비 연 3~5% 초과수익</li>
+</ul>
+<h3>한국 시장 실증 데이터 (참고)</h3>
+<p><div class="mermaid">xychart-beta
+ title "한국 저PBR 포트폴리오 vs KOSPI (연평균 수익률 추정)"
+ x-axis ["저PBR 상위20%", "중간 PBR", "고PBR 상위20%", "KOSPI 평균"]
+ y-axis "연평균 수익률 (%)" 0 --> 20
+ bar [14, 10, 7, 9]
+</div></p>
+<blockquote>
+<p><span style="color:#e74c3c"><strong>[주의]</strong></span> 위 수치는 예시 수준. 실제 수익률은 기간·방법론에 따라 상이함.</p>
+</blockquote>
+<h3>주요 학술 발견 요약</h3>
+<table>
+<thead>
+<tr>
+<th>연구</th>
+<th>결론</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fama-French (1992)</td>
+<td>저PBR + 소형주 장기 초과수익</td>
+</tr>
+<tr>
+<td>Graham &amp; Dodd (1934)</td>
+<td>안전마진 확보 시 장기 초과수익</td>
+</tr>
+<tr>
+<td>Lakonishok et al. (1994)</td>
+<td>가치주가 성장주 대비 5년 장기 성과 우수</td>
+</tr>
+<tr>
+<td>AQR (Asness 2013)</td>
+<td>글로벌 시장에서 가치 팩터 유효성 확인</td>
+</tr>
+<tr>
+<td>MSCI Value Index</td>
+<td>장기(20년+) 가치 인덱스 &gt; 성장 인덱스</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. 주가 변동 4대 촉매 (Catalysts)</h2>
+<h3>촉매가 없으면 저평가가 지속될 수 있음</h3>
+<p><div class="mermaid">flowchart TD
+ CAT["주가 재평가 촉매"] --> E["📊 실적 촉매<br/>어닝 서프라이즈<br/>가이던스 상향"]
+ CAT --> C[" 기업 이벤트<br/>M&A 타겟<br/>IPO / 스핀오프<br/>자사주 소각"]
+ CAT --> M[" 시장 촉매<br/>섹터 로테이션<br/>금리 인하<br/>지수 편입"]
+ CAT --> N[" 내러티브 전환<br/>신사업 발표<br/>경영진 교체<br/>규제 완화"]
+
+ E --> EX1[" 효과: PER 배수 즉각 반응<br/>서프라이즈 폭 × PER = 주가 상승"]
+ C --> EX2[" 효과: 경영권 프리미엄 20~40%<br/>즉각 주가 급등"]
+ M --> EX3[" 효과: 섹터 전체 멀티플 확장"]
+ N --> EX4[" 효과: 장기 PER 상승 가능성"]
+</div></p>
+<hr />
+<h2>5. 주가-가치 괴리 분석 프레임</h2>
+<h3>DCF 내재가치 vs 현재 주가</h3>
+<div class="math-block">$$\text{안전마진} = \frac{\text{내재가치} - \text{현재 주가}}{\text{내재가치}} \times 100\%$$</div>
+
+<table>
+<thead>
+<tr>
+<th>안전마진</th>
+<th>판단</th>
+<th>액션</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; 40%</td>
+<td>매우 저평가</td>
+<td>적극 매수 검토</td>
+</tr>
+<tr>
+<td>20~40%</td>
+<td>저평가</td>
+<td>분할 매수</td>
+</tr>
+<tr>
+<td>0~20%</td>
+<td>적정</td>
+<td>기존 보유 유지</td>
+</tr>
+<tr>
+<td>-10~0%</td>
+<td>소폭 고평가</td>
+<td>신규 매수 자제</td>
+</tr>
+<tr>
+<td>&lt; -20%</td>
+<td>고평가</td>
+<td>수익 실현 검토</td>
+</tr>
+</tbody>
+</table>
+<h3>주가-EPS 괴리 분석</h3>
+<p><div class="mermaid">flowchart LR
+ GAP["주가 vs EPS 성장 괴리"] --> OVER["주가 > EPS 성장<br/>(PER 배수 팽창)"]
+ GAP --> UNDER["주가 < EPS 성장<br/>(PER 배수 수축)"]
+
+ OVER --> OV_Q{"지속 가능한가?"}
+ OV_Q -->|"성장률 가속화"| OV_YES["PER 팽창 정당화<br/>성장주 특성"]
+ OV_Q -->|"성장 둔화 중"| OV_NO["[주의] 멀티플 수축 리스크<br/>주가 조정 위험"]
+
+ UNDER --> UN_Q{"왜 낮은가?"}
+ UN_Q -->|"시장 과잉 반응<br/>일시적 악재"| UN_OPP[" 매수 기회<br/>평균 회귀 기대"]
+ UN_Q -->|"구조적 성장 둔화"| UN_TRAP["[경고] Value Trap<br/>이익 성장 확인 필수"]
+</div></p>
+<hr />
+<h2>6. 기업가치 지표의 주가 예측력 검증 방법</h2>
+<h3>직접 검증 방법</h3>
+<p><div class="mermaid">flowchart TD
+ V["검증 방법"] --> V1["📊 백테스트<br/>저PER/저PBR 포트폴리오<br/>과거 수익률 계산"]
+ V --> V2[" 상관관계 분석<br/>EPS 성장률 vs 주가 수익률<br/> R² 계산"]
+ V --> V3[" 사례 분석<br/>저평가 → 촉매 발생 → 주가 상승<br/>패턴 확인"]
+ V --> V4[" 회귀 분석<br/>독립변수: PER·ROE·CAGR<br/>종속변수: 3년 후 수익률"]
+
+ V1 --> R1["결과: 저PBR 상위 20% 포트폴리오<br/>시장 대비 초과수익 여부"]
+ V2 --> R2["결과: EPS CAGR과 주가 수익률<br/>장기 R² > 0.6 이면 강한 상관"]
+</div></p>
+<h3>검증 시 주의사항</h3>
+<table>
+<thead>
+<tr>
+<th>주의사항</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>생존 편향</strong></td>
+<td>상장폐지 기업 제외 시 수익률 과대 계산</td>
+</tr>
+<tr>
+<td><strong>룩어헤드 바이어스</strong></td>
+<td>당시에는 알 수 없었던 미래 데이터 사용 금지</td>
+</tr>
+<tr>
+<td><strong>거래비용</strong></td>
+<td>잦은 리밸런싱 시 실질 수익률 하락</td>
+</tr>
+<tr>
+<td><strong>시기 의존성</strong></td>
+<td>특정 시장 사이클에서만 유효할 수 있음</td>
+</tr>
+<tr>
+<td><strong>시장 효율성</strong></td>
+<td>알려진 팩터는 시간이 지날수록 효과 약화 가능</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>7. 시장 비효율성과 투자 기회</h2>
+<h3>저평가가 발생하는 이유</h3>
+<p><div class="mermaid">pie title "시장 비효율성 발생 원인"
+ "시장 과잉 반응 (공포·패닉)" : 30
+ "단기 실적 악화, 장기 가치 무시" : 25
+ "기관 투자자 제약 (유동성·벤치마크)" : 15
+ "섹터·국가 편견 (지역 디스카운트)" : 15
+ "정보 비대칭 (소형주·해외주)" : 15
+</div></p>
+<h3>저평가 발생 시나리오와 대응</h3>
+<table>
+<thead>
+<tr>
+<th>시나리오</th>
+<th>저평가 원인</th>
+<th>검증 방법</th>
+<th>기대 수익 기간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>실적 쇼크 후 과도 하락</td>
+<td>단기 투자자 패닉 매도</td>
+<td>EPS 수정폭 vs 주가 하락폭 비교</td>
+<td>3~12개월</td>
+</tr>
+<tr>
+<td>섹터 전체 하락</td>
+<td>업종 매크로 역풍</td>
+<td>기업 펀더멘털 변화 여부 확인</td>
+<td>1~3년</td>
+</tr>
+<tr>
+<td>지수 편출</td>
+<td>기계적 매도</td>
+<td>사업 가치 변화 없음 확인</td>
+<td>3~12개월</td>
+</tr>
+<tr>
+<td>대주주 지분 매각</td>
+<td>수급 충격</td>
+<td>매도 이유 확인 (세금 vs 경영 이탈)</td>
+<td>1~6개월</td>
+</tr>
+<tr>
+<td>오너 리스크 해소</td>
+<td>지배구조 개선</td>
+<td>개선 지속성 확인</td>
+<td>1~3년</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>8. 금리와 기업 가치의 관계</h2>
+<h3>금리가 PER에 미치는 영향</h3>
+<div class="math-block">$$\text{이론적 PER} \approx \frac{1}{\text{요구수익률}} = \frac{1}{r_f + \text{위험 프리미엄}}$$</div>
+
+<p><div class="mermaid">flowchart LR
+ RATE["금리 변화"] --> UP[" 금리 상승"]
+ RATE --> DOWN[" 금리 하락"]
+
+ UP --> UP1["할인율 상승<br/>→ DCF 현재가치 감소"]
+ UP --> UP2["PER 배수 수축<br/>특히 장기 성장주 타격"]
+ UP --> UP3["채권 대비 주식 매력↓"]
+
+ DOWN --> DOWN1["할인율 하락<br/>→ DCF 현재가치 증가"]
+ DOWN --> DOWN2["PER 배수 팽창<br/>성장주 특히 수혜"]
+ DOWN --> DOWN3["채권 대비 주식 매력↑"]
+</div></p>
+<p><strong>금리 환경별 선호 투자 스타일</strong></p>
+<table>
+<thead>
+<tr>
+<th>금리 환경</th>
+<th>선호 스타일</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>금리 상승기</td>
+<td>가치주, 배당주, 금융주</td>
+<td>낮은 듀레이션, 금리 수혜</td>
+</tr>
+<tr>
+<td>금리 하락기</td>
+<td>성장주, 테크, 부동산</td>
+<td>장기 현금흐름 할인율 감소</td>
+</tr>
+<tr>
+<td>고금리 유지</td>
+<td>가치주 + FCF 우량주</td>
+<td>이익 가시성 중요</td>
+</tr>
+<tr>
+<td>저금리 유지</td>
+<td>성장주 + 배당 성장주</td>
+<td>멀티플 유지</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>9. 주가 예측의 한계 — 알아야 할 것</h2>
+<pre><code>┌──────────────────────────────────────────────────┐
+│ 기업 가치 분석으로 알 수 있는 것 │
+│ ✅ 현재 기업이 저평가/고평가인지 │
+│ ✅ 장기(3~5년) 수익률 기대값 │
+│ ✅ 하락 시 추가 매수 가능한지 │
+│ ✅ 안전마진 존재 여부 │
+├──────────────────────────────────────────────────┤
+│ 알 수 없는 것 │
+│ 단기 주가 방향 (1~6개월) │
+│ 저평가 해소 시점 (촉매 없으면 장기 지속 가능) │
+│ 블랙 스완 사건 영향 │
+│ 거시경제 변수 (금리·환율·지정학) │
+└──────────────────────────────────────────────────┘
+</code></pre>
+<hr />
+<h2>투자 의사결정 최종 검증 체크리스트</h2>
+<pre><code>최종 투자 결정 전 확인 사항
+
+기업 가치 분석
+□ FCF Yield &gt; 5% 또는 EV/EBITDA가 섹터 평균 이하
+□ ROE &gt; 15% 또는 ROIC &gt; WACC
+□ EPS 3년 CAGR &gt; 10%
+□ 부채비율 &lt; 150% &amp; 이자보상배율 &gt; 3배
+
+주가-가치 괴리
+□ 안전마진 ≥ 20% (내재가치 대비 20% 이상 저평가)
+□ PEG &lt; 1.0 (성장 대비 저평가)
+□ 52주 저점 대비 위치 확인 (과매도 구간 선호)
+
+촉매 &amp; 리스크
+□ 단기 촉매 1가지 이상 확인 가능
+□ Value Trap 가능성 배제 확인
+□ 포지션 크기 = 확신도에 비례 (분산투자 원칙)
+□ 손절 기준 사전 설정 (안전마진 훼손 시)
+</code></pre>
+<hr />
+<blockquote>
+<p><strong>관련 노트</strong>: <a href="../주식/07.html" class="wikilink">07. 기업가치 평가 허브</a> | <a href="../주식/08.html" class="wikilink">08. 가치평가 지표 총람</a> | <a href="../주식/10.html" class="wikilink">10. 기업 비교 분석 프레임워크</a></p>
+</blockquote>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>

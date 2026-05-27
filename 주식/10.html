@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기업 비교 분석 프레임워크 — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="주식">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li class="current"><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="etf">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>📈 주식 · 기업 분석</span><span class="sep">›</span><span>기업 비교 분석 프레임워크</span></div>
+<article class="content">
+<h1>기업 비교 분석 프레임워크</h1>
+<blockquote>
+<p>동종업계 기업을 올바르게 비교하고 상대적 저평가를 발견하는 체계적 방법론.</p>
+</blockquote>
+<h2>비교 분석 전체 프로세스</h2>
+<p><div class="mermaid">flowchart TD
+ A[" 목표 기업 선정"] --> B[" Step 1: Peer Group 구성<br/>동종업계 5~10개 선정"]
+ B --> C["📊 Step 2: 재무 정규화<br/>일회성 항목 제거"]
+ C --> D[" Step 3: 배수 계산<br/>PER·PBR·EV/EBITDA 등"]
+ D --> E[" Step 4: 수익성 비교<br/>ROE·영업이익률·ROIC"]
+ E --> F[" Step 5: 성장성 비교<br/>CAGR·PEG"]
+ F --> G[" Step 6: 안전성 비교<br/>부채·현금흐름"]
+ G --> H[" Step 7: 종합 스코어링<br/>가중 평균 점수"]
+ H --> I{"결론"}
+ I -->|"목표 기업이 저평가"| J["✅ 투자 후보 확정"]
+ I -->|"목표 기업이 고평가"| K["[참고] 관심 유지<br/>조정 대기"]
+</div></p>
+<hr />
+<h2>Step 1: Peer Group 구성 기준</h2>
+<h3>올바른 Peer 선정 요건</h3>
+<p><div class="mermaid">flowchart LR
+ PEER["올바른 Peer"] --> SAME["동일 산업<br/>같은 섹터·서브섹터"]
+ PEER --> SIZE["유사한 규모<br/>시총 ±50% 이내 권장"]
+ PEER --> BIZ["유사한 비즈니스 모델<br/>수익 구조·고객 유사"]
+ PEER --> STAGE["유사한 성장 단계<br/>성장기 vs 성숙기 혼용 금지"]
+</div></p>
+<h3>Peer Group 구성 예시</h3>
+<table>
+<thead>
+<tr>
+<th>목표 기업</th>
+<th>적합한 Peer</th>
+<th>부적합한 Peer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>삼성전자 (반도체+스마트폰)</td>
+<td>SK하이닉스, TSMC, 인텔</td>
+<td>LG전자 (다른 사업 구조)</td>
+</tr>
+<tr>
+<td>카카오 (플랫폼)</td>
+<td>네이버, Meta, Tencent</td>
+<td>삼성SDS (IT서비스)</td>
+</tr>
+<tr>
+<td>현대차 (완성차)</td>
+<td>기아, Toyota, GM</td>
+<td>현대모비스 (부품)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Step 2: 재무 정규화 (Normalization)</h2>
+<h3>정규화가 필요한 항목</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>정규화 이유</th>
+<th>처리 방법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일회성 이익</td>
+<td>자산 매각·소송 합의금 등</td>
+<td>제거 후 조정 EPS 계산</td>
+</tr>
+<tr>
+<td>일회성 비용</td>
+<td>구조조정·대손상각 등</td>
+<td>제거</td>
+</tr>
+<tr>
+<td>영업권 상각</td>
+<td>국가별 회계기준 차이 (IFRS vs US GAAP)</td>
+<td>EBITDA 사용으로 우회</td>
+</tr>
+<tr>
+<td>리스 비용</td>
+<td>IFRS 16 도입 효과 차이</td>
+<td>EV/EBITDA-리스 기준 통일</td>
+</tr>
+<tr>
+<td>세율 차이</td>
+<td>국가별 법인세율 상이</td>
+<td>세전이익(EBIT) 기준 비교 추가</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Step 3~6: 4단계 비교 분석표</h2>
+<h3>비교 분석 종합 템플릿</h3>
+<pre><code class="language-markdown">### [목표 기업명] vs 동종업계 비교 분석
+
+**분석 기준일**: YYYY-MM-DD
+
+#### 밸류에이션 배수 비교
+
+| 기업 | PER | PBR | EV/EBITDA | PSR | FCF Yield |
+|------|-----|-----|-----------|-----|-----------|
+| **[목표]** | | | | | |
+| Peer A | | | | | |
+| Peer B | | | | | |
+| Peer C | | | | | |
+| **섹터 평균** | | | | | |
+| **목표 대비** | | | | | |
+
+#### 수익성 비교
+
+| 기업 | ROE | ROIC | 영업이익률 | EBITDA 마진 | ROA |
+|------|-----|------|-----------|-------------|-----|
+| **[목표]** | | | | | |
+| Peer A | | | | | |
+| Peer B | | | | | |
+| 섹터 평균 | | | | | |
+
+#### 성장성 비교 (3년 CAGR)
+
+| 기업 | 매출 CAGR | EPS CAGR | EBITDA CAGR | PEG |
+|------|-----------|----------|-------------|-----|
+| **[목표]** | | | | |
+| Peer A | | | | |
+| Peer B | | | | |
+
+#### 재무 안전성 비교
+
+| 기업 | 부채비율 | 순부채/EBITDA | 이자보상배율 | FCF(억원) |
+|------|---------|--------------|-------------|-----------|
+| **[목표]** | | | | |
+| Peer A | | | | |
+| Peer B | | | | |
+</code></pre>
+<hr />
+<h2>Step 7: 종합 스코어링</h2>
+<h3>가중 점수 채점 기준</h3>
+<p><div class="mermaid">pie title "비교 항목 가중치"
+ "밸류에이션 배수 (PER·EV/EBITDA)" : 25
+ "수익성 (ROE·ROIC·영업이익률)" : 25
+ "성장성 (CAGR·PEG)" : 20
+ "재무 안전성 (부채·FCF)" : 20
+ "주주환원 (배당·자사주)" : 10
+</div></p>
+<h3>스코어링 방식</h3>
+<p><strong>점수 기준</strong>: 섹터 내 순위 기반<br />
+- 1위 = 5점 / 2위 = 4점 / 3위 = 3점 / 4위 = 2점 / 5위 이하 = 1점</p>
+<table>
+<thead>
+<tr>
+<th>카테고리</th>
+<th>가중치</th>
+<th>목표 기업</th>
+<th>Peer A</th>
+<th>Peer B</th>
+<th>Peer C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PER 저평가</td>
+<td>10%</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>EV/EBITDA 저평가</td>
+<td>10%</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>FCF Yield</td>
+<td>5%</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ROE</td>
+<td>10%</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ROIC</td>
+<td>10%</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>영업이익률</td>
+<td>5%</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>매출 CAGR</td>
+<td>10%</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>EPS CAGR</td>
+<td>5%</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PEG</td>
+<td>5%</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>부채비율</td>
+<td>10%</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>FCF 안정성</td>
+<td>10%</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>주주환원</td>
+<td>10%</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>가중 합계</strong></td>
+<td><strong>100%</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>상대가치법 핵심 원리</h2>
+<h3>내재적 할인율 계산</h3>
+<blockquote>
+<p>목표 기업의 배수가 섹터 평균보다 낮다고 무조건 저평가가 아님 — <strong>수익성·성장성으로 디스카운트 정당성 확인 필요</strong></p>
+</blockquote>
+<p><div class="mermaid">flowchart TD
+ DISC["목표 기업의 PER<br/>섹터 평균 대비 낮음"] --> WHY{"왜 낮은가?"}
+ WHY -->|"ROE·성장성 낮음"| JUST["✅ 정당한 디스카운트<br/>섹터 평균 프리미엄 없음"]
+ WHY -->|"일시적 실적 부진<br/>또는 시장 과잉 반응"| OPP[" 투자 기회<br/>저평가 가능성 높음"]
+ WHY -->|"구조적 문제<br/>(사양 산업, 경쟁력 상실)"| TRAP["[경고] Value Trap<br/>투자 제외"]
+ OPP --> CHECK["검증: PEG도 낮은가?<br/>ROIC > WACC인가?"]
+</div></p>
+<hr />
+<h2>업종별 핵심 비교 지표</h2>
+<h3>섹터별 가장 중요한 지표</h3>
+<table>
+<thead>
+<tr>
+<th>섹터</th>
+<th>1순위 지표</th>
+<th>2순위 지표</th>
+<th>3순위 지표</th>
+<th>특수 지표</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>반도체</strong></td>
+<td>EV/EBITDA</td>
+<td>ROE</td>
+<td>CAPEX/매출</td>
+<td>공정 세대</td>
+</tr>
+<tr>
+<td><strong>바이오·제약</strong></td>
+<td>Pipeline 가치</td>
+<td>PSR</td>
+<td>임상 단계</td>
+<td>Peak Sales</td>
+</tr>
+<tr>
+<td><strong>은행</strong></td>
+<td>PBR</td>
+<td>ROE</td>
+<td>NIM</td>
+<td>BIS 비율</td>
+</tr>
+<tr>
+<td><strong>통신</strong></td>
+<td>EV/EBITDA</td>
+<td>FCF Yield</td>
+<td>ARPU</td>
+<td>Churn Rate</td>
+</tr>
+<tr>
+<td><strong>리테일·소비재</strong></td>
+<td>EV/Sales</td>
+<td>GPM</td>
+<td>재고회전율</td>
+<td>SSS(동일점포)</td>
+</tr>
+<tr>
+<td><strong>SaaS·플랫폼</strong></td>
+<td>PSR / EV/Sales</td>
+<td>ARR 성장률</td>
+<td>NRR</td>
+<td>CAC/LTV</td>
+</tr>
+<tr>
+<td><strong>자동차</strong></td>
+<td>PER</td>
+<td>OPM</td>
+<td>재고일수</td>
+<td>BEV 전환율</td>
+</tr>
+<tr>
+<td><strong>에너지</strong></td>
+<td>EV/EBITDA</td>
+<td>FCF Yield</td>
+<td>생산비용</td>
+<td>원자재 가격</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>비교 분석 시 흔한 실수</h2>
+<p><div class="mermaid">flowchart LR
+ ERR["비교 분석<br/>흔한 실수"] --> E1["[금지] 다른 성장 단계<br/>비교"]
+ ERR --> E2["[금지] 회계기준 차이<br/>무시 (IFRS vs GAAP)"]
+ ERR --> E3["[금지] 일회성 항목<br/>미제거"]
+ ERR --> E4["[금지] 환율 효과<br/>무시 (글로벌 비교)"]
+ ERR --> E5["[금지] 부채 수준 차이<br/>무시하고 PER만 비교"]
+ ERR --> E6["[금지] 섹터 사이클<br/>위치 무시"]
+
+ E5 --> SOL["해결책: EV/EBITDA 사용<br/>(부채 포함 기업가치 비교)"]
+ E3 --> SOL2["해결책: 조정 EPS<br/>(Adjusted EPS) 사용"]
+</div></p>
+<hr />
+<h2>실전 비교 분석 예시 프레임 (국내 반도체 섹터)</h2>
+<pre><code class="language-markdown">**분석 대상**: SK하이닉스
+**비교 기업**: 삼성전자, 마이크론(MU), 키옥시아
+
+| 지표 | SK하이닉스 | 삼성전자 | 마이크론 | 섹터 평균 | SK 하이닉스 상대 위치 |
+|------|-----------|---------|---------|---------|------------------|
+| PER | X | X | X | X | 저평가/적정/고평가 |
+| EV/EBITDA | X | X | X | X | |
+| ROE | X | X | X | X | |
+| 영업이익률 | X | X | X | X | |
+| 매출 CAGR | X | X | X | X | |
+| 순부채/EBITDA | X | X | X | X | |
+
+**결론**: SK하이닉스는 EV/EBITDA 기준 섹터 대비 XX% 디스카운트 거래 중.
+ROE·성장률은 섹터 상위 20%로 디스카운트가 정당화되지 않음 → 저평가 판단.
+</code></pre>
+<hr />
+<blockquote>
+<p><strong>관련 노트</strong>: <a href="../주식/08.html" class="wikilink">08. 가치평가 지표 총람</a> | <a href="../주식/09.html" class="wikilink">09. 재무제표 분석 &amp; 체크리스트</a> | <a href="../주식/11.html" class="wikilink">11. 주가-기업가치 상관관계 분석</a></p>
+</blockquote>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>
