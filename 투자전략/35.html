@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>투자 심리 & 행동경제학 — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세전략">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="주식기업분석">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+    <li><a href="../주식/32.html">트레이딩 용어 사전</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="ETF완전가이드">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩유안타증권">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="투자전략심화">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📊 투자 전략 & 심화<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../투자전략/33.html">거시경제 기초 — 금리·환율·경기사이클</a></li>
+    <li><a href="../절세/34.html">해외 주식 세금 실무</a></li>
+    <li class="current"><a href="../투자전략/35.html">투자 심리 & 행동경제학</a></li>
+    <li><a href="../투자전략/36.html">포트폴리오 자산배분 전략</a></li>
+    <li><a href="../투자전략/37.html">배당 투자 전략</a></li>
+    <li><a href="../투자전략/38.html">채권 기초 & ETF 활용</a></li>
+    <li><a href="../투자전략/39.html">기술적 분석 기초</a></li>
+    <li><a href="../투자전략/40.html">리스크 관리</a></li>
+    <li><a href="../투자전략/41.html">투자 철학 & 명저</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>📊 투자 전략 & 심화</span><span class="sep">›</span><span>투자 심리 & 행동경제학</span></div>
+<article class="content">
+<h1>투자 심리 &amp; 행동경제학</h1>
+<blockquote>
+<p>개인 투자자 80%가 시장 수익률을 밑도는 가장 큰 이유는 정보 부족이 아니라 <strong>심리 편향</strong>.<br />
+자신의 편향을 아는 것이 투자 실력의 절반이다.</p>
+</blockquote>
+<hr />
+<h2>1. 손실회피 편향 (Loss Aversion)</h2>
+<p><strong>같은 크기의 이익보다 손실이 2.5배 더 크게 느껴지는 현상.</strong></p>
+<h3>증상</h3>
+<ul>
+<li>손절을 못 하고 버팀 ("언젠가는 오르겠지")</li>
+<li>수익은 빠르게 실현, 손실은 늦게 실현 (프로스펙트 이론)</li>
+<li>폭락 시 패닉 매도</li>
+</ul>
+<h3>실제 피해</h3>
+<pre><code>-50% 손실 → 원금 회복에 +100% 상승 필요
+손절 안 하고 버티다 -30% → -70% 로 확대되는 패턴
+</code></pre>
+<h3>극복법</h3>
+<ul>
+<li><strong>손절선 사전 설정</strong>: 매수 전 "이 가격 이하면 매도" 룰 설정</li>
+<li>손절은 실패가 아니라 리스크 관리임을 인식</li>
+<li>포지션 규모를 작게 유지해 손실에 덜 민감하게</li>
+</ul>
+<hr />
+<h2>2. 확증편향 (Confirmation Bias)</h2>
+<p><strong>내가 믿고 싶은 정보만 찾고, 반대 정보는 무시하는 경향.</strong></p>
+<h3>증상</h3>
+<ul>
+<li>산 주식의 호재 뉴스만 검색</li>
+<li>비판적 의견을 "모르는 소리"로 무시</li>
+<li>커뮤니티에서 같은 생각 가진 사람들끼리만 교류</li>
+</ul>
+<h3>극복법</h3>
+<ul>
+<li>매수 후 <strong>의도적으로 반대 의견 검색</strong> ("○○ 주식 위험한 이유")</li>
+<li>투자 thesis 작성 시 반론 섹션 필수 포함</li>
+<li>다양한 시각의 애널리스트 리포트 비교</li>
+</ul>
+<hr />
+<h2>3. 앵커링 편향 (Anchoring Bias)</h2>
+<p><strong>처음 접한 숫자(앵커)에 과도하게 의존하는 경향.</strong></p>
+<h3>증상</h3>
+<ul>
+<li>"전고점 10만원에서 5만원으로 내렸으니 싸다" → 실제로는 고평가일 수 있음</li>
+<li>매입 단가에 집착 ("평단 이상 안 팔아")</li>
+<li>52주 신저가를 무조건 저렴하다고 인식</li>
+</ul>
+<h3>극복법</h3>
+<ul>
+<li>현재 가격이 아닌 <strong>현재 기업가치(PER·PBR)</strong> 기준으로 판단</li>
+<li>"지금 처음 산다면 이 가격에 살 것인가?" 자문</li>
+</ul>
+<hr />
+<h2>4. 군중심리 &amp; 밴드왜건 효과</h2>
+<p><strong>다수가 하면 나도 해야 할 것 같은 심리. 상승장 고점 매수, 하락장 패닉 매도의 원인.</strong></p>
+<h3>증상</h3>
+<ul>
+<li>주변이 다 "○○ 주식 올랐다"고 할 때 뒤늦게 진입</li>
+<li>커뮤니티 추천글 보고 충동 매수</li>
+<li>모두가 팔 때 나도 팔고 싶어짐</li>
+</ul>
+<h3>역발상 투자 관점</h3>
+<blockquote>
+<p>워런 버핏: "다른 사람들이 탐욕스러울 때 두려워하고,<br />
+다른 사람들이 두려워할 때 탐욕스러워져라."</p>
+</blockquote>
+<ul>
+<li>VIX 30 이상, 공포·탐욕 지수 극단 공포 → 역발상 매수 기회 가능성</li>
+<li>유행 테마주 끝물 진입 → 고점 잡기 확률 높음</li>
+</ul>
+<hr />
+<h2>5. 매몰비용 오류 (Sunk Cost Fallacy)</h2>
+<p><strong>이미 투입한 비용 때문에 합리적 결정을 못 하는 편향.</strong></p>
+<h3>증상</h3>
+<ul>
+<li>"이미 1,000만원 넣었으니 더 넣어야지" → 물타기 반복</li>
+<li>"본전만 오면 팔 거야" → 본전에 집착해 최적 매도 타이밍 놓침</li>
+<li>손실 난 주식을 "본전치기" 목표로 장기 보유</li>
+</ul>
+<h3>극복법</h3>
+<ul>
+<li>과거 투입 비용은 무관 — <strong>지금 이 가격에 처음 산다면 살 것인가?</strong> 기준으로 결정</li>
+<li>현재 가치와 미래 전망만 판단 기준</li>
+</ul>
+<hr />
+<h2>6. 과잉 확신 편향 (Overconfidence Bias)</h2>
+<p><strong>자신의 분석·예측 능력을 과대평가하는 경향.</strong></p>
+<h3>증상</h3>
+<ul>
+<li>"이 주식은 반드시 오른다" 확신 → 포지션 과대 집중</li>
+<li>짧은 성공 경험 후 "나는 투자를 잘 한다"는 착각</li>
+<li>빈번한 매매 → 거래 수수료·세금 누적</li>
+</ul>
+<h3>극복법</h3>
+<ul>
+<li><strong>분산 투자</strong> (한 종목 집중 제한 10~20%)</li>
+<li>투자 일지 작성 → 실제 수익률 vs 예측 정확도 추적</li>
+<li>"내가 틀릴 수 있다"는 가능성 항상 열어두기</li>
+</ul>
+<hr />
+<h2>7. 현재 편향 (Present Bias)</h2>
+<p><strong>미래보다 즉각적 만족을 더 크게 느끼는 경향. 장기 투자의 가장 큰 적.</strong></p>
+<h3>증상</h3>
+<ul>
+<li>노후 자금 적립 미루기 ("나중에 하지")</li>
+<li>단기 등락에 포트폴리오 자주 변경</li>
+<li>복리 효과를 과소평가</li>
+</ul>
+<h3>극복법</h3>
+<ul>
+<li><strong>자동이체 설정</strong>: 월급날 자동으로 연금저축·IRP 납입</li>
+<li>포트폴리오 확인 주기를 의도적으로 줄이기 (일→주→월 단위)</li>
+</ul>
+<hr />
+<h2>8. 처분 효과 (Disposition Effect)</h2>
+<p><strong>수익 난 주식은 빨리 팔고, 손실 난 주식은 오래 보유하는 경향.</strong></p>
+<p>손실회피 편향의 결과. 실증 연구에서 개인 투자자의 보편적 패턴으로 확인.</p>
+<h3>결과</h3>
+<ul>
+<li>수익 나는 "꽃"은 빨리 뽑고, 손실 나는 "잡초"는 오래 키움</li>
+<li>포트폴리오가 점점 손실 종목으로 채워짐</li>
+</ul>
+<h3>극복법</h3>
+<ul>
+<li>"잡초는 뽑고 꽃은 키운다" 원칙 의식적 적용</li>
+<li>종목별 목표 수익률·손절선 사전 설정 후 기계적 실행</li>
+</ul>
+<hr />
+<h2>9. 투자 원칙 수립이 중요한 이유</h2>
+<p>모든 편향에 공통되는 처방: <strong>사전에 룰을 정하고 기계적으로 실행.</strong></p>
+<h3>투자 원칙 예시 템플릿</h3>
+<pre><code>매수 원칙:
+- 종목당 최대 포지션: 포트폴리오의 20% 이하
+- 매수 전 thesis 작성 필수 (왜 사는가, 언제 파는가)
+
+손절 원칙:
+- 매입가 대비 -15% 도달 시 자동 손절
+- 단, thesis가 여전히 유효하면 재평가 후 결정
+
+익절 원칙:
+- 목표 수익률 도달 시 절반 매도, 나머지 홀딩
+- 기업 펀더멘털 변화 시 전량 매도
+
+리밸런싱:
+- 반기 1회 정기 리밸런싱
+- 특정 자산이 ±10% 이상 목표 비중 이탈 시 즉시 리밸런싱
+</code></pre>
+<div class="callout callout-important"><div class="callout-title">🔑 핵심</div><div class="callout-body">
+
+원칙은 **시장이 조용할 때** 만들어야 함.  
+폭락·급등 시 만든 원칙은 감정에 오염됨.
+
+</div></div>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>

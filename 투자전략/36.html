@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>포트폴리오 자산배분 전략 — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세전략">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="주식기업분석">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+    <li><a href="../주식/32.html">트레이딩 용어 사전</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="ETF완전가이드">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩유안타증권">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="투자전략심화">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📊 투자 전략 & 심화<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../투자전략/33.html">거시경제 기초 — 금리·환율·경기사이클</a></li>
+    <li><a href="../절세/34.html">해외 주식 세금 실무</a></li>
+    <li><a href="../투자전략/35.html">투자 심리 & 행동경제학</a></li>
+    <li class="current"><a href="../투자전략/36.html">포트폴리오 자산배분 전략</a></li>
+    <li><a href="../투자전략/37.html">배당 투자 전략</a></li>
+    <li><a href="../투자전략/38.html">채권 기초 & ETF 활용</a></li>
+    <li><a href="../투자전략/39.html">기술적 분석 기초</a></li>
+    <li><a href="../투자전략/40.html">리스크 관리</a></li>
+    <li><a href="../투자전략/41.html">투자 철학 & 명저</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>📊 투자 전략 & 심화</span><span class="sep">›</span><span>포트폴리오 자산배분 전략</span></div>
+<article class="content">
+<h1>포트폴리오 자산배분 전략</h1>
+<blockquote>
+<p>"개별 종목 선택보다 자산배분이 장기 수익률의 90%를 결정한다." — 브린슨 연구(1986)</p>
+</blockquote>
+<hr />
+<h2>1. 자산배분이란?</h2>
+<p>수익과 리스크를 조절하기 위해 <strong>주식·채권·현금·대안자산</strong> 등에 자금을 나눠 투자하는 것.</p>
+<h3>주요 자산군 특성</h3>
+<table>
+<thead>
+<tr>
+<th>자산군</th>
+<th>기대 수익</th>
+<th>리스크</th>
+<th>역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주식</td>
+<td>높음</td>
+<td>높음</td>
+<td>성장 엔진</td>
+</tr>
+<tr>
+<td>채권</td>
+<td>중간</td>
+<td>낮음</td>
+<td>안정·헤징</td>
+</tr>
+<tr>
+<td>현금·예금</td>
+<td>낮음</td>
+<td>없음</td>
+<td>유동성</td>
+</tr>
+<tr>
+<td>부동산·리츠</td>
+<td>중간</td>
+<td>중간</td>
+<td>인플레 헤지</td>
+</tr>
+<tr>
+<td>금</td>
+<td>낮음</td>
+<td>중간</td>
+<td>위기 헤지</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. 연령별 자산배분 공식</h2>
+<h3>전통 공식: 100 - 나이 = 주식 비중</h3>
+<table>
+<thead>
+<tr>
+<th>나이</th>
+<th>주식</th>
+<th>채권·안전자산</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20대</td>
+<td>80%</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>30대</td>
+<td>70%</td>
+<td>30%</td>
+</tr>
+<tr>
+<td>40대</td>
+<td>60%</td>
+<td>40%</td>
+</tr>
+<tr>
+<td>50대</td>
+<td>50%</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>60대+</td>
+<td>40%</td>
+<td>60%</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>저금리 시대엔 "110 - 나이" 공식도 많이 사용</p>
+</blockquote>
+<h3>리스크 성향별 기본 포트폴리오</h3>
+<p><strong>공격형 (30대 이하, 장기 투자자)</strong></p>
+<pre><code>국내 주식 ETF:  20%
+해외 주식 ETF:  60%
+채권 ETF:       10%
+현금·예금:      10%
+</code></pre>
+<p><strong>중립형 (40대, 균형 투자자)</strong></p>
+<pre><code>국내 주식 ETF:  20%
+해외 주식 ETF:  40%
+채권 ETF:       25%
+현금·예금:      10%
+금·리츠:         5%
+</code></pre>
+<p><strong>안정형 (50대 이상, 자산 보전 우선)</strong></p>
+<pre><code>주식 ETF:       30%
+채권 ETF:       40%
+현금·예금:      20%
+금·리츠:        10%
+</code></pre>
+<hr />
+<h2>3. 코어·새틀라이트 전략</h2>
+<p>포트폴리오를 <strong>안정적 핵심(Core)</strong>과 <strong>공격적 위성(Satellite)</strong>으로 분리.</p>
+<pre><code>┌─────────────────────────────────────┐
+│  CORE (70~80%)                      │
+│  - 시장 지수 ETF (S&amp;P500, 코스피200)  │
+│  - 안정적 장기 수익 추구               │
+│  - 패시브 운용, 낮은 비용              │
+└─────────────────────────────────────┘
+┌─────────────────────────────────────┐
+│  SATELLITE (20~30%)                 │
+│  - 개별 종목, 테마 ETF, 섹터 ETF      │
+│  - 초과 수익 추구                     │
+│  - 적극 운용, 높은 집중도              │
+└─────────────────────────────────────┘
+</code></pre>
+<h3>장점</h3>
+<ul>
+<li>Core로 시장 수익률 확보 → 절대 손실 방지</li>
+<li>Satellite로 알파(초과수익) 추구</li>
+<li>심리적 안정 (Core가 버텨줌)</li>
+</ul>
+<hr />
+<h2>4. 달러 코스트 애버리징 (DCA)</h2>
+<p><strong>매월 일정 금액을 정기적으로 투자해 평균 매입 단가를 평준화하는 전략.</strong></p>
+<h3>효과 시뮬레이션</h3>
+<table>
+<thead>
+<tr>
+<th>월</th>
+<th>주가</th>
+<th>투자금</th>
+<th>매수 수량</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1월</td>
+<td>10,000원</td>
+<td>100만원</td>
+<td>100주</td>
+</tr>
+<tr>
+<td>2월</td>
+<td>8,000원</td>
+<td>100만원</td>
+<td>125주</td>
+</tr>
+<tr>
+<td>3월</td>
+<td>6,000원</td>
+<td>100만원</td>
+<td>167주</td>
+</tr>
+<tr>
+<td>4월</td>
+<td>9,000원</td>
+<td>100만원</td>
+<td>111주</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td></td>
+<td><strong>400만원</strong></td>
+<td><strong>503주</strong></td>
+</tr>
+</tbody>
+</table>
+<p>평균 매입가: 400만원 ÷ 503주 = <strong>7,952원</strong> (단순 평균 8,250원보다 낮음)</p>
+<h3>장점</h3>
+<ul>
+<li>고점 일시 매수 위험 제거</li>
+<li>감정 개입 없이 기계적 투자 가능</li>
+<li>적립식 투자의 기본 원리</li>
+</ul>
+<h3>단점</h3>
+<ul>
+<li>강한 상승장에서는 일시 매수보다 수익 낮을 수 있음</li>
+<li>하락장 지속 시 손실 규모 커질 수 있음 (그러나 평단은 낮아짐)</li>
+</ul>
+<hr />
+<h2>5. 리밸런싱</h2>
+<p><strong>시간이 지나며 변한 자산 비중을 목표 비중으로 되돌리는 작업.</strong></p>
+<h3>왜 필요한가</h3>
+<pre><code>초기 목표: 주식 60% / 채권 40%
+1년 후 주식 급등: 주식 75% / 채권 25%
+→ 리스크 과도 집중 → 리밸런싱 필요
+</code></pre>
+<h3>리밸런싱 방법</h3>
+<p><strong>정기 리밸런싱</strong>: 반기 또는 연 1회 고정 날짜에 실행<br />
+<strong>밴드 리밸런싱</strong>: 특정 자산이 목표 비중 ±5~10% 이탈 시 실행</p>
+<h3>리밸런싱의 효과</h3>
+<ul>
+<li><strong>자동으로 고점 매도·저점 매수</strong> 효과</li>
+<li>리스크 통제</li>
+<li>수익이 난 자산 일부를 손실 자산으로 이전 → 분산 유지</li>
+</ul>
+<div class="callout callout-tip"><div class="callout-title">💡 세금 효율적 리밸런싱</div><div class="callout-body">
+
+- 매도 대신 **새 자금을 비중 낮은 자산에 투입**해 리밸런싱 (양도세 절감)
+- ISA·연금계좌 내에서 리밸런싱 시 과세이연 효과
+
+</div></div>
+
+<hr />
+<h2>6. 레이 달리오의 올웨더 포트폴리오</h2>
+<p><strong>어떤 경제 환경에서도 안정적 수익을 추구하는 배분.</strong></p>
+<pre><code>주식:          30%
+장기채권:      40%
+중기채권:      15%
+금:             7.5%
+원자재:         7.5%
+</code></pre>
+<h3>4가지 경제 환경 대응</h3>
+<table>
+<thead>
+<tr>
+<th>환경</th>
+<th>유리한 자산</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>성장 + 인플레 상승</td>
+<td>원자재, 금, 물가연동채</td>
+</tr>
+<tr>
+<td>성장 + 인플레 하락</td>
+<td>주식, 회사채</td>
+</tr>
+<tr>
+<td>침체 + 인플레 상승</td>
+<td>금, 물가연동채</td>
+</tr>
+<tr>
+<td>침체 + 인플레 하락</td>
+<td>국채, 주식 일부</td>
+</tr>
+</tbody>
+</table>
+<h3>한계</h3>
+<ul>
+<li>채권 비중이 높아 강한 상승장에서 주식 100% 대비 수익 낮음</li>
+<li>저금리 구간에서 채권 매력 감소</li>
+</ul>
+<hr />
+<h2>7. 실전 포트폴리오 구성 체크리스트</h2>
+<ul>
+<li>[ ] 투자 목표 설정 (노후 자금? 주택 구입? 단기 수익?)</li>
+<li>[ ] 투자 기간 확인 (단기 3년 이하 / 중기 3~10년 / 장기 10년+)</li>
+<li>[ ] 리스크 허용도 점검 (-30% 폭락 시 버틸 수 있는가?)</li>
+<li>[ ] 자산별 목표 비중 설정</li>
+<li>[ ] 계좌별 자산 배치 (절세 계좌 우선 활용)</li>
+<li>[ ] DCA 자동이체 설정</li>
+<li>[ ] 리밸런싱 주기 캘린더 등록</li>
+</ul>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>
