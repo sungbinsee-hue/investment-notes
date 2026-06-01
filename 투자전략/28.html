@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 완성된 투자 포트폴리오 (2026~2036) — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#4f8ef7', background: '#21263a', mainBkg: '#21263a', nodeBorder: '#2e3350', lineColor: '#94a3b8', textColor: '#e2e8f0' } });
+</script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }, options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="주식">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 & 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="etf">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 & 정밀 재무 분석</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="실전">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🎯 실전 투자<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../실전/42.html">공모주 IPO 청약 실전</a></li>
+    <li><a href="../실전/44.html">종목 스크리닝 & DART</a></li>
+    <li><a href="../실전/45.html">HTS·MTS 실전 활용</a></li>
+    <li><a href="../실전/51.html">퇴직연금 DC형 실전 운용</a></li>
+    <li><a href="../실전/52.html">미국 주식 직접 투자 실무</a></li>
+    <li><a href="../실전/53.html">투자 일지 & 수익률 계산</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="투자전략">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📊 투자 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../투자전략/25.html">개인 투자 포트폴리오 설계</a></li>
+    <li><a href="../투자전략/26.html">복리 재투자 전략</a></li>
+    <li class="current"><a href="../투자전략/28.html">완성된 투자 포트폴리오</a></li>
+    <li><a href="../투자전략/33.html">거시경제 기초</a></li>
+    <li><a href="../투자전략/35.html">투자 심리 & 행동경제학</a></li>
+    <li><a href="../투자전략/36.html">포트폴리오 자산배분 전략</a></li>
+    <li><a href="../투자전략/37.html">배당 투자 전략</a></li>
+    <li><a href="../투자전략/38.html">채권 기초 & ETF 활용</a></li>
+    <li><a href="../투자전략/39.html">기술적 분석 기초</a></li>
+    <li><a href="../투자전략/40.html">리스크 관리</a></li>
+    <li><a href="../투자전략/41.html">투자 철학 & 명저</a></li>
+    <li><a href="../투자전략/43.html">경제 지표 & 뉴스 해석법</a></li>
+    <li><a href="../투자전략/46.html">금·원자재 투자</a></li>
+    <li><a href="../투자전략/47.html">리츠(REITs) 실전 투자</a></li>
+    <li><a href="../투자전략/48.html">파생상품 기초</a></li>
+    <li><a href="../투자전략/49.html">암호화폐 기초 & 세금</a></li>
+    <li><a href="../투자전략/50.html">퀀트 투자 기초</a></li>
+    <li><a href="../투자전략/55.html">AI·방산·원전 투자 사이클</a></li>
+  </ul>
+</div>
+</nav>
+<main class="main">
+<div class="breadcrumb"><a href="../index.html">홈</a><span class="sep">›</span><span>📊 투자 전략</span><span class="sep">›</span><span>나의 완성된 투자 포트폴리오 (2026~2036)</span></div>
+<article class="content">
+<h1>나의 완성된 투자 포트폴리오 (2026~2036)</h1>
+<blockquote>
+<p><strong>기준일</strong>: 2026년 5월 26일. ✅=확인된 수치, 📊=추정치<br />
+<strong>초기 자금</strong>: 5,000만원 | <strong>연간 추가 납입</strong>: IRP 900만원<br />
+<strong>연계 노트</strong>: <a href="../투자전략/25.html" class="wikilink">25. 개인 투자 포트폴리오 설계 (5000만원)</a> | <a href="../투자전략/26.html" class="wikilink">26. 복리 재투자 전략 &amp; 연도별 운용 플랜 (2026~2036)</a> | <span class="wikilink-missing">27. 미래에셋증권 투자 가이드 &amp; 새 ISA 전략 (2026)</span></p>
+</blockquote>
+<hr />
+<h2>PART 1 — 전체 포트폴리오 구조 한눈에</h2>
+<h3>현재 자금 배분 (2026년 5월, 슈퍼 ISA 출시 전)</h3>
+<p><div class="mermaid">pie title "초기 5,000만원 계좌별 배분"
+ "IRP (연금·절세)" : 900
+ "기존 중개형 ISA (해외ETF 코어)" : 2000
+ "일반계좌 (고위험·성장)" : 2100
+</div></p>
+<table>
+<thead>
+<tr>
+<th>계좌</th>
+<th>금액</th>
+<th>비중</th>
+<th>핵심 목적</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IRP</strong></td>
+<td>900만원/년</td>
+<td>연납입</td>
+<td><span style="color:#2980b9"><strong>세액공제 148.5만원/년</strong></span></td>
+</tr>
+<tr>
+<td><strong>기존 중개형 ISA</strong></td>
+<td>2,000만원 (초기)</td>
+<td>40%</td>
+<td><span style="color:#27ae60"><strong>해외 ETF 비과세 · 장기 성장</strong></span></td>
+</tr>
+<tr>
+<td><strong>일반 계좌</strong></td>
+<td>2,100만원 (초기)</td>
+<td>42%</td>
+<td>성장주·레버리지·IPO 기회</td>
+</tr>
+</tbody>
+</table>
+<h3>슈퍼 ISA 출시 후 재편 (2026년 6월 ~)</h3>
+<p><div class="mermaid">flowchart LR
+    subgraph "절세 최우선 계좌"
+        A1["IRP<br/>연 900만원<br/>세액공제 148.5만원"]
+        A2["연금저축 ETF<br/>연 600만원 (추가 검토)<br/>세액공제 99만원"]
+    end
+
+    subgraph "ISA 이중 비과세 구조"
+        B1["기존 ISA<br/>해외 ETF 전용<br/>VOO·QQQ·TIGER S&P500"]
+        B2["국민성장 ISA<br/>국내 주식·ETF 전용<br/>비과세 ~500만원 📊"]
+    end
+
+    subgraph "고수익 추구"
+        C1["일반 계좌<br/>URA·MAGS·이수페타시스<br/>IonQ·레버리지 ETF"]
+    end
+</div></p>
+<hr />
+<h2>PART 2 — 계좌별 상세 운용 전략</h2>
+<h3>계좌 1: IRP (미래에셋증권) — 연 900만원</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>납입 전략</strong></td>
+<td><span style="color:#2980b9"><strong>1월 첫째 주 연 900만원 일괄 납입</strong></span> (11개월 복리 효과)</td>
+</tr>
+<tr>
+<td><strong>세액공제</strong></td>
+<td>148.5만원/년 (총급여 5,500~8,800만원 기준, 세율 16.5%)</td>
+</tr>
+<tr>
+<td><strong>안전자산 의무</strong></td>
+<td><span style="color:#e74c3c"><strong>30% = 270만원 → TIGER 단기통안채</strong></span></td>
+</tr>
+<tr>
+<td><strong>위험자산</strong></td>
+<td>70% = 630만원 → TIGER 미국S&amp;P500</td>
+</tr>
+<tr>
+<td><strong>10년 누적 절세</strong></td>
+<td>1,485만원 (세액공제 환급 기준)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>IRP 포트폴리오 세부 배분</strong></p>
+<table>
+<thead>
+<tr>
+<th>비중</th>
+<th>ETF</th>
+<th>역할</th>
+<th>연간 금액</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>50%</td>
+<td>TIGER 미국S&amp;P500</td>
+<td>장기 성장 코어</td>
+<td>450만원</td>
+</tr>
+<tr>
+<td>20%</td>
+<td>TIGER 미국나스닥100</td>
+<td>기술주 성장</td>
+<td>180만원</td>
+</tr>
+<tr>
+<td>30%</td>
+<td>TIGER 단기통안채</td>
+<td><span style="color:#e74c3c"><strong>IRP 안전자산 30% 의무</strong></span></td>
+<td>270만원</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>계좌 2: 기존 중개형 ISA (미래에셋 다이렉트) — 해외 ETF 전용</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>초기 투자</strong></td>
+<td>2,000만원 (2026년 5월 투자 시작)</td>
+</tr>
+<tr>
+<td><strong>연간 납입 여력</strong></td>
+<td>최대 연 4,000만원 (총 1억원 한도)</td>
+</tr>
+<tr>
+<td><strong>비과세 혜택</strong></td>
+<td>순이익 200만원 (일반형) — 초과분 9.9% 분리과세</td>
+</tr>
+<tr>
+<td><strong>만기 전략</strong></td>
+<td><span style="color:#27ae60"><strong>2029년 5월 만기 → 연금저축 이체 (이체액 10% 추가 세액공제)</strong></span></td>
+</tr>
+<tr>
+<td><strong>운용 방향</strong></td>
+<td>슈퍼 ISA 출시 후 해외 ETF 전용으로 특화</td>
+</tr>
+</tbody>
+</table>
+<p><strong>기존 ISA 포트폴리오 세부 배분</strong></p>
+<table>
+<thead>
+<tr>
+<th>비중</th>
+<th>ETF</th>
+<th>역할</th>
+<th>초기 금액</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>40%</td>
+<td>TIGER 미국배당다우존스</td>
+<td><span style="color:#27ae60"><strong>월배당 비과세 극대화</strong></span></td>
+<td>800만원</td>
+</tr>
+<tr>
+<td>30%</td>
+<td>TIGER 미국S&amp;P500</td>
+<td>안정 성장 코어</td>
+<td>600만원</td>
+</tr>
+<tr>
+<td>20%</td>
+<td>TIGER 미국나스닥100</td>
+<td>기술주 성장 추가</td>
+<td>400만원</td>
+</tr>
+<tr>
+<td>10%</td>
+<td>ACE KRX금현물</td>
+<td>분산·헤지</td>
+<td>200만원</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>계좌 3: 국민성장 ISA (2026년 6월 개설) — 국내 주식·ETF 전용</h3>
+<blockquote>
+<p><span style="color:#e67e22"><strong>[참고]</strong></span> 2026년 6월 출시 목표. 비과세 ~500만원(일반형) 📊. 조세특례제한법 개정 후 확정.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>개설 시점</strong></td>
+<td>2026년 6월 출시 즉시 개설</td>
+</tr>
+<tr>
+<td><strong>초기 투자</strong></td>
+<td>500~1,000만원 (일반 계좌 일부 이동)</td>
+</tr>
+<tr>
+<td><strong>비과세 한도</strong></td>
+<td><span style="color:#27ae60"><strong>~500만원 📊 (기존 2.5배)</strong></span></td>
+</tr>
+<tr>
+<td><strong>운용 방향</strong></td>
+<td>국내 주식·섹터 ETF 전용 (해외 ETF 불가)</td>
+</tr>
+<tr>
+<td><strong>기존 ISA와 관계</strong></td>
+<td>중복 가입 → 이중 비과세 구조 완성</td>
+</tr>
+</tbody>
+</table>
+<p><strong>국민성장 ISA 포트폴리오 세부 배분</strong></p>
+<table>
+<thead>
+<tr>
+<th>비중</th>
+<th>ETF / 종목</th>
+<th>역할</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30%</td>
+<td>KODEX 200</td>
+<td>코스피 코어 · 밸류업 수혜</td>
+<td>배당수익 1.08% ✅</td>
+</tr>
+<tr>
+<td>20%</td>
+<td>TIGER 반도체TOP10</td>
+<td>반도체 테마</td>
+<td>순자산 1.68조원 ✅</td>
+</tr>
+<tr>
+<td>20%</td>
+<td>KODEX 방산TOP10</td>
+<td>방산 K-수출</td>
+<td>한화에어로·LIG넥스원 포함</td>
+</tr>
+<tr>
+<td>15%</td>
+<td>TIGER 은행고배당+</td>
+<td><span style="color:#27ae60"><strong>고배당 + 밸류업 비과세</strong></span></td>
+<td>KB·신한·하나</td>
+</tr>
+<tr>
+<td>15%</td>
+<td>SOL 조선TOP3플러스</td>
+<td>조선 슈퍼사이클</td>
+<td>순자산 1.26조원 ✅</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>계좌 4: 일반 계좌 — 성장주·고위험·기회 포착</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>초기 투자</strong></td>
+<td>2,100만원</td>
+</tr>
+<tr>
+<td><strong>세금</strong></td>
+<td>매매차익 배당소득세 15.4% / 해외주식 양도차익 22%</td>
+</tr>
+<tr>
+<td><strong>전략</strong></td>
+<td><span style="color:#e67e22"><strong>고위험·고수익 추구. 손절 원칙 필수 적용</strong></span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>일반 계좌 포트폴리오 세부 배분</strong></p>
+<table>
+<thead>
+<tr>
+<th>비중</th>
+<th>종목 / ETF</th>
+<th>역할</th>
+<th>평가</th>
+<th>금액</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>25%</td>
+<td>MAGS (Magnificent 7 ETF)</td>
+<td>AI 빅테크 집중</td>
+<td><span style="color:#27ae60"><strong>★★★★☆ 1년 +54%</strong></span></td>
+<td>525만원</td>
+</tr>
+<tr>
+<td>20%</td>
+<td>URA (글로벌 우라늄 ETF)</td>
+<td>원전·에너지 성장</td>
+<td><span style="color:#27ae60"><strong>★★★★☆ 배당 4.06%</strong></span></td>
+<td>420만원</td>
+</tr>
+<tr>
+<td>15%</td>
+<td>이수페타시스</td>
+<td>AI 서버 PCB 국내 대장</td>
+<td><span style="color:#27ae60"><strong>★★★★☆ 목표가 175,000원</strong></span></td>
+<td>315만원</td>
+</tr>
+<tr>
+<td>15%</td>
+<td>QQQ (나스닥100 ETF)</td>
+<td>기술주 안전판</td>
+<td><span style="color:#27ae60"><strong>★★★★★ 코어 성장</strong></span></td>
+<td>315만원</td>
+</tr>
+<tr>
+<td>10%</td>
+<td>IonQ (양자컴퓨터)</td>
+<td>초고위험·초고수익 테마</td>
+<td><span style="color:#e74c3c"><strong>★★☆☆☆ 투기적 비중</strong></span></td>
+<td>210만원</td>
+</tr>
+<tr>
+<td>10%</td>
+<td>현금·대기</td>
+<td>시장 폭락 시 추가 매수</td>
+<td>VIX 30+ 시 집행</td>
+<td>210만원</td>
+</tr>
+<tr>
+<td>5%</td>
+<td>SpaceX 대안 (ARKX)</td>
+<td>우주·차세대 기술</td>
+<td>📊 소액 모험</td>
+<td>105만원</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><span style="color:#e74c3c"><strong>[주의]</strong></span> IonQ는 2026E EBITDA 적자 -$96.8M. 전체 포트폴리오의 10% 이하 유지. 손절선: 매수가 -30%.</p>
+</blockquote>
+<hr />
+<h2>PART 3 — 전체 포트폴리오 종합 현황</h2>
+<h3>자산 배분 전체 비중 (초기 5,000만원 기준)</h3>
+<p><div class="mermaid">pie title "전체 자산 배분 (2026년 5월 기준)"
+ "TIGER 미국S&P500 (IRP+ISA)" : 1050
+ "TIGER 나스닥100 (IRP)" : 180
+ "TIGER 단기통안채 (IRP)" : 270
+ "TIGER 미국배당다우존스 (ISA)" : 800
+ "TIGER 미국나스닥100 (ISA)" : 400
+ "ACE KRX금현물 (ISA)" : 200
+ "MAGS (일반)" : 525
+ "URA (일반)" : 420
+ "이수페타시스 (일반)" : 315
+ "QQQ (일반)" : 315
+ "IonQ (일반)" : 210
+ "현금·대기 (일반)" : 210
+ "ARKX (일반)" : 105
+</div></p>
+<h3>리스크 레벨별 배분</h3>
+<table>
+<thead>
+<tr>
+<th>레벨</th>
+<th>금액</th>
+<th>비중</th>
+<th>해당 자산</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="color:#27ae60"><strong>방어 (안전)</strong></span></td>
+<td>1,170만원</td>
+<td>23%</td>
+<td>단기통안채 270 + S&amp;P500 1050 + 배당다우존스 800 (일부)</td>
+</tr>
+<tr>
+<td><span style="color:#2980b9"><strong>균형 (성장)</strong></span></td>
+<td>2,230만원</td>
+<td>45%</td>
+<td>TIGER 나스닥·S&amp;P500·QQQ·KODEX200·섹터ETF</td>
+</tr>
+<tr>
+<td><span style="color:#e67e22"><strong>공격 (고위험)</strong></span></td>
+<td>1,365만원</td>
+<td>27%</td>
+<td>MAGS·URA·이수페타시스</td>
+</tr>
+<tr>
+<td><span style="color:#e74c3c"><strong>투기 (초고위험)</strong></span></td>
+<td>315만원</td>
+<td>6%</td>
+<td>IonQ·ARKX</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>PART 4 — 폭락 시장 대응 지표 체계</h2>
+<blockquote>
+<p>폭락 지표 VIX·하이일드 스프레드를 기준으로 매수·홀드·일부 매도를 자동 결정하는 체계</p>
+</blockquote>
+<p><div class="mermaid">flowchart TD
+    CHECK["매주 지표 확인<br/>(매주 월요일)"]
+
+    CHECK --> VIX{"VIX 수치"}
+    VIX -->|"< 20 안전"| GREEN["정상 운용<br/>계획대로 투자 집행"]
+    VIX -->|"20~30 경고"| YELLOW["신규 매수 보류<br/>현금 비중 유지"]
+    VIX -->|"> 30 위기"| RED["일반계좌 30% 현금화<br/>VIX 50+ 분할 매수 준비"]
+
+    CHECK --> HY{"하이일드 스프레드"}
+    HY -->|"< 4% 안전"| H1["정상 운용"]
+    HY -->|"4~6% 경고"| H2["레버리지 ETF 즉시 정리"]
+    HY -->|"> 6% 위기"| H3["방어 자산 확대<br/>TIGER 단기통안채 비중 증가"]
+
+    RED & H3 --> CRISIS["위기 대응<br/>① IonQ·ARKX 전량 매도<br/>② 현금 확보 30% 이상<br/>③ VIX 50 돌파 시 분할 매수"]
+</div></p>
+<h3>시장 상태별 행동 지침</h3>
+<table>
+<thead>
+<tr>
+<th>시장 상태</th>
+<th>VIX</th>
+<th>하이일드 스프레드</th>
+<th>행동</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="color:#27ae60"><strong>정상</strong></span></td>
+<td>&lt; 20</td>
+<td>&lt; 4%</td>
+<td>계획대로 IRP·ISA 납입, 리밸런싱 연 1회</td>
+</tr>
+<tr>
+<td><span style="color:#e67e22"><strong>경고</strong></span></td>
+<td>20~30</td>
+<td>4~6%</td>
+<td>일반계좌 신규 매수 중단, 레버리지 청산</td>
+</tr>
+<tr>
+<td><span style="color:#e74c3c"><strong>위기</strong></span></td>
+<td>30~50</td>
+<td>6~8%</td>
+<td>일반계좌 30% 현금화, IRP·ISA 적립 유지</td>
+</tr>
+<tr>
+<td><span style="color:#e74c3c"><strong>폭락</strong></span></td>
+<td>&gt; 50</td>
+<td>&gt; 8%</td>
+<td>준비한 현금으로 S&amp;P500·나스닥100 분할 매수</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><span style="color:#27ae60"><strong>[현황]</strong></span> 2026년 5월 기준 VIX 17~19 ✅, 하이일드 스프레드 2.95% ✅ → <strong>정상 · 계획대로 집행</strong></p>
+</blockquote>
+<hr />
+<h2>PART 5 — 연도별 자금 이동 마스터 플랜</h2>
+<h3>2026~2036 핵심 이벤트 타임라인</h3>
+<p><div class="mermaid">flowchart LR
+    Y26["2026년<br/>5월: ISA 개설 2,000만원<br/>6월: 국민성장ISA 개설<br/>연말: IRP 세액공제 148.5만원"]
+    Y27["2027년<br/>IRP 900만원 재납입<br/>ISA 배당 재투자<br/>리밸런싱 연 1회"]
+    Y28["2028년<br/>ISA 2차 추가 납입 검토<br/>IRP 복리 가속<br/>레버리지 ETF 진입 검토"]
+    Y29["2029년<br/>기존 ISA 1차 만기<br/>연금저축 이체 (추가 세액공제)<br/>ISA 재가입"]
+    Y32["2032년<br/>기존 ISA 2차 만기<br/>연금저축 재이체<br/>누적 자산 3억+ 목표"]
+    Y36["2036년<br/>10년 목표<br/>균형형(10%): 3억+ 예상<br/>연금 수령 준비"]
+
+    Y26 --> Y27 --> Y28 --> Y29 --> Y32 --> Y36
+</div></p>
+<h3>연도별 예상 자산 성장 (균형형 10% 기준)</h3>
+<table>
+<thead>
+<tr>
+<th>연도</th>
+<th>IRP 누적</th>
+<th>ISA 누적</th>
+<th>일반계좌</th>
+<th>총 자산</th>
+<th>주요 이벤트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026</td>
+<td>990만원</td>
+<td>2,200만원</td>
+<td>2,310만원</td>
+<td>5,500만원</td>
+<td>ISA·국민성장ISA 개설</td>
+</tr>
+<tr>
+<td>2027</td>
+<td>2,079만원</td>
+<td>2,420만원</td>
+<td>2,541만원</td>
+<td>7,040만원</td>
+<td>IRP 2차 납입</td>
+</tr>
+<tr>
+<td>2028</td>
+<td>3,267만원</td>
+<td>2,662만원</td>
+<td>2,795만원</td>
+<td>8,724만원</td>
+<td>3년차 복리 가속</td>
+</tr>
+<tr>
+<td>2029</td>
+<td>4,494만원</td>
+<td>2,928만원</td>
+<td>3,075만원</td>
+<td><span style="color:#2980b9"><strong>1억 497만원</strong></span></td>
+<td>ISA 만기·연금저축 이체</td>
+</tr>
+<tr>
+<td>2030</td>
+<td>5,943만원</td>
+<td>3,221만원</td>
+<td>3,383만원</td>
+<td>1억 2,547만원</td>
+<td>5년차 복리 폭발</td>
+</tr>
+<tr>
+<td>2032</td>
+<td>8,537만원</td>
+<td>3,897만원</td>
+<td>4,094만원</td>
+<td>1억 6,528만원</td>
+<td>ISA 2차 만기·재이체</td>
+</tr>
+<tr>
+<td>2034</td>
+<td>1억 1,390만원</td>
+<td>4,716만원</td>
+<td>4,955만원</td>
+<td>2억 1,061만원</td>
+<td>—</td>
+</tr>
+<tr>
+<td>2036</td>
+<td>1억 4,529만원</td>
+<td>5,707만원</td>
+<td>5,995만원</td>
+<td><span style="color:#27ae60"><strong>2억 6,231만원</strong></span></td>
+<td>10년 목표 달성</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📊 IRP: 초기 900만원 + 매년 900만원 재납입, 연 10% 수익률 가정. ISA·일반: 초기 투자 연 10% 복리. 절세 환급금 재투자 포함.</p>
+</blockquote>
+<h3>4가지 시나리오 최종 비교 (10년 후)</h3>
+<p><div class="mermaid">xychart-beta
+ title "10년 후 예상 총자산 시나리오 비교 (만원)"
+ x-axis ["안정형 7%", "균형형 10%", "공격형 14%", "최대위험형 20%"]
+ y-axis "총 자산 (만원)" 0 --> 60000
+ bar [23000, 26231, 37000, 56000]
+</div></p>
+<table>
+<thead>
+<tr>
+<th>시나리오</th>
+<th>연수익률</th>
+<th>10년 총자산</th>
+<th>위험도</th>
+<th>권장 여부</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="color:#27ae60"><strong>안정형</strong></span></td>
+<td>7%</td>
+<td>~2.3억원</td>
+<td>낮음</td>
+<td>위험 회피 성향</td>
+</tr>
+<tr>
+<td><span style="color:#2980b9"><strong>균형형</strong></span></td>
+<td>10%</td>
+<td>~2.6억원</td>
+<td>중간</td>
+<td><span style="color:#2980b9"><strong>권장 (현재 포트폴리오 목표)</strong></span></td>
+</tr>
+<tr>
+<td><span style="color:#e67e22"><strong>공격형</strong></span></td>
+<td>14%</td>
+<td>~3.7억원</td>
+<td>높음</td>
+<td>레버리지 일부 추가 시</td>
+</tr>
+<tr>
+<td><span style="color:#e74c3c"><strong>최대위험형</strong></span></td>
+<td>20%</td>
+<td>~5.6억원</td>
+<td>매우 높음</td>
+<td>TQQQ 비중 50%+, 손실 위험 극심</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>PART 6 — 연간 절세 효과 종합</h2>
+<h3>계좌별 연간 절세 효과</h3>
+<table>
+<thead>
+<tr>
+<th>계좌</th>
+<th>절세 유형</th>
+<th>연간 절세 금액</th>
+<th>10년 누적</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IRP</strong></td>
+<td>세액공제 16.5%</td>
+<td><span style="color:#27ae60"><strong>148.5만원</strong></span></td>
+<td>1,485만원</td>
+</tr>
+<tr>
+<td><strong>기존 ISA</strong></td>
+<td>비과세 (200만원 한도)</td>
+<td>~20~50만원 📊</td>
+<td>~200~500만원</td>
+</tr>
+<tr>
+<td><strong>국민성장 ISA</strong></td>
+<td>비과세 (~500만원 한도 📊)</td>
+<td>~50~150만원 📊</td>
+<td>~500~1,500만원</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td>—</td>
+<td><span style="color:#27ae60"><strong>연 약 220~350만원</strong></span></td>
+<td><span style="color:#27ae60"><strong>10년 약 2,200~3,500만원</strong></span></td>
+</tr>
+</tbody>
+</table>
+<h3>절세 효과 포함 실질 수익률 향상</h3>
+<p><div class="mermaid">xychart-beta
+ title "절세 효과 포함 vs 일반계좌 동일 투자 비교 (10년, 만원)"
+ x-axis ["일반계좌만", "IRP+ISA 절세 계좌", "슈퍼ISA 추가 후"]
+ y-axis "10년 후 자산 (만원)" 0 --> 35000
+ bar [22000, 26231, 29000]
+</div></p>
+<hr />
+<h2>PART 7 — 월별 정기 점검 체계</h2>
+<h3>연간 투자 캘린더</h3>
+<table>
+<thead>
+<tr>
+<th>월</th>
+<th>필수 액션</th>
+<th>체크 항목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1월</strong></td>
+<td><span style="color:#27ae60"><strong>IRP 900만원 연납입 (1~2주 이내)</strong></span></td>
+<td>세액공제 신청 확인</td>
+</tr>
+<tr>
+<td><strong>2월</strong></td>
+<td>연말정산 세액공제 환급금 확인</td>
+<td>환급금 → ISA 즉시 재투자</td>
+</tr>
+<tr>
+<td><strong>3월</strong></td>
+<td>ISA 배당금 수령 → 동일 ETF 재매수</td>
+<td>DRIP 실행</td>
+</tr>
+<tr>
+<td><strong>4월</strong></td>
+<td>1분기 리밸런싱 — 목표 비중 ±5%p 점검</td>
+<td>VIX·하이일드 확인</td>
+</tr>
+<tr>
+<td><strong>5월</strong></td>
+<td>—</td>
+<td>연 1회 종목 재검토 (대장주 변화 확인)</td>
+</tr>
+<tr>
+<td><strong>6월</strong></td>
+<td><span style="color:#27ae60"><strong>국민성장 ISA 개설 (출시 즉시)</strong></span></td>
+<td>슈퍼 ISA 세부 내용 최종 확인</td>
+</tr>
+<tr>
+<td><strong>7월</strong></td>
+<td>상반기 성과 점검</td>
+<td>URA·MAGS 모멘텀 점검</td>
+</tr>
+<tr>
+<td><strong>9월</strong></td>
+<td>Fed FOMC 결과 분석</td>
+<td>금리 인하 시 TLT 확대 검토</td>
+</tr>
+<tr>
+<td><strong>11월</strong></td>
+<td>연말 절세 전략 최종 점검</td>
+<td>손실 종목 매도 후 재매수 (손익통산)</td>
+</tr>
+<tr>
+<td><strong>12월</strong></td>
+<td>IRP 세액공제 확인·환급 대기</td>
+<td>연말 리밸런싱 최종 실행</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>PART 8 — 리밸런싱 규칙</h2>
+<h3>리밸런싱 기준</h3>
+<table>
+<thead>
+<tr>
+<th>조건</th>
+<th>행동</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>특정 자산 목표 비중 <strong>±5%p 이탈</strong></td>
+<td>연 4회 정기 리밸런싱</td>
+</tr>
+<tr>
+<td>특정 자산 <strong>±20% 급변</strong></td>
+<td>즉시 트리거 리밸런싱</td>
+</tr>
+<tr>
+<td><strong>VIX 30 돌파</strong></td>
+<td>일반계좌 레버리지·투기 자산 30% 축소</td>
+</tr>
+<tr>
+<td><strong>하이일드 스프레드 5% 초과</strong></td>
+<td>레버리지 ETF 전량 청산</td>
+</tr>
+<tr>
+<td><strong>IonQ 매수가 -30% 하락</strong></td>
+<td><span style="color:#e74c3c"><strong>손절 실행 (원칙 준수)</strong></span></td>
+</tr>
+<tr>
+<td><strong>이수페타시스 목표가 175,000원 달성</strong></td>
+<td>50% 이익 실현 → QQQ 전환</td>
+</tr>
+</tbody>
+</table>
+<h3>연 1회 종목 교체 기준</h3>
+<p><div class="mermaid">flowchart LR
+    REVIEW["연 1회 종목 검토<br/>(12월)"] --> Q1{"시총 TOP10<br/>순위 변화?"}
+    Q1 -->|"대장주 교체"| SWITCH["ETF 교체<br/>새 대장주로 리밸런싱"]
+    Q1 -->|"유지"| HOLD["현 포트폴리오 유지"]
+
+    REVIEW --> Q2{"이익 +50%<br/>달성 종목?"}
+    Q2 -->|"있음"| PARTIAL["30% 이익 실현<br/>→ 코어 ETF 전환"]
+    Q2 -->|"없음"| HOLD2["홀드 유지"]
+</div></p>
+<hr />
+<h2>PART 9 — 관심 종목 재검토 요약</h2>
+<blockquote>
+<p>파일 25 분석 기반. 최종 편입 결정 여부 기록.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>종목</th>
+<th>평가</th>
+<th>현재 배분</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAGS (Magnificent 7)</td>
+<td><span style="color:#27ae60"><strong>★★★★☆ 편입</strong></span></td>
+<td>일반 25%</td>
+<td>1년 +54% ✅</td>
+</tr>
+<tr>
+<td>URA (우라늄 ETF)</td>
+<td><span style="color:#27ae60"><strong>★★★★☆ 편입</strong></span></td>
+<td>일반 20%</td>
+<td>배당 4.06% ✅</td>
+</tr>
+<tr>
+<td>IonQ (양자컴퓨터)</td>
+<td><span style="color:#e74c3c"><strong>★★☆☆☆ 소액 편입</strong></span></td>
+<td>일반 10%</td>
+<td>EBITDA 적자 위험 ✅</td>
+</tr>
+<tr>
+<td>이수페타시스</td>
+<td><span style="color:#27ae60"><strong>★★★★☆ 편입</strong></span></td>
+<td>일반 15%</td>
+<td>목표가 175,000원 ✅</td>
+</tr>
+<tr>
+<td>VIX 폭락지표</td>
+<td><span style="color:#27ae60"><strong>★★★★★ 모니터링</strong></span></td>
+<td>매수 신호</td>
+<td>30 이상 시 추가 매수</td>
+</tr>
+<tr>
+<td>TIGER 미국S&amp;P500</td>
+<td><span style="color:#27ae60"><strong>★★★★★ 코어</strong></span></td>
+<td>IRP+ISA 핵심</td>
+<td>순자산 17.6조원 ✅</td>
+</tr>
+<tr>
+<td>TIGER 미국배당다우존스</td>
+<td><span style="color:#27ae60"><strong>★★★★★ 코어</strong></span></td>
+<td>ISA 40%</td>
+<td>월배당 · 비과세 최적화</td>
+</tr>
+<tr>
+<td>QQQ</td>
+<td><span style="color:#27ae60"><strong>★★★★★ 코어</strong></span></td>
+<td>일반 15%</td>
+<td>안전판 역할</td>
+</tr>
+<tr>
+<td>SpaceX 대리 (ARKX)</td>
+<td><span style="color:#e67e22"><strong>★★★☆☆ 소액 편입</strong></span></td>
+<td>일반 5%</td>
+<td>IPO 전 소액 포지션</td>
+</tr>
+<tr>
+<td>OpenAI 대리 (MSFT)</td>
+<td><span style="color:#e67e22"><strong>★★★★☆ ISA 편입 검토</strong></span></td>
+<td>ISA 교체 검토</td>
+<td>지분 49% 간접 보유</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>PART 10 — 최종 투자 원칙 10계명</h2>
+<pre><code>1. [코어 우선] IRP·ISA 납입은 연초 최우선 실행 — 절세 기회는 해마다 리셋된다
+2. [분산 필수] 단일 종목 비중은 전체 포트폴리오의 20% 초과 금지
+3. [손절 원칙] 매수가 -30% 도달 시 감정 없이 손절 실행 (IonQ·ARKX 적용)
+4. [이익 실현] 목표가 달성 시 30~50% 이익 실현 → 코어 ETF 전환
+5. [VIX 규율] VIX 30 이상 → 레버리지 청산, VIX 50+ → 현금으로 분할 매수
+6. [재투자 강제] 배당금·세액공제 환급금은 30일 이내 100% 재투자
+7. [리밸런싱] 목표 비중 ±5%p 이탈 시 즉시 리밸런싱 (감정 배제)
+8. [ISA 만기] ISA 만기 시 반드시 연금저축 이체 (추가 세액공제 10% 활용)
+9. [슈퍼ISA] 2026년 6월 출시 즉시 국민성장 ISA 개설 — 국내 주식 비과세 최대화
+10. [장기 신뢰] 단기 시장 노이즈에 반응하지 말 것 — 10년 복리를 믿는다
+</code></pre>
+<hr />
+<h2>연결 노트</h2>
+<table>
+<thead>
+<tr>
+<th>노트</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../투자전략/25.html" class="wikilink">25. 개인 투자 포트폴리오 설계 (5000만원)</a></td>
+<td>PDF 관심 종목 검증 + 기초 포트폴리오</td>
+</tr>
+<tr>
+<td><a href="../투자전략/26.html" class="wikilink">26. 복리 재투자 전략 &amp; 연도별 운용 플랜 (2026~2036)</a></td>
+<td>4시나리오 복리 + 레버리지 전략</td>
+</tr>
+<tr>
+<td><span class="wikilink-missing">27. 미래에셋증권 투자 가이드 &amp; 새 ISA 전략 (2026)</span></td>
+<td>미래에셋 선택 근거 + 슈퍼 ISA 완전 분석</td>
+</tr>
+<tr>
+<td><a href="../etf/24.html" class="wikilink">24. 국내·해외 ETF 종합 비교 마스터</a></td>
+<td>절세 시뮬레이션 + ETF 비교</td>
+</tr>
+<tr>
+<td><a href="../대장주/12.html" class="wikilink">12. 테마별 대장주 허브 (2026)</a></td>
+<td>국내 테마 대장주 (국민성장 ISA 종목 기준)</td>
+</tr>
+<tr>
+<td><a href="../대장주/20.html" class="wikilink">20. 국내·해외 테마 종합 비교 마스터</a></td>
+<td>국내·해외 1:1 비교 포트폴리오</td>
+</tr>
+</tbody>
+</table>
+</article>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+
+</body>
+</html>
