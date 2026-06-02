@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인사이트 큐레이션 2026-06-01 — 투자 &amp; 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.insight-advisor{margin-bottom:28px}
+.insight-advisor-title{font-size:1.05rem;font-weight:700;color:var(--accent);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.insight-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-bottom:14px}
+.insight-quote{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:12px;font-style:italic;padding-left:12px;border-left:3px solid var(--accent)}
+.ilabel{font-size:.75rem;font-weight:700;color:var(--accent2);margin-bottom:3px;text-transform:uppercase;letter-spacing:.05em}
+.ibody{font-size:.87rem;color:var(--text2);line-height:1.75;margin-bottom:12px}
+.ibullets{font-size:.84rem;color:var(--text2);line-height:1.8;padding-left:16px;margin-bottom:12px}
+.ibullets li{margin-bottom:3px}
+.ilink{font-size:.78rem}.ilink a{color:var(--accent);text-decoration:none}
+.ilink a:hover{text-decoration:underline}
+.idivider{border:none;border-top:1px solid var(--border);margin:24px 0}
+</style>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세전략"><div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div><ul><li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li><li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li><li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li><li><a href="../절세/04.html">연말정산 소득공제 전략</a></li><li><a href="../절세/05.html">절세 포트폴리오 분배</a></li><li><a href="../절세/34.html">해외 주식 세금 실무</a></li><li><a href="../절세/54.html">금투세 폐지 &amp; 세제 변화</a></li></ul></div>
+<div class="nav-group" data-group="주식기업분석"><div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div><ul><li><a href="../주식/07.html">기업가치 평가 허브</a></li><li><a href="../주식/08.html">가치평가 지표 총람</a></li><li><a href="../주식/09.html">재무제표 분석 &amp; 체크리스트</a></li><li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li><li><a href="../주식/11.html">주가-기업가치 상관관계</a></li></ul></div>
+<div class="nav-group" data-group="대장주국내"><div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div><ul><li><a href="../대장주/12.html">테마별 대장주 허브</a></li><li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li><li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li><li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li></ul></div>
+<div class="nav-group" data-group="대장주해외"><div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div><ul><li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li><li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li><li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li><li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li><li><a href="../대장주/20.html">국내·해외 종합 비교</a></li></ul></div>
+<div class="nav-group" data-group="ETF완전가이드"><div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div><ul><li><a href="../etf/06.html">ETF 완전 가이드</a></li><li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li><li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li><li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li><li><a href="../etf/24.html">국내·해외 ETF 비교</a></li></ul></div>
+<div class="nav-group" data-group="유동원랩유안타증권"><div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div><ul><li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li><li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li><li><a href="../유동원랩/31.html">스크랩 &amp; 정밀 재무 분석</a></li></ul></div>
+<div class="nav-group" data-group="투자전략심화"><div class="nav-group-title" onclick="toggleGroup(this)">📊 투자 전략 &amp; 심화<span class="arrow">▼</span></div><ul><li><a href="../투자전략/33.html">거시경제 기초</a></li><li><a href="../투자전략/35.html">투자 심리 &amp; 행동경제학</a></li><li><a href="../투자전략/36.html">포트폴리오 자산배분 전략</a></li><li><a href="../투자전략/37.html">배당 투자 전략</a></li><li><a href="../투자전략/38.html">채권 기초 &amp; ETF 활용</a></li><li><a href="../투자전략/39.html">기술적 분석 기초</a></li><li><a href="../투자전략/40.html">리스크 관리</a></li><li><a href="../투자전략/41.html">투자 철학 &amp; 명저</a></li><li><a href="../투자전략/43.html">경제 지표 &amp; 뉴스 해석법</a></li><li><a href="../투자전략/46.html">금·원자재 투자</a></li><li><a href="../투자전략/47.html">리츠(REITs) 실전 투자</a></li><li><a href="../투자전략/48.html">파생상품 기초</a></li><li><a href="../투자전략/49.html">암호화폐 기초 &amp; 세금</a></li><li><a href="../투자전략/50.html">퀀트 투자 기초</a></li><li><a href="../투자전략/55.html">AI·방산·원전 투자 사이클</a></li></ul></div>
+<div class="nav-group" data-group="실전투자가이드"><div class="nav-group-title" onclick="toggleGroup(this)">🛠️ 실전 투자 가이드<span class="arrow">▼</span></div><ul><li><a href="../실전/42.html">공모주 IPO 청약 실전</a></li><li><a href="../실전/44.html">종목 스크리닝 &amp; DART 실전</a></li><li><a href="../실전/45.html">HTS·MTS 실전 활용</a></li><li><a href="../실전/51.html">퇴직연금 DC형 실전 운용</a></li><li><a href="../실전/52.html">미국 주식 직접 투자 실무</a></li><li><a href="../실전/53.html">투자 일지 &amp; 수익률 계산</a></li><li><a href="../주식/32.html">트레이딩 용어 사전</a></li></ul></div>
+<div class="nav-group active" data-group="인사이트큐레이션"><div class="nav-group-title" onclick="toggleGroup(this)">💡 인사이트 큐레이션<span class="arrow">▼</span></div><ul>
+<li><a href="../인사이트/index.html">큐레이션 전체 목록</a></li>
+<li><a href="../인사이트/2026-06-02.html">2026-06-02 — AI·프로덕트</a></li>
+<li><a href="../인사이트/경제-사회-2026-06-02.html">2026-06-02 — 경제·사회</a></li>
+<li><a href="../인사이트/주식-투자-2026-06-02.html">2026-06-02 — 주식·투자</a></li>
+<li><a href="../인사이트/2026-06-01.html">2026-06-01 — AI·프로덕트</a></li>
+<li><a href="../인사이트/경제-사회-2026-06-01.html">2026-06-01 — 경제·사회</a></li>
+<li><a href="../인사이트/주식-투자-2026-06-01.html">2026-06-01 — 주식·투자</a></li>
+<li><a href="../인사이트/2026-05-31.html">2026-05-31 — AI·프로덕트</a></li>
+<li><a href="../인사이트/경제-사회-2026-05-31.html">2026-05-31 — 경제·사회</a></li>
+<li><a href="../인사이트/주식-투자-2026-05-31.html">2026-05-31 — 주식·투자</a></li>
+</ul></div>
+</nav>
+<main class="main">
+<div class="hero">
+  <h1>💡 인사이트 큐레이션 2026-06-01</h1>
+  <p>2026-06-01 | 토픽: AI·프로덕트</p>
+</div>
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 18px;margin-bottom:20px;font-size:.85rem;color:var(--text2)">
+<div><strong style="color:var(--text)">🔥 1. 프로덕트 메이커</strong></div>
+<div>&nbsp;&nbsp;· AI 시대 경쟁 우위는 '모델+하네스 통합'에 있다 — Ben Thompson</div>
+<div>&nbsp;&nbsp;· AI-First B2B SaaS 수익화: 좌석당 과금에서 사용량 기반으로</div>
+</div>
+<hr class="idivider">
+<div class="insight-advisor"><div class="insight-advisor-title">🔥 1. 프로덕트 메이커</div>
+<div class="insight-card"><div class="insight-quote">"AI 시대 경쟁 우위는 '모델+하네스 통합'에 있다 — Agents Over Bubbles"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">AI 에이전트 시대의 경쟁 구도는 단순 모델 성능이 아닌, 모델과 운용 환경(하네스)의 통합 완성도에서 판가름 난다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody">Ben Thompson은 Stratechery "Agents Over Bubbles"에서 현재의 AI 경쟁이 과거의 버블 패턴을 따르지 않는다고 주장했다. 핵심 논거는 Claude Code 사례다. Anthropic의 Opus 4.5가 주목받은 이유는 모델 자체보다 Claude Code 하네스 업데이트에 있었으며, 이는 모델 단독 성능이 충분한 경쟁 우위가 되지 못한다는 증거다. Thompson은 Anthropic과 OpenAI가 모델+하네스 통합을 가장 잘 실현하고 있는 반면, Google은 강력한 Gemini 모델에도 불구하고 하네스 완성도가 부족하다고 평가했다. 이 통합 완성도 덕분에 Anthropic과 OpenAI는 시장 예상보다 훨씬 높은 수익성을 달성할 가능성이 크다. Nvidia의 보고 구조 변경 사례에서도 볼 수 있듯, 스택 전체를 장악하는 플레이어가 상품화 압력을 더 효과적으로 방어한다는 논리다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>모델이 상품화되는 세계에서 '에이전트 하네스' 영역은 새로운 해자(moat)가 되고 있다. 제품을 만드는 입장에서는 API 연동을 넘어 사용자 경험 전체 흐름을 통합적으로 설계하는 것이 핵심이다.</li>
+<li>Google이 최강 모델을 보유하면서도 시장 지위가 흔들리는 이유를 설명하는 프레임이다. "최고의 모델"을 쓰는 것과 "최고의 에이전트 제품"을 만드는 것은 전혀 다른 문제다.</li>
+<li>B2B 제품 팀 관점에서도 시사점이 크다. 어떤 LLM API를 쓰느냐보다 그 위에 얼마나 통합된 워크플로우를 설계하느냐가 사용자 잔존율과 전환 비용을 결정한다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://stratechery.com/2026/agents-over-bubbles/" target="_blank" rel="noopener">https://stratechery.com/2026/agents-over-bubbles/</a></div>
+</div>
+<hr class="idivider">
+<div class="insight-card"><div class="insight-quote">"AI-First B2B SaaS 수익화: 좌석당 과금에서 사용량·성과 기반 하이브리드로"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">AI로 인해 SaaS 수익 모델의 구조 자체가 바뀌고 있으며, 순수 좌석당 과금은 전체 시장의 15%로 급감하고 하이브리드 사용량 기반 모델이 61%로 주류가 됐다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody">2026년 B2B SaaS 시장에서 가장 빠른 구조적 변화 중 하나는 수익 모델의 전환이다. AI 기능 도입으로 동일 구독료를 내도 사용자별 AI 컴퓨팅 소비량이 최대 100배 차이가 나는 현실이 기존 좌석당 과금 체계의 한계를 드러냈다. 현재 순수 좌석당 과금은 전체 SaaS 시장의 15%에 불과하며(전년 21%에서 급감), 61%는 기본료+사용량 기반 하이브리드 구조를 채택했다. 성과 기반 과금(outcome-based pricing)은 완전 도입 비율이 9%에 그치지만 47%가 검토 또는 시범 운영 중이다. Microsoft는 Copilot for Microsoft 365를 기존 오피스 라이선스 대비 훨씬 높은 월 30달러/사용자로 책정하며 AI 기능 프리미엄 과금 가능성을 입증했다. 사용량 기반 모델은 고객 성장과 수익 성장이 자동으로 연결되어 영업 마찰 없이 NRR(순수익잔류율)을 높이는 구조를 만든다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>사용량 기반 전환은 단순한 과금 방식 변경이 아닌 제품 설계 철학의 변화다. 얼마나 많이 쓰이는가에 가치를 매기는 구조는, 제품이 실제로 가치를 전달하는지 여부가 수익에 직결됨을 의미한다.</li>
+<li>성과 기반 과금은 벤더-고객 이해관계를 정렬시키는 이상적 구조지만, 측정 가능한 KPI를 계약 시점에 명확히 합의하는 것이 선결 조건이다. 이 합의 역량이 세일즈·CS 팀의 새로운 핵심 스킬이 될 것이다.</li>
+<li>AI 네이티브 스타트업들은 초기부터 사용량 기반으로 설계하는 반면, 기존 SaaS 기업들은 레거시 계약 구조와 마찰을 겪는다. 전환 타이밍과 방식이 경쟁 구도를 바꿀 핵심 변수다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://www.getmonetizely.com/blogs/the-economics-of-ai-first-b2b-saas-in-2026" target="_blank" rel="noopener">https://www.getmonetizely.com/blogs/the-economics-of-ai-first-b2b-saas-in-2026</a></div>
+</div>
+<hr class="idivider">
+</div>
+<div class="insight-advisor"><div class="insight-advisor-title">🤖 2. AI 빌더</div>
+<div class="insight-card"><div class="insight-quote">"바이브 코딩은 끝났다: Karpathy의 에이전틱 엔지니어링과 소프트웨어 3.0"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">Karpathy는 2025년 12월을 전환점으로 에이전틱 코딩이 성숙기에 접어들었다고 선언하며, 개발자의 역할이 '코드 작성자'에서 '에이전트 지휘자'로 이동한다고 주장했다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody">Andrej Karpathy는 5월 Sequoia AI Ascent 2026 파이어사이드 챗에서 소프트웨어 패러다임의 3단계 진화를 제시했다. 소프트웨어 1.0(명시적 코드 작성), 2.0(데이터 큐레이션 및 신경망 학습), 3.0(LLM에 컨텍스트 프롬프팅)이다. 소프트웨어 3.0에서 컨텍스트 윈도우는 새로운 프로그래밍 표면이 되고, 개발자는 컴퓨터에 명령하는 것을 넘어 읽고 추론하며 도구를 호출하고 오류를 스스로 수정하는 지능형 인터프리터에 맥락을 제공하는 역할을 한다. Karpathy는 2025년 12월을 에이전틱 코딩의 변곡점으로 지목하며, 모델 오류율이 충분히 낮아져 지속적인 교정 피드백 루프가 사실상 사라졌다고 설명했다. 에이전틱 엔지니어는 생성 코드를 맹목적으로 수용하지 않는다. 스펙 설계, 계획 감독, diff 검토, 테스트 작성, 평가 루프 구성, 권한 관리, 워크트리 격리로 품질을 유지한다. 숙련된 에이전틱 엔지니어는 단순 속도 향상을 넘어 10배를 훨씬 초과하는 생산성을 달성할 수 있다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>"바이브 코딩은 바닥을 올리고, 에이전틱 엔지니어링은 천장을 확장한다"는 프레임은 팀 내 개발 문화를 재설계할 때 유효한 기준점이다. 빠른 프로토타이핑과 프로덕션 품질 사이의 경계를 어디서 설정할지 명확히 해야 한다.</li>
+<li>컨텍스트 윈도우를 프로그래밍 표면으로 보는 관점은, 에이전트에게 '무엇을 하라'고 명령하는 것보다 '어떤 맥락을 제공하는가'가 더 중요해진다는 의미다. 프롬프트 엔지니어링이 아닌 컨텍스트 아키텍처 설계가 새로운 핵심 스킬이다.</li>
+<li>AutoResearch 같은 실험 자동화 패턴은 ML 팀에 직접 적용 가능하다. 연구 방향을 마크다운으로 정의하고 에이전트가 실험 루프를 돌리는 구조는 반복 실험 속도를 극적으로 높일 수 있다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://karpathy.bearblog.dev/sequoia-ascent-2026/" target="_blank" rel="noopener">https://karpathy.bearblog.dev/sequoia-ascent-2026/</a></div>
+</div>
+<hr class="idivider">
+<div class="insight-card"><div class="insight-quote">"Anthropic, 에이전트 런타임까지 제공: Claude Agent SDK와 Managed Agents 아키텍처"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">Anthropic은 개발자에게 API 래퍼를 넘어 실행 환경 전체를 관리형으로 제공하며, 에이전트 인프라 계층 자체를 장악하는 전략을 가속화했다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody">Anthropic이 2026년 2분기에 공개한 Claude Agent SDK와 Managed Agents 서비스는 에이전트 개발의 추상화 수준을 한 단계 높였다. Claude Agent SDK는 기존 Claude Code SDK에서 이름을 바꾸며 코딩 전용을 넘어 범용 에이전트 구축 도구로 포지셔닝됐다. 핵심 루프는 '컨텍스트 수집 → 액션 실행 → 결과 검증 → 반복'이며, 개발자가 이 루프를 직접 보고 제어할 수 있다는 점이 기존 프레임워크와의 차별점이다. Managed Agents는 Claude가 파일 읽기, 커맨드 실행, 웹 브라우징, 코드 실행을 클라우드에서 직접 수행하는 완전 관리형 런타임으로, 세션 연속성과 컨텍스트 관리가 기본 제공된다. 서브에이전트 기능으로 수십~수백 개의 병렬 에이전트를 단일 세션에서 동적으로 오케스트레이션할 수 있으며, 각 서브에이전트는 독립 컨텍스트 윈도우를 갖는다. Amazon Bedrock, Vertex AI, Microsoft Foundry 등 다중 클라우드를 지원한다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>'API 제공자'에서 '런타임 제공자'로의 전환은 Anthropic이 에이전트 스택의 더 깊은 계층을 장악하려는 전략적 이동이다. 개발자 종속성(lock-in)을 높이는 동시에 복잡한 에이전트 인프라 구축의 진입 장벽을 낮추는 이중 효과를 갖는다.</li>
+<li>서브에이전트의 격리된 컨텍스트 윈도우 패턴은 긴 작업을 쪼개고 오케스트레이터가 요약된 결과만 수신하는 구조로, 대규모 코드베이스나 복잡한 리서치 태스크에 구조적으로 적합하다. 이 패턴을 내재화하는 것이 효율적인 에이전트 시스템 구축의 출발점이다.</li>
+<li>Managed Agents의 관리형 런타임은 스타트업 관점에서 인프라 부담을 크게 줄여준다. 다만 실행 비용 예측 가능성과 벤더 의존 리스크를 사전에 검토해야 한다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://zylos.ai/research/2026-04-20-claude-agent-sdk-managed-agents-architecture/" target="_blank" rel="noopener">https://zylos.ai/research/2026-04-20-claude-agent-sdk-managed-agents-architecture/</a></div>
+</div>
+<hr class="idivider">
+</div>
+<div class="insight-advisor"><div class="insight-advisor-title">⚡ 3. AI 소식통</div>
+<div class="insight-card"><div class="insight-quote">"5월 AI 모델 대전: 22일 만에 10개 이상 출시, 아키텍처 혁신이 프론티어를 재정의"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">2026년 5월은 단일 달 기준 역대 가장 많은 프론티어 모델이 출시된 달로, Gemini 3.5 Flash 정식 출시와 세계 최초 상용 서브쿼드라틱 LLM 등 아키텍처 혁신이 화제가 됐다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody">2026년 5월은 AI 모델 출시 역사상 가장 밀도 높은 달이었다. 22일 만에 Gemini 3.5 Flash GA, Composer 2.5, Grok Build 0.1, Gemini Omni Flash, Antigravity 2.0, Google Gemini API 내 Managed Agents, Anthropic 자체 호스팅 샌드박스, MCP 터널, Microsoft Copilot Studio 컴퓨터 활용 GA, GLM-5.1 등 10개 이상의 주요 출시가 이어졌다. Gemini 3.5 Flash는 유사 수준 모델 대비 4배 빠른 속도에 100만 토큰 컨텍스트를 입력 기준 100만 토큰당 1.50달러라는 공격적 가격으로 출시됐다. 가장 주목할 아키텍처 혁신은 SubQ의 세계 최초 상용 서브쿼드라틱 LLM으로, 1,200만 토큰 컨텍스트를 지원하면서 전통 트랜스포머의 2차 어텐션 복잡도를 극복했다. Zyphra는 8B MoE 모델을 AMD 하드웨어에서 출시하며 Nvidia 의존 구조에 균열을 냈다. 5월의 경쟁은 프론티어 성능이 아닌 속도·비용·컨텍스트 용량 최적화라는 실용 레이어에서 치열하게 전개됐다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>모델 벤치마크 점수 경쟁보다 '속도 × 비용 × 컨텍스트 용량'의 삼각 최적화가 실무 채택의 핵심 변수가 됐다. 제품 팀은 추상적 성능 지표보다 실제 워크로드 프로파일에 맞는 모델 선택이 중요하다.</li>
+<li>서브쿼드라틱 아키텍처의 상용화는 장기 컨텍스트 유지가 필요한 에이전트 시스템에 게임 체인저가 될 수 있다. 수백만 토큰의 코드베이스나 대화 이력을 다루는 시나리오에서 비용 구조가 근본적으로 달라질 수 있다.</li>
+<li>AMD 생태계로의 확장은 단기적으로 틈새이지만, 하드웨어 다양성이 확보될수록 Nvidia의 가격 협상력이 낮아진다. 클라우드 비용 최적화 관점에서 중장기적으로 주목할 흐름이다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://whatllm.org/blog/new-ai-models-may-2026" target="_blank" rel="noopener">https://whatllm.org/blog/new-ai-models-may-2026</a></div>
+</div>
+<hr class="idivider">
+<div class="insight-card"><div class="insight-quote">"Google I/O 2026: 검색의 AI 전환 선언, Anthropic·OpenAI는 정부·보안 영역 확장"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">Google은 I/O 2026에서 검색과 YouTube를 AI 중심으로 재편했고, Anthropic과 OpenAI는 각각 정부 보안·사이버 영역으로 사업을 확장하며 AI 대전이 새로운 국면에 진입했다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody">Google은 2026년 I/O 개발자 컨퍼런스를 AI에 전면 집중시켰다. 핵심은 기존 검색창이 단문 쿼리와 챗봇 스타일 장문 대화를 모두 처리하도록 재설계됐다는 것이다. YouTube에는 'Ask YouTube' 기능이 추가돼 텍스트 질문에 텍스트 답변과 관련 영상 링크를 함께 제공한다. 속도와 비용 효율에 집중한 Gemini 3.5 Flash를 전면에 내세운 점도 이번 I/O의 특징이다. Anthropic의 고급 모델 "Mythos"는 레거시 시스템 취약점 분석 능력을 앞세워 정부 보안 계약 영역에서 두각을 나타내고 있으며, Anthropic은 Google Cloud와 협력해 클라우드 인프라 및 칩에 2,000억 달러 이상을 투자하기로 했다. OpenAI는 사이버 보안 특화 모델 GPT-5.5-Cyber를 검증된 보안팀과 EU에 공개했다. Google·Microsoft·xAI·OpenAI·Anthropic은 미국 상무부의 AI 모델 사전 검토 체계에 참여하며 정부 신뢰 관계를 선점하고 있다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>Google이 검색을 AI로 재편하는 것은 10년 이상 지속된 '검색 광고 = 핵심 수익원' 공식을 스스로 해체하는 역설적 움직임이다. AI 검색 전환이 광고 클릭률에 미치는 영향이 향후 실적에서 가시화될 것이다.</li>
+<li>Anthropic이 Mythos를 통해 정부·보안 계약으로 확장하는 것은 API 개발자 시장을 넘어 고부가가치·고진입장벽 버티컬로의 전략적 다각화다. B2G(Business-to-Government) AI 시장의 경쟁 구도가 새롭게 형성되고 있다.</li>
+<li>AI 모델의 정부 사전 검토 체계 참여는 규제 수용을 통해 신뢰도를 선점하려는 전략이다. 규제가 강화될수록 이미 신뢰 체계에 편입된 기업과 후발주자 간 진입 장벽이 커질 것이다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://www.axios.com/2026/05/21/google-ai-anthropic-openai-war" target="_blank" rel="noopener">https://www.axios.com/2026/05/21/google-ai-anthropic-openai-war</a></div>
+</div>
+<hr class="idivider">
+</div>
+<div class="insight-advisor"><div class="insight-advisor-title">🌱 4. 커리어 멘토</div>
+<div class="insight-card"><div class="insight-quote">"시니어 → 스태프 승진의 '침묵의 정체기': AI가 바꾼 엔지니어 성장 공식"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">AI 도구의 확산으로 시니어 엔지니어 기본 기대치가 높아지면서 L5→L6 승진 정체 현상이 심화됐고, 2026년에는 '시스템 방향을 형성하는 영향력'이 스태프 승진의 핵심 조건이 됐다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody">2026년 엔지니어 커리어 사다리에서 가장 두드러진 변화는 시니어(L5)에서 스태프(L6)로의 전환 구간이 더 어려워졌다는 점이다. L4→L5는 여전히 18개월 내외지만, L5→L6에서 3~5년 이상 정체하는 '침묵의 스태프 정체기(silent staff plateau)'가 보편화됐다. 핵심 원인은 AI가 기존 시니어 업무를 자동화하면서, 과거 시니어 승진 패킷을 구성했던 업무들이 이제 기본 기대치(table stakes)가 됐기 때문이다. 스태프 엔지니어의 정의는 명확해졌다. "당신 때문에 주변 팀이 더 빠르게 성과를 낸다"가 핵심이다. 권한 없는 영향력(influence without authority), 기술 의사결정의 조직 전체 파급력, 회사가 무엇을 해야 하는지를 선제적으로 정의하는 능력이 요구된다. 비기술적 역량인 범위 확장, 영향력, 멘토링, 문서화가 실제 승진의 원동력이며, 스태프 엔지니어의 평균 보상은 연봉+스톡 기준 50만 달러 이상이다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>AI 시대에 '코드를 잘 짜는 것'이 기본 조건이 됐다는 것은, 기술 역량의 차별화 포인트가 실행(execution)에서 설계·방향 설정(direction setting)으로 이동했음을 의미한다. 스태프 승진을 목표로 한다면 지금 당장 "내가 어떤 기술적 방향을 조직에 제안하고 이끌고 있는가"를 자문해야 한다.</li>
+<li>'권한 없는 영향력'은 조직 내 신뢰 자산과 의사소통 능력의 함수다. 기술 문서를 자주 작성하고, 팀 간 조율을 먼저 나서서 하고, 결정의 근거를 명문화하는 습관이 이를 쌓는 실질적 방법이다.</li>
+<li>AI가 기능 개발 속도를 높일수록 '무엇을 만들지' 정의하는 역할의 상대적 가치가 높아진다. 스태프 엔지니어는 결국 제품적 판단력을 갖춘 기술 리더로 수렴하고 있다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://developereq.com/blog/engineers-guide-to-getting-promoted-2026" target="_blank" rel="noopener">https://developereq.com/blog/engineers-guide-to-getting-promoted-2026</a></div>
+</div>
+<hr class="idivider">
+<div class="insight-card"><div class="insight-quote">"판단력의 프리미엄: Shreyas Doshi가 말하는 블런트 피드백과 고에이전시 리더십"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">Shreyas Doshi는 AI가 강한 개인의 레버리지를 극대화하는 동시에 판단력의 프리미엄을 높이며, 진정성 있는 블런트 피드백 문화가 팀 신뢰와 성장의 핵심 기반임을 강조했다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody">Shreyas Doshi는 최근 서브스택 에세이 "On Blunt Feedback"에서 솔직한 피드백이 조직 신뢰의 근간이며 이를 회피하는 문화가 팀 성장을 저해한다고 주장했다. 그는 고에이전시(high-agency) 인재들이 외부 슬로건이나 인센티브보다 내적 동기에 의해 움직인다는 점을 지적하며, 리더는 자율성이 풍부한 환경을 의도적으로 설계해야 한다고 말했다. 위임, 승진, 정신적 함정이라는 세 가지 핵심 주제에 대해 그는 PM 리더십에서 가장 흔히 저지르는 실수로 '학습 기회로 활용하려다 결과를 망치는 것'을 꼽으며, 고위험 상황에서는 결과를 학습보다 우선해야 한다고 강조했다. AI 시대에는 강한 개인의 레버리지가 더욱 증폭되면서 판단력(judgment)이 최고의 희소 역량이 된다는 점도 그의 핵심 메시지다. 중견 PM들이 숙련도의 천장을 너무 낮게 설정한다는 점도 비판하며, 프로덕트 역량의 깊이를 계속 개발하는 것이 필요하다고 말했다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>"AI가 강한 개인의 레버리지를 높인다"는 것은 역으로, 판단력이 약한 사람의 실수도 AI를 통해 더 빠르고 크게 증폭된다는 의미다. 리더십 스킬 개발의 ROI가 그 어느 때보다 높아졌다.</li>
+<li>고에이전시 환경 설계는 단순한 권한 위임이 아니다. 충분한 맥락을 제공하고 결과 책임을 명확히 하는 구조가 전제돼야 실질적인 자율성이 작동한다.</li>
+<li>AI 도구가 코드 리뷰와 초안 작성을 대신하면서, 오히려 사람 간의 솔직한 대화와 판단 교환이 팀의 핵심 역량으로 재부각되고 있다. 블런트 피드백 문화는 심리적 안전감과 직결된다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://shreyasdoshi.substack.com/p/on-blunt-feedback" target="_blank" rel="noopener">https://shreyasdoshi.substack.com/p/on-blunt-feedback</a></div>
+</div>
+</div>
+<div style="margin-top:32px;text-align:center;">
+  <a href="../인사이트/index.html" style="color:var(--accent);text-decoration:none;font-size:.9rem;">← 큐레이션 전체 목록으로</a>
+</div>
+</main>
+<script>
+function toggleGroup(el){const g=el.parentElement;g.classList.toggle('collapsed');const s={};document.querySelectorAll('.nav-group[data-group]').forEach(g=>{s[g.dataset.group]=g.classList.contains('collapsed');});try{localStorage.setItem('navState',JSON.stringify(s));}catch(e){}}
+document.addEventListener('DOMContentLoaded',()=>{try{const s=JSON.parse(localStorage.getItem('navState')||'{}');document.querySelectorAll('.nav-group[data-group]').forEach(g=>{if(s[g.dataset.group]&&!g.classList.contains('active')){g.classList.add('collapsed');}});}catch(e){}});
+</script>
+</body>
+</html>
