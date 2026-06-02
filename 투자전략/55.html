@@ -39,12 +39,12 @@
     <li><a href="../주식/09.html">재무제표 분석 &amp; 체크리스트</a></li>
     <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
     <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
-    <li style="color:var(--text2);font-size:.75rem;padding:6px 0 2px;pointer-events:none">— 국내 대장주 —</li>
+    <li class="nav-sep">— 국내 대장주 —</li>
     <li><a href="../대장주/12.html">테마별 대장주 허브 (2026)</a></li>
     <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
     <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
     <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
-    <li style="color:var(--text2);font-size:.75rem;padding:6px 0 2px;pointer-events:none">— 해외 대장주 —</li>
+    <li class="nav-sep">— 해외 대장주 —</li>
     <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
     <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
     <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
@@ -101,7 +101,7 @@
     <li><a href="../실전/52.html">미국 주식 직접 투자 실무</a></li>
     <li><a href="../실전/53.html">투자 일지 &amp; 수익률 계산</a></li>
     <li><a href="../주식/32.html">트레이딩 용어 사전</a></li>
-    <li style="color:var(--text2);font-size:.75rem;padding:6px 0 2px;pointer-events:none">— 리서치 &amp; 분석 —</li>
+    <li class="nav-sep">— 리서치 &amp; 분석 —</li>
     <li><a href="../유동원랩/29.html">유동원랩·유안타 종합 분석</a></li>
     <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
     <li><a href="../유동원랩/31.html">스크랩 &amp; 정밀 재무 분석</a></li>
@@ -449,6 +449,7 @@ function toggleGroup(el) {
   try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
 }
 document.addEventListener('DOMContentLoaded', () => {
+  // 저장된 상태 복원
   try {
     const state = JSON.parse(localStorage.getItem('navState') || '{}');
     document.querySelectorAll('.nav-group[data-group]').forEach(g => {
@@ -457,6 +458,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   } catch(e) {}
+
+  // 현재 페이지 자동 하이라이트
+  const cur = window.location.pathname.split('/').pop() || 'index.html';
+  const dir = window.location.pathname.split('/').slice(-2, -1)[0] || '';
+  document.querySelectorAll('.nav-group ul li a').forEach(a => {
+    const href = a.getAttribute('href') || '';
+    const hParts = href.replace(/\.\.\//g, '').split('/');
+    const hFile = hParts[hParts.length - 1];
+    const hDir  = hParts.length > 1 ? hParts[hParts.length - 2] : '';
+    if (hFile === cur && (hDir === dir || hDir === '')) {
+      a.parentElement.classList.add('current');
+      const grp = a.closest('.nav-group');
+      if (grp) { grp.classList.remove('collapsed'); grp.classList.add('active'); }
+    }
+  });
+
+  // 모바일 메뉴 버튼
+  const btn = document.createElement('button');
+  btn.className = 'mobile-menu-btn';
+  btn.innerHTML = '☰';
+  btn.onclick = () => document.querySelector('.sidebar').classList.toggle('mobile-open');
+  document.body.appendChild(btn);
 });
 </script>
 
