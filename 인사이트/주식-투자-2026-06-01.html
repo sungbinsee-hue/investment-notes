@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인사이트 큐레이션 2026-06-01 — 투자 &amp; 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.insight-advisor{margin-bottom:28px}
+.insight-advisor-title{font-size:1.05rem;font-weight:700;color:var(--accent);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.insight-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-bottom:14px}
+.insight-quote{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:12px;font-style:italic;padding-left:12px;border-left:3px solid var(--accent)}
+.ilabel{font-size:.75rem;font-weight:700;color:var(--accent2);margin-bottom:3px;text-transform:uppercase;letter-spacing:.05em}
+.ibody{font-size:.87rem;color:var(--text2);line-height:1.75;margin-bottom:12px}
+.ibullets{font-size:.84rem;color:var(--text2);line-height:1.8;padding-left:16px;margin-bottom:12px}
+.ibullets li{margin-bottom:3px}
+.ilink{font-size:.78rem}.ilink a{color:var(--accent);text-decoration:none}
+.ilink a:hover{text-decoration:underline}
+.idivider{border:none;border-top:1px solid var(--border);margin:24px 0}
+</style>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세전략"><div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div><ul><li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li><li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li><li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li><li><a href="../절세/04.html">연말정산 소득공제 전략</a></li><li><a href="../절세/05.html">절세 포트폴리오 분배</a></li><li><a href="../절세/34.html">해외 주식 세금 실무</a></li><li><a href="../절세/54.html">금투세 폐지 &amp; 세제 변화</a></li></ul></div>
+<div class="nav-group" data-group="주식기업분석"><div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div><ul><li><a href="../주식/07.html">기업가치 평가 허브</a></li><li><a href="../주식/08.html">가치평가 지표 총람</a></li><li><a href="../주식/09.html">재무제표 분석 &amp; 체크리스트</a></li><li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li><li><a href="../주식/11.html">주가-기업가치 상관관계</a></li></ul></div>
+<div class="nav-group" data-group="대장주국내"><div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div><ul><li><a href="../대장주/12.html">테마별 대장주 허브</a></li><li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li><li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li><li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li></ul></div>
+<div class="nav-group" data-group="대장주해외"><div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div><ul><li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li><li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li><li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li><li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li><li><a href="../대장주/20.html">국내·해외 종합 비교</a></li></ul></div>
+<div class="nav-group" data-group="ETF완전가이드"><div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div><ul><li><a href="../etf/06.html">ETF 완전 가이드</a></li><li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li><li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li><li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li><li><a href="../etf/24.html">국내·해외 ETF 비교</a></li></ul></div>
+<div class="nav-group" data-group="유동원랩유안타증권"><div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div><ul><li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li><li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li><li><a href="../유동원랩/31.html">스크랩 &amp; 정밀 재무 분석</a></li></ul></div>
+<div class="nav-group" data-group="투자전략심화"><div class="nav-group-title" onclick="toggleGroup(this)">📊 투자 전략 &amp; 심화<span class="arrow">▼</span></div><ul><li><a href="../투자전략/33.html">거시경제 기초</a></li><li><a href="../투자전략/35.html">투자 심리 &amp; 행동경제학</a></li><li><a href="../투자전략/36.html">포트폴리오 자산배분 전략</a></li><li><a href="../투자전략/37.html">배당 투자 전략</a></li><li><a href="../투자전략/38.html">채권 기초 &amp; ETF 활용</a></li><li><a href="../투자전략/39.html">기술적 분석 기초</a></li><li><a href="../투자전략/40.html">리스크 관리</a></li><li><a href="../투자전략/41.html">투자 철학 &amp; 명저</a></li><li><a href="../투자전략/43.html">경제 지표 &amp; 뉴스 해석법</a></li><li><a href="../투자전략/46.html">금·원자재 투자</a></li><li><a href="../투자전략/47.html">리츠(REITs) 실전 투자</a></li><li><a href="../투자전략/48.html">파생상품 기초</a></li><li><a href="../투자전략/49.html">암호화폐 기초 &amp; 세금</a></li><li><a href="../투자전략/50.html">퀀트 투자 기초</a></li><li><a href="../투자전략/55.html">AI·방산·원전 투자 사이클</a></li></ul></div>
+<div class="nav-group" data-group="실전투자가이드"><div class="nav-group-title" onclick="toggleGroup(this)">🛠️ 실전 투자 가이드<span class="arrow">▼</span></div><ul><li><a href="../실전/42.html">공모주 IPO 청약 실전</a></li><li><a href="../실전/44.html">종목 스크리닝 &amp; DART 실전</a></li><li><a href="../실전/45.html">HTS·MTS 실전 활용</a></li><li><a href="../실전/51.html">퇴직연금 DC형 실전 운용</a></li><li><a href="../실전/52.html">미국 주식 직접 투자 실무</a></li><li><a href="../실전/53.html">투자 일지 &amp; 수익률 계산</a></li><li><a href="../주식/32.html">트레이딩 용어 사전</a></li></ul></div>
+<div class="nav-group active" data-group="인사이트큐레이션"><div class="nav-group-title" onclick="toggleGroup(this)">💡 인사이트 큐레이션<span class="arrow">▼</span></div><ul>
+<li><a href="../인사이트/index.html">큐레이션 전체 목록</a></li>
+<li><a href="../인사이트/2026-06-02.html">2026-06-02 — AI·프로덕트</a></li>
+<li><a href="../인사이트/경제-사회-2026-06-02.html">2026-06-02 — 경제·사회</a></li>
+<li><a href="../인사이트/주식-투자-2026-06-02.html">2026-06-02 — 주식·투자</a></li>
+<li><a href="../인사이트/2026-06-01.html">2026-06-01 — AI·프로덕트</a></li>
+<li><a href="../인사이트/경제-사회-2026-06-01.html">2026-06-01 — 경제·사회</a></li>
+<li><a href="../인사이트/주식-투자-2026-06-01.html">2026-06-01 — 주식·투자</a></li>
+<li><a href="../인사이트/2026-05-31.html">2026-05-31 — AI·프로덕트</a></li>
+<li><a href="../인사이트/경제-사회-2026-05-31.html">2026-05-31 — 경제·사회</a></li>
+<li><a href="../인사이트/주식-투자-2026-05-31.html">2026-05-31 — 주식·투자</a></li>
+</ul></div>
+</nav>
+<main class="main">
+<div class="hero">
+  <h1>💡 인사이트 큐레이션 2026-06-01</h1>
+  <p>2026-06-01 | 토픽: 주식·투자</p>
+</div>
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 18px;margin-bottom:20px;font-size:.85rem;color:var(--text2)">
+</div>
+<hr class="idivider">
+<div class="insight-advisor"><div class="insight-advisor-title">📈 1. 쿌트 애널리스트</div>
+<div class="insight-card"><div class="insight-quote">"J.P. Morgan 2Q 2026 팩터 뷰: 모멘텀 선두, 밸류·퀄리티 혼재"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">2026년 2분기 팩터 시장에서 모멘텀이 가장 강한 성과를 보인 반면, 밸류는 꾸준히 우상향하고 퀄리티는 상대적으로 부진했다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody">J.P. Morgan Asset Management가 발표한 2026년 2분기 팩터 뷰에 따르면, 모멘텀 팩터는 올 1분기에 예외적으로 강한 성과를 기록하며 퀄리티 대비 뚜렷한 아웃퍼폼을 나타냈다. 밸류 팩터는 최근 3분기 연속 글로벌 플러스 수익을 기록했으며, 특히 신흥국과 미국에서 밸류에이션 매력이 가장 높다고 분석됐다. 미국 퀄리티 팩터는 닷컴버블과 코로나 충격 외에 역사상 가장 저렴한 구간으로 평가되며 중장기 매력도가 높다. 유럽·일본은 밸류 팩터가 약간 고평가된 반면, 미국·호주·아태(일본 제외)·신흥국은 여전히 저평가 상태다. 고퀄리티 주식이 시장 전체 대비 할인 거래 중이라는 점도 이례적인 신호로 평가됐다. 머신러닝 기법을 팩터 신호 생성에 통합함으로써 신호 감쇠를 줄이고 위험 조정 수익률을 개선하는 추세도 지속되고 있다. AQR의 Cliff Asness는 밸류에이션 단독 포지셔닝의 위험성을 경고하며 다중 팩터 분산을 강조했다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>모멘텀 팩터가 단기적으로 강세를 유지하고 있지만, 이미 RSI 70 이상인 지수들과 겹치는 국면에서 추가 추격 매수는 신중해야 한다.</li>
+<li>고퀄리티 주식이 역사적 저평가 구간에 있다는 점은 중장기 가치 투자자에게 눈여겨볼 신호다. QVM(퀄리티·밸류·모멘텀) 복합 전략으로 리스크를 분산하는 접근이 유효하다.</li>
+<li>신흥국 밸류 팩터의 매력도가 부각되는 만큼, 한국·인도·브라질 등 신흥국 팩터 ETF 비중 확대를 고려해볼 만하다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://am.jpmorgan.com/us/en/asset-management/institutional/insights/portfolio-insights/asset-class-views/factor/" target="_blank" rel="noopener">https://am.jpmorgan.com/us/en/asset-management/institutional/insights/portfolio-insights/asset-class-views/factor/</a></div>
+</div>
+<hr class="idivider">
+<div class="insight-card"><div class="insight-quote">"BNP Paribas AM·AXA IM: 2026년 퀀트 투자의 진화 — 데이터·AI·인간 판단의 융합"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">2026년 퀀트 투자는 비정형 데이터·AI 통합으로 더욱 고도화되었으나, 인간 판단과의 균형이 여전히 핵심 경쟁력이다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody">BNP Paribas Asset Management와 AXA Investment Managers는 2026년 퀀트 투자의 핵심 트렌드로 데이터 복잡성의 폭증, AI 통합, 인간 판단과의 협력을 꼽았다. 전통적 팩터 스크리닝을 넘어 텍스트·특허·대안 데이터 등 비정형 데이터가 수익 시그널로 본격 활용되고 있다. AI 기반 밸류에이션 분석은 전통 스크린이 놓치는 저평가 주식을 발굴하는 알파 소스로 부상했다. 다만 AI 모델의 과적합(overfitting)과 데이터 편향 리스크를 통제하려면 경험 있는 투자자의 판단이 여전히 필수다. 팩터 플랫폼 시장 자체도 2026년 21.1억 달러에서 2034년 40.3억 달러로 연 8.6% 성장이 전망된다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>퀀트 모델의 AI 통합이 가속화되면서 개인 투자자도 Fintel, Kavout 같은 플랫폼을 통해 기관 수준의 팩터 스크리닝을 접할 수 있게 됐다.</li>
+<li>AI 모델이 생성하는 신호는 과거 데이터에 기반하므로 구조적 시장 변화(지정학, 금리 체제 전환 등)에는 오작동할 수 있다. 모델 의존도를 높이되 최종 판단은 인간이 수행하는 하이브리드 접근이 권장된다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://www.bnpparibas-am.com/en/forward-thinking/quant-investing-in-2026-data-ai-and-human-judgment/" target="_blank" rel="noopener">https://www.bnpparibas-am.com/en/forward-thinking/quant-investing-in-2026-data-ai-and-human-judgment/</a></div>
+</div>
+<hr class="idivider">
+</div>
+<div class="insight-advisor"><div class="insight-advisor-title">🏬 2. 기업 분석가</div>
+<div class="insight-card"><div class="insight-quote">"엔비디아 FY2027 1분기 실적: 매출 816억 달러, YoY 85% 성장으로 어닝 서프라이즈"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">엔비디아가 2026년 5월 20일 발표한 분기 실적에서 매출 816억 달러, 주당 순이익 1.87달러로 시장 예상을 크게 상회했다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody">엔비디아는 FY2027 1분기(2026년 5월 발표) 실적에서 전년 동기 대비 85% 성장한 816억 달러의 매출을 기록했다. 이는 시장 컨센서스인 788억 달러를 약 3.5% 초과한 수치로, EPS도 1.87달러로 컨센서스 1.76달러를 상회했다. 데이터센터 부문이 전체 성장을 주도했으며, AI 인프라 투자 사이클이 예상보다 빠르게 확장 중임을 시사했다. S&P 500 기업의 89%가 1분기 실적을 발표한 상황에서 84%가 EPS 예상치를 상회했으며, 2026년 연간 이익 성장률은 21%로 전망된다. TJX, Lowe's, Target 등도 이번 주 어닝 서프라이즈를 기록했으나, Walmart는 가솔린 가격 부담으로 인한 소비 위축을 경고하며 가이던스를 하향했다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>엔비디아의 실적은 AI 인프라 투자가 단기 사이클이 아닌 구조적 성장 국면임을 재확인해준다. 데이터센터·전력 인프라 관련 종목의 중장기 비중 유지가 여전히 유효하다.</li>
+<li>이미 주가에 상당 부분 반영된 만큼, 신규 진입보다는 부분 이익 실현 후 조정 시 재매수하는 전략이 리스크를 줄일 수 있다.</li>
+<li>Walmart의 소비 경고는 하이인컴 소비주와 저가 소비주 간의 양극화가 심화될 수 있음을 시사한다. 소비 섹터 내 종목 선별에 신중을 기해야 한다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://intellectia.ai/blog/nvda-stock-earnings-analysis-may-2026" target="_blank" rel="noopener">https://intellectia.ai/blog/nvda-stock-earnings-analysis-may-2026</a></div>
+</div>
+<hr class="idivider">
+<div class="insight-card"><div class="insight-quote">"버크셔 해서웨이 포트폴리오 2026: 버핏 퇴임 이후에도 애플·배당주 중심 전략 유지"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">워런 버핏이 2025년 말 CEO에서 물러난 뒤에도 버크셔는 애플을 최대 보유 종목으로 유지하며 가치주·고배당 전략의 기조를 이어가고 있다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody">2025년 12월 31일 워런 버핏이 60여 년 만에 버크셔 해서웨이 CEO 자리에서 공식 퇴임했다. 2026년 5월 현재 버크셔의 총 포트폴리오 규모는 약 2,840억 달러로, 애플(AAPL)이 최대 보유 종목 자리를 유지하고 있다. 고배당 포트폴리오에서는 크래프트 하인즈(KHC)가 최고 배당 수익률 종목으로 꼽히고 있다. 버크셔는 5월에 424B5 공시를 통해 신규 자금 조달 계획도 발표했다. 후임 체제에서도 버핏이 수십 년간 다듬어온 사업 모델 평가·안전마진·해자(moat) 중심 철학이 유지되고 있다는 점이 시장의 신뢰를 받고 있다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>버핏 퇴임이 버크셔의 투자 철학 단절로 이어지지 않는다는 점은 긍정적이다. 후임 체제가 동일한 가치 기반 전략을 유지한다면 중장기 보유 논거는 여전히 유효하다.</li>
+<li>다만 버핏이라는 인물 리스크 프리미엄이 사라진 만큼, 포트폴리오의 투명성과 후임 경영진의 의사결정 능력을 지속적으로 모니터링할 필요가 있다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://stockcircle.com/portfolio/warren-buffett" target="_blank" rel="noopener">https://stockcircle.com/portfolio/warren-buffett</a></div>
+</div>
+<hr class="idivider">
+</div>
+<div class="insight-advisor"><div class="insight-advisor-title">🌐 3. 글로벌 시장 전략가</div>
+<div class="insight-card"><div class="insight-quote">"S&P 500, 9주 연속 상승…RSI 73으로 과매수 경고등"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">S&P 500이 5월 29일 기준 9주 연속 상승하며 연간 5% 상승했으나, RSI가 73을 기록하며 단기 과열 신호가 켜졌다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody">TheStreet 보도에 따르면, S&P 500은 메모리얼 데이 연휴 직후인 5월 29일 기준 9주 연속 상승이 확실시되고 있다. AI 랠리와 미-이란 휴전 협상 기대감이 상승 동력으로 작용했다. S&P 500과 나스닥 지수 모두 RSI가 73으로 과매수 영역(70 이상)에 진입했다. 나스닥은 5월 한 달간 8% 이상 급등하며 강한 모멘텀을 이어갔다. 역사적으로 6월은 주식시장에 우호적이지 않은 계절성을 보이지만, 현재의 강한 모멘텀과 시장 심리가 계절 효과를 압도할 가능성도 열려 있다. 다우지수도 5월 한 달 3% 상승했다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>RSI 73은 단기 차익 실현 압력이 높아질 수 있음을 시사한다. 신규 포지션 진입은 비중을 줄이고, 기존 보유 종목에 대한 트레일링 스탑 설정을 검토할 시점이다.</li>
+<li>AI 랠리 지속성은 6월 이후 빅테크 가이던스와 연준 금리 경로에 달려 있다. 지정학적 변수(미-이란 협정 진전 여부)도 단기 변동성을 키울 수 있다.</li>
+<li>6월 역사적 약세 계절성과 현재 과매수 상태의 조합은 단기 매도 또는 방어적 자산(채권·금) 헤지를 고려하는 계기가 될 수 있다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-may-29-2026" target="_blank" rel="noopener">https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-may-29-2026</a></div>
+</div>
+<hr class="idivider">
+<div class="insight-card"><div class="insight-quote">"글로벌 ETF 2026: 미국 집중 리스크 분산, 비미국 자산과 액티브 ETF로 무게중심 이동"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">글로벌 ETF 자산이 19.85조 달러를 돌파한 가운데, 미국 시장 집중 리스크 헤지를 위해 비미국 자산과 액티브 ETF 비중 확대가 2026년 핵심 전략으로 부상했다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody">2025년 말 글로벌 ETF 순자산이 19.85조 달러를 기록하며 역대 최고치를 경신했다. Invesco와 State Street의 2026년 분기 전망 보고서는 유럽과 신흥국 자산을 선호하며, 미국 달러 약세와 연준 완화 기조가 비미국 자산의 상대적 매력을 높이고 있다고 분석했다. 한 기관 투자자는 570만 달러 규모의 인터내셔널 ETF를 매수하며 미국 시장 집중 리스크에 대한 베팅을 공개했다. 액티브 ETF 시장이 급성장 중이며, 10년 내 10조 달러 돌파 가능성이 제기된다. 자산 배분 측면에서 국채·투자등급 크레딧은 소폭 비중 축소, 비미국 주식·원자재·리츠가 초과 수익 기대 자산군으로 분류된다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>달러 약세 국면에서 환 노출이 있는 비미국 ETF(유럽, 신흥국)는 환차익까지 기대할 수 있다. 환 헤지 여부를 신중히 검토해야 한다.</li>
+<li>한국 투자자 입장에서 미국 S&P 500 집중 포트폴리오를 유럽·신흥국 ETF로 일부 분산하는 전략이 2026년 하반기 리스크 관리에 유효하다.</li>
+<li>액티브 ETF는 패시브 ETF 대비 비용이 높지만, 시장 변동성이 높은 구간에서 알파 창출 가능성을 제공한다. 운용사의 트랙레코드 검증 후 선별 활용을 권한다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://www.fool.com/coverage/filings/2026/05/10/why-this-usd5-7-million-international-etf-buy-looks-like-a-bet-against-u-s-market-concentration/" target="_blank" rel="noopener">https://www.fool.com/coverage/filings/2026/05/10/why-this-usd5-7-million-international-etf-buy-looks-like-a-bet-against-u-s-market-concentration/</a></div>
+</div>
+<hr class="idivider">
+</div>
+<div class="insight-advisor"><div class="insight-advisor-title">⚡ 4. 테마 투자 스카우터</div>
+<div class="insight-card"><div class="insight-quote">"한국 방산·항공, 1년 수익률 131%…KAI 컨센서스 목표가 15% 상승 여력"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">한국 방산·항공우주 섹터가 최근 1년간 131% 급등한 가운데, 한국항공우주(KAI)의 컨센서스 목표가는 현재 주가 대비 약 15% 추가 상승을 시사한다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody">TradingView 및 Stockopedia 데이터에 따르면, 한국 KOSPI 방산·항공우주 섹터는 최근 1년간 131%의 압도적인 수익률을 기록했다. 한국항공우주(KAI, 047810)는 2026년 5월 28일 기준 주가 167,700원으로 당일 1.21% 상승 마감했으며, 애널리스트 컨센서스 목표가는 193,529원으로 현재 주가 168,500원 대비 약 14.85% 상승 여력을 보유하고 있다. HD한국조선해양(009540)은 2025년 매출 29.93조 원(전년 대비 17.21% 증가), 영업이익 2.17조 원(84.97% 증가)을 기록하며 실적 개선이 가파르다. 한화에어로스페이스(012450)는 방산 섹터 내 가장 고평가 종목 중 하나로 분류되며 프리미엄이 지속되고 있다. PLUS 코리아 방산 ETF(KDEF)도 미국 시장에서 거래 가능한 투자 수단으로 주목받고 있다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>지정학적 긴장 지속과 방산 수출 확대(폴란드, 호주, 중동 등)는 한국 방산주의 중장기 성장 논거를 지지한다. 단기 조정이 오더라도 구조적 성장 스토리는 유효하다.</li>
+<li>섹터 전체가 1년간 131% 급등한 만큼, 현 시점 신규 진입은 밸류에이션 부담이 있다. 조정 시 분할 매수 또는 KDEF ETF를 통한 분산 접근을 권한다.</li>
+<li>KAI는 국내 차세대 전투기 사업(KF-21)과 수출 계약 확대가 주가의 핵심 촉매다. 방산 계약 뉴스와 환율 변동을 지속적으로 모니터링해야 한다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://www.stockopedia.com/share-prices/korea-aerospace-industries-KRX:047810/" target="_blank" rel="noopener">https://www.stockopedia.com/share-prices/korea-aerospace-industries-KRX:047810/</a></div>
+</div>
+<hr class="idivider">
+<div class="insight-card"><div class="insight-quote">"ARK Invest, 5월 25일 리밸런싱: 디지털 자산·AI 하드웨어·자율물류로 집중 재편"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">ARK Invest가 5월 25일 대규모 리밸런싱을 단행하며 디지털 자산 인프라, AI 하드웨어, 차세대 항공, 자율물류 분야로 자본을 재배치했다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody">GuruFocus 보도에 따르면, Cathie Wood의 ARK Investment Management는 2026년 5월 25일 대규모 리밸런싱 전략을 발표하며 포트폴리오를 디지털 자산 인프라, 차세대 항공(next-gen aviation), AI 하드웨어, 물류 분야로 집중 재편했다. ARK의 Big Ideas 2026 보고서는 ① AI(기업 소프트웨어 재편·노동 생산성 혁명), ② 에너지 저장·분산 전력, ③ 자율 기술 및 물류, ④ 멀티오믹스·바이오테크, ⑤ 우주·방산, ⑥ 블록체인·핀테크 등 6개 테마를 핵심 성장 영역으로 제시했다. ARK는 현재의 기술 투자 사이클이 역사상 가장 큰 규모가 될 수 있다고 전망했다. 자율 배달은 이미 대규모로 실현되고 있으며, 데이터 축적과 비용 하락이 물류 산업의 새로운 효율 곡선을 만들고 있다고 분석했다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>ARK의 리밸런싱은 단기 수익보다 5~10년 파괴적 혁신에 베팅하는 고위험·고수익 전략이다. 변동성을 감내할 수 있는 투자자에게만 적합하다.</li>
+<li>디지털 자산 인프라와 AI 하드웨어의 교차점에 있는 종목(고성능 컴퓨팅 칩, 냉각 솔루션 등)은 ARK 편입 수혜를 기대할 수 있다.</li>
+<li>멀티오믹스·바이오테크 테마는 2026년 FDA 허가 파이프라인이 풍부해 하반기 이벤트 드리븐 기회가 많을 전망이다. 개별 임상 결과 리스크는 분산 투자로 관리해야 한다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://www.gurufocus.com/news/8879160/ark-invest-shifts-focus-to-ai-and-digital-assets-amid-rebalancing" target="_blank" rel="noopener">https://www.gurufocus.com/news/8879160/ark-invest-shifts-focus-to-ai-and-digital-assets-amid-rebalancing</a></div>
+</div>
+</div>
+<div style="margin-top:32px;text-align:center;">
+  <a href="../인사이트/index.html" style="color:var(--accent);text-decoration:none;font-size:.9rem;">← 큐레이션 전체 목록으로</a>
+</div>
+</main>
+<script>
+function toggleGroup(el){const g=el.parentElement;g.classList.toggle('collapsed');const s={};document.querySelectorAll('.nav-group[data-group]').forEach(g=>{s[g.dataset.group]=g.classList.contains('collapsed');});try{localStorage.setItem('navState',JSON.stringify(s));}catch(e){}}
+document.addEventListener('DOMContentLoaded',()=>{try{const s=JSON.parse(localStorage.getItem('navState')||'{}');document.querySelectorAll('.nav-group[data-group]').forEach(g=>{if(s[g.dataset.group]&&!g.classList.contains('active')){g.classList.add('collapsed');}});}catch(e){}});
+</script>
+</body>
+</html>
