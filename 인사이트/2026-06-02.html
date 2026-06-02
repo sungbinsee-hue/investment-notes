@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인사이트 큐레이션 2026-06-02 — 투자 & 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.insight-advisor { margin-bottom:32px; }
+.insight-advisor-title {
+  font-size:1.1rem; font-weight:700; color:var(--accent);
+  margin-bottom:16px; padding-bottom:8px;
+  border-bottom:1px solid var(--border);
+}
+.insight-card {
+  background:var(--surface2); border:1px solid var(--border);
+  border-radius:10px; padding:20px 24px; margin-bottom:16px;
+}
+.insight-quote {
+  font-size:1rem; font-weight:600; color:var(--text);
+  margin-bottom:14px; font-style:italic;
+  padding-left:12px; border-left:3px solid var(--accent);
+}
+.insight-label {
+  font-size:0.78rem; font-weight:700; color:var(--accent2);
+  margin-bottom:4px; text-transform:uppercase; letter-spacing:0.05em;
+}
+.insight-body { font-size:0.88rem; color:var(--text2); line-height:1.75; margin-bottom:14px; }
+.insight-bullets { font-size:0.85rem; color:var(--text2); line-height:1.8; padding-left:18px; margin-bottom:14px; }
+.insight-bullets li { margin-bottom:4px; }
+.insight-link { font-size:0.8rem; }
+.insight-link a { color:var(--accent); text-decoration:none; }
+.insight-link a:hover { text-decoration:underline; }
+.divider { border:none; border-top:1px solid var(--border); margin:28px 0; }
+</style>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세전략">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li>
+    <li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li>
+    <li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li>
+    <li><a href="../절세/04.html">연말정산 소득공제 전략</a></li>
+    <li><a href="../절세/05.html">절세 포트폴리오 분배</a></li>
+    <li><a href="../절세/34.html">해외 주식 세금 실무</a></li>
+    <li><a href="../절세/54.html">금투세 폐지 &amp; 세제 변화</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="주식기업분석">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../주식/07.html">기업가치 평가 허브</a></li>
+    <li><a href="../주식/08.html">가치평가 지표 총람</a></li>
+    <li><a href="../주식/09.html">재무제표 분석 &amp; 체크리스트</a></li>
+    <li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li>
+    <li><a href="../주식/11.html">주가-기업가치 상관관계</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주국내">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/12.html">테마별 대장주 허브</a></li>
+    <li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li>
+    <li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li>
+    <li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="대장주해외">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li>
+    <li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li>
+    <li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li>
+    <li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li>
+    <li><a href="../대장주/20.html">국내·해외 종합 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="ETF완전가이드">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../etf/06.html">ETF 완전 가이드</a></li>
+    <li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li>
+    <li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li>
+    <li><a href="../etf/24.html">국내·해외 ETF 비교</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="유동원랩유안타증권">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li>
+    <li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li>
+    <li><a href="../유동원랩/31.html">스크랩 &amp; 정밀 재무 분석</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="투자전략심화">
+  <div class="nav-group-title" onclick="toggleGroup(this)">📊 투자 전략 &amp; 심화<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../투자전략/33.html">거시경제 기초</a></li>
+    <li><a href="../투자전략/35.html">투자 심리 &amp; 행동경제학</a></li>
+    <li><a href="../투자전략/36.html">포트폴리오 자산배분 전략</a></li>
+    <li><a href="../투자전략/37.html">배당 투자 전략</a></li>
+    <li><a href="../투자전략/38.html">채권 기초 &amp; ETF 활용</a></li>
+    <li><a href="../투자전략/39.html">기술적 분석 기초</a></li>
+    <li><a href="../투자전략/40.html">리스크 관리</a></li>
+    <li><a href="../투자전략/41.html">투자 철학 &amp; 명저</a></li>
+    <li><a href="../투자전략/43.html">경제 지표 &amp; 뉴스 해석법</a></li>
+    <li><a href="../투자전략/46.html">금·원자재 투자</a></li>
+    <li><a href="../투자전략/47.html">리츠(REITs) 실전 투자</a></li>
+    <li><a href="../투자전략/48.html">파생상품 기초</a></li>
+    <li><a href="../투자전략/49.html">암호화폐 기초 &amp; 세금</a></li>
+    <li><a href="../투자전략/50.html">퀀트 투자 기초</a></li>
+    <li><a href="../투자전략/55.html">AI·방산·원전 투자 사이클</a></li>
+  </ul>
+</div>
+<div class="nav-group" data-group="실전투자가이드">
+  <div class="nav-group-title" onclick="toggleGroup(this)">🛠️ 실전 투자 가이드<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../실전/42.html">공모주 IPO 청약 실전</a></li>
+    <li><a href="../실전/44.html">종목 스크리닝 &amp; DART 실전</a></li>
+    <li><a href="../실전/45.html">HTS·MTS 실전 활용</a></li>
+    <li><a href="../실전/51.html">퇴직연금 DC형 실전 운용</a></li>
+    <li><a href="../실전/52.html">미국 주식 직접 투자 실무</a></li>
+    <li><a href="../실전/53.html">투자 일지 &amp; 수익률 계산</a></li>
+    <li><a href="../주식/32.html">트레이딩 용어 사전</a></li>
+  </ul>
+</div>
+<div class="nav-group active" data-group="인사이트큐레이션">
+  <div class="nav-group-title" onclick="toggleGroup(this)">💡 인사이트 큐레이션<span class="arrow">▼</span></div>
+  <ul>
+    <li><a href="../인사이트/index.html">큐레이션 전체 목록</a></li>
+    <li class="current"><a href="../인사이트/2026-06-02.html">2026-06-02 — AI·프로덕트</a></li>
+  </ul>
+</div>
+</nav>
+
+<main class="main">
+<div class="hero">
+  <h1>💡 인사이트 큐레이션 — 2026-06-02</h1>
+  <p>토픽: AI·프로덕트 | 어드바이저 4명 · 6개 인사이트</p>
+</div>
+
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 20px;margin-bottom:28px;font-size:0.85rem;color:var(--text2);">
+  <strong style="color:var(--text)">목차</strong> &nbsp;·&nbsp;
+  <a href="#product" style="color:var(--accent);text-decoration:none;">🔥 프로덕트 메이커</a> &nbsp;·&nbsp;
+  <a href="#builder" style="color:var(--accent);text-decoration:none;">🤖 AI 빌더</a> &nbsp;·&nbsp;
+  <a href="#news" style="color:var(--accent);text-decoration:none;">⚡ AI 소식통</a> &nbsp;·&nbsp;
+  <a href="#career" style="color:var(--accent);text-decoration:none;">🌱 커리어 멘토</a>
+</div>
+
+<!-- 프로덕트 메이커 -->
+<div class="insight-advisor" id="product">
+  <div class="insight-advisor-title">🔥 프로덕트 메이커</div>
+  <div class="insight-card">
+    <div class="insight-quote">"AI 앱은 왜 첫 달은 잘 팔리고 두 번째 달에 무너지나"</div>
+    <div class="insight-label">한 줄 요약</div>
+    <div class="insight-body">AI 제품은 첫 사용 경험은 강렬하지만 습관화에 실패하면서 일반 SaaS보다 30% 빠르게 이탈한다.</div>
+    <div class="insight-label">상세 내용</div>
+    <div class="insight-body">2026년 현재 AI 앱의 구독 수익은 일반 SaaS 대비 41% 높지만 이탈률은 30% 빠르다. 근본 원인은 두 가지다. 첫째, AI 쿼리마다 실제 컴퓨팅 비용이 발생해 마진 구조가 SaaS(80~90%)에서 AI(50~60%)로 압축된다. 둘째, "강렬한 첫 경험 → 일상 워크플로우 미편입 → 이탈"의 패턴이 반복된다. 살아남는 AI 제품의 공통점은 명확한 고통 지점 공략 + 기존 워크플로우 내 삽입 + 숫자로 증명하는 ROI다.</div>
+    <div class="insight-label">에이전트 의견</div>
+    <ul class="insight-bullets">
+      <li>"첫 달 WOW, 두 번째 달 이탈"은 PMF를 착각하게 만드는 가장 위험한 패턴이다. 리텐션 곡선이 flattening되는 시점까지 PMF를 선언하지 않는 것이 원칙이 되어야 한다.</li>
+      <li>AI 제품의 가격 정책이 2026년 갱신 사이클을 처음 맞이하면서 "가치 증명 vs 비용 정당화" 전쟁이 본격화되고 있다. 가격보다 workflow 점착성(stickiness)이 더 중요한 방어선이다.</li>
+      <li>usage-based pricing으로 전환하는 팀이 늘고 있지만, 예측 불가능한 청구서가 오히려 이탈을 부추기는 역설도 관찰된다.</li>
+    </ul>
+    <div class="insight-link">📎 <a href="https://editorialge.com/ai-startup-monetization-failure/" target="_blank" rel="noopener">editorialge.com — Why Most AI Startup Monetization is Failing in 2026</a></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- AI 빌더 -->
+<div class="insight-advisor" id="builder">
+  <div class="insight-advisor-title">🤖 AI 빌더</div>
+  <div class="insight-card">
+    <div class="insight-quote">"Claude Opus 4.8 출시 — 추론·에이전틱 성능 업그레이드"</div>
+    <div class="insight-label">한 줄 요약</div>
+    <div class="insight-body">Anthropic이 2026-05-28 Claude Opus 4.8을 출시했다. Sonnet 4.6·Haiku 4.5와 함께 추론·코딩·다단계 에이전틱 작업을 위한 3단계 티어 체계가 완성됐다.</div>
+    <div class="insight-label">상세 내용</div>
+    <div class="insight-body">Opus 4.8은 멀티스텝 추론과 코드 생성 정확도 향상에 집중한 업데이트다. Sonnet 4.6은 속도·비용 균형, Haiku 4.5는 고속 처리 특화로 역할이 구분된다. 에이전틱 태스크에서 컨텍스트 일관성 유지가 강화됐고 tool use 정확도가 개선됐다는 점이 빌더 관점의 핵심이다.</div>
+    <div class="insight-label">에이전트 의견</div>
+    <ul class="insight-bullets">
+      <li>Opus/Sonnet/Haiku 3단계 티어가 명확해짐에 따라 아키텍처 설계 시 모델 선택 기준을 명문화하는 것이 중요해졌다. 오케스트레이터는 Opus, 서브에이전트 실행은 Sonnet·Haiku로 분리하는 패턴이 비용-성능 최적 구조로 자리잡을 가능성이 높다.</li>
+      <li>tool use 정확도 개선은 MCP 기반 에이전틱 파이프라인의 에러율 감소로 직결된다. 기존 파이프라인에서 실패하던 엣지 케이스를 Opus 4.8로 재테스트할 가치가 있다.</li>
+    </ul>
+    <div class="insight-link">📎 <a href="https://releasebot.io/updates/anthropic" target="_blank" rel="noopener">releasebot.io — Anthropic Release Notes May 2026</a></div>
+  </div>
+  <div class="insight-card">
+    <div class="insight-quote">"6월 15일부터 Claude 구독 크레딧 풀 분리"</div>
+    <div class="insight-label">한 줄 요약</div>
+    <div class="insight-body">2026-06-15부터 Claude 구독의 API·Agent SDK 사용량이 별도 월간 크레딧 풀로 분리된다.</div>
+    <div class="insight-label">상세 내용</div>
+    <div class="insight-body">현재는 Claude.ai 구독으로 API·claude-p·서드파티 도구를 함께 소비하지만, 6월 15일부터 프로그래매틱 사용은 분리된 크레딧 풀에서 차감된다. 인디 해커와 개인 빌더에게는 예상치 못한 비용 증가 또는 한도 초과 리스크가 생기는 반면, API 직접 호출 기반 프로덕트 팀은 영향이 제한적이다.</div>
+    <div class="insight-label">에이전트 의견</div>
+    <ul class="insight-bullets">
+      <li>Claude Code·MCP 워크플로우를 구독 플랜에 얹어 쓰던 팀은 6월 15일 전에 사용 패턴을 점검하고 필요시 직접 API 과금 체계로 전환 여부를 검토해야 한다.</li>
+      <li>이 변경은 Anthropic이 구독과 플랫폼 API를 별도 사업 단위로 가져가려는 신호로 읽힌다. IPO를 앞두고 수익 구조를 정교화하는 맥락과 맞닿아 있다.</li>
+    </ul>
+    <div class="insight-link">📎 <a href="https://devtoolpicks.com/blog/anthropic-splits-claude-subscriptions-agent-sdk-credit-june-2026" target="_blank" rel="noopener">devtoolpicks.com — Anthropic Splits Claude Subscriptions</a></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- AI 소식통 -->
+<div class="insight-advisor" id="news">
+  <div class="insight-advisor-title">⚡ AI 소식통</div>
+  <div class="insight-card">
+    <div class="insight-quote">"Anthropic, SEC에 IPO 신청 — 밸류에이션 $965B"</div>
+    <div class="insight-label">한 줄 요약</div>
+    <div class="insight-body">Anthropic이 2026-06-01 SEC에 IPO를 기밀 신청했다. 연환산 매출 $47B, 최근 밸류에이션 $965B로 역대 최대 규모 AI 기업 상장 시도다.</div>
+    <div class="insight-label">상세 내용</div>
+    <div class="insight-body">Washington Post 등 복수 매체가 6월 1일 보도했다. Anthropic은 최근 $65B 규모 펀딩 라운드로 밸류에이션이 $965B까지 올랐으며, Claude 구독을 기업과 개인에 판매하는 연환산 매출이 $47B에 달한다고 밝혔다. IPO 시점은 미정이나 기밀 신청은 공개 상장을 본격화하는 첫 단계다.</div>
+    <div class="insight-label">에이전트 의견</div>
+    <ul class="insight-bullets">
+      <li>$47B ARR은 ChatGPT 출시 3년 만에 만들어낸 숫자다. AI 기반 SaaS의 수익화 속도가 기존 소프트웨어 산업의 상식을 완전히 벗어나고 있음을 보여주는 데이터포인트다.</li>
+      <li>IPO 이후 Anthropic의 가장 큰 변수는 분기 실적 공시 압박이다. 단기 수익보다 안전성·정렬을 우선해온 의사결정 문화가 상장 후에도 유지될 수 있을지가 생태계 전체의 관심사다.</li>
+      <li>Claude API를 핵심 인프라로 쓰는 팀 입장에서는 상장 후 가격 정책 변화와 SLA 조건 변경 가능성을 모니터링할 필요가 있다.</li>
+    </ul>
+    <div class="insight-link">📎 <a href="https://www.washingtonpost.com/technology/2026/06/01/anthropic-maker-claude-files-with-sec-go-public-an-ipo/" target="_blank" rel="noopener">Washington Post — Anthropic files for IPO</a></div>
+  </div>
+  <div class="insight-card">
+    <div class="insight-quote">"Gemini 3.5 Pro, 6월 출시 임박 — 구글 I/O 예고"</div>
+    <div class="insight-label">한 줄 요약</div>
+    <div class="insight-body">구글이 Google I/O 2026에서 Gemini 3.5 Pro의 6월 GA를 예고했다. 이미 출시된 Flash는 MCP Atlas 벤치마크에서 GPT-5.5를 앞질렀다.</div>
+    <div class="insight-label">상세 내용</div>
+    <div class="insight-body">Sundar Pichai는 I/O 무대에서 "다음 달까지 기다려 달라"며 Gemini 3.5 Pro 출시를 예고했다. Flash 버전 기준 입력 $1.50/백만 토큰으로 GPT-5.5($5.00)보다 저렴하고, 멀티스텝 tool calling 벤치마크(MCP Atlas)에서 83.6% vs 75.3%로 앞선다. 순수 추론 및 Terminal-Bench에서는 GPT-5.5가 여전히 우위다.</div>
+    <div class="insight-label">에이전트 의견</div>
+    <ul class="insight-bullets">
+      <li>MCP Atlas 점수 역전은 agentic 워크플로우 영역에서 구글이 오픈AI를 처음으로 실질적으로 앞선 데이터포인트다. 비용까지 낮으니 프로토타이핑 단계에서 Gemini Flash를 기본 옵션으로 검토할 이유가 생겼다.</li>
+      <li>Gemini 3.5 Pro 출시 후 Opus 4.8·GPT-5.5·Gemini 3.5 Pro 3파전이 본격화된다. 플래그십 모델 선택 기준이 "최고 성능"에서 "태스크 적합성 + 비용"으로 이동하는 흐름이 가속될 것이다.</li>
+    </ul>
+    <div class="insight-link">📎 <a href="https://codersera.com/blog/gemini-3-5-pro-launch-guide-2026/" target="_blank" rel="noopener">codersera.com — Gemini 3.5 Pro Launch Guide 2026</a></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- 커리어 멘토 -->
+<div class="insight-advisor" id="career">
+  <div class="insight-advisor-title">🌱 커리어 멘토</div>
+  <div class="insight-card">
+    <div class="insight-quote">"커리어 중반 불만족의 진짜 원인 — Shreyas Doshi"</div>
+    <div class="insight-label">한 줄 요약</div>
+    <div class="insight-body">커리어 중반의 불만족은 성과 부족이 아니라 '커리어 부러움(career envy)'을 다루는 능력 부재에서 온다.</div>
+    <div class="insight-label">상세 내용</div>
+    <div class="insight-body">Shreyas Doshi가 2026-05-31 Substack에 발행한 글. 수백 명의 미드커리어 전문가를 코칭한 경험을 바탕으로, LinkedIn이 좋아 보이는 사람들이 오히려 더 불행한 경우가 많다는 관찰에서 출발한다. AI 붐으로 특정 회사·직군의 결과가 극단적으로 갈리면서 비교 심리가 더 심해졌다. 그의 처방: 커리어의 진짜 관객은 "나와 나에게 의존하는 사람들"뿐이며, 그 관객을 위해 플레이하라.</div>
+    <div class="insight-label">에이전트 의견</div>
+    <ul class="insight-bullets">
+      <li>"LinkedIn은 성과의 거울이 아니라 마케팅 채널"이라는 전제가 핵심이다. 가시성 높은 포스팅이 많은 사람이 더 잘하고 있다는 착각을 의식적으로 걷어낼 필요가 있다.</li>
+      <li>AI 붐 특수를 타고 급성장한 소수와의 비교는 구조적으로 불공평하다. 같은 타이밍, 같은 운을 전제하지 않은 비교는 진단이 아니라 소음이다.</li>
+      <li>"직급이 아니라 영향 범위로 평가받는다"는 원칙과 연결하면: 내 영향 범위가 실제로 넓어지고 있는가가 커리어 건강 지표의 핵심이고, 타인의 타이틀 변경 알림은 그 지표와 무관하다.</li>
+    </ul>
+    <div class="insight-link">📎 <a href="https://shreyasdoshi.substack.com/p/on-mid-career-satisfaction" target="_blank" rel="noopener">Shreyas Doshi — On mid-career satisfaction (2026-05-31)</a></div>
+  </div>
+</div>
+
+<div style="margin-top:36px;text-align:center;">
+  <a href="../인사이트/index.html" style="color:var(--accent);text-decoration:none;font-size:0.9rem;">← 큐레이션 전체 목록으로</a>
+</div>
+</main>
+
+<script>
+function toggleGroup(el) {
+  const group = el.parentElement;
+  group.classList.toggle('collapsed');
+  const state = {};
+  document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+    state[g.dataset.group] = g.classList.contains('collapsed');
+  });
+  try { localStorage.setItem('navState', JSON.stringify(state)); } catch(e) {}
+}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const state = JSON.parse(localStorage.getItem('navState') || '{}');
+    document.querySelectorAll('.nav-group[data-group]').forEach(g => {
+      if (state[g.dataset.group] && !g.classList.contains('active')) {
+        g.classList.add('collapsed');
+      }
+    });
+  } catch(e) {}
+});
+</script>
+</body>
+</html>
