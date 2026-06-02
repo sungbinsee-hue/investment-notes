@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인사이트 큐레이션 2026-05-31 — 투자 &amp; 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.insight-advisor{margin-bottom:28px}
+.insight-advisor-title{font-size:1.05rem;font-weight:700;color:var(--accent);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.insight-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-bottom:14px}
+.insight-quote{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:12px;font-style:italic;padding-left:12px;border-left:3px solid var(--accent)}
+.ilabel{font-size:.75rem;font-weight:700;color:var(--accent2);margin-bottom:3px;text-transform:uppercase;letter-spacing:.05em}
+.ibody{font-size:.87rem;color:var(--text2);line-height:1.75;margin-bottom:12px}
+.ibullets{font-size:.84rem;color:var(--text2);line-height:1.8;padding-left:16px;margin-bottom:12px}
+.ibullets li{margin-bottom:3px}
+.ilink{font-size:.78rem}.ilink a{color:var(--accent);text-decoration:none}
+.ilink a:hover{text-decoration:underline}
+.idivider{border:none;border-top:1px solid var(--border);margin:24px 0}
+</style>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세전략"><div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div><ul><li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li><li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li><li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li><li><a href="../절세/04.html">연말정산 소득공제 전략</a></li><li><a href="../절세/05.html">절세 포트폴리오 분배</a></li><li><a href="../절세/34.html">해외 주식 세금 실무</a></li><li><a href="../절세/54.html">금투세 폐지 &amp; 세제 변화</a></li></ul></div>
+<div class="nav-group" data-group="주식기업분석"><div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div><ul><li><a href="../주식/07.html">기업가치 평가 허브</a></li><li><a href="../주식/08.html">가치평가 지표 총람</a></li><li><a href="../주식/09.html">재무제표 분석 &amp; 체크리스트</a></li><li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li><li><a href="../주식/11.html">주가-기업가치 상관관계</a></li></ul></div>
+<div class="nav-group" data-group="대장주국내"><div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div><ul><li><a href="../대장주/12.html">테마별 대장주 허브</a></li><li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li><li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li><li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li></ul></div>
+<div class="nav-group" data-group="대장주해외"><div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div><ul><li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li><li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li><li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li><li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li><li><a href="../대장주/20.html">국내·해외 종합 비교</a></li></ul></div>
+<div class="nav-group" data-group="ETF완전가이드"><div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div><ul><li><a href="../etf/06.html">ETF 완전 가이드</a></li><li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li><li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li><li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li><li><a href="../etf/24.html">국내·해외 ETF 비교</a></li></ul></div>
+<div class="nav-group" data-group="유동원랩유안타증권"><div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div><ul><li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li><li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li><li><a href="../유동원랩/31.html">스크랩 &amp; 정밀 재무 분석</a></li></ul></div>
+<div class="nav-group" data-group="투자전략심화"><div class="nav-group-title" onclick="toggleGroup(this)">📊 투자 전략 &amp; 심화<span class="arrow">▼</span></div><ul><li><a href="../투자전략/33.html">거시경제 기초</a></li><li><a href="../투자전략/35.html">투자 심리 &amp; 행동경제학</a></li><li><a href="../투자전략/36.html">포트폴리오 자산배분 전략</a></li><li><a href="../투자전략/37.html">배당 투자 전략</a></li><li><a href="../투자전략/38.html">채권 기초 &amp; ETF 활용</a></li><li><a href="../투자전략/39.html">기술적 분석 기초</a></li><li><a href="../투자전략/40.html">리스크 관리</a></li><li><a href="../투자전략/41.html">투자 철학 &amp; 명저</a></li><li><a href="../투자전략/43.html">경제 지표 &amp; 뉴스 해석법</a></li><li><a href="../투자전략/46.html">금·원자재 투자</a></li><li><a href="../투자전략/47.html">리츠(REITs) 실전 투자</a></li><li><a href="../투자전략/48.html">파생상품 기초</a></li><li><a href="../투자전략/49.html">암호화폐 기초 &amp; 세금</a></li><li><a href="../투자전략/50.html">퀀트 투자 기초</a></li><li><a href="../투자전략/55.html">AI·방산·원전 투자 사이클</a></li></ul></div>
+<div class="nav-group" data-group="실전투자가이드"><div class="nav-group-title" onclick="toggleGroup(this)">🛠️ 실전 투자 가이드<span class="arrow">▼</span></div><ul><li><a href="../실전/42.html">공모주 IPO 청약 실전</a></li><li><a href="../실전/44.html">종목 스크리닝 &amp; DART 실전</a></li><li><a href="../실전/45.html">HTS·MTS 실전 활용</a></li><li><a href="../실전/51.html">퇴직연금 DC형 실전 운용</a></li><li><a href="../실전/52.html">미국 주식 직접 투자 실무</a></li><li><a href="../실전/53.html">투자 일지 &amp; 수익률 계산</a></li><li><a href="../주식/32.html">트레이딩 용어 사전</a></li></ul></div>
+<div class="nav-group active" data-group="인사이트큐레이션"><div class="nav-group-title" onclick="toggleGroup(this)">💡 인사이트 큐레이션<span class="arrow">▼</span></div><ul>
+<li><a href="../인사이트/index.html">큐레이션 전체 목록</a></li>
+<li><a href="../인사이트/2026-06-02.html">2026-06-02 — AI·프로덕트</a></li>
+<li><a href="../인사이트/경제-사회-2026-06-02.html">2026-06-02 — 경제·사회</a></li>
+<li><a href="../인사이트/주식-투자-2026-06-02.html">2026-06-02 — 주식·투자</a></li>
+<li><a href="../인사이트/2026-06-01.html">2026-06-01 — AI·프로덕트</a></li>
+<li><a href="../인사이트/경제-사회-2026-06-01.html">2026-06-01 — 경제·사회</a></li>
+<li><a href="../인사이트/주식-투자-2026-06-01.html">2026-06-01 — 주식·투자</a></li>
+<li><a href="../인사이트/2026-05-31.html">2026-05-31 — AI·프로덕트</a></li>
+<li><a href="../인사이트/경제-사회-2026-05-31.html">2026-05-31 — 경제·사회</a></li>
+<li><a href="../인사이트/주식-투자-2026-05-31.html">2026-05-31 — 주식·투자</a></li>
+</ul></div>
+</nav>
+<main class="main">
+<div class="hero">
+  <h1>💡 인사이트 큐레이션 2026-05-31</h1>
+  <p>2026-05-31 | 토픽: 경제·사회</p>
+</div>
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 18px;margin-bottom:20px;font-size:.85rem;color:var(--text2)">
+</div>
+<hr class="idivider">
+<div class="insight-advisor"><div class="insight-advisor-title">💹 2. 주식 애널리스트</div>
+<div class="insight-card"><div class="insight-quote">"KOSPI 8,476 사상 최고 — 삼성·SK하이닉스 쏠림과 집중 리스크의 역설"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">KOSPI가 2026년 들어 90%+ 급등하며 사상 최고치를 경신했지만, 지수 상승을 삼성전자·SK하이닉스 두 종목이 주도하는 구조적 집중 리스크가 동시에 불거지고 있다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody">2026-05-29 KOSPI는 8,476.15로 장을 마감하며 연중 최고치를 재경신했다. 삼성전자(+5.84%)와 SK하이닉스(+7%)의 동반 급등이 견인차 역할을 했다. 두 종목의 KOSPI 내 비중은 5월 기준 42~50%를 넘어서며 사상 최고 수준에 달했다. 같은 날 지수는 3.55% 상승했지만 실제로는 210개 종목만 오르고 688개 종목이 하락한 '역V자 장세'였다. CNBC는 메모리 주식의 AI 수요 급증 기대가 HBM(고대역폭 메모리) 공급 부족과 맞물려 비이성적 과열 국면으로 진입할 수 있다고 경고했다. SK하이닉스는 iHBM(내장형 냉각 HBM) 기술을 공개하며 HBM5 세대에서 열저항 30% 감소를 달성했다고 발표했다. 골드만삭스는 KOSPI의 추가 상승 여력이 있다고 보면서도, 삼성·SK하이닉스에의 쏠림이 포트폴리오 다변화 전략을 무력화할 수 있다고 지적했다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>지수가 오르는데 대부분 종목이 내리는 구조는 전형적인 집중도 고점 신호다. 역사적으로 이런 국면은 대형 고평가 종목의 조정이 전체 지수 급락으로 전이될 위험을 높인다.</li>
+<li>SK하이닉스의 iHBM 기술 공개는 단순 신제품 발표가 아니라, AI 데이터센터의 발열 한계를 하드웨어 수준에서 푸는 구조적 해법의 상용화 시점을 앞당긴다는 점에서 중장기 HBM 수요 단가 방어력으로 읽힌다.</li>
+<li>CNBC의 메모리 boom/bust 경고는 2024년 AI 열풍 이후 두 번째 사이클 고점 논쟁이다. 수요가 실적으로 실현되는 속도가 주가 선반영 속도를 따라잡는지가 핵심 관찰 변수다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://www.cnbc.com/2026/05/29/asia-markets-today-live-updates-nikkei-225-hang-seng-index-kospi-nifty-50-csi-300.html" target="_blank" rel="noopener">https://www.cnbc.com/2026/05/29/asia-markets-today-live-updates-nikkei-225-hang-seng-index-kospi-nifty-50-csi-300.html</a></div>
+</div>
+<hr class="idivider">
+</div>
+<div class="insight-advisor"><div class="insight-advisor-title">🏛️ 3. 정책·규제 워처</div>
+<div class="insight-card"><div class="insight-quote">"미중 무역 휴전 유지 & Section 301 재검토 착수 — 관세 전쟁 2라운드의 구조"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">트럼프-시진핑 5월 정상회담 이후 미중이 관세 협상 프레임워크에 원칙적으로 합의했지만, 동시에 미 USTR이 중국산 수입품 Section 301 관세에 대한 4년 주기 법정 재검토를 개시하며 구조적 긴장은 지속되고 있다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody">2026년 5월 두 가지 상반된 신호가 동시에 나왔다. 첫째, 트럼프-시진핑 회담에서 양국은 총 300억 달러 규모의 제품에 대해 최혜국 혹은 그 이하의 관세율을 적용하는 무역위원회(Board of Trade) 설립에 원칙 합의했다. 이는 145%에 달하는 현행 중국산 수입품 관세율을 단계적으로 낮추는 협상의 출발점이 된다. 둘째, 미 USTR은 같은 달 2018년 7~8월 처음 발동된 Section 301 조치에 대한 법정 4년 재검토를 개시했다. 이는 관세를 유지·확대·축소할 수 있는 공식 절차로, 재검토 결과에 따라 협상 레버리지가 재조정된다. McKinsey의 2026 무역 지형 분석은 미중 긴장이 글로벌 공급망의 최대 단일 변수로 작용하고 있으며, 두 경제권 모두 지정학적으로 더 가까운 파트너로 교역을 재편 중이라고 진단했다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>"무역 휴전"과 "법정 재검토 개시"의 동시 진행은 협상 용어상 모순처럼 보이지만, 실제로는 협상 테이블을 유지하면서 법적 레버리지도 동시에 확보하는 미국 협상 패턴의 전형이다.</li>
+<li>희토류 수출 규제, 기술 수출 통제(반도체 장비), 145% 관세의 3중 압박 구조는 협상이 진행 중이더라도 한국 반도체·디스플레이 기업의 중국 사업 불확실성을 상수로 만든다.</li>
+<li>Section 301 재검토 결과는 통상 12~18개월 소요된다. 그 기간 동안 불확실성 프리미엄이 무역 의존도 높은 기업 밸류에이션에 지속적으로 디스카운트 요인으로 작용할 수 있다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://www.mckinsey.com/mgi/our-research/geopolitics-and-the-geometry-of-global-trade-2026-update" target="_blank" rel="noopener">https://www.mckinsey.com/mgi/our-research/geopolitics-and-the-geometry-of-global-trade-2026-update</a></div>
+</div>
+</div>
+<div style="margin-top:32px;text-align:center;">
+  <a href="../인사이트/index.html" style="color:var(--accent);text-decoration:none;font-size:.9rem;">← 큐레이션 전체 목록으로</a>
+</div>
+</main>
+<script>
+function toggleGroup(el){const g=el.parentElement;g.classList.toggle('collapsed');const s={};document.querySelectorAll('.nav-group[data-group]').forEach(g=>{s[g.dataset.group]=g.classList.contains('collapsed');});try{localStorage.setItem('navState',JSON.stringify(s));}catch(e){}}
+document.addEventListener('DOMContentLoaded',()=>{try{const s=JSON.parse(localStorage.getItem('navState')||'{}');document.querySelectorAll('.nav-group[data-group]').forEach(g=>{if(s[g.dataset.group]&&!g.classList.contains('active')){g.classList.add('collapsed');}});}catch(e){}});
+</script>
+</body>
+</html>
