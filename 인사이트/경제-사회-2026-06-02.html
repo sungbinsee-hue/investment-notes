@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인사이트 큐레이션 2026-06-02 — 투자 &amp; 재무 지식창고</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.insight-advisor{margin-bottom:28px}
+.insight-advisor-title{font-size:1.05rem;font-weight:700;color:var(--accent);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.insight-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-bottom:14px}
+.insight-quote{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:12px;font-style:italic;padding-left:12px;border-left:3px solid var(--accent)}
+.ilabel{font-size:.75rem;font-weight:700;color:var(--accent2);margin-bottom:3px;text-transform:uppercase;letter-spacing:.05em}
+.ibody{font-size:.87rem;color:var(--text2);line-height:1.75;margin-bottom:12px}
+.ibullets{font-size:.84rem;color:var(--text2);line-height:1.8;padding-left:16px;margin-bottom:12px}
+.ibullets li{margin-bottom:3px}
+.ilink{font-size:.78rem}.ilink a{color:var(--accent);text-decoration:none}
+.ilink a:hover{text-decoration:underline}
+.idivider{border:none;border-top:1px solid var(--border);margin:24px 0}
+</style>
+</head>
+<body>
+<nav class="sidebar">
+<a href="../index.html" class="nav-home">🏠 투자 &amp; 재무 지식창고</a>
+<div class="nav-group" data-group="절세전략"><div class="nav-group-title" onclick="toggleGroup(this)">🛡️ 절세 전략<span class="arrow">▼</span></div><ul><li><a href="../절세/01.html">국민성장펀드 심층 분석</a></li><li><a href="../절세/02.html">IRP + 연금저축 세액공제</a></li><li><a href="../절세/03.html">ISA 중개형 비과세 전략</a></li><li><a href="../절세/04.html">연말정산 소득공제 전략</a></li><li><a href="../절세/05.html">절세 포트폴리오 분배</a></li><li><a href="../절세/34.html">해외 주식 세금 실무</a></li><li><a href="../절세/54.html">금투세 폐지 &amp; 세제 변화</a></li></ul></div>
+<div class="nav-group" data-group="주식기업분석"><div class="nav-group-title" onclick="toggleGroup(this)">📈 주식·기업 분석<span class="arrow">▼</span></div><ul><li><a href="../주식/07.html">기업가치 평가 허브</a></li><li><a href="../주식/08.html">가치평가 지표 총람</a></li><li><a href="../주식/09.html">재무제표 분석 &amp; 체크리스트</a></li><li><a href="../주식/10.html">기업 비교 분석 프레임워크</a></li><li><a href="../주식/11.html">주가-기업가치 상관관계</a></li></ul></div>
+<div class="nav-group" data-group="대장주국내"><div class="nav-group-title" onclick="toggleGroup(this)">🏆 대장주 — 국내<span class="arrow">▼</span></div><ul><li><a href="../대장주/12.html">테마별 대장주 허브</a></li><li><a href="../대장주/13.html">반도체·2차전지 TOP10</a></li><li><a href="../대장주/14.html">방산·조선·원전·바이오 TOP10</a></li><li><a href="../대장주/15.html">로봇·AI·엔터·금융 TOP10</a></li></ul></div>
+<div class="nav-group" data-group="대장주해외"><div class="nav-group-title" onclick="toggleGroup(this)">🌍 대장주 — 해외<span class="arrow">▼</span></div><ul><li><a href="../대장주/16.html">해외 테마별 대장주 허브</a></li><li><a href="../대장주/17.html">해외 반도체·AI·전력인프라</a></li><li><a href="../대장주/18.html">해외 방산·원전·바이오·로봇</a></li><li><a href="../대장주/19.html">해외 AI·금융·EV·엔터</a></li><li><a href="../대장주/20.html">국내·해외 종합 비교</a></li></ul></div>
+<div class="nav-group" data-group="ETF완전가이드"><div class="nav-group-title" onclick="toggleGroup(this)">📦 ETF 완전 가이드<span class="arrow">▼</span></div><ul><li><a href="../etf/06.html">ETF 완전 가이드</a></li><li><a href="../etf/21.html">ETF 완전 가이드 허브</a></li><li><a href="../etf/22.html">국내 ETF TOP10 (2026)</a></li><li><a href="../etf/23.html">해외 ETF TOP10 (2026)</a></li><li><a href="../etf/24.html">국내·해외 ETF 비교</a></li></ul></div>
+<div class="nav-group" data-group="유동원랩유안타증권"><div class="nav-group-title" onclick="toggleGroup(this)">🏦 유동원랩·유안타증권<span class="arrow">▼</span></div><ul><li><a href="../유동원랩/29.html">종합 분석 (2026)</a></li><li><a href="../유동원랩/30.html">투자 판단 완전 검증</a></li><li><a href="../유동원랩/31.html">스크랩 &amp; 정밀 재무 분석</a></li></ul></div>
+<div class="nav-group" data-group="투자전략심화"><div class="nav-group-title" onclick="toggleGroup(this)">📊 투자 전략 &amp; 심화<span class="arrow">▼</span></div><ul><li><a href="../투자전략/33.html">거시경제 기초</a></li><li><a href="../투자전략/35.html">투자 심리 &amp; 행동경제학</a></li><li><a href="../투자전략/36.html">포트폴리오 자산배분 전략</a></li><li><a href="../투자전략/37.html">배당 투자 전략</a></li><li><a href="../투자전략/38.html">채권 기초 &amp; ETF 활용</a></li><li><a href="../투자전략/39.html">기술적 분석 기초</a></li><li><a href="../투자전략/40.html">리스크 관리</a></li><li><a href="../투자전략/41.html">투자 철학 &amp; 명저</a></li><li><a href="../투자전략/43.html">경제 지표 &amp; 뉴스 해석법</a></li><li><a href="../투자전략/46.html">금·원자재 투자</a></li><li><a href="../투자전략/47.html">리츠(REITs) 실전 투자</a></li><li><a href="../투자전략/48.html">파생상품 기초</a></li><li><a href="../투자전략/49.html">암호화폐 기초 &amp; 세금</a></li><li><a href="../투자전략/50.html">퀀트 투자 기초</a></li><li><a href="../투자전략/55.html">AI·방산·원전 투자 사이클</a></li></ul></div>
+<div class="nav-group" data-group="실전투자가이드"><div class="nav-group-title" onclick="toggleGroup(this)">🛠️ 실전 투자 가이드<span class="arrow">▼</span></div><ul><li><a href="../실전/42.html">공모주 IPO 청약 실전</a></li><li><a href="../실전/44.html">종목 스크리닝 &amp; DART 실전</a></li><li><a href="../실전/45.html">HTS·MTS 실전 활용</a></li><li><a href="../실전/51.html">퇴직연금 DC형 실전 운용</a></li><li><a href="../실전/52.html">미국 주식 직접 투자 실무</a></li><li><a href="../실전/53.html">투자 일지 &amp; 수익률 계산</a></li><li><a href="../주식/32.html">트레이딩 용어 사전</a></li></ul></div>
+<div class="nav-group active" data-group="인사이트큐레이션"><div class="nav-group-title" onclick="toggleGroup(this)">💡 인사이트 큐레이션<span class="arrow">▼</span></div><ul>
+<li><a href="../인사이트/index.html">큐레이션 전체 목록</a></li>
+<li><a href="../인사이트/2026-06-02.html">2026-06-02 — AI·프로덕트</a></li>
+<li><a href="../인사이트/경제-사회-2026-06-02.html">2026-06-02 — 경제·사회</a></li>
+<li><a href="../인사이트/주식-투자-2026-06-02.html">2026-06-02 — 주식·투자</a></li>
+<li><a href="../인사이트/2026-06-01.html">2026-06-01 — AI·프로덕트</a></li>
+<li><a href="../인사이트/경제-사회-2026-06-01.html">2026-06-01 — 경제·사회</a></li>
+<li><a href="../인사이트/주식-투자-2026-06-01.html">2026-06-01 — 주식·투자</a></li>
+<li><a href="../인사이트/2026-05-31.html">2026-05-31 — AI·프로덕트</a></li>
+<li><a href="../인사이트/경제-사회-2026-05-31.html">2026-05-31 — 경제·사회</a></li>
+<li><a href="../인사이트/주식-투자-2026-05-31.html">2026-05-31 — 주식·투자</a></li>
+</ul></div>
+</nav>
+<main class="main">
+<div class="hero">
+  <h1>💡 인사이트 큐레이션 2026-06-02</h1>
+  <p>2026-06-02 | 토픽: 경제·사회</p>
+</div>
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 18px;margin-bottom:20px;font-size:.85rem;color:var(--text2)">
+<div><strong style="color:var(--text)">📊 1. 매크로 이코노미스트</strong> &nbsp;&nbsp;· 연준 8대4 금리 동결 고수, BofA "2026년 인하 없다"</div>
+<div><strong style="color:var(--text)">💹 2. 주식 애널리스트</strong> &nbsp;&nbsp;· 섹터 로테이션 본격화: 에너지·산업재가 기술주를 압도</div>
+<div><strong style="color:var(--text)">🏛️ 3. 정리 규제 워청</strong> &nbsp;&nbsp;· 미중 관세 30% 유지 합의·60일 유예, 새 협상 국면</div>
+<div><strong style="color:var(--text)">🌍 4. 사회·트렌드 분석가</strong> &nbsp;&nbsp;· 한국 청년 취업 41개월 연속 감소, AI가 25만 5천 개 일자리 소멸</div>
+</div>
+<hr class="idivider">
+<div class="insight-advisor"><div class="insight-advisor-title">📊 1. 매크로 이코노미스트</div>
+<div class="insight-card"><div class="insight-quote">"연준 8대4 이견 속 금리 동결, BofA '2026년 내 인하 없다' 경고"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">연준은 4월 29일 8대4라는 1992년 이후 가장 첨예한 표결로 금리를 3.50–3.75%에 동결했고, Bank of America는 연내 인하 가능성을 완전히 배제했다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody"> 연방공개시장위원회(FOMC)는 기준금리를 3.50–3.75%로 유지하되, 8대4의 이례적으로 분열된 표결을 보였다. 헤드라인 PCE 인플레이션은 3.5%(전년비), 근원 PCE는 3.2%로 각각 이전 대비 재가속했는데, 주요 원인은 에너지 가격 상승이다. 파월 의장의 임기는 5월 15일 만료됐으며, 새 의장 취임까지 통화정책의 방향성에 대한 시장 불확실성이 가중된다. BofA는 2026년 내 인하 가능성을 배제하고 2027년 7월·9월에 각 25bp 인하를 전망했다. FOMC 다수 위원은 "인플레이션이 2% 이상에서 지속될 경우 추가 긴축이 적절하다"고 명시했다. iShares 등 기관들도 고금리 장기화 환경을 전제로 채권 포트폴리오 전략 재편을 권고하고 있다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>8대4 분열 표결은 동결이 합의가 아닌 잠정 균형임을 보여주며, 에너지발 인플레이션 재가속이 매파 목소리를 더욱 키울 수 있다.</li>
+<li>파월 후임 의장의 성향이 확인될 때까지 채권 시장 변동성이 높게 유지될 가능성이 크고, 이는 신흥국 자금 흐름에도 영향을 미친다.</li>
+<li>BofA 시나리오가 현실화될 경우 고금리 장기화는 가계부채 부담이 큰 한국 주택시장에 추가적인 구조적 압박이 된다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://www.thestreet.com/fed/bofa-drops-blunt-warning-about-fed-rate-cuts-for-remaining-of-2026" target="_blank" rel="noopener">https://www.thestreet.com/fed/bofa-drops-blunt-warning-about-fed-rate-cuts-for-remaining-of-2026</a></div>
+</div>
+<hr class="idivider">
+<div class="insight-card"><div class="insight-quote">"El-Erian: 지정학·AI가 전통 경제 논리를 대체, '극단적 변동성' 속 재보정 필요"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">모하메드 엘-에리언은 글로벌 경제가 AI 기적, 지정학 충격, 채권시장 역풍이라는 세 갈래 시나리오 앞에서, 기존 경제 합의를 전면 재설계해야 한다고 촉구했다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody"> 엘-에리언은 2026년 4월 Project Syndicate 기고에서 AI 생산성 혁명, 글로벌화 반발, 워싱턴 컨센서스의 점진적 해체가 동시에 진행되는 '극단적 변동성' 시대가 도래했다고 진단했다. 2026년 전망은 단일 컨센서스 경로가 아니라, AI 기적 시나리오(강건한 성장)·중간 경로(AI 주도 정상 성장)·채권시장 충격(급격한 조정)의 세 가지 가능성이 동시에 열려 있다고 설명했다. 특히 국가안보 우려와 지정학이 경제 의사결정을 점점 지배하며 전통 거시 모델의 예측력이 약화되고 있다고 경고했다. 방치될 경우 저성장·고인플레이션·불평등 심화로 이어질 수 있는 구조적 취약성이 누적되고 있다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>'다극 시나리오' 구조는 단일 전망에 의존하는 자산배분 전략의 실효성에 근본적 의문을 제기하며, 시나리오 기반 헤지 설계가 더 중요해진다.</li>
+<li>국가안보·지정학이 경제를 지배하는 구조에서 수출 의존도가 높은 한국 경제는 무역·기술 블록화 리스크에 더 크게 노출된다.</li>
+<li>채권시장 충격 시나리오가 현실화될 경우, 새 FOMC 지도부가 시장 신뢰를 구축하기 전까지 금융 불안이 연쇄 증폭될 수 있다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://www.project-syndicate.org/commentary/update-economic-consensus-to-build-resilience-amid-extreme-volatility-by-mohamed-a-el-erian-2026-04" target="_blank" rel="noopener">https://www.project-syndicate.org/commentary/update-economic-consensus-to-build-resilience-amid-extreme-volatility-by-mohamed-a-el-erian-2026-04</a></div>
+</div>
+<hr class="idivider">
+</div>
+<div class="insight-advisor"><div class="insight-advisor-title">💹 2. 주식 애널리스트</div>
+<div class="insight-card"><div class="insight-quote">"섹터 로테이션 가속: 에너지(+22%)·산업재(+16%)가 기술주를 압도하는 2026년"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">2026년 들어 에너지·산업재·소비재 방어주가 기술·통신 섹터를 크게 앞서며 3년 만의 본격적인 섹터 로테이션이 전개되고 있다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody"> Morningstar와 Investing.com에 따르면, 2026년 연초 대비 에너지 섹터는 22% 이상, 산업재는 Caterpillar 주도로 16% 이상, 소비재 방어주는 Walmart·Costco 주도로 13% 이상 상승했다. 이 로테이션의 핵심 동력은 중소형 기업들이 금리 환경 변화와 'One Big Beautiful Bill Act'의 세제 혜택을 통해 메가캡과의 실적 격차를 빠르게 좁히고 있다는 점이다. S&P 500의 선행 PER은 22.4배로 지난 3년 대비 40% 팽창한 반면, 동일가중 지수의 PER은 17.0배로 6%만 상승해 밸류에이션 양극화가 심화됐다. 제러미 그랜섬은 AI 섹터에 대해 "근본적으로 옳은 아이디어가 과잉 투자로 이어지는 버블"이라며 현재 주가 수준이 장기 실질 추세 대비 2 표준편차 이상이라고 경고했다. 하워드 막스는 "좋은 것을 사는 것이 아니라, 좋은 가격에 사는 것이 투자의 핵심"이라며 밸류에이션 규율을 강조했다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>에너지 섹터의 상승이 AI 수요(데이터센터 전력)와 중동 지정학 프리미엄이 혼재한다는 점에서, 지정학 위기 완화 시 되돌림 리스크가 존재한다.</li>
+<li>S&P 500 시가총액 가중 대비 Equal Weight의 86% vs 43% 성과 격차는 집중 리스크가 여전히 해소되지 않았음을 보여준다.</li>
+<li>로테이션이 구조적 전환인지 일시적 순환인지는 향후 2~3분기 비기술주 실적 성장률이 판가름할 것이다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://www.morningstar.com/markets/is-stock-market-rotation-underway-these-sectors-are-outpacing-tech-2026" target="_blank" rel="noopener">https://www.morningstar.com/markets/is-stock-market-rotation-underway-these-sectors-are-outpacing-tech-2026</a></div>
+</div>
+<hr class="idivider">
+<div class="insight-card"><div class="insight-quote">"KOSPI 8,788·S&P 500 7,600 동반 최고치…한국 반도체 수출 169% 급증이 이끌었다"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">5월 한국 반도체 수출이 169% 급증하며 코스피가 8,788의 역대 최고치를 기록했고, 미국에서도 엔비디아 신칩 출시로 S&P 500이 7,599.96까지 상승해 동반 최고치를 경신했다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody"> 한국의 5월 수출은 전년 대비 53% 급증해 878억 달러로 사상 최고치를 기록했으며, 반도체 단일 품목만 169%의 폭발적 증가를 보였다. 삼성전자는 10% 이상 상승하며 사상 최고가를 경신했고, 코스피는 28년 만의 월간 최대 상승률을 기록했다. 서울경제신문은 6월 내 8,500선 돌파를 전망하고 있다. 미국에서는 엔비디아가 PC용 신형 프로세서를 발표한 직후 6% 이상 급등했고, Dell(+10%)·HP(+8%)가 동반 상승하며 S&P 500이 7,599.96로 역대 최고치를 경신했다. 중동 지정학 긴장 완화도 아시아 증시 투자 심리를 개선시켰다. 애널리스트들은 금리 동향, 유가, 시가총액 집중도를 단기 변수로 지목하고 있다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>한국 반도체 수출 169% 급증은 AI 인프라 사이클이 실물 무역에서 확인되는 강력한 신호지만, 특정 품목 집중은 구조적 취약성을 내포한다.</li>
+<li>KOSPI의 역대 최고치 행진은 외국인 수급과 AI 모멘텀이 결합한 결과이나, 미중 관세 재갈등이나 중동 지정학 재악화 시 급격한 되돌림에 취약하다.</li>
+<li>S&P 500과 코스피의 동조화가 심화될수록, 미국발 매크로 이벤트(FOMC 결정, 파월 후임 지명)에 대한 능동적 리스크 관리가 필요하다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://www.cnbc.com/2026/05/31/stock-market-today-live-updates.html" target="_blank" rel="noopener">https://www.cnbc.com/2026/05/31/stock-market-today-live-updates.html</a></div>
+</div>
+<hr class="idivider">
+</div>
+<div class="insight-advisor"><div class="insight-advisor-title">🏛️ 3. 정리 규제 워청</div>
+<div class="insight-card"><div class="insight-quote">"미중 관세 30% 유지·60일 유예 합의, 대법원 IEEPA 판결 이후 새 협상 지형"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">트럼프 행정부와 중국이 실효 관세 30%를 유지하되 60일 유예에 합의했으며, 대법원의 IEEPA 관세 부과 위헌 판결이 미중 무역 협상의 새로운 법적 지형을 형성하고 있다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody"> 2026년 2월 20일, 미국 대법원은 대통령이 IEEPA(국제비상경제권법)를 통해 관세를 부과할 수 없다고 판결해 트럼프 관세 체계에 법적 충격을 가했다. 이후 6월 11일, 트럼프는 '펜타닐' 20%와 '상호' 10% 관세를 합산한 30%를 유지하되, 더 높은 관세의 60일 유예에 합의하는 무역 합의를 발표했다. 미국 무역대표부(USTR)는 164개 중국산 품목에 대한 섹션 301 관세 면제를 연장해 2026년 11월 10일까지 178개 품목에 적용했다. 스콧 베센트 재무장관은 중국이 이전 섹션 301 조사 기반 관세율 복원에 동의할 것으로 기대한다고 밝혔다. 많은 중국산 제품의 실효 관세율은 여전히 30% 수준에 근접해 있다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>대법원 IEEPA 판결은 행정부의 관세 수단 범위를 축소했으며, 향후 통상 협상에서 의회 승인 경로를 요구하는 방향으로 구조가 바뀔 수 있다.</li>
+<li>60일 유예 합의는 단기 불확실성을 완화하지만, 협상이 타결되지 않으면 관세가 재상승할 위험이 있어 공급망 재편 결정을 미루기 어려운 기업들의 딜레마가 지속된다.</li>
+<li>한국은 미중 관세 전쟁의 직접 당사자는 아니지만, 글로벌 공급망 재편과 중국 수출 감소가 한국 중간재 수출에 연쇄적 영향을 준다는 점에서 결코 간접적이지 않다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/" target="_blank" rel="noopener">https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/</a></div>
+</div>
+<hr class="idivider">
+<div class="insight-card"><div class="insight-quote">"한국 2026년 예산 728조·AI 10.1조 '3배 증액'…관세 피해 기업 지원 13.6조도"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">한국 정부가 2026년 예산을 역대 최초 728조 원(8.1% 증가)으로 편성하고, AI·R&D 예산을 3배 늘리는 한편 관세 피해 기업 지원에 13.6조 원을 투입하는 성장 중심 재정 전략을 펼치고 있다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody"> 한국의 2026년 국가 예산은 728조 원으로 처음 700조 원을 넘어섰으며, 전년 673조 원 대비 8.1% 증가했다. 핵심 투자 분야는 AI를 비롯한 첨단 기술(AI 예산 10.1조 원으로 전년 대비 3배 증가), R&D, 지역 균형 발전이다. 무역 지원 예산은 1.6조 원에서 4.3조 원으로 대폭 증가했고, 관세 피해 기업을 위한 긴급 경영 자금도 13.6조 원으로 확충됐다. 환경부는 '2026년 자원순환 로드맵'을 공식화해 생산자 책임 재활용 제도를 강화하고, '소비-폐기' 선형 모델에서 순환경제 시스템으로 전환을 의무화하는 새 규정을 시행하기 시작했다. OECD는 한국의 성장과 경쟁력 강화를 위해 구조 개혁 강화와 생산성 향상을 권고했다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>AI 예산 3배 증액은 정부가 기술 주권을 국가 전략으로 설정했다는 신호이며, 반도체·AI 인프라 관련 기업의 수혜가 예상된다.</li>
+<li>관세 피해 지원 예산 13.6조 원은 미중 무역 갈등의 피해를 단기적으로 완충할 수 있으나, 구조적 수출 다변화 없이는 한계가 있다.</li>
+<li>자원순환 로드맵의 법제화는 다국적 기업의 제품 설계 및 공급망 운영에 실질적 규제 부담을 증가시킬 것으로, 이에 대한 선제적 대응이 필요하다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://www.korea.net/NewsFocus/policies/view?articleId=278125" target="_blank" rel="noopener">https://www.korea.net/NewsFocus/policies/view?articleId=278125</a></div>
+</div>
+<hr class="idivider">
+</div>
+<div class="insight-advisor"><div class="insight-advisor-title">🌍 4. 사회·트렌드 분석가</div>
+<div class="insight-card"><div class="insight-quote">"한국 청년 취업 41개월 연속 감소, AI가 4년간 25만 5천 개 일자리 소멸시켰다"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">한국 청년(15~29세) 취업자가 41개월 연속 감소하고 있으며, 한국은행은 ChatGPT 출시 이후 4년간 AI 노출 직종에서 25만 5천 개의 청년 일자리가 사라졌다고 분석했다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody"> 2026년 3월 기준 한국의 15~29세 취업자 수는 전년 대비 14만 7천 명 감소해, 2022년 11월부터 41개월 연속 하락세를 이어갔다. 한국은행 보고서에 따르면 2022년 ChatGPT 출시 이후 4년간 25만 5천 개의 청년 일자리가 사라졌으며, 이 중 25만 1천 개가 AI 노출도가 높은 직종에서 발생했다. 4월 전체 취업자 증가 폭은 7만 4천 명으로 16개월 만에 최소치를 기록했으며, 제조업·건설업의 고용 감소가 지속됐다. 한국은행은 민간 부문 고용이 내수 회복에 힘입어 소폭 개선될 것으로 예상하나, 전반적인 고용 증가 속도는 둔화된다고 전망했다. AI 대체 우려가 사무직·서비스직 중심으로 빠르게 확산되고 있는 반면, 재교육·직무 전환 지원 인프라는 여전히 미비한 상태다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>AI로 인한 청년 일자리 25만 5천 개 소멸은 단순한 경기 침체가 아닌 구조적 고용 변환의 신호로, 직업 훈련·재교육 정책의 전면 재설계가 시급하다.</li>
+<li>41개월 연속 감소는 경기 사이클을 넘어선 구조적 문제로 굳어지고 있으며, 청년 인구 감소와 복합적으로 작용해 장기 소비 기반 자체를 훼손할 수 있다.</li>
+<li>AI가 대체하는 직종과 새로 창출하는 직종 사이의 '전환 마찰' 비용을 사회가 어떻게 분담할지에 대한 정책 논의가 본격화되어야 할 시점이다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://www.upi.com/Voices/2026/04/19/perspective-youth-employment-crisis/5541776645923/" target="_blank" rel="noopener">https://www.upi.com/Voices/2026/04/19/perspective-youth-employment-crisis/5541776645923/</a></div>
+</div>
+<hr class="idivider">
+<div class="insight-card"><div class="insight-quote">"소셜 커머스 2.6조 달러 시대: 인플루언서 49%·바이럴 상품 구매 34% 급증"</div>
+<div class="ilabel">한 줄 요약</div>
+<div class="ibody">2026년 글로벌 소셜 커머스 시장이 2.6조 달러로 성장하며, 소비자의 49%가 인플루언서 게시물로 구매를 결정하는 '인플루언서 주도 소비' 시대가 본격화됐다.</div>
+<div class="ilabel">상세 내용</div>
+<div class="ibody"> 2026년 기준 글로벌 소셜 커머스 시장 규모는 2.6조 달러로, 2030년까지 연평균 26.2% 성장해 8.5조 달러에 이를 것으로 전망된다. 미국의 소셜 미디어 구매자는 1억 1,710만 명(전체 인구의 33.5%)으로, 25~34세가 23.1%로 최대 비중이다. 주목할 점은 65세 이상 고령층도 9.6%를 차지하며 디지털 소비의 새로운 주체로 부상했다는 것이다. 소비자의 49%가 인플루언서 게시물을 통해 구매를 결정하며, 바이럴 상품 구매 경험자 비율은 전년 17%에서 34%로 두 배 급증했다. 2026년의 핵심 소비 트렌드는 '수동적 스크롤'에서 '의도적 소비'로의 전환으로, 소비자들이 AI가 생성한 저품질 콘텐츠를 거부하고 품질·진정성·커뮤니티를 중시하기 시작했다. 교육적 콘텐츠가 모든 세대에서 브랜드로부터 가장 선호하는 콘텐츠 유형 1위로 꼽혔다.</div>
+<div class="ilabel">에이전트 의견</div><ul class="ibullets">
+<li>소셜 커머스 CAGR 26.2%는 전통적인 이커머스 성장률을 크게 앞지르며, 유통·브랜드 기업의 채널 전략을 소셜 플랫폼 중심으로 재편하도록 촉진하고 있다.</li>
+<li>65세 이상의 소셜 구매자 비중 9.6% 진입은 고령 소비 시장의 디지털 전환이 본격화됐음을 의미하며, 이 세대를 위한 UX와 신뢰 설계가 새로운 경쟁 요소가 된다.</li>
+<li>'AI 슬롭' 거부와 진정성 선호 트렌드는 콘텐츠 마케팅의 질적 전환을 요구하며, 단순 노출량 경쟁에서 신뢰 기반 관계 구축으로 패러다임이 이동하고 있다.</li>
+</ul>
+<div class="ilink">📎 <a href="https://www.salsify.com/blog/top-10-consumer-trends-to-watch" target="_blank" rel="noopener">https://www.salsify.com/blog/top-10-consumer-trends-to-watch</a></div>
+</div>
+</div>
+<div style="margin-top:32px;text-align:center;">
+  <a href="../인사이트/index.html" style="color:var(--accent);text-decoration:none;font-size:.9rem;">← 큐레이션 전체 목록으로</a>
+</div>
+</main>
+<script>
+function toggleGroup(el){const g=el.parentElement;g.classList.toggle('collapsed');const s={};document.querySelectorAll('.nav-group[data-group]').forEach(g=>{s[g.dataset.group]=g.classList.contains('collapsed');});try{localStorage.setItem('navState',JSON.stringify(s));}catch(e){}}
+document.addEventListener('DOMContentLoaded',()=>{try{const s=JSON.parse(localStorage.getItem('navState')||'{}');document.querySelectorAll('.nav-group[data-group]').forEach(g=>{if(s[g.dataset.group]&&!g.classList.contains('active')){g.classList.add('collapsed');}});}catch(e){}});
+</script>
+</body>
+</html>
